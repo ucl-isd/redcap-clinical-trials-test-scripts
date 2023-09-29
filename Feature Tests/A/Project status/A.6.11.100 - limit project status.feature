@@ -3,7 +3,7 @@ Feature: Control Center: The system shall support limiting the ability to move p
 As a REDCap end user  
 I want to see that My Project is functioning as expected    
 
-Scenario: B.6.11.100.100 Production status setting in control center    
+Scenario: A.6.11.100.100 Production status setting in control center    
 #SETUP  
 Given I login to REDCap with the user "Test_Admin"  
 And I create a new project named "A.6.11.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button     
