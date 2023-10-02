@@ -30,6 +30,9 @@ Feature: A.1.5.100 Browse Projects
     When I click on the table heading column labeled "Project Title"
     Then I should see projects sorted correctly when I click on "Project Title" to sort in either direction
 
+    When I click on the table heading column labeled "PID"
+    Then I should see projects sorted correctly when I click on "PID" to sort in either direction
+
     When I click on the table heading column labeled "Records"
     Then I should see projects sorted correctly when I click on "Records" to sort in either direction
 
@@ -45,11 +48,7 @@ Feature: A.1.5.100 Browse Projects
     When I click on the table heading column labeled "Status"
     Then I should see projects sorted correctly when I click on "Status" to sort in either direction
 
-    When I click on the table heading column labeled "PID"
-    Then I should see projects sorted correctly when I click on "PID" to sort in either direction
-
-    When I click on the link labeled "Control Center"
-    And I click on the link labeled "Browse Projects"
+    When I click on the link labeled "Browse Projects"
     Then I should see "Viewing projects accessible by user:"
 
     When I enter "Test_Admin" into the input field labeled "Viewing projects accessible by user:"
