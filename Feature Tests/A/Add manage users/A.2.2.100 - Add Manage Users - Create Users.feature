@@ -3,7 +3,7 @@ Feature: A.2.2.100 Add/Manage users Control Center - Users: The system shall sup
 As a REDCap end user    
 I want to see that Add / Manage Users is functioning as expected      
 
-Scenario: A.2.2.100.100 
+Scenario: A.2.2.100.100 Create Users
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: A.2.2.100.200 Create a Table-based user
 Given I login to REDCap with the user "Test_Admin"      
