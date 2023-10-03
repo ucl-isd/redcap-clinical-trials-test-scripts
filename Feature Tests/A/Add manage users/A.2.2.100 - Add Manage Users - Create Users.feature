@@ -107,7 +107,7 @@ When I logout
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: User can make new project without admin    
 Given I login to REDCap with the user "Test_User1"      
-Then I should see "New Project:
+Then I should see "New Project"
 
 #FUNCTIONAL_REQUIREMENT
 ##VERIFY: User can make project
