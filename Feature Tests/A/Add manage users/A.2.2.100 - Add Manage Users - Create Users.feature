@@ -81,7 +81,7 @@ When I logout
 ##ACTION: A.2.2.100.600 User has no control center access      
 Given I login to REDCap with the user "Test_User1"      
 Then I should NOT see "Control Center"
- And I should see "New Project:
+ And I should see "New Project"
 
 #FUNCTIONAL_REQUIREMENT
 ##VERIFY: Admin only can make project
