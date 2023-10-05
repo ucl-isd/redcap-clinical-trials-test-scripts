@@ -4,9 +4,10 @@ As a REDCap end user
  I want to see that file repository is functioning as expected    
 
 Scenario: C.3.26.100.100 Enable/Disable file repository public links via Control Center    
-#SETUP   Given I login to REDCap with the user "Test_Admin"  
-When I create a "New Project" named "A.3.26.100.100", select "Practice / Just for Fun" from the dropdown, choose file "Project_1.xml" and click on the "Create Project" button   
-And I click on the link labeled "My Projects"    
+#SETUP
+Given I login to REDCap with the user "Test_Admin"
+And I create a new project named "A.3.26.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.16.xml", and clicking the "Create Project" button
+And I click on the link labeled "My Projects"
 And I click on the link labeled "A.3.26.100.100"      
 And I click the link labeled "Designer"  
 And I click the button labeled "Survey Settings" for the instrument "Consent"  
