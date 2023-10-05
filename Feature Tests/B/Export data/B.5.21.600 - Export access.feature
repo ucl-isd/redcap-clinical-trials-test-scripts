@@ -7,7 +7,7 @@ Scenario: B.5.21.600.100 Restrict users from exporting data
 
 #SETUP 
 Given I login to REDCap with the user "Test_User1" 
-And I create a new project named "B.5.21.600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_5.21.xml" and clicking the "Create Project" button  
+And I create a new project named "B.5.21.600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_5.21.xml", and clicking the "Create Project" button
 
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: export CSV and confirm can export
