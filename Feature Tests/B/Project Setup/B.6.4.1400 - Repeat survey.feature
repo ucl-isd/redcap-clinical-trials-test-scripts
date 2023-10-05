@@ -6,7 +6,7 @@ I want to see that Manage project user access is functioning as expected
 Scenario: B.6.4.1400.100 Ability to create repeating surveys
 #SETUP
 Given I login to REDCap with the user "Test_User1"
-And I create a new project named "B.6.4.1400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button 
+And I create a new project named "B.6.4.1400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 #VERIFY_SETUP repeat instrument
 When I click on the link labeled "Project Setup"
 Then I should see a button labeled "Modify" on the field labeled "Repeating instruments and events"

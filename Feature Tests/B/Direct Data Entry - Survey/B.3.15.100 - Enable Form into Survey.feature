@@ -6,7 +6,7 @@ I want to see that Manage project user access is functioning as expected
 Scenario: B.3.15.100.100 Enable/Disable survey in Online Designer
 #SETUP
 Given I login to REDCap with the user "Test_User1"
-And I create a new project named "B.3.15.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button 
+And I create a new project named "B.3.15.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
 When I click on the link labeled "Project Setup"
 #PARENT #B.6.4.1300.100

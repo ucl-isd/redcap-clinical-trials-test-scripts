@@ -6,7 +6,7 @@ I want to see that Project Setup is functioning as expected
 Scenario: B.4.27.300.100 Change project longitudinal status 
 ##SETUP_DEV
 Given I login to REDCap with the user "Test_User1"
-And I create a new project named "B.4.27.300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button 
+And I create a new project named "B.4.27.300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
 ##ACTION Verify event exist ##VERIFY_RSD
 When I click on the link labeled "Record Status Dashboard"

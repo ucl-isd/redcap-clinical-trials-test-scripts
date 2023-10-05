@@ -6,7 +6,7 @@ I want to see that Data Access Groups is functioning as expected
 Scenario: B.2.10.100.100 Create, Edit & Delete DAGs
 #SETUP 
 Given I login to REDCap with the user "Test_Admin"
-And I create a new project named "B.2.10.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button 
+And I create a new project named "B.2.10.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
 When I click on the link labeled "DAGs"
 Then I should see "Assign user to a group"

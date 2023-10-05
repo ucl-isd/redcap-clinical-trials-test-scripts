@@ -6,7 +6,7 @@ I want to see that Manage project user access is functioning as expected
 Scenario: B.3.15.200.100 Survey Online/Offline Status 
 #SETUP
 Given I login to REDCap with the user "Test_User1"
-And I create a new project named "B.3.15.200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button 
+And I create a new project named "B.3.15.200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
 #SETUP_PRODUCTION
 When I click on the button labeled "Move project to production" 

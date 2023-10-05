@@ -7,7 +7,7 @@ Scenario: B.6.7.1800.100 Designating field as required through the Online Design
 
 #SETUP
 Given I login to REDCap with the user "Test_Admin"   
-And I create a new project named "B.6.7.1800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button 
+And I create a new project named "B.6.7.1800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
 ##SETUP_PRODUCTION
 When I click on the link labeled "My Projects"  

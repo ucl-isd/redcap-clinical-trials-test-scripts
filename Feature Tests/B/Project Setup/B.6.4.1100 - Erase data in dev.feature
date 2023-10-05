@@ -6,7 +6,7 @@ I want to see that Project Setup is functioning as expected
 Scenario: B.6.4.1100.100 Erase all data only in development as User
 ##SETUP_DEV
 Given I login to REDCap with the user "Test_User1"
-And I create a new project named "B.6.4.1100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button 
+And I create a new project named "B.6.4.1100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
 ##ACTION Verify record exist ##VERIFY_RSD
 When I click on the link labeled "Record Status Dashboard"
@@ -44,7 +44,7 @@ And I logout
 Scenario: B.6.4.1100.200 Erase all data in production mode as Admin
 ##SETUP_PRODUCTION
 Given I login to REDCap with the user "Test_Admin"
-And I create a new project named "B.6.4.1100.200.PROD" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button 
+And I create a new project named "B.6.4.1100.200.PROD" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 When I click on the button labeled "Project Setup"
 And I click on the button labeled "Move project to production"
 And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box

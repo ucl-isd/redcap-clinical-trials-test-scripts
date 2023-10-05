@@ -7,7 +7,7 @@ Scenario: C.2.19.900.100 Enable user rights for Record Locking Customization mod
 
 #SETUP 
 Given I login to REDCap with the user "Test_User1" 
-And I create a new project named "C.2.19.900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button  
+And I create a new project named "C.2.19.900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
 #USER_RIGHTS
 When I click on the link labeled "User Rights"  

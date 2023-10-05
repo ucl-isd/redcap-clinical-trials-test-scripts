@@ -5,7 +5,7 @@ I want to see that My Project is functioning as expected
 
 Scenario: B.6.13.200.100 Hide archived projects
 Given I login to REDCap with the user "Test_Admin" 
-And I create a new project named "B.6.13.200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button  
+And I create a new project named "B.6.13.200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 When I click on the link labeled "Other Functionality"
 And I click on the button "Mark project as Completed"
 And I click on the button "Mark project as Completed" in the dialog box

@@ -85,7 +85,7 @@ Then I should NOT see "Control Center"
 
 #FUNCTIONAL_REQUIREMENT
 ##VERIFY: Admin only can make project
-When I create a new project named "A.2.2.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button  
+When I create a new project named "A.2.2.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 And I click on the button labeled "I Agree" in the dialog box
 Then I should see "Request Sent"
 When I logout
@@ -111,6 +111,6 @@ Then I should see "New Project"
 
 #FUNCTIONAL_REQUIREMENT
 ##VERIFY: User can make project
-When I create a new project named "A.2.2.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml" and clicking the "Create Project" button  
+When I create a new project named "A.2.2.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 And I click on the button labeled "I Agree" in the dialog box
 Then I should see "Project Setup" 
