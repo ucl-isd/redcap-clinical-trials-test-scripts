@@ -34,7 +34,7 @@ Then I should see "Your system configuration values have now been changed!"
 ##VERIFY: Admin Go to user rights and look for the edit survey checkbox (should be there)  
 Given I click on the link labeled "My Projects"    
 When I click on the link labeled "A.6.4.1600.100"    
-nd I click on the link labeled "User Rights"  
+And I click on the link labeled "User Rights"
 And I click on the link labeled "test_admin"  
 And I click on the button labeled "Edit user privileges"   
 Then I should see the checkbox labeled "Edit user privileges" for the instrument labeled "Survey"   
@@ -68,4 +68,7 @@ Then I should see "EDITED SURVEY RESPONSE" in the field labeled "Name"
 
 ##VERIFY_LOG    
 When I click the link labeled "Logging"  
-Then I should see a table header and rows including the following values in the logging table:  | Username                   |        Action                 | List of Data Changes OR Fields Exported |  | test_admin                 | Update record 1      | name_survey  = 'EDITED SURVEY RESPONSE ' |  | [survey respondent] | Update Response 1 | name_survey  = 'SURVEY RESPONSE ' |
+Then I should see a table header and rows including the following values in the logging table:
+ | Username                   |        Action                 | List of Data Changes OR Fields Exported |
+ | test_admin                 | Update record 1      | name_survey  = 'EDITED SURVEY RESPONSE ' |
+ | [survey respondent] | Update Response 1 | name_survey  = 'SURVEY RESPONSE ' |
