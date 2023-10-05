@@ -7,7 +7,7 @@ Scenario: C.3.26.300.100 Automatic uploading of data export logs into the data e
 
 #SETUP 
 Given I login to REDCap with the user "Test_Admin"
-When I create a "New Project" named "C.3.26.300.100", select "Practice / Just for Fun" from the dropdown, choose file "Project_1.xml" and click on the "Create Project" button 
+When I create a "New Project" named "C.3.26.300.100", select "Practice / Just for Fun" from the dropdown, choose file "Project_1.xml" and click on the "Create Project" button
 And I click on the link labeled "My Projects"  
 And I click on the link labeled "A.3.26.300.100"  
 
@@ -35,7 +35,7 @@ Scenario: C.3.26.300.300 Recycle bin function - permanently force delete
 
 #SETUP 
 Given I login to REDCap with the user "Test_Admin"
-When I create a "New Project" named "C.3.26.300.300", select "Practice / Just for Fun" from the dropdown, choose file "Project_1.xml" and click on the "Create Project" button 
+When I create a "New Project" named "C.3.26.300.300", select "Practice / Just for Fun" from the dropdown, choose file "Project_1.xml" and click on the "Create Project" button
 And I click on the link labeled "My Projects"  
 And I click on the link labeled "A.3.26.300.300"  
 

@@ -7,7 +7,7 @@ Scenario: C.3.26.200.100 Limit user view and export access based on User Rights 
 
 #SETUP 
 Given I login to REDCap with the user "Test_Admin"
-When I create a "New Project" named "A.3.26.200.100", select "Practice / Just for Fun" from the dropdown, choose file "Project_1.xml" and click on the "Create Project" button 
+When I create a new project named "A.3.26.200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 And I click on the link labeled "My Projects"  
 And I click on the link labeled "A.3.26.200.100"  
 
