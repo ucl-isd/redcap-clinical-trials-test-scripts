@@ -40,13 +40,16 @@ And I click on the button labeled "Yes, Request Admin to Move to Production Stat
 Then I should see "Success! Your request to move the project to production status has been sent to a REDCap administrator. "    
 
 ##VERIFY_LOG  
-When I click on the button labeled "Logging" 
- Then I should see a table header and rows including the following values in the logging table:  | Username   |        Action               | List of Data Changes OR Fields Exported |  | test_user1 |    Manage/Design    | Send request to move project to production status|    
+When I click on the button labeled "Logging"
+Then I should see a table header and rows containing the following values in the logging table:
+  | Username   |  Action               | List of Data Changes OR Fields Exported          |
+  | test_user1 |  Manage/Design        | Send request to move project to production status|
 
 ##ACTION: cancel request  
 When I click on the link labeled "Project Setup"  
 And I click on the button labeled "Cancel request"  
-And I click on the button labeled "Submit" in the dialog box  Then I should see "Project status: Development"  
+And I click on the button labeled "Submit" in the dialog box
+Then I should see "Project status: Development"
 And I logout    
 
 #SETUP   
@@ -55,7 +58,9 @@ Given I login to REDCap with the user "Test_Admin"
 And I click on the link labeled "User Settings"  
 Then I should see "System-level User Settings"     
 When I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"   
-And I click on the button labeled "Save Changes"   ##VERIFY  Then I should see "Your system configuration values have now been changed!"   
+And I click on the button labeled "Save Changes"
+##VERIFY
+Then I should see "Your system configuration values have now been changed!"
 And I logout    
 
 #SETUP   
@@ -73,6 +78,8 @@ And I click on the button labeled "Yes, Move to Production Status" in the dialog
 Then I should see "Project status: Production"    
 
 ##VERIFY_LOG  
-When I click on the button labeled "Logging"  
-Then I should see a table header and rows including the following values in the logging table:  | Username   |        Action           | List of Data Changes OR Fields Exported |  | test_user1  | Manage/Design | Move project to Production status            |
+When I click on the button labeled "Logging"
+And I should see a table header and rows containing the following values in the logging table:
+ | Username   | Action           | List of Data Changes OR Fields Exported |
+ | test_user1 | Manage/Design    | Move project to Production status       |
 
