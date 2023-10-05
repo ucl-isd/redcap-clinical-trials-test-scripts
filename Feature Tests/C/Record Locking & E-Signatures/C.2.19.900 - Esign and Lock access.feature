@@ -16,7 +16,7 @@ And I click on the button labeled "Edit user privileges"
 Then I should see "Editing existing user "test_user1"" 
 
 When I click on the checkbox for the field labeled "Record Locking Customization"
-And I click on the radio button labeled "Locking / Unlocking with E-signature authority" for the field labeled "Lock / Unlock Records (instrument level)"
+And I click on the radio labeled "Locking / Unlocking with E-signature authority" for the field labeled "Lock / Unlock Records (instrument level)"
 And I click on the button labeled "Close" in the dialog box
 And I click on the checkbox for the field labeled "Lock/Unlock *Entire* Records (record level)"
 And I click on the button labeled "Save changes" 
@@ -44,7 +44,7 @@ And I click on the button labeled "Edit user privileges"
 Then I should see "Editing existing user "test_user1"" 
 
 When I deselect the checkbox for the field labeled "Record Locking Customization"
-And I click on the radio button labeled "Disabled" for the field labeled "Lock / Unlock Records (instrument level)"
+And I click on the radio labeled "Disabled" for the field labeled "Lock / Unlock Records (instrument level)"
 And I verify the checkbox for the field labeled "Lock/Unlock *Entire* Records (record level)" is not checked
 And I click on the button labeled "Save Changes" 
 Then I should see "User "test_user1" was successfully edited"
@@ -61,7 +61,7 @@ And I should NOT see the link labeled "Customize and Manage the Record Locking a
 ##SETUP_PRODUCTION
 When I click on the link labeled "Project Setup" 
 And I click on the button labeled "Move project to production"  
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box 
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box 
 Then I should see "Project status: Production" 
 
@@ -87,7 +87,7 @@ And I verify the checkbox for the field labeled "Lock/Unlock *Entire* Records (r
 
 ##USER_RIGHTS
 When I click on the checkbox for the field labeled "Record Locking Customization"
-And I click on the radio button labeled "Locking / Unlocking with E-signature authority" for the field labeled "Lock / Unlock Records (instrument level)"
+And I click on the radio labeled "Locking / Unlocking with E-signature authority" for the field labeled "Lock / Unlock Records (instrument level)"
 And I click on the button labeled "Close" in the dialog box
 And I click on the checkbox for the field labeled "Lock/Unlock *Entire* Records (record level)"
 And I click on the button labeled "Save Changes" 

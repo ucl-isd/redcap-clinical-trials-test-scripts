@@ -14,7 +14,7 @@ And I click on the link labeled "A.3.26.300.100"
 #SETUP Export data automatically placed in file repo
 Given I click on the link labeled "Data Exports, Reports, and Stats"
 And I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
-And I click on the radio button labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 

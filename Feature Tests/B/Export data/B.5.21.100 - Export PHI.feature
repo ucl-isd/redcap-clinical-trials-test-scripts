@@ -63,7 +63,7 @@ Then I should see a table row containing the following values in the reports tab
  
 ##ACTION: export all
 Given I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
-And I click on the radio button labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 
@@ -81,7 +81,7 @@ And I click on the button labeled "Close" in the dialog box
 When I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
 And I click on the checkbox button labeled "Remove All Identifier Fields (tagged in Data Dictionary)"
 And I click on the checkbox button labeled "Hash the Record ID field (converts record name to an unrecognizable value)"
-And I click on the radio button labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 
@@ -102,7 +102,7 @@ And I deselect the checkbox button labeled "Remove All Identifier Fields (tagged
 And I deselect the checkbox button labeled "Hash the Record ID field (converts record name to an unrecognizable value)"
 And I click on the checkbox button labeled "Remove unvalidated Text fields (i.e. Text fields other than dates, numbers, etc.)"
 And I click on the checkbox button labeled "Remove Notes/Essay box fields"
-And I click on the radio button labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 
@@ -119,7 +119,7 @@ FUNCTIONAL_REQUIREMENT
 ##ACTION: remove date, datetime fields
 When I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
 And I click on the checkbox button labeled "Remove all date and datetime fields"
-And I click on the radio button labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 
@@ -154,7 +154,7 @@ Given I click on the link labeled "Data Exports, Reports, and Stats"
 When I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
 And I click on the checkbox button labeled "Shift all dates by value between 0 and 364 days"
 And I click on the checkbox button labeled "Also shift all survey completion timestamps by value between 0 and 364 days"
-And I click on the radio button labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 And I should see "All dates within your data have been DATE SHIFTED to an unknown value between 0 and 364 days."

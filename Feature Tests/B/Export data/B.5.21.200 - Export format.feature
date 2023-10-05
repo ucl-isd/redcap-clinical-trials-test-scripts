@@ -16,7 +16,7 @@ Then I should see a table row containing the following values in the reports tab
 | A | All data (all records and fields) | 
 
 Given I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
-And I click on the radio button labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 
@@ -29,7 +29,7 @@ And I click on the button labeled "Close" in the dialog box
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: export CSV (labels)
 Given I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
-And I click on the radio button labeled "CSV / Microsoft Excel (labels)" in the dialog box
+And I click on the radio labeled "CSV / Microsoft Excel (labels)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 
@@ -42,7 +42,7 @@ And I click on the button labeled "Close" in the dialog box
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: export SPSS
 Given I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
-And I click on the radio button labeled "SPSS Statistical Software" in the dialog box
+And I click on the radio labeled "SPSS Statistical Software" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 
@@ -55,7 +55,7 @@ And I click on the button labeled "Close" in the dialog box
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: export SAS
 Given I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
-And I click on the radio button labeled "SAS Statistical Software" in the dialog box
+And I click on the radio labeled "SAS Statistical Software" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 
@@ -68,7 +68,7 @@ And I click on the button labeled "Close" in the dialog box
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: export R
 Given I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
-And I click on the radio button labeled "R Statistical Software" in the dialog box
+And I click on the radio labeled "R Statistical Software" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 
@@ -81,7 +81,7 @@ And I click on the button labeled "Close" in the dialog box
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: export STATA
 Given I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
-And I click on the radio button labeled "Stata Statistical Software" in the dialog box
+And I click on the radio labeled "Stata Statistical Software" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 
@@ -94,7 +94,7 @@ And I click on the button labeled "Close" in the dialog box
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: export XML
 Given I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
-And I click on the radio button labeled "CDISC ODM (XML)" in the dialog box
+And I click on the radio labeled "CDISC ODM (XML)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 

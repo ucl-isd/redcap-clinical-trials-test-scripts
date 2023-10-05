@@ -11,7 +11,7 @@ And I create a new project named "C.2.19.400.100" by clicking on "New Project" i
 #SETUP_PRODUCTION 
 When I click on the link labeled "Project Setup" 
 And I click on the button labeled "Move project to production"  
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box 
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box 
 Then I should see "Project status: Production" 
 
@@ -22,7 +22,7 @@ And I click on the button labeled "Add with custom rights"
 Then I should see "Adding new user "test_user1"" 
 
 When I click on the checkbox for the field labeled "Record Locking Customization"
-And I click on the radio button labeled "Locking / Unlocking" for the field labeled "Lock / Unlock Records (instrument level)"
+And I click on the radio labeled "Locking / Unlocking" for the field labeled "Lock / Unlock Records (instrument level)"
 And I click on the checkbox for the field labeled "Lock/Unlock *Entire* Records (record level)"
 And I click on the button labeled "Add user"
 And I click on the checkbox for the field labeled "Logging"

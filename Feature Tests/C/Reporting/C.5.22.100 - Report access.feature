@@ -10,7 +10,7 @@ And I create a new project named "C.5.22.100.100" by clicking on "New Project" i
 #SETUP_PRODUCTION
 When I click on the link labeled "Project Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 Then I should see "Project status: Production"
 
@@ -140,7 +140,7 @@ Then I should see "Edit Existing Report: "C.5.22.100.100 REPORT"
 When I click on the radio button labeled "Custom user access" for the field labeled "View Access"
 And I select "test_user1" from the dropdown field labeled "Selected users"
 And I select "test_user2" from the dropdown field labeled "Selected users"
-And I click on the radio button labeled "Custom user access" for the field labeled "Edit Access"
+And I click on the radio labeled "Custom user access" for the field labeled "Edit Access"
 And I select "test_user1" from the dropdown field labeled "Selected users"
 And I click on the button labeled "Save Report"
 Then I should see "Your report has been saved!" in the dialog box

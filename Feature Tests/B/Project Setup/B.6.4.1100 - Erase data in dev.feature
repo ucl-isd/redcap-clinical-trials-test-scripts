@@ -30,7 +30,7 @@ Then I should see "No records exist yet"
 ##SETUP_PRODUCTION
 When I click on the button labeled "Project Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 Then I should see "Project Status: Production"
 
@@ -47,7 +47,7 @@ Given I login to REDCap with the user "Test_Admin"
 And I create a new project named "B.6.4.1100.200.PROD" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 When I click on the button labeled "Project Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 Then I should see "Project Status: Production"
 

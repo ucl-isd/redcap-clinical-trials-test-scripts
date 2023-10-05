@@ -7,7 +7,7 @@ Scenario: B.6.4.1200.100 Projects in development can be deleted by user
 ##SETUP_DEV
 Given I login to REDCap with the user "Test_User1"
 And I create a new project named "B.6.4.1200.100.DEV" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown
-And I click on the radio button labeled "Empty project (blank slate)"
+And I click on the radio labeled "Empty project (blank slate)"
 And I click on the button labeled "Create Project" 
 Then I should see "B.6.4.1200.100.DEV"
 
@@ -30,7 +30,7 @@ Scenario: B.6.4.1200.200 Projects in production with no records can be deleted b
 ##SETUP_PRODUCTION
 Given I login to REDCap with the user "Test_User1"
 Given I create a new project named "B.6.4.1200.200.PROD" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown
-And I click on the radio button labeled "Empty project (blank slate)"
+And I click on the radio labeled "Empty project (blank slate)"
 And I click on the button labeled "Create Project" 
 Then I should see "B.6.4.1200.200.PROD"
 
@@ -38,7 +38,7 @@ When I click on the link labeled "My Projects"
 And I click on the link labeled " B.6.4.1200.200.PROD"  
 And I click on the button labeled "Project Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 Then I should see "Project Status: Production"
 
@@ -65,7 +65,7 @@ When I click on the link labeled "My Projects"
 And I click on the link labeled " B.6.4.1200.300.PROD"  
 And I click on the button labeled "Project Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 Then I should see "Project Status: Production"
 

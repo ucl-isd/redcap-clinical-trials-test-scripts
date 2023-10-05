@@ -34,7 +34,7 @@ And I click on the link labeled "A.6.11.100.100"
 ##ACTION: Test user requests move to production  
 And I click on the link labeled "Project Setup"  
 And I click on the button labeled "Move project to production"   
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box  
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "Yes, Request Admin to Move to Production Status" in the dialog box  
 ##VERIFY  
 Then I should see "Success! Your request to move the project to production status has been sent to a REDCap administrator. "    
@@ -66,7 +66,7 @@ Given I login to REDCap with the user "Test_User1"
  ##ACTION: Test user move to production  
 And I click on the link labeled "Project Setup"  
 And I click on the button labeled "Move project to production"   
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box  
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "Yes, Move to Production Status" in the dialog box  
 
 ##VERIFY  

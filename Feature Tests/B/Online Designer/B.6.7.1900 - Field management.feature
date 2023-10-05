@@ -20,7 +20,7 @@ Then I should see "Test User1" within the "1_FullRights" row of the column label
 ##SETUP_PRODUCTION
 When I click on the button labeled "Project Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 Then I should see "Project Status: Production"
 And I logout

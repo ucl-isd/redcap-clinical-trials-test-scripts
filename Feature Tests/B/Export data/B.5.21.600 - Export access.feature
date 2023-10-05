@@ -17,7 +17,7 @@ Then I should see a table row containing the following values in the reports tab
 
 #VERIFY: can export
 Given I click on the "Export Data" button for "All data (all records and fields)" report in the My Reports & Exports table
-And I click on the radio button labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 

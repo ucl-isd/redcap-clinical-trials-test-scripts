@@ -19,7 +19,7 @@ Given I click on the "Make custom selections" button for "Selected instruments a
 When I select the dropdown option labeled "Text Validation" from the dropdown labeled "Instruments"
 And I select the dropdown option labeled "Event (Arm 1: Arm 1)" from the dropdown labeled "Events"
 And I click on the button labeled "Export Data"
-And I click on the radio button labeled "CSV / Microsoft Excel (raw data)" in the dialog box
+And I click on the radio labeled "CSV / Microsoft Excel (raw data)" in the dialog box
 And I click on the button labeled "Export Data" in the dialog box
 Then I should see a dialog containing the following text: "Data export was successful!"
 

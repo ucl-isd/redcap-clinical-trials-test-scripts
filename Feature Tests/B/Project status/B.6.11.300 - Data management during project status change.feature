@@ -14,7 +14,7 @@ When I click on the link labeled "My Projects"
 And I click on the link labeled "B.6.11.300.100"  
 And I click on the link labeled "Project Setup"
 And I click on the button labeled "Move project to production" 
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "Yes, Move to Production Status" in the dialog box
 ##VERIFY
 Then I should see "Project status: Production"
@@ -35,7 +35,7 @@ When I click on the link labeled "My Projects"
 And I click on the link labeled "B.6.11.300.200"  
 And I click on the link labeled "Project Setup"
 And I click on the button labeled "Move project to production" 
-And I click on the radio button labeled "Delete ALL data" in the dialog box
+And I click on the radio labeled "Delete ALL data" in the dialog box
 And I click on the button labeled "Yes, Move to Production Status" in the dialog box
 And I click on the button labeled "OK" in the pop-up box
 ##VERIFY

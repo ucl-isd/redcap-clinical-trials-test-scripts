@@ -12,14 +12,14 @@ And I create a new project named " C.3.24.600.100" by clicking on "New Project" 
 #SETUP_PRODUCTION
 When I click on the button labeled "Project Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 Then I should see "Project Status: Production"
 
 ##ACTION: e-consent survey settings - auto-archive and e-consent
 When I click on the link labeled "Designer"  
 And I click on the button labeled "Survey settings" for the instrument labeled "Consent"
-And I click on the radio button labeled "Auto-Archiver + e-Consent Framework" for the field labeled "e-Consent Framework"
+And I click on the radio labeled "Auto-Archiver + e-Consent Framework" for the field labeled "e-Consent Framework"
 And I click on the button labeled "Save Changes"
 Then I should see "Your survey settings were successfully saved!"
 

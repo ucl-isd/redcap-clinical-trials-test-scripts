@@ -18,7 +18,7 @@ Then I should see "Successfully saved!"
 
 #SETUP_PRODUCTION
 When I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Delete ALL data in the project" in the dialog box
+And I click on the radio labeled "Delete ALL data in the project" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 And I click on the button labeled "Ok" in the pop-up box
 Then I should see "Project Status: Production"
