@@ -20,17 +20,17 @@ When I clear the field labeled "Number of failed login attempts before user is l
 Then I should see "Your system configuration values have now been changed!"
 Given I logout
 
-##ACTION incorrect attempt
+##ACTION Login with bad password; first failed attempt at logging in
 Given I enter "Test_User1" into the input field labeled "Username:"
     And I enter "test" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
 Then I should see "ERROR: You entered an invalid user name or password!"
 
-##ACTION incorrect attempt 
+##ACTION Try to login again with a bad password; we will be locked out
 Given I enter "Test_User1" into the input field labeled "Username:"
     And I enter "test" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
-##VERIFY Timeout / lockout
+##VERIFY Timeout / lockout We only have to wait for 2 minute total this time
 Then I should see "ACCESS DENIED!"
 
 Given I wait for 2 minutes
@@ -55,23 +55,23 @@ When I clear the field labeled "Number of failed login attempts before user is l
 Then I should see "Your system configuration values have now been changed!"
 Given I logout
 
-##ACTION incorrect attempt 
+##ACTION Login with bad password; first failed attempt at logging in
 Given I enter "Test_User1" into the input field labeled "Username:"
     And I enter "test" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
 Then I should see "ERROR"
 
-##ACTION incorrect attempt 
+##ACTION Login with bad password; failed attempt at logging in
 Given I enter "Test_User1" into the input field labeled "Username:"
     And I enter "test" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
 Then I should see "ERROR"
 
-##ACTION incorrect attempt 
+##ACTION Try to login again with a bad password and we will be locked out
 Given I enter "Test_User1" into the input field labeled "Username:"
     And I enter "test" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
-##VERIFY Timeout / lockout
+##VERIFY Timeout / lockout; We only have to wait for 1 minute total this time
 Then I should see "ACCESS DENIED!"
 
 Given I wait for 1 minute
