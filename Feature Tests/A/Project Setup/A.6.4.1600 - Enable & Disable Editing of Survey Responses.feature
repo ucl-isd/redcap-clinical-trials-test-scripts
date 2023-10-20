@@ -4,6 +4,7 @@ Feature: Control Center: The system shall allow users to edit survey responses t
  I want to see that allow edit survey response is functioning as expected    
 
 Scenario: A.6.4.1600.100   
+#PARENT to A.6.4.300.100 User's ability to edit survey responses
 #SETUP_DEV  
 Given I login to REDCap with the user "Test_Admin"  
 And I create a new project named "A.6.4.1600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
@@ -45,7 +46,8 @@ When I click on the checkbox labeled "Edit user privileges" for the instrument l
 And I click on the button labeled "Save Changes"  
  Then I should see "User "test_admin" was successfully edited"    
 
-#SETUP Check edit survey function in a  record  
+#SETUP 
+#A.6.4.300.100 User's ability to edit survey responses
 Given I click the link labeled "Record Status Dashboard"  
 And I click the bubble for the "Survey" longitudinal instrument on event "Event Three" for record "1" 
  And I click on the button labeled "Survey options"  And I select the option labeled "Open survey" 
