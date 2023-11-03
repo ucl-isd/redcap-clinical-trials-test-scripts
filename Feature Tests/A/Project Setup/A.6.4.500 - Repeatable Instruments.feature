@@ -80,6 +80,9 @@ Then I should see "Repeating instruments and events"
 
 When I open the dialog box for the Repeatable Instruments and Events module
 And I close the popup  
+And I select "-- not repeating --" on the dropdown field labeled "Event 1 (Arm 1: Arm 1)"
+And I select "Repeat Instruments (repeat independently of each other)" on the dropdown field labeled "Event Three (Arm 1: Arm 1)"
+And I check the checkbox labeled "Survey"
 And I click on the button labeled "Save"
 
 Then I should see a dialog containing the following text: "Your settings for repeating instruments and/or events have been successfully saved."
@@ -206,7 +209,7 @@ Then I should see a table header and rows containing the following values in the
 Given I click on the link labeled "Add / Edit Records"
 And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
 
-Then I should NOT see "(#3)"
+Then I should NOT see "(#2)"
 
 When I click on the button labeled "Add new"
 And I click the bubble to add a record for the "Survey" longitudinal instrument on event "(#3)"
@@ -216,15 +219,15 @@ Then I should see "Editing existing Record ID 1"
 When I clear field and enter "My repeat event name" into the data entry form field labeled "Name"
 And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
 
-Then I should see "(#3)"
+Then I should see "(#2)"
 
 ##VERIFY_DE
 When I click on the link labeled "Data Exports, Reports, and Stats"
 And I see a table row containing the following values in the reports table:
       | A | All data (all records and fields) |
 And I click on the button labeled "View Report"
-And I should see a "1" within the "Event Three (Arm 1: Arm 1)" row of the column labeled "Repeat Instance" of the Reports table
-And I should see "My repeat event name"
+Then I should see a table row containing the following values in the report data table:
+      | Event Three (Arm 1: Arm 1) | My repeat event name | 
 
 #FUNCTIONAL REQUIREMENT
 #User modifies repeat event to see orphaned event
