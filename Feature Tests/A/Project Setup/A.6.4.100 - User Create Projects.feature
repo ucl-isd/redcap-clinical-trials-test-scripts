@@ -1,8 +1,8 @@
-Feature: A.6.4.100 Manage project creation, deletion, and settings
+Feature: A.6.4.100 Manage project creation, deletion, and settings.   Control Center: The system shall support the option to limit the creation of new projects to administrators.
 
-  Manage project creation, deletion, and settings
-  Control Center: The system shall support the option to limit the creation of new projects to administrators.
-
+As a REDCap end user 
+I want to see that manage project functions is functioning as expected    
+ 
   Scenario: A.6.4.100.100 User's ability to create new projects
 #SETUP_CONTROL_CENTER
 Given I login to REDCap with the user "Test_Admin"
