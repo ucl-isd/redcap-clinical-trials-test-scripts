@@ -1,7 +1,7 @@
-Feature: A.6.4.400 Manage project creation, deletion, and settings
+Feature: A.6.4.400 Manage project creation, deletion, and settings. Control Center: The system shall allow production Draft Mode changes to be approved automatically under certain conditions.
 
-  Manage project creation, deletion, and settings
-  Control Center: The system shall allow production Draft Mode changes to be approved automatically under certain conditions.
+As a REDCap end user 
+ I want to see that manage project functions is functioning as expected    
 
   Scenario: A.6.4.400.100 User's ability to approve draft changes without administrative approval
 
