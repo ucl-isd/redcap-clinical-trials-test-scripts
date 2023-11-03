@@ -52,7 +52,7 @@ Given I click the link labeled "Record Status Dashboard"
 And I click the bubble for the "Survey" longitudinal instrument on event "Event Three" for record "1" 
  And I click on the button labeled "Survey options"  And I select the option labeled "Open survey" 
  And I enter "SURVEY RESPONSE" in the field labeled "Name"  And I click on the button labeled "Submit" 
- Then I should see "Thank you for taking this survey"  And I click on the button labeled "Close survey"    
+ Then I should see "Thank you for taking the survey"  And I click on the button labeled "Close survey"    
 
 ##VERIFY_RSD  
 Given I click on the button labeled "Leave without saving changes"  
