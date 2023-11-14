@@ -11,7 +11,7 @@ Given I login to REDCap with the user "Test_Admin"
     And I click on the link labeled "Browse Users"
 Then I should see "User Search: Search for user by username, first name, last name, or primary email"        
 
-##ACTION_MANUAL_TESTING: Verify Delete_User is already created.  If Delete_User is not created, skip to line 22.
+##ACTION_MANUAL_TESTING: Verify Delete_User is already created.  If Delete_User is not created, skip to Create Delete_User (Line 20).
 #When I enter "Delete_User" into the input field labeled "User Search: Search for user by username, first name, last name, or primary email"      
 #  And I click on the button labeled "Search"      
 #Then I should see "Delete_User"     
