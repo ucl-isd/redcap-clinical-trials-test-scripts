@@ -11,12 +11,13 @@ Given I login to REDCap with the user "Test_Admin"
     And I click on the link labeled "Browse Users"
 Then I should see "User Search: Search for user by username, first name, last name, or primary email"        
 
-##ACTION_MANUAL_TESTING: Verify Delete_User is already created.  If Delete_User is not created, skip to Create Delete_User (Line 20).
+##ACTION_MANUAL_TESTING: Verify Delete_User is already created.  If Delete_User is not created, skip to Create Delete_User (Line 21).
 #When I enter "Delete_User" into the input field labeled "User Search: Search for user by username, first name, last name, or primary email"      
 #  And I click on the button labeled "Search"      
-#Then I should see "Delete_User"     
-
-#Manual skip to Functional Requirement test (Line 40: ##ACTION Cancel delete user )
+#Then I should see "Delete_User"  
+#  And I should see "Editable user attributes"
+   
+#Manual skip to Functional Requirement test (Line 41: ##ACTION Cancel delete user )
 ##ACTION_AUTOMATED_TESTING: Create Delete_User
 When I click on the link labeled "Add Users (Table-based Only)"
 Then I should see "Create single user"
