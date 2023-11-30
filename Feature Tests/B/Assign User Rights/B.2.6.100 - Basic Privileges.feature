@@ -216,3 +216,5 @@ And I logout
 ##VERIFY: Verify User has no access to project
 
 Given I login to REDCap with the user "Test_User1"
+Then I should see "My Projects"
+And I should NOT see "B.2.6.100.100"
