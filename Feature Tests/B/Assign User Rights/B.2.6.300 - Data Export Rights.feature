@@ -12,7 +12,7 @@ When I click on the link labeled "Project Setup"
 And I click on the button labeled "Move project to production" 
 And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
-Then I see "Project status: Production"
+Then I should see "Project status: Production"
 
 ##USER_RIGHTS
 When I click on the link labeled "User Rights"  
@@ -144,4 +144,4 @@ And I click on the link labeled "B.2.6.300.100"
 ##ACTION: 
 And I click on the link labeled "Data Exports, Reports, and Stats" 
 ##VERIFY
-Then I should NOT see "Export Data" 
+Then I should not see the button labeled "Export Data"
