@@ -62,3 +62,9 @@ When I click on the button labeled "View Report"
 Then I should see a table header and rows including the following values in the report data table:  
 | Record ID|  Email | 
 |       5         | email@test.edu|
+
+#VERIFY_LOG
+When I click on the button labeled "Logging"
+Then I should see a table header and rows including the following values in the logging table:
+| Username   |        Action            | List of Data Changes OR Fields Exported |
+| test_admin| Create record (import) | Create record (import)
