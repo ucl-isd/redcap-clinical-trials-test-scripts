@@ -27,7 +27,7 @@ Then I should see "Test User1"
 ##ACTION: create record
 When I click the link labeled "Add/Edit Records"
 And I click the button labeled "Add new record for the arm selected above"
-And I click the bubble labeled "Text Validation for event "Event 1" 
+And I click the bubble labeled "Text Validation" for event "Event 1" 
 And I click the button labeled "Save and Exit Form"
 ##VERIFY
 Then I should see "Record ID 7 successfully added"
@@ -66,8 +66,8 @@ Then I should NOT see the button labeled "Add new record for the arm selected ab
 ##VERIFY Can edit existing record
 When I click on the dropdown field with the placeholder text of "select record"
 And I select the dropdown option labeled "1"
-And I click the bubble labeled "Text Validation for event "Event 1"
-And I enter "Edit" on the field labeled "Name"
+And I click the bubble labeled "Text Validation" for event "Event 1"
+And I enter "EDIT" on the field labeled "Name"
 And I click on the button labeled "Save & Exit Form"
 Then I should see "Record ID 1 successfully edited"
 
