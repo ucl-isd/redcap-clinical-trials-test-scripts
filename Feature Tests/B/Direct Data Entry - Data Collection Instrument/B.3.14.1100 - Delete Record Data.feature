@@ -40,8 +40,7 @@ When I click on the link labeled "Logging"
 Then I should see table rows including the following values in the logging table: 
 | Username  |           Action            | List of Data Changes OR Fields Exported|
 | test_user1 | Update record 1     | calc_test = ''|
-| test_user1 | Update record 1     |calculated_field = '' |
-| test_user1 | Update record 1     |calculated_field_2 = ''|
+| test_user1 | Update record 1     |consent_complete = '' |
 | test_user1 | Update record 1     |data_types_complete = '' |
 | test_user1 | Update record 1     |dob = '' |
 | test_user1 | Update record 1     |email = '' |
@@ -55,5 +54,6 @@ Then I should see a table row containing the following values in the reports tab
 | A | All data (all records and fields) | 
  
 When I click on the button labeled "View Report" 
-Then I should NOT see data for event "Event 1" for record "1"
-
+Then I should NOT see a table row including the following values in in the logging table:
+| record_id | redcap_event_name | name |
+| 1  | Event 1 (Arm 1: Arm 1) | Name |
