@@ -24,7 +24,7 @@ Then I should see a table header and rows including the following values in the 
 | test_user1  | Manage/Design | Modify project settings                               |
 
 ##ACTION #CROSS-FEATURE B.2.23.100: Verify Logging Filter by event manage/design
-When I select the dropdown option labeled "Manage/Design" from the dropdown field labeled "Filter by event:" with the placeholder text of ""All event types"
+When I select the dropdown option labeled "Manage/Design" from the dropdown field labeled "Filter by event:" with the placeholder text of "All event types"
 ##VERIFY_LOG #CROSS-FEATURE: Verify Logging Filter by event manage/design
 Then I should see a table header and rows including the following values in the logging table:
 | Username   |        Action           | List of Data Changes OR Fields Exported |
