@@ -33,6 +33,11 @@ Then I should see "Record ID 7" data entry cancelled - not saved."
 ##VERIFY_LOG
 When I click on the link labeled "Logging"
 Then I should NOT see table rows including the following values in the logging table:
+| Username | Action                  | List of Data Changes
+OR Fields Exported  |
+| test_user1 | Manage/Design | Move project to Production status  |
+
+Then I should NOT see table rows including the following values in the logging table:
 | Username | Action                  | 
 | test_user1 | Create record 7 | 
 
@@ -105,6 +110,7 @@ Then I should see "Now displaying the next record: Record ID 11"
 When I click on the link labeled "Logging"
 Then I should see table rows including the following values in the logging table:
 | Username | Action                  | List of Data Changes OR Fields Exported |
+| test_user1 | Update record 11 |   name = 'NEXT RECORD '|
 | test_user1 | Update record 10 |   name = 'SAVE & GO TO NEXT RECORD '|
 | test_user1 | Create record 9    |   name = 'SAVE & EXIT RECORD' |
 | test_user1 | Create record 8    |   name = 'SAVE & GO TO NEXT FORM' |
@@ -122,3 +128,4 @@ Then I should see a table header and rows including the following values in the 
 |          8      | Event 1 (Arm 1: Arm 1) | SAVE & GO TO NEXT FORM|
 |          9      | Event 1 (Arm 1: Arm 1) | SAVE AND EXIT RECORD|
 |         10     | Event 1 (Arm 1: Arm 1) | SAVE & GO TO NEXT RECORD|
+|         11     | Event 1 (Arm 1: Arm 1) | NEXT RECORD|
