@@ -38,4 +38,13 @@ When I click on the button labeled "Today" for the field labeled "date YMD"
 ##VERIFY 
 Then I should see today's date in the field labeled "date YMD"
 
+When I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
+Then I should see "Adding new Record ID 7."
 
+##VERIFY_LOG
+When I click on the link labeled "Logging"
+Then I should see a table header and rows including the following values in the logging table:
+| Username   |        Action           | List of Data Changes OR Fields Exported |
+| test_admin | Create record 7 | date_ymd = '2023-12-27',|
+| test_admin | Create record 7 | time_hhmmss = '15:33:55',|
+| test_admin | Create record 7 | datetime_ymd_hmss = '2023-08-01 00:00:00',|
