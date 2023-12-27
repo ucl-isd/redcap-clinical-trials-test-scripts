@@ -46,7 +46,7 @@ Then I should see "Consent"
 And I verify I see "Name" in the field labeled "1) Name"
 And I verify I see "Name" in the field labeled "2) Name"
 And I verify I see "email@test.edu" in the field labeled "3) Email"
-And I verify I see "2023-09-03" in the field labeled "4) DOB"
+And I verify I see "2023-12-18" in the field labeled "4) DOB" #Date will be today's date.
 And I enter a signature in the field labeled "5) Signature"
 And I verify I see "signature_consent_2" in the field labeled "6) Signature"
 And I verify I see "signature_consent_3" in the field labeled "7) Signature"
