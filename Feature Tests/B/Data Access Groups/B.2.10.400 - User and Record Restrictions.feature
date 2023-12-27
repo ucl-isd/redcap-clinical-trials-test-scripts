@@ -5,7 +5,7 @@ I want to see that Data Access Groups is functioning as expected
 
 Scenario: B.2.10.400.100 User restriction for records in DAGs
 
-#SETUP_NOTE: Will reference unique Group ID numbers located on DAG page. These numbers are specific the PID
+#SETUP_NOTE: Will reference unique Group ID numbers located on DAG page. These numbers are specific to the PID
 
 #SETUP
 Given I login to REDCap with the user "Test_Admin"
@@ -65,7 +65,7 @@ Then I should see a dialog containing the following text: "Editing existing user
 ##ACTION: Set user access to View & Edit + Edit survey responses
 When I set Data Viewing Rights to View & Edit for the instrument "Text Validation"
 And I set Data Viewing Rights to View & Edit with Edit survey responses checked for the instrument "Consent"
-    And I save changes within the context of User Rights
+And I save changes within the context of User Rights
 
 #ASSIGN RECORDS TO SPECIFIC DAGs
 # -- Record ID 3 - TestGroup1 --
@@ -194,7 +194,8 @@ Then I should see a table header and rows containing the following values in the
 When I click on the link labeled "Record Status Dashboard"
 Then I should see a table header and rows containing the following values in the record status dashboard table:
 | Record ID             |
-| 3  TestGroup1   |
+| 3      |
+| 1-1    |
 
 ##VERIFY_FR:
 When I click on the link labeled "File Repository"
@@ -262,12 +263,8 @@ Then I should see "Thank you for taking the survey."
 When I click on the button labeled "Close survey"
 Then I should see "You may now close this tab/window"
 
-Given I am still logged in to REDCap with the user "Test_User4"
-When I click on the link labeled "My Projects"
-And I click on the link labeled "B.2.10.400.100"
-
 ##VERIFY_RSD:
-And I click on the link labeled "Record Status Dashboard"
+When I click on the link labeled "Record Status Dashboard"
 Then I should see a table header and rows containing the following values in the record status dashboard table:
 | Record ID             |
 | 2-1  TestGroup2 |
