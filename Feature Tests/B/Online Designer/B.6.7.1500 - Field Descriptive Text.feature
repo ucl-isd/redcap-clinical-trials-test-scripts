@@ -25,7 +25,7 @@ Then I should see "The project is now in Draft Mode"
 
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: Signature field creation
-Given When I click on the instrument labeled "Form 1"
+Given I click on the instrument labeled "Form 1"
 And I click on the button labeled "Add Field" at the bottom of the instrument
 When I click on the dropdown field labeled "Select a Type of Field"
 And I add a new Descriptive Text (with optional Image/Video/Audio/File Attachment) labeled "Descriptive Text with File" with the variable name "descriptive_text_file"
