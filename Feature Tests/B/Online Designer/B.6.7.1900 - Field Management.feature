@@ -133,7 +133,7 @@ Then I should see "Project Changes Committed/User Notified"
 
 ##VERIFY_CODEBOOK
 When I click on the link labeled "Codebook"
-Then I should see a table row containing the following values in the codebook table: 
+Then I should see a table row including the following values in the codebook table: 
 | Variable / Field Name   |Field Label             |Field Attributes (Field Type, Validation, Choices, Calculations, etc.) | 
 | [add]                                | Add Field              | text |
 | [radio_button_manual]| Radio Button Manual| Choice Abc123|
