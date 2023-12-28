@@ -5,7 +5,6 @@ I want to see that Survey Feature is functioning as expected
 
 Scenario: B.3.15.1100.100 Tracking survey responders
 
-
 #SETUP
 Given I login to REDCap with the user "Test_User1"
 And I create a new project named "B.3.15.1100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button 
@@ -29,12 +28,13 @@ And I should see a grey bubble for the column labeled "Responded?" for record "2
 #FUNCTIONAL_REQUIREMENT
 ##ACTION
 When I click the link icon for record "1"
-And I click on the button labeled "Survey Options"
-And I click on the dropdown option labeled "Open survey"
-And I click on the button labeled "Submit"
-And I click on the button labeled "Close survey"
-And I click on the button labeled "Leave without saving changes" in the dialog box
-And I click on the link labeled "Survey Invitation Log"
+Then I should see "Survey"
+And I should see "Name"
+
+When I click on the button labeled "Submit"
+Then I should see "Close survey"
+
+When I click on the link labeled "Survey Distribution Tools"  
 And I click on the button labeled "Participant List"
 And I select "Survey" from the dropdown labeled "Participant List belonging to"
-Then I should see a green checkmark for the column labeled "Responded?" for record "1"
+Then green checkmark for the column labeled "Responded?" for record "1"
