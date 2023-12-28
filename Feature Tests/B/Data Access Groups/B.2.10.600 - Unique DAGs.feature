@@ -14,7 +14,8 @@ And I click on the link labeled "3"
 Then I should see the "Record Home Page" 
 
 #FUNCTIONAL REQUIREMENT
-##ACTION: Assign Record DAG_testgroup1
+##ACTION: Assign Record DAG_testgroup1  
+##REDUNDANT #B.2.10.500 Assign Records to a DAG
 When I select the dropdown option labeled "Assign to Data Access Group" from the dropdown "Choose action for record" 
 And I select the dropdown option labeled "TestGroup1" from the dropdown with the placeholder text of "[No Assignment]" in the dialog box
 And I click on the button labeled "Assign to Data Access Group" in the dialog box
