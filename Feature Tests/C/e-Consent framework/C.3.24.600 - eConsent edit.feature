@@ -7,7 +7,7 @@ Scenario: C.3.24.600.100 Enable/disable edit ability for e-Consent framework
 
 #SETUP
 Given I login to REDCap with the user "Test_Admin"
-And I create a new project named " C.3.24.600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button 
+And I create a new project named "C.3.24.600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button 
 
 #SETUP_PRODUCTION
 When I click on the button labeled "Project Setup"
@@ -55,7 +55,7 @@ Then I should see "1 File" for the field labeled "PDF Survey Archive"
 When I click on the link labeled "PDF Survey Archive"
 And I click on the link on the PDF link for record "5"
 Then I should have a pdf file with the following values in the report: "1) Name" is "Consent Name"
-#M: Close document
+#Manual: Close document
 
 ##ACTION: edit survey response
 When I click on the link labeled "Record Status Dashboard"
@@ -80,7 +80,7 @@ Then I should see "1 File" for the field labeled "PDF Survey Archive"
 When I click on the link labeled "PDF Survey Archive"
 And I click on the link on the PDF link for record "5"
 Then I should have a pdf file with the following values in the report: I should NOT see "1) Name" is "Consent 2 Name"
-#M: Close document
+#Manual: Close document
 
 ##ACTION: disable e-consent survey settings - auto-archive and e-consent
 When I click on the link labeled "Designer"  
@@ -99,4 +99,3 @@ When I click on the link labeled "Logging"
 Then I should see a table header and rows including the following values in the logging table:
 | Username                 |        Action           | List of Data Changes OR Fields Exported |
 | test_admin               | Manage/Design | Modify survey info         |
-
