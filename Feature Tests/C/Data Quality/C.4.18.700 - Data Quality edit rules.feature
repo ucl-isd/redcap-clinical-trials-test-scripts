@@ -14,6 +14,7 @@ When I click on the link labeled "Project Setup"
 And I click on the button labeled "Move project to production"   
 And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box  
+
 #USER_RIGHTS  
 When I click on the link labeled "User Rights"  
 And I click on the link labeled "Test_User1"
@@ -35,7 +36,7 @@ And I click on the button labeled "Add"
 ##VERIFY
 Then I should see a table header and rows including the following values in the Data Quality Rules table: 
 | Rule # | Rule Name   | Rule Logic (Show discrepancy only if...) |        
-|      3     |  Integer         |             [integer]='1'                           |  
+|      3     |  Integer   | [integer]='1'  |  
 
 #FUNCTIONAL_REQUIREMENT
 ##ACTION executing rule 
@@ -63,7 +64,6 @@ And I click on the button labeled "Edit User Privileges"
 And I deselect the checkbox labeled "Create & edit rules" for the field labeled "Data Quality" 
 And I click on the button labeled "Save Changes" 
 Then I should see "User "test_user1" was successfully edited"
-
 
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: cannot add rule and can execute rules
