@@ -14,47 +14,47 @@ And I enter "Test_User1" into the field with the placeholder text of "Assign new
 And I click on the button labeled "Assign to role" 
 And I select "4_NoAccess_Noexport" on the dropdown field labeled "Select Role" on the role selector dropdown 
 And I click on the button labeled exactly "Assign" on the role selector dropdown 
-Then I should see "Test User1" within the "3_ReadOnly_Deidentified" row of the column labeled "Username" of the User Rights table 
+Then I should see a table header and rows including the following values in the logging table:
+| Role name | Username | 
+| 4_NoAccess_Noexport | test_user1 |
 
 ##VERIFY_CODEBOOK
 When I click on the link labeled "Codebook"
 Then I should see a table header and rows containing the following values in the codebook table: 
 | Variable/Field Name | Field Label| Field Attributes (Field/Type, Validation, Choices, Calculations, etc. |
-| [identifier]                   | Identifier    |text, Identifier                                                                                             |
-| [identifier_2]              | Identifier 2  |text, Identifier                                                                                             |
-| [ptname]                     | Name          |text                                                                                                                |
-| [radio ]                         | radio           | radio, Identifier                                                                                          |
-
+| [identifier] | Identifier    |text, Identifier  |
+| [identifier_2] | Identifier 2  |text, Identifier |
+| [ptname]  | Name  |text |
+| [radio ] | radio | radio, Identifier |
 
 ##ACTION: change identifier status
 When I click on the link labeled "Project Setup"
 And I click on the link labeled "Check for identifiers"
 Then I should see a table header and rows containing the following values in the codebook table: 
 | Variable Name | Field Label| Identifier?|
-| identifier        | Identifier   |check icon |
-|  identifier_2  | Identifier  2|check icon |
-| ptname          | Name         |                   |
-| radio              | radio           | check icon|
+| identifier  | Identifier   | select checkbox |
+|  identifier_2  | Identifier  2|select checkbox |
+| ptname | Name |  deselect checkbox |
+| radio  | radio   | select checkbox|
 
 When I deselect the checkbox labeled "Identifier?" for the variable labeled "identifier_2" 
 And I select the checkbox labeled "Identifier?" for the variable labeled "ptname" 
 And I click on the button labeled "Update Identifiers"
 Then I should see a table header and rows containing the following values in the codebook table: 
 | Variable Name | Field Label| Identifier?|
-| identifier        | Identifier   |check icon |
-|  identifier_2  | Identifier 2 |                    |
-| ptname          | Name         | check icon| 
-| radio              | radio           | check icon|
+| identifier  | Identifier   | select checkbox |
+|  identifier_2  | Identifier  2| deselect checkbox |
+| ptname | Name |  select checkbox |
+| radio  | radio   | select checkbox|
 
 ##VERIFY_CODEBOOK
 When I click on the link labeled "Codebook"
 Then I should see a table header and rows containing the following values in the codebook table: 
 | Variable/Field Name | Field Label| Field Attributes (Field/Type, Validation, Choices, Calculations, etc. |
-| [identifier]                   | Identifier   |text, Identifier                                                                                             |
-| [identifier_2]              | Identifier 2  |text                                                                                                               |
-| [ptname]                     | Name          | text, Identifier                                                                                            |
-| [radio ]                         | radio           | radio, Identifier                                                                                          |
-
+| [identifier]  | Identifier   |text, Identifier |
+| [identifier_2] | Identifier 2  |text   |
+| [ptname]  | Name          | text, Identifier   |
+| [radio ]   | radio           | radio, Identifier  |
 
 ##VERIFY_DE
 When I click on the link labeled "Data Exports, Reports, and Stats" 
@@ -72,7 +72,7 @@ Given I click on the download icons to receive the files for the "CSV / Microsof
 ##VERIFY: User can see all variables, including identifier, identifier_2 and name, survey_timestamp, radio button
 Then I should have a "csv" file that contains the headings below
 | record_id | redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | redcap_survey_identifier | data_types_timestamp | pt_name | textbox | radio | notesbox | identifier | identifier_2 | date_ymd | datetime_ymd_hmss | date_types_complete |
-#M: Close the report
+#Manual: Close the report
 
 And I click on the button labeled "Close" in the dialog box
 
@@ -91,7 +91,7 @@ Given I click on the download icons to receive the files for the "CSV / Microsof
 Then I should have a "csv" file that contains the headings below
 | record_id | redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | data_types_timestamp | textbox | notesbox | identifier_2 | date_ymd | datetime_ymd_hmss | date_types_complete |
 
-#M: Close the report & refresh page
+#Manual: Close the report & refresh page
 
 And I click on the button labeled "Close" in the dialog box
 
@@ -111,7 +111,7 @@ Given I click on the download icons to receive the files for the "CSV / Microsof
 Then I should have a "csv" file that contains the headings below
 | record_id | redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | redcap_survey_identifier | data_types_timestamp | radio | date_ymd | datetime_ymd_hmss | date_types_complete |
 
-#M: Close the report & refresh page
+#Manual: Close the report & refresh page
 
 And I click on the button labeled "Close" in the dialog box
 
@@ -128,7 +128,7 @@ Given I click on the download icons to receive the files for the "CSV / Microsof
 Then I should have a "csv" file that contains the headings below
 | record_id | redcap_repeat_instrument | redcap_repeat_instance | redcap_data_access_group | redcap_survey_identifier | data_types_timestamp | pt_name | textbox | radio | notesbox | identifier | identifier_2 | date_types_complete |
 
-#M: Close the report & refresh page
+#Manual: Close the report & refresh page
 
 And I click on the button labeled "Close" in the dialog box
 
@@ -148,6 +148,7 @@ And I click on the button labeled "Close Survey"
 And I click on the button labeled "Leave without saving changes" in the dialog box
 Then I should see "Record Home Page"
 And I should see a Completed Survey Response Icon for the field the instrument labeled "Data Types"
+
 FUNCTIONAL_REQUIREMENT
 ##ACTION: shift all dates
 Given I click on the link labeled "Data Exports, Reports, and Stats"
@@ -161,14 +162,14 @@ And I should see "All dates within your data have been DATE SHIFTED to an unknow
 
 Given I click on the download icons to receive the files for the "CSV / Microsoft Excel (raw data)" format in the dialog box
 ##VERIFY:
-#MUser can see all variables with dates shifted ([date_ymd]=! 2023-08-22) AND ([date_ymd_hmss]=! 2023-08-23 11:48:01)
+#Manual User can see all variables with dates shifted ([date_ymd]=! 2023-08-22) AND ([date_ymd_hmss]=! 2023-08-23 11:48:01)
 
 Then I should have a "csv" file 
 And I verify that the timestamp in the column labeled "data_types_timestamp" for record 5 has shifted
 And I verify that the date in the column labeled "date_ymd" for record 5 has shifted
 And I verify that the datetime in the column labeled "date_ymd_hmss" for record 5 has shifted
 
-#M: Close the report & refresh page
+#Manual: Close the report & refresh page
 
 And I click on the button labeled "Close" in the dialog box
 And I logout
