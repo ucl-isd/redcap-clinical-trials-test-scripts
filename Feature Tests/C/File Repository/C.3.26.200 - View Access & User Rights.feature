@@ -50,16 +50,16 @@ Then I should see a dialog containing the following text: "SUCCESS!"
 And I close the popup
 
 And I should see a table header and rows including the following values in the table:
-|Role name                            | Username   |
-|                      		      | test_admin |
-|                        		      | test_user1 |
-|                      		      | test_user2 |
-|                       	             	      | test_user3 |
-|                        		      | test_user4 |
-| 1_FullRights  |                     |		|
-| 2_Edit_RemoveID|             |		|
-| 3_ReadOnly_Deidentified |                    |
-| 4_NoAccess_Noexport     |                     |
+|Role name | Username   |
+|          | test_admin |
+|          | test_user1 |
+|          | test_user2 |
+|          | test_user3 |
+|          | test_user4 |
+| 1_FullRights  |       |
+| 2_Edit_RemoveID|      |	
+| 3_ReadOnly_Deidentified |   |
+| 4_NoAccess_Noexport     |   |
 
 ##SETUP Assign to roles
 When I click on the link labeled "Test_User1" 
@@ -85,6 +85,15 @@ And I click on the button labeled "Assign to role"
 And I should see the dropdown field labeled "Select Role" with the option "3_ReadOnly_Deidentified" selected 
 And I click on the button labeled "Assign" 
 Then I should see "Test_User4" user assigned "3_ReadOnly_Deidentified" role 
+And I should see a table header and rows including the following values in the table:
+|Role name | Username   |
+|          | test_admin |
+| 1_FullRights  |  test_user1  |
+| 1_FullRights  |  test_user2  |
+| 2_Edit_RemoveID|             |	
+| 3_ReadOnly_Deidentified |  test_user3 |
+| 3_ReadOnly_Deidentified |  test_user4 |
+| 4_NoAccess_Noexport     |   |
 
 ##SETUP DAG: Assign User to DAG 
 When I select "Test_User1" from "Assign User" dropdown  
@@ -93,7 +102,8 @@ And I click on the button labeled "Assign"
 Then I should see "Test_User1" assigned to "TestGroup1"
 
 When I select "Test_User2" from "Assign User" dropdown  
-And I select "TestGroup2" from "DAG" dropdown  
+And I select "TestGroup2" from "DAG" dropdown 
+And I click on the button labeled "Assign"
 Then I should see "Test_User2" assigned to "TestGroup2"
 
 When I select "Test_User3" from "Assign User" dropdown  
@@ -111,7 +121,6 @@ When I click on the link labeled "Add/Edit Records"
 And I click on the button labeled "Add new record for the arm selected above"
 And I click on the bubble labeled "Consent" for event "Event 1" 
 Then I should see "Adding new Record ID"
-
 
 When I click on the button labeled "Save & Stay"
 And I select the dropdown option labeled "Open survey" from the dropdown button with the placeholder text of "Survey options" 
@@ -135,14 +144,12 @@ Then I should see "user list for project 1.csv"
 And I should see "Role1_Folder"
 And I should see "TestGroup1_Folder"
 
-
 ##ACTION Upload to top tier file repo (all users will see file) - using the Select files to upload button
 When I click on the link labeled "File Repository"
 When I upload a "csv" format file located at "import_files/testusers_bulk_upload.csv", by clicking the button near "Select files to upload" to browse for the file, and clicking the button labeled "Open" to upload the file
 
 ##VERIFY_FiRe file uploaded in folder
 Then I should see "testusers_bulk_upload.csv"
-
 
 #FUNCTIONAL_REQUIREMENT
 ##ACTION Upload to DAG folder
@@ -194,7 +201,6 @@ And I click on the button labeled "Leave without saving changes" in the dialog b
 Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Consent" for event "Event 1"
 And I should see "TestGroup2"
 
-
 #FUNCTIONAL_REQUIREMENT
 When I click on the link labeled "File Repository"
 ##ACTION Unable to access DAG folder
@@ -234,7 +240,6 @@ Name | Record |
 
 And I logout
 
-
 #FUNCTIONAL_REQUIREMENT
 Given I login to REDCap with the user "Test_User3"
 When I click on the link labeled "File Repository"
@@ -272,7 +277,6 @@ Name | Record |
 #Don't see consent created by testgroup2
 
 And I logout
-
 
 #FUNCTIONAL_REQUIREMENT
 ##ACTION Download to top tier file 
