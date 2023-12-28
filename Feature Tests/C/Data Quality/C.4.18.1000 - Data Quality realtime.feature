@@ -23,11 +23,11 @@ Then I should see "Data Quality Rules"
 When I enter "Integer" for the field labeled "Rule Name"
 And I enter "[integer]<>'1999'" for the field labeled "Logic Editor"
 And I click on the button labeled "Update & Close Editor" in the dialog box
-And I click on the button labeled "Execute in real time on data entry forms" button
+And I select the checkbox labeled "Execute in real time on data entry forms"
 And I click on the button labeled "Add"
 Then I should see a table header and rows containing the following values in the Data Quality Rules table: 
-| Rule # | Rule Name   | Rule Logic (Show discrepancy only if...) |        
-|      3 |  Integer    |             [integer]<>'1999'         |
+| Rule # | Rule Name   | Rule Logic (Show discrepancy only if...) |  Real-time execution |      
+|      3 |  Integer    |             [integer]<>'1999'         | Enabled |
  
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: System shall support the ability to run custom data quality rules real time
@@ -35,7 +35,9 @@ When I click the link labeled "Add/Edit Records"
 And I click on the button labeled "Add new record for the arm selected above"
 And I click the bubble labeled "Data Types" for event "Event 1" 
 And I enter "2000" in the field labeled "Integer"	
-And I click on the button labeled "Close" in the dialog box
+Then I should see "The value you provided is outside the suggested range"
+
+When I click on the button labeled "Close" in the dialog box
 And I click the button labeled "Save and Exit Form"
 Then I should see "WARNING: Data Quality rules were violated!"
 And I click on the button labeled "Close" in the dialog box
