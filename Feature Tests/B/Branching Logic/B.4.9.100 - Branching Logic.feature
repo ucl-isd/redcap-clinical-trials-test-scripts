@@ -17,7 +17,6 @@ And I verify I see "Branching logic: [record_id] = '999'" on the field labeled "
 And I verify I see "Branching logic: [record_id] = '999'" on the field labeled "Text2"
 And I verify I see "Branching logic: [record_id] = '999'" on the field labeled "Notes Box"
 
-
 #FUNCTIONAL_REQUIREMENT: survey mode
 When I click on the link labeled "Survey Distribution Tools"
 And I click on the button labeled "Open public survey"
@@ -28,7 +27,7 @@ And I should NOT see the field labeled "Notes box"
 And I should see the field labeled "Calculated Field"
 And I should see the field labeled "Multiple Choice dropdown Auto"
 And I should see the field labeled "Multiple Choice dropdown Manual"
-#M: Close the survey page
+#Manual: Close the survey page
 
 #FUNCTIONAL_REQUIREMENT: data entry mode
 When I click the link labeled "Add/Edit Records"
@@ -46,18 +45,18 @@ And I should see the field labeled "Calculated Field"
 And I should see the field labeled "Multiple Choice dropdown Auto"
 And I should see the field labeled "Multiple Choice dropdown Manual"
 
-##ACTION: change branching logic
+##ACTION: change branching logic for one
 When I click on the link labeled "Designer"
 And I click on the button labeled "Leave without saving changes" in the dialog box
 And I click on the instrument labeled "Data Types"
 And I click on the Branching Logic icon for the field labeled "Name"
-And I enter " [record_id] <> '999'" in the field labeled "Advanced Branching Logic Syntax" 
+And I enter "[record_id] <> '999'" in the field labeled "Advanced Branching Logic Syntax" 
 And I click on the button labeled "Update & Close Editor"
 And I click on the button labeled "Save"
 And I click on the button labeled "No" in the dialog box
 Then I should see "Branching logic: [record_id] <> '999'" on the field labeled "Name"
 
-##ACTION: change branching logic
+##ACTION: change branching logic for all
 When I click on the Branching Logic icon for the field labeled "Text2"
 And I enter " [record_id] <> '999'" in the field labeled "Advanced Branching Logic Syntax" 
 And I click on the button labeled "Update & Close Editor"
@@ -75,7 +74,7 @@ And I should see the field labeled "Notes box"
 And I should see the field labeled "Calculated Field"
 And I should see the field labeled "Multiple Choice dropdown Auto"
 And I should see the field labeled "Multiple Choice dropdown Manual"
-#M: Close tab
+#Manual: Close tab
  
 #FUNCTIONAL_REQUIREMENT: data entry mode
 When I click the link labeled "Add/Edit Records"
@@ -90,6 +89,7 @@ And I should see the field labeled "Multiple Choice dropdown Auto"
 And I should see the field labeled "Multiple Choice dropdown Manual"
  
 ##ACTION
+#FUNCTIONAL_REQUIREMENT: Radio logic
 When I click on the link labeled "Designer"
 And I click on the button labeled "Leave without saving changes" in the dialog box
 And I click on the instrument labeled "Data Types"
@@ -99,6 +99,7 @@ And I drag the field choice labeled "radio_button_manual = Choice101 (101)" to t
 And I click on the button labeled "Save"
 Then I should see "Branching logic: [radio_button_manual] = '101'" on the field labeled "Descriptive Text with File"
 
+#FUNCTIONAL_REQUIREMENT: Checkbox logic
 When I click on the Branching Logic icon for the field labeled "Required"
 And I click on the radio labeled "Drag-N-Drop Logic Builder"
 And I drag the field choice labeled "checkbox = Checkbox (3)" to the box labeled "Show the field only if"
@@ -119,7 +120,7 @@ Then I should see the field labeled "Required"
 
 When I deselect the multi-select option labeled "Checkbox3" on the field labeled "Checkbox"
 Then I should NOT see the field labeled "Required"
-#M: Close the survey page
+#Manual: Close the survey page
  
 ##VERIFY_LOG
 When I click on the link labeled "Logging"
