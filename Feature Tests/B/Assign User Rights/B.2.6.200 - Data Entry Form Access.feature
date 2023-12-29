@@ -18,8 +18,9 @@ Then I should see "Project status: Production"
 When I click on the link labeled "User Rights" 
 And I click on the button labeled "Upload or download users, roles, and assignments"
 Then I should see "Upload users (CSV)"
-Then I should see a dialog containing the following text: "Upload users (CSV)"
 
+When I click on the button labeled "Upload users (CSV)"
+Then I should see a dialog containing the following text: "Upload users (CSV)"
 
 Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
 Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
@@ -35,16 +36,16 @@ Then I should see a dialog containing the following text: "SUCCESS!"
 And I close the popup
 
 And I should see a table header and rows including the following values in the table:
-|Role name                            | Username   |
-|                      		      | test_admin |
-|                        		      | test_user1 |
-|                      		      | test_user2 |
-|                       	             	      | test_user3 |
-|                        		      | test_user4 |
-| 1_FullRights  |                     |		|
-| 2_Edit_RemoveID|             |		|
-| 3_ReadOnly_Deidentified |                    |
-| 4_NoAccess_Noexport     |                     |
+|Role name | Username |
+|  | test_admin |
+|  | test_user1 |
+|  | test_user2 |
+|  | test_user3 |
+|  | test_user4 |
+| 1_FullRights |  |
+| 2_Edit_RemoveID |  |
+| 3_ReadOnly_Deidentified |  |
+| 4_NoAccess_Noexport |  |
 
 When I click on the link labeled "test_user1" 
 And I click on the button labeled "Edit user privileges" 
@@ -59,15 +60,22 @@ And I save changes within the context of User Rights
 And I click on the button labeled "Logging" 
 Then I should see a table header and rows including the following values in the logging table:
 | Username   |        Action    | List of Data Changes OR Fields Exported |
-| test_admin | Add user       | user = 'test_user1'                           |
-
+| test_admin | Update user      | user = 'test_user1'                     |
+| test_admin | Add user       | user = 'test_user1'                       |
 
 ##ACTION #CROSS-FEATURE B.2.23.100: Verify Logging Filter by user name
 When I select the "test_admin" option from the Filter by username dropdown field
 ##VERIFY_LOG #CROSS-FEATURE: Verify Logging Filter by user name
 Then I should see a table header and rows including the following values in the logging table:
 | Username   |        Action    | List of Data Changes OR Fields Exported |
-| test_admin | Update user       | user = 'test_user1'                           |
+| test_admin | Update user      | user = 'test_user1'                     |
+| test_admin | Add user       | user = 'test_user1'                       |
+
+##ACTION #CROSS-FEATURE B.2.23.100: Verify Logging Filter by user name
+When I select the "test_user1" option from the Filter by username dropdown field
+##VERIFY_LOG #CROSS-FEATURE: Verify Logging Filter by user name
+Then I should see "No logged events to display"
+
 And I logout 
 
 Given I login to REDCap with the user "Test_User1" 
@@ -86,7 +94,7 @@ Then I should see a dialog containing the following text: "Editing existing user
 
 When I set Data Viewing Rights to Read Only for the instrument "Text Validation" 
 And I save changes within the context of User Rights 
-Then I should see " User "test_user1" was successfully edited"
+Then I should see "successfully edited"
 
 Given I click on the link labeled "Add / Edit Records" 
 And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page 
@@ -108,7 +116,7 @@ When I set Data Viewing Rights to View & Edit for the instrument "Text Validatio
 When I select Data Viewing Rights to View & Edit for the instrument "Text Validation"
 And I verify Data Viewing Rights to View & Edit with Edit survey responses is checked for the instrument "Survey"
 And I save changes within the context of User Rights
-Then I should see "User "test_user1" was successfully edited" 
+Then I should see "successfully edited" 
 
 Given I click on the link labeled "Add / Edit Records" 
 And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page 
@@ -124,7 +132,6 @@ Then I should see "Record Home Page"
 
 ##VERIFY: Edit survey responses for the instrument
 When I click the bubble for the "Survey" longitudinal instrument on event "Event 3" 
-And I click on the button labeled "Save & Stay"
 And I select the dropdown option labeled "Open survey"
 And I click on the button labeled "Submit"
 And I click on the button labeled "Close survey"
