@@ -24,13 +24,13 @@ And I select the dropdown option labeled "TestGroup1" from the dropdown button w
 And I click on the button labeled "Assign to Data Access Group" in the dialog box
 Then I should see "Record ID 1 was successfully assigned to a Data Access Group1"
 
-#SETUP: Assign record 1 to DAG1
+#SETUP: Assign record 2 to DAG2
 When I click on the link labeled "Record Status Dashboard"
 And I click on record "2"
 And I select the dropdown option labeled "Assign to Data Access Group" from the dropdown button with the placeholder text of "Choose action for record"
-And I select the dropdown option labeled "TestGroup1" from the dropdown button with the placeholder text of "[No Assignment]" in the dialog box
+And I select the dropdown option labeled "TestGroup2" from the dropdown button with the placeholder text of "[No Assignment]" in the dialog box
 And I click on the button labeled "Assign to Data Access Group" in the dialog box
-Then I should see "Record ID 2 was successfully assigned to a Data Access Group1"
+Then I should see "Record ID 2 was successfully assigned to a Data Access Group2"
 
 #USER_RIGHTS
 When I click on the link labeled "User Rights"
