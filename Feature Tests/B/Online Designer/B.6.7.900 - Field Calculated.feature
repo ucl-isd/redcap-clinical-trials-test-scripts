@@ -9,11 +9,9 @@ Given I login to REDCap with the user "Test_Admin"
 And I create a new project named "B.6.7.900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing "Empty project", and clicking the "Create Project" button
 
 ##SETUP_PRODUCTION
-When I click on the link labeled "My Projects"  
-And I click on the link labeled "B.6.7.900.100" 
 When I click on the button labeled "Project Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 Then I should see "Project Status: Production"
 
@@ -42,6 +40,7 @@ When I click on the button labeled "Close" in the dialog box
 ##VERIFY_CODEBOOK
 When I click on the link labeled "Codebook"
 Then I should see a table row containing the following values in the codebook table: 
+| Variable / Field Name   |        Field Label           | Field Attributes (Field Type, Validation, Choices, Calculations, etc.) |
 | [calculated_field] | Calculated Field | calc |
 
 ##VERIFY_LOG
@@ -50,17 +49,17 @@ Then I should see a table header and rows including the following values in the 
 | Username   |        Action           | List of Data Changes OR Fields Exported |
 | test_user1  | Manage/Design | Create project field | 
 
-. Scenario: B.6.7.900.200 Creation of calculated field through Data Dictionary upload
+#Scenario: B.6.7.900.200 Creation of calculated field through Data Dictionary upload
 
 #SETUP
-Given I login to REDCap with the user "Test_Admin"   
-And I create a new project named "B.6.7.900.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing "Empty project", and clicking the "Create Project" button 
+#Given I login to REDCap with the user "Test_Admin"   
+#And I create a new project named "B.6.7.900.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing "Empty project", and clicking the "Create Project" button 
 
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: Upload data dictionary
 When I click on the link labeled "Dictionary" 
 And I click on the button labeled "Choose File"
-And I select the file labeled "Project1xml_DataDictionary.csv"
+And I select the file labeled "B67900_DataDictionary.csv"
 And I click on the button labeled "Upload File"
 Then I should see "Your document was uploaded successfully and awaits your confirmation below."
 
@@ -70,10 +69,12 @@ Then I should see "Changes Made Successfully!"
 ##VERIFY_CODEBOOK
 When I click on the link labeled "Codebook"
 Then I should see a table row containing the following values in the codebook table: 
+| Variable / Field Name   |        Field Label           | Field Attributes (Field Type, Validation, Choices, Calculations, etc.) |
 | [calculated_field] | Calculated Field | calc |
+| [calculated_field2]| Calculated Field 2 | calc |
 
 ##VERIFY_LOG
 When I click on the link labeled "Logging"
 Then I should see a table header and rows including the following values in the logging table:
 | Username   |        Action           | List of Data Changes OR Fields Exported |
-| test_admin | Manage/Design | Create project field |
+| test_admin | Manage/Design | Upload data dictionary |

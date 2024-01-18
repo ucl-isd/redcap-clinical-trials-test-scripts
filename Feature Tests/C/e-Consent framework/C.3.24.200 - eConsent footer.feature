@@ -12,14 +12,14 @@ And I create a new project named " C.3.24.200.100" by clicking on "New Project" 
 #SETUP_PRODUCTION
 When I click on the button labeled "Project Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 Then I should see "Project Status: Production"
 
 #SETUP_eConsent
 When I click on the button labeled "Designer"
 And I click on the button labeled "Survey settings" for the instrument labeled "Consent"
-And I click on the radio button labeled "Auto-Archiver + e-Consent Framework" for the field labeled "e-Consent Framework"
+And I click on the radio labeled "Auto-Archiver + e-Consent Framework" for the field labeled "e-Consent Framework"
 And I verify I see "version test" in the field labeled "e-Consent version:"
 And I verify I see "fname "Name"" in the field labeled "First name field:"
 And I verify I see "lname "Name"" in the field labeled "Last name field:"
@@ -46,7 +46,7 @@ Then I should see "Consent"
 And I verify I see "Name" in the field labeled "1) Name"
 And I verify I see "Name" in the field labeled "2) Name"
 And I verify I see "email@test.edu" in the field labeled "3) Email"
-And I verify I see "2023-09-03" in the field labeled "4) DOB"
+And I verify I see "2023-12-18" in the field labeled "4) DOB" #Date will be today's date.
 And I enter a signature in the field labeled "5) Signature"
 And I verify I see "signature_consent_2" in the field labeled "6) Signature"
 And I verify I see "signature_consent_3" in the field labeled "7) Signature"
@@ -300,7 +300,7 @@ Then I should have a pdf file with the following values in the footer: "Version:
 #SETUP_eConsent_change field
 When I click on the button labeled "Designer"
 And I click on the button labeled "Survey settings" for the instrument labeled "Consent"
-And I click on the radio button labeled "Auto-Archiver + e-Consent Framework" for the field labeled "e-Consent Framework"
+And I click on the radio labeled "Auto-Archiver + e-Consent Framework" for the field labeled "e-Consent Framework"
 And I enter "UPDATED VERSION TEST" in the field labeled "e-Consent version:"
 And I verify I see "fname "Name"" in the field labeled "First name field:"
 And I verify I see "lname "Name"" in the field labeled "Last name field:"
@@ -359,7 +359,7 @@ Then I should have a pdf file with the following values in the footer: "Name Nam
 #SETUP_eConsent_change field
 When I click on the button labeled "Designer"
 And I click on the button labeled "Survey settings" for the instrument labeled "Consent"
-And I click on the radio button labeled "Auto-Archiver enabled" for the field labeled "e-Consent Framework"
+And I click on the radio labeled "Auto-Archiver enabled" for the field labeled "e-Consent Framework"
 And I click on the button labeled "Save Changes"
 Then I should see "Your survey settings were successfully saved!"
 

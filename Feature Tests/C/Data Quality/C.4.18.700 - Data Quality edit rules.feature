@@ -7,13 +7,14 @@ Scenario: C.4.18.700.100 Edit rule
 
 #SETUP
 Given I login to REDCap with the user "Test_User1"
-And I create a new project named "C.4.18.700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml" and clicking the "Create Project" button  
+And I create a new project named "C.4.18.700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml", and clicking the "Create Project" button
 
 #SETUP_PRODUCTION  
 When I click on the link labeled "Project Setup"  
 And I click on the button labeled "Move project to production"   
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box  
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box  
+
 #USER_RIGHTS  
 When I click on the link labeled "User Rights"  
 And I click on the link labeled "Test_User1"
@@ -35,7 +36,7 @@ And I click on the button labeled "Add"
 ##VERIFY
 Then I should see a table header and rows including the following values in the Data Quality Rules table: 
 | Rule # | Rule Name   | Rule Logic (Show discrepancy only if...) |        
-|      3     |  Integer         |             [integer]='1'                           |  
+|      3     |  Integer   | [integer]='1'  |  
 
 #FUNCTIONAL_REQUIREMENT
 ##ACTION executing rule 
@@ -63,7 +64,6 @@ And I click on the button labeled "Edit User Privileges"
 And I deselect the checkbox labeled "Create & edit rules" for the field labeled "Data Quality" 
 And I click on the button labeled "Save Changes" 
 Then I should see "User "test_user1" was successfully edited"
-
 
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: cannot add rule and can execute rules
