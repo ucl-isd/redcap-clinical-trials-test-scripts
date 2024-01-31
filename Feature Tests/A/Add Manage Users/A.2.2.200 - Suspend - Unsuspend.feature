@@ -5,8 +5,8 @@ Feature: A.2.2.200 Add/Manage users
 
   Scenario: A.2.2.200.100 Account suspension
     Given I login to REDCap with the user "Test_Admin"
-      And I click on the link labeled "Control Center"
-      And I click on the link labeled "Add Users (Table-based Only)"
+    And I click on the link labeled "Control Center"
+    And I click on the link labeled "Add Users (Table-based Only)"
     Then I should see "User Management for Table-based Authentication"
 
   #SETUP_CYPRESS - add users  
@@ -32,13 +32,13 @@ Feature: A.2.2.200 Add/Manage users
     Then I should NOT see "Success! The user has now been suspended from REDCap"
     And I should NOT see "unsuspend user"
 
-    When I logout
+    Given I logout
 
 #VERIFY User not suspended
-    Given I login to REDCap with the user "Test_User1"
-    Then I should see "Home"
-   
-    When I logout
+   Given I login to REDCap with the user "Test_User1"
+   Then I should see "Home"
+ 
+   When I logout
     
 #FUNCTIONAL REQUIREMENT
 ##ACTION Suspend user account
@@ -71,7 +71,7 @@ Feature: A.2.2.200 Add/Manage users
    Given I login to REDCap with the user "Test_User1"
    Then I should see "The following REDCap user account has been suspended:"
     
-    When I logout
+   When I logout
 
 #FUNCTIONAL REQUIREMENT
 ##ACTION Cancel unsuspend user account
