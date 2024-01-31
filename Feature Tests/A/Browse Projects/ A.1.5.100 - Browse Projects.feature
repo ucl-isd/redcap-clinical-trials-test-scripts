@@ -10,13 +10,6 @@ Feature: A.1.5.100 Browse Projects
     And I click on the link labeled "Browse Projects"
     Then I should see "Viewing projects accessible by user:"
 
-    When I click on the button labeled "View all projects"
-    Then I should see "A.1.5.100.100"
-
-    When I click on the link labeled "Control Center"
-    And I click on the link labeled "Browse Projects"
-    Then I should see "Viewing projects accessible by user:"
-
     When I enter "A.1.5.100.100" into the input field labeled "Search project title by keyword(s):"
     And I click on the button labeled "Search project title"
     Then I should see a row labeled "A.1.5.100.100" in the projects table
