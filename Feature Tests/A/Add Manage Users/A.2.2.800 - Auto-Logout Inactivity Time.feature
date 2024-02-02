@@ -6,13 +6,13 @@ I want to see that amount of inactivity time before auto logout time is function
 Scenario: A.2.2.800.100 User account locked time
 #SETUP control center Auto logout time
 Given I login to REDCap with the user "Test_Admin"
-    And I click on the link labeled "Control Center"
-    And I click on the link labeled "Security & Authentication"
+And I click on the link labeled "Control Center"
+And I click on the link labeled "Security & Authentication"
 Then I should see "Security & Authentication Configuration"
 
 When I clear the field labeled "Auto logout time"
-    And I enter "4" into the input field labeled "Auto logout time"
-    And I click on the button labeled "Save Changes"
+And I enter "4" into the input field labeled "Auto logout time"
+And I click on the button labeled "Save Changes"
 Then I should see "Your system configuration values have now been changed!"
 
 Given I logout
@@ -44,13 +44,13 @@ Then I should see"My Projects"
 Given I logout
 
 Given I login to REDCap with the user "Test_Admin"
-    And I click on the link labeled "Control Center"
-    And I click on the link labeled "Security & Authentication"
+And I click on the link labeled "Control Center"
+And I click on the link labeled "Security & Authentication"
 Then I should see "Security & Authentication Configuration"
 
 When I clear the field labeled "Auto logout time"
-    And I enter "3" into the input field labeled "Auto logout time"
-    And I click on the button labeled "Save Changes"
+And I enter "3" into the input field labeled "Auto logout time"
+And I click on the button labeled "Save Changes"
 Then I should see "Your system configuration values have now been changed!"
 
 Given I logout
@@ -58,7 +58,7 @@ Given I logout
 #FUNCTIONAL REQUIREMENT
 ##ACTION wait for timeout warning
 Given I login to REDCap with the user "Test_User1"
-    And I wait for 2 minutes
+And I wait for 2 minutes
 ##VERIFY warning
 Then I should see a dialog containing the following text: "REDCap Auto Logout Warning"
 
@@ -79,11 +79,11 @@ Given I logout
 
 #SETUP control center Auto logout time
 Given I login to REDCap with the user "Test_Admin"
-    And I click on the link labeled "Control Center"
-    And I click on the link labeled "Security & Authentication"
+And I click on the link labeled "Control Center"
+And I click on the link labeled "Security & Authentication"
 Then I should see "Security & Authentication Configuration"
 
 When I clear the field labeled "Auto logout time"
-    And I enter "20" into the input field labeled "Auto logout time"
-    And I click on the button labeled "Save Changes"
+And I enter "20" into the input field labeled "Auto logout time"
+And I click on the button labeled "Save Changes"
 Then I should see "Your system configuration values have now been changed!"
