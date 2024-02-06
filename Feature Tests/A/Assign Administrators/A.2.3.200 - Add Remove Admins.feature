@@ -46,15 +46,15 @@ Then I should see a table header and rows containing the following values in the
 Given I logout
 Then I login to REDCap with the user "Test_User1"
 And I click on the link labeled "Control Center"
-And I click on the link labeled "Administrator Privleges"
+And I click on the link labeled "Administrator Privileges"
 
 Then I should see a table header and rows containing the following values in the administrators table: 
      | Administrators | Set administrator privileges | Access to all projects and data with maximum user privileges | Manage user accounts | Modify system configuration pages | Install, upgrade, and configure External Modules | Perform REDCap upgrades | Access to Control Center dashboards |
      | Test_User1 | Enable | Disable | Disable | Disable | Disable | Disable | Disable |
 
-#FUNCTIONAL REQUIREMENT A.2.3.300 & A.2.3.400 Modify by Enable Administartor Privleges
+#FUNCTIONAL REQUIREMENT A.2.3.300 & A.2.3.400 Modify by Enable Administrator Privileges
 When I enable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1"
-And I enable the Administrator Privilege "ccess to all projects and data with maximum user privileges" for the administrator "Test_User1"
+And I enable the Administrator Privilege "Access to all projects and data with maximum user privileges" for the administrator "Test_User1"
 And I enable the Administrator Privilege "Manage user accounts" for the administrator "Test_User1"
 And I enable the Administrator Privilege "Modify system configuration pages" for the administrator "Test_User1"
 And I enable the Administrator Privilege "Install, upgrade, and configure External Modules" for the administrator "Test_User1"
@@ -65,7 +65,7 @@ Then I should see a table header and rows containing the following values in the
      | Administrators | Set administrator privileges | Access to all projects and data with maximum user privileges | Manage user accounts | Modify system configuration pages | Install, upgrade, and configure External Modules | Perform REDCap upgrades | Access to Control Center dashboards |
      | Test_User1 | Enable | Enable | Enable | Enable | Enable | Enable | Enable |
 
-#VERIFY Administartor Privleges 
+#VERIFY Administrator Privileges 
 When I click on the link labeled "Control Center"
 Then I should see "Administrator privileges"
 And I should see "Browse Projects"
@@ -74,7 +74,7 @@ And I should see "Add Users"
 And I should see "General Configurations"
 And I should see "User Settings"
 
-#FUNCTIONAL REQUIREMENT A.2.3.300 & A.2.3.400 Modify by Disable Administartor Privleges
+#FUNCTIONAL REQUIREMENT A.2.3.300 & A.2.3.400 Modify by Disable Administrator Privileges
 When I enable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1"
 And I disable the Administrator Privilege "ccess to all projects and data with maximum user privileges" for the administrator "Test_User1"
 And I disable the Administrator Privilege "Manage user accounts" for the administrator "Test_User1"
@@ -87,7 +87,7 @@ Then I should see a table header and rows containing the following values in the
      | Administrators | Set administrator privileges | Access to all projects and data with maximum user privileges | Manage user accounts | Modify system configuration pages | Install, upgrade, and configure External Modules | Perform REDCap upgrades | Access to Control Center dashboards |
      | Test_User1 | Enable | Disable | Disable | Disable | Disable | Disable | Disable |
 
-#VERIFY Administartor Privleges 
+#VERIFY Administrator Privileges
 When I click on the link labeled "Control Center"
 Then I should see "Administrator privileges"
 And I should see "Browse Projects"
