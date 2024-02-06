@@ -76,7 +76,7 @@ And I should see "User Settings"
 
 #FUNCTIONAL REQUIREMENT A.2.3.300 & A.2.3.400 Modify by Disable Administrator Privileges
 When I enable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1"
-And I disable the Administrator Privilege "ccess to all projects and data with maximum user privileges" for the administrator "Test_User1"
+And I disable the Administrator Privilege "Access to all projects and data with maximum user privileges" for the administrator "Test_User1"
 And I disable the Administrator Privilege "Manage user accounts" for the administrator "Test_User1"
 And I disable the Administrator Privilege "Modify system configuration pages" for the administrator "Test_User1"
 And I disable the Administrator Privilege "Install, upgrade, and configure External Modules" for the administrator "Test_User1"
