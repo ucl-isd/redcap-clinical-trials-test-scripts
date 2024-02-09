@@ -42,4 +42,6 @@ Then I should see the button labeled "Enable" for the field labeled "Use surveys
 
 ##VERIFY_LOG  
 When I click the link labeled "Logging"  
-Then I should see a table header and rows including the following values in the logging table:  | Username   |        Action           | List of Data Changes OR Fields Exported |  | test_admin | Manage/Design | Modify project settings|
+Then I should see a table header and rows including the following values in the logging table:  
+| Username   |        Action           | List of Data Changes OR Fields Exported |  
+| test_admin | Manage/Design | Modify project settings|
