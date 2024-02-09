@@ -19,15 +19,15 @@ Then I should see "Test User1" within the "1_FullRights" row of the column label
 #FUNCTIONAL REQUIREMENT  
 ##ACTION: Setup in control center - admin only  
 When I click on the link labeled "Control Center"
-  And I click on the link labeled "User Settings"  
+And I click on the link labeled "User Settings"  
 Then I should see "System-level User Settings"     
 
 When I select "No, only Administrators can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"  
- And I click on the button labeled "Save Changes"  
- ##VERIFY  
+And I click on the button labeled "Save Changes"  
+##VERIFY  
 Then I should see "Your system configuration values have now been changed!"   
 And I logout   
- #SETUP   
+#SETUP   
 Given I login to REDCap with the user "Test_User1"  
 When I click on the link labeled "My Projects"    
 And I click on the link labeled "A.6.11.100.100"   
@@ -42,8 +42,8 @@ Then I should see "Success! Your request to move the project to production statu
 ##VERIFY_LOG  
 When I click on the button labeled "Logging"
 Then I should see a table header and rows containing the following values in the logging table:
-  | Username   |  Action               | List of Data Changes OR Fields Exported          |
-  | test_user1 |  Manage/Design        | Send request to move project to production status|
+| Username   |  Action               | List of Data Changes OR Fields Exported          |
+| test_user1 |  Manage/Design        | Send request to move project to production status|
 
 ##ACTION: cancel request  
 When I click on the link labeled "Project Setup"  
@@ -54,7 +54,7 @@ And I logout
 
 #SETUP   
 Given I login to REDCap with the user "Test_Admin" 
- When I click on the link labeled "Control Center"  
+When I click on the link labeled "Control Center"  
 And I click on the link labeled "User Settings"  
 Then I should see "System-level User Settings"     
 When I select "Yes, normal users can move projects to production" on the dropdown field labeled "Allow normal users to move projects to production?"   
@@ -65,10 +65,10 @@ And I logout
 
 #SETUP   
 Given I login to REDCap with the user "Test_User1" 
- When I click on the link labeled "My Projects"  
-  And I click on the link labeled "A.6.11.100.100"  
+When I click on the link labeled "My Projects"  
+And I click on the link labeled "A.6.11.100.100"  
 
- ##ACTION: Test user move to production  
+##ACTION: Test user move to production  
 And I click on the link labeled "Project Setup"  
 And I click on the button labeled "Move project to production"   
 And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
@@ -80,6 +80,5 @@ Then I should see "Project status: Production"
 ##VERIFY_LOG  
 When I click on the button labeled "Logging"
 And I should see a table header and rows containing the following values in the logging table:
- | Username   | Action           | List of Data Changes OR Fields Exported |
- | test_user1 | Manage/Design    | Move project to Production status       |
-
+| Username   | Action           | List of Data Changes OR Fields Exported |
+| test_user1 | Manage/Design    | Move project to Production status       |

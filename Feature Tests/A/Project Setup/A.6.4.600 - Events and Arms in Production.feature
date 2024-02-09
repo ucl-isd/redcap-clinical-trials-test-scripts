@@ -46,9 +46,9 @@ Then I should see "Event 1" in the define events table
 When I click on the link labeled "Logging"
 
 Then I should see table header and rows containing the following values in the logging table:
-      | Username   | Action        | List of Data ChangesOR Fields Exported |
-      | test_user1 | Manage/Design | Create event (Event: Event 1, Arm: Arm 3, Days Offset: 0, Offset Range: -0/+0) |
-      | test_user1 | Manage/Design | Create arm (Arm 3: Arm 3)  |
+| Username   | Action        | List of Data ChangesOR Fields Exported |
+| test_user1 | Manage/Design | Create event (Event: Event 1, Arm: Arm 3, Days Offset: 0, Offset Range: -0/+0) |
+| test_user1 | Manage/Design | Create arm (Arm 3: Arm 3)  |
 
 #FUNCTIONAL REQUIREMENT
 ##ACTION - User Rename Arm in Development mode
@@ -72,9 +72,9 @@ Then I should see "Event One"
 When I click on the link labeled "Logging"
 
 Then I should see table header and rows containing the following values in the logging table:
-      | Username   | Action        | List of Data ChangesOR Fields Exported |
-      | test_user1 | Manage/Design | Edit event (Event: Event One, Arm: Arm 1, Days Offset: 1, Offset Range: -0/+0 |
-      | test_user1 | Manage/Design | Edit arm name/number (Arm 2: Arm 2)                          |
+| Username   | Action        | List of Data ChangesOR Fields Exported |
+| test_user1 | Manage/Design | Edit event (Event: Event One, Arm: Arm 1, Days Offset: 1, Offset Range: -0/+0 |
+| test_user1 | Manage/Design | Edit arm name/number (Arm 2: Arm 2)                          |
 
 #FUNCTIONAL REQUIREMENT
 ##ACTION - User Adds event with days offset in development mode
@@ -132,8 +132,8 @@ Then I should see a Data Collection Instrument named "Consent" for the Event nam
 When I click on the link labeled "Logging"
 
 Then I should see table header and rows containing the following values in the logging table:
-      | Username   | Action        | List of Data ChangesOR Fields Exported |
-      | test_user1 | Manage/Design | Perform instrument-event mappings      |
+| Username   | Action        | List of Data ChangesOR Fields Exported |
+| test_user1 | Manage/Design | Perform instrument-event mappings      |
 
 #SETUP_PRODUCTION
 When I click on the link labeled "Project Setup"
@@ -257,8 +257,8 @@ Then I verify the Data Collection Instrument named "Data Types" is enabled for t
 When I click on the link labeled "Logging"
 
 Then I should see table header and rows containing the following values in the logging table:
-      | Username   | Action        | List of Data ChangesOR Fields Exported |
-      | test_user1 | Manage/Design | Perform instrument-event mappings      |
+| Username   | Action        | List of Data ChangesOR Fields Exported |
+| test_user1 | Manage/Design | Perform instrument-event mappings      |
 
 Given I logout
 
@@ -284,8 +284,8 @@ And I should see "Event Four"
 When I click on the link labeled "Logging"
 
 Then I should see table header and rows containing the following values in the logging table:
-      | Username   | Action        | List of Data ChangesOR Fields Exported |
-      | test_admin | Manage/Design | Edit event                             |
-      | test_admin | Manage/Design | Event Four, Arm: Arm One               |
-      | test_admin | Manage/Design | Edit arm name/number                   |
-      | test_admin | Manage/Design | Arm 1: Arm One                         |
+| Username   | Action        | List of Data ChangesOR Fields Exported |
+| test_admin | Manage/Design | Edit event                             |
+| test_admin | Manage/Design | Event Four, Arm: Arm One               |
+| test_admin | Manage/Design | Edit arm name/number                   |
+| test_admin | Manage/Design | Arm 1: Arm One                         |

@@ -1,7 +1,7 @@
 Feature: Control Center: The system shall allow the survey feature to be enabled or disabled.    
 
 As a REDCap end user 
- I want to see that survey feature is functioning as expected    
+I want to see that survey feature is functioning as expected    
 
 Scenario: A.6.4.1500.100 Enable and disable survey feature   
 #SETUP_DEV  
@@ -19,20 +19,20 @@ Then I should see "Your system configuration values have now been changed!"
 #VERIFY Disable survey feature in project setup  
 When I click on the link labeled "My Projects"    
 And I click on the link labeled "A.6.4.1500.100"   
- And I click on the link labeled "Project Setup"  
+And I click on the link labeled "Project Setup"  
 Then I should NOT see the button labeled "Enable" for the field labeled "Use surveys in this project?"   
 
  #FUNCTIONAL REQUIREMENT  
 ##ACTION: Enable survey mode in Control Center 
- Given I click on the link labeled "Control Center"   
+Given I click on the link labeled "Control Center"   
 And I click on the link labeled "Modules/Services Configuration"  
- And I select "Enabled" on the dropdown field labeled " Enable the use of surveys in projects?"  
+And I select "Enabled" on the dropdown field labeled " Enable the use of surveys in projects?"  
 And I click on the button "Save Changes"   
 Then I should see "Your system configuration values have now been changed! "    
 
 #VERIFY Enable survey feature in project setup  
 When I click on the link labeled "My Projects"  
-  And I click on the link labeled "A.6.4.1500.100"    
+And I click on the link labeled "A.6.4.1500.100"    
 And I click on the link labeled "Project Setup"  
 Then I should see the button labeled "Disable" for the field labeled "Use surveys in this project?"    
 
