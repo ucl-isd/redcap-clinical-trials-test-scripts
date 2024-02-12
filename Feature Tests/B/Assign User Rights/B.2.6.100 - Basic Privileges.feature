@@ -43,7 +43,7 @@ And I logout
 
 ##VERIFY: Verify User with Basic custom rights
 Given I login to REDCap with the user "Test_User1"
-Then I should see "Logged in as"
+Then I should see "Logged in as test_user1"
 
 When I click on the link labeled "My Projects"
 And I click on the link labeled "B.2.6.100.100"
@@ -119,9 +119,13 @@ And I logout
 ##VERIFY: Verify User with full custom rights
 
 Given I login to REDCap with the user "Test_User1"
-Then I should see "Logged in as"
+Then I should see "Logged in as test_user1"
+And I should see a link labeled "Project Setup"
+And I should see a link labeled "Designer"
+And I should see a link labeled "Dictionary"
 And I should see a link labeled "Codebook"
 And I should see a link labeled "Survey Distribution Tools"
+And I should see a link labeled "Scheduling"
 And I should see a link labeled "Record Status Dashboard"
 And I should see a link labeled "Add / Edit Records"
 And I should see "Applications"
@@ -129,9 +133,11 @@ And I should see a link labeled "Project Dashboards"
 And I should see a link labeled "Alerts & Notifications"
 And I should see a link labeled "Multi-Language Management"
 And I should see a link labeled "Calendar"
+And I should see a link labeled "Data Exports, Reports, and Stats"
 And I should see a link labeled "Data Import Tool"
 And I should see a link labeled "Logging"
 And I should see a link labeled "Email Logging"
+And I should see a link labeled "Field Comment Log"
 And I should see a link labeled "File Repository"
 And I should see a link labeled "Data Comparison Tool"
 And I should see a link labeled "User Rights "
@@ -159,7 +165,7 @@ And I logout
 ##VERIFY: Verify User access to project
 
 Given I login to REDCap with the user "Test_User1"
-Then I should see "Logged in as"
+Then I should see "Logged in as test_user1"
 And I click on the link labeled "My Projects"
 And I click on a link labeled "B.2.6.100.100"
 Then I should see "ACCESS DENIED!"
@@ -185,7 +191,7 @@ And I logout
 ##VERIFY: Verify User access to project
 
 Given I login to REDCap with the user "Test_User1"
-Then I should see "Logged in as"
+Then I should see "Logged in as test_user1"
 And I click on the link labeled "My Projects"
 And I click on the link labeled "B.2.6.100.100"
 Then I should see a link labeled "Project Home"
@@ -206,12 +212,12 @@ Then I should see a dialog containing the following text: "Remove user?"
 And I click on the button labeled "Remove user" in the dialog box
 
 ##VERIFY_LOG: Verify Logging of Delete user
-And I click on the link labeled "Logging"
+When I click on the link labeled "Logging"
 Then I should see a table header and rows including the following values in the logging table:
 | Username | Action | List of Data Changes OR Fields Exported |
 | test_admin | Delete user | test_user1 |
 | test_admin | Updated User Expiration| test_user1 |
-And I logout
+Given I logout
 
 ##VERIFY: Verify User has no access to project
 
