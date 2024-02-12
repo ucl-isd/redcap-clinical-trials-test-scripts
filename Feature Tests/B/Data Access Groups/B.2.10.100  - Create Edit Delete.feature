@@ -27,6 +27,5 @@ Then I should see "RenameGroup3"
 When I click delete icon for the DAG labeled "RenameGroup3"
 And I click on the button labeled "Delete" in the dialog box
 ##VERIFY 
-Then I should see "Data Access Group "TestGroup3" has been deleted!"
+Then I should see "Data Access Group 'RenameGroup3' has been deleted!"
 And I should NOT see "RenameGroup3"
-
