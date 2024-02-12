@@ -157,5 +157,5 @@ Then I should see " User "test_user1" was successfully edited"
 Given I click on the link labeled "Add / Edit Records" 
 And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page 
 Then I should see "Record Home Page" 
-When I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event 1" 
+When I click the bubble to select a record for the "Survey" longitudinal instrument on event "Event Three" 
 Then I should see "Survey response is read-only" 
