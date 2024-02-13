@@ -18,7 +18,8 @@ Then I should see "Record ID 3 was successfully assigned to a Data Access Group!
 
 #SETUP_USER_RIGHTS
 When I click on the link labeled "User Rights"   
-Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
+#Click on the dropdown labeled "uplooad or download users, roles, and assignements" and select "Upload users (CSV)"
+And I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
 Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
 And I should see a table header and rows containing the following values in the table:
 | username   |
@@ -55,7 +56,7 @@ Then I should see "TestGroup1" assigned to "Test_User1" user
 When I click on the link labeled "Logging"
 Then I should see a table header and rows including the following values in the logging table:
 | Username   |        Action           | List of Data Changes OR Fields Exported |
-| test_admin | Manage/Design  | Assign user to data access group user = 'test_user1'
+| test_admin | Manage/Design  | Assign user to data access group user = 'test_user1' |
 And I logout 
 
 Given I login to REDCap with the user "Test_User1"
@@ -67,7 +68,7 @@ Then I should see "RESTRICTED:"
 
 ##VERIFY_UR: DAG assignment
 When I click on the link labeled "User Rights"
-Then I should see "TestGroup1" assigned to "Test_User1"user 
+Then I should see "TestGroup1" assigned to "Test_User1" user 
 ##VERIFY_RSD:
 When I click on "Record Status Dashboard"  
 Then I should see record "3" 
@@ -92,7 +93,7 @@ Given I login to REDCap with the user "Test_User1"
 When I click on the link labeled "My Projects" 
 And I click on the link labeled "B.2.10.200.100" 
 ##VERIFY: Access to DAG Module 
-And I click on the link labeled "Data Access Group" 
+And I click on the link labeled "Data Access Groups" 
 Then I should see "Assign user to a group" 
 ##VERIFY_UR
 When I click on the link labeled "User Rights"
