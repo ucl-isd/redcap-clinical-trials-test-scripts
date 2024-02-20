@@ -179,11 +179,15 @@ Feature: User Interface: The system shall provide the ability to restrict a user
 
         When I click on the button labeled "Close survey"
         Then I should see "You may now close this tab/window"
+        
+        Given I click on the button labeled "Leave without saving changes"
+        And I logout
 
         Given I am still logged in to REDCap with the user "Test_User3"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.10.400.100"
 
+#Manual:  DAG numbers will be different than what is listed below.  It will be based on your specific Group ID number located in the Data Access Groups Page
         ##VERIFY_LOG:
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
@@ -262,6 +266,9 @@ Feature: User Interface: The system shall provide the ability to restrict a user
 
         When I click on the button labeled "Close survey"
         Then I should see "You may now close this tab/window"
+
+        Given I click on the button labeled "Leave without saving changes"
+
 
         ##VERIFY_RSD:
         When I click on the link labeled "Record Status Dashboard"
