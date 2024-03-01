@@ -36,8 +36,8 @@ Feature: Project Level:  The system shall allow instrument level data export rig
             |                         | test_user2 |
             |                         | test_user3 |
             |                         | test_user4 |
-            | 1_FullRights            |            |  |
-            | 2_Edit_RemoveID         |            |  |
+            | 1_FullRights            |            | 
+            | 2_Edit_RemoveID         |            | 
             | 3_ReadOnly_Deidentified |            |
             | 4_NoAccess_Noexport     |            |
 
@@ -49,7 +49,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.6.300.100"
         And I click on the link labeled "Data Exports, Reports, and Stats"
-        ##ACTION:
+        ##ACTION
         And I click on the button labeled "Export Data"
         Then I should see "All data (all records and fields)"
 
@@ -59,7 +59,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
 
         When I click on the button labeled "Excel CSV"
         And I click the button labeled "Close"
-        ##VERIFY_DE:
+        ##VERIFY_DE
         And I open the Excel CSV File
         Then I should see "text_validation_complete"
         And I should see "ptname"
@@ -68,7 +68,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         And I should see "data_types_complete"
         #M: Close csv file
 
-        ##VERIFY_LOG:
+        ##VERIFY_LOG
         When I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action      | List of Data Changes OR Fields Exported |
@@ -84,7 +84,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.6.300.100"
         And I click on the link labeled "Data Exports, Reports, and Stats"
-        ##ACTION:
+        ##ACTION
         And I click on the button labeled "Export Data"
         Then I should see "All data (all records and fields)" Test_User3
 
@@ -94,7 +94,7 @@ Feature: Project Level:  The system shall allow instrument level data export rig
 
         When I click on the button labeled "Excel CSV"
         And I click the button labeled "Close"
-        ##VERIFY_DE:
+        ##VERIFY_DE
         And I open the Excel CSV File
         Then I should see "text_validation_complete"
         And I should see "ptname"
@@ -117,13 +117,13 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         Then I should see "All data (all records and fields) "
 
         When I click on the link labeled "CSV / Microsoft Excel (raw data)"
-        ##ACTION:
+        ##ACTION
         And I click on the button labeled "Export Data"
         Then I should see "Data export was successful! "
 
         When I click on the button labeled "Excel CSV"
         And I click the button labeled "Close"
-        ##VERIFY_DE:
+        ##VERIFY_DE
         And I open the Excel CSV File
         Then I should see "text_validation_complete"
         And I should NOT see "ptname"
