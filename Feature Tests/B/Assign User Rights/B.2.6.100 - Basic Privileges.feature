@@ -8,6 +8,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         #SETUP
 
         Given I login to REDCap with the user "Test_Admin"
+        #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
         And I create a new project named "B.2.6.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.6.100.100"
@@ -61,7 +62,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action   | List of Data Changes OR Fields Exported |
             | test_admin | Add User | test_user1                              |
-        And I logout
+        Given I logout
 
         ##VERIFY: Verify User with Basic custom rights
         Given I login to REDCap with the user "Test_User1"
@@ -91,7 +92,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I should NOT see a link labeled "Data Quality"
         And I should NOT see a link labeled "API and API Playground"
         And I should NOT see a link labeled "REDCap Mobile App"
-        And I logout
+        Given I logout
 
         ##ACTION: Edit User to full custom rights
 
@@ -136,7 +137,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action      | List of Data Changes OR Fields Exported |
             | test_admin | Update user | test_user1                              |
-        And I logout
+        Given I logout
 
         ##VERIFY: Verify User with full custom rights
 
@@ -182,7 +183,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action                  | List of Data Changes OR Fields Exported |
             | test_admin | Updated User Expiration | test_user1                              |
-        And I logout
+        Given I logout
 
         ##VERIFY: Verify User access to project
 
@@ -192,7 +193,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on a link labeled "B.2.6.100.100"
         Then I should see "ACCESS DENIED!"
         And I should see "Your access to this particular REDCap project has expired"
-        And I click on the link labeled "Return to My Projects page"
+        When I click on the link labeled "Return to My Projects page"
         And I logout
 
         ##ACTION: Remove expiration for User
@@ -208,7 +209,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action                  | List of Data Changes OR Fields Exported |
             | test_admin | Updated User Expiration | test_user1                              |
-        And I logout
+        Given I logout
 
         ##VERIFY: Verify User access to project
 
@@ -217,7 +218,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.6.100.100"
         Then I should see a link labeled "Project Home"
-        And I logout
+        Given I logout
 
         ##ACTION: Remove User from project
 

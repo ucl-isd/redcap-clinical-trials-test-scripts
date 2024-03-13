@@ -7,6 +7,7 @@ Feature: User Interface: The system shall import only valid formats for text fie
 
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
+        #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
         And I create a new project named "B.3.16.400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.16.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
@@ -82,4 +83,4 @@ Feature: User Interface: The system shall import only valid formats for text fie
             | test_admin | 300    | email = 'ringo@noreply.edu'             |
             | test_admin | 300    | bdate = '1940-07-07'                    |
             | test_admin | 300    | multiple_radio_auto = '2'               |
-
+#End

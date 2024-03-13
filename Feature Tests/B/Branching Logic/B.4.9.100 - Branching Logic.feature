@@ -7,6 +7,7 @@ Feature: User Interface: The system shall support branching logic for data entry
 
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
+        #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
         And I create a new project named "B.4.9.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_4.9.xml", and clicking the "Create Project" button
 
         ##VERIFY: Branching logic
