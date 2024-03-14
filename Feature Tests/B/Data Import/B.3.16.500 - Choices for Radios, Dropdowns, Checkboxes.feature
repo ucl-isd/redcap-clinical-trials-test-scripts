@@ -58,7 +58,7 @@ Feature: User Interface: The system shall import only valid choice codes for rad
             | Username   | Action                     | List of Data Changes OR Fields Exported |
             | test_admin | Update record (import) 300 | multiple_dropdown_auto = '3'            |
             | test_admin | Update record (import) 300 | multiple_dropdown_manual = '5'          |
-            | test_admin | Update record (import) 300 | multiple_radio_auto = '101'             |
+            | test_admin | Update record (import) 300 | multiple_radio_auto = '2'             |
             | test_admin | Update record (import) 300 | radio_button_manual = '101'             |
             | test_admin | Update record (import) 300 | checkbox(1) = unchecked                 |
 #End
