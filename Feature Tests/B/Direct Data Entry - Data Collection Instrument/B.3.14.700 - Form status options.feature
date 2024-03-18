@@ -22,7 +22,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble for the "Text Validation" longitudinal instrument on event "Event 1"
         ##ACTION  Set record status to Incomplete (No data)
-        And I verify the dropdown option labeled "Incomplete" is selected on the dropdown l field labeled "Complete?"
+        And I verify the dropdown option labeled "Incomplete" is selected on the dropdown field labeled "Complete?"
         And I select the button labeled "Cancel"
         Then I should see "Record ID 7 data entry cancelled - not saved."
 
@@ -42,7 +42,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         #FUNCTIONAL_REQUIREMENT
         Given I click the bubble for the "Text Validation" longitudinal instrument on event "Event 1" for record "7"
         ##ACTION  Set record status to Unverified
-        And I select the dropdown option labeled "Unverified" on the dropdown l field labeled "Complete?"
+        And I select the dropdown option labeled "Unverified" on the dropdown field labeled "Complete?"
         And I select the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully edited."
 
@@ -52,7 +52,7 @@ Feature: Saving Data: The system shall support the following statuses for data i
         #FUNCTIONAL_REQUIREMENT
         Given I click the bubble for the "Text Validation" longitudinal instrument on event "Event 1" for record "7"
         ##ACTION  Set record status to Complete
-        And I select the dropdown option labeled "Complete" on the dropdown l field labeled "Complete?"
+        And I select the dropdown option labeled "Complete" on the dropdown field labeled "Complete?"
         And I select the button labeled "Save & Exit Form"
         Then I should see "Record ID 7 successfully edited."
 

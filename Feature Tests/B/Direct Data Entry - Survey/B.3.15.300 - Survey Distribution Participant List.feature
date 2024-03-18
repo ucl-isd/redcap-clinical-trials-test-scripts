@@ -30,7 +30,13 @@ Feature: The system shall allow creation of a participant list automatically usi
         ##ACTION Verify Survey Distribution Tool
         When I click on the link labeled "Survey Distribution Tools"
         And I click on the button labeled "Participant List"
-        Then I should see the option labeled "[Initial survey] "Text Validation"" selected on the field labeled "Participant List belonging to"
+        Then I should see the option labeled "[Initial survey]" selected on the field labeled "Participant List"
         And I should see the email "email@test.edu" for the record labeled "1"
-        And I logout
+
+        ##VERIFY_DE
+        When I click on the link labeled "Data Exports, Reports, and Stats"
+        And I click on the button labeled "View Report"
+        Then I should see a table header and rows including the following values in the report data table:
+            | Record ID | Email                |
+            | 1         | email@test.edu |
 #END

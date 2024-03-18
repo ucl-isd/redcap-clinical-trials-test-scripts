@@ -34,7 +34,8 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         And I enter "Name_B.3.15.100.100" into the field labeled "Name"
         And I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey"
-        And I click on the button labeled "Close survey"
+
+        When I click on the button labeled "Close survey"
         And I click on the button labeled "Leave without saving changes" in the dialog box
 
         ##VERIFY_DE
@@ -70,18 +71,27 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         #VERIFY
         Then I should NOT see "Survey options"
 
-        #VERIFY_LOG
-        When I click on the button labeled "Logging"
-        Then I should see a table row containing the following values in the logging table:
-            | test_admin | Manage/design |
+        ##ACTION Verify no survey function in record
+        When I click on the link labeled "Record Status Dashboard"
+        And I click on the bubble for the instrument labeled "Text Validation" for event "Event 1" for record "2"
+        And I click on the dropdown option labeled "Open Survey" on the dropdown button labeled "Survey options"
+        #VERIFY
+        Then I should see "survey is not currently active"
+
+        When I click on the button labeled "Close survey"
+        And I click on the button labeled "Leave without saving changes" in the dialog box
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION Disable survey in Online Designer
         Given I click on the link labeled "Online Designer"
         And I click on the link labeled "Survey settings" for the data instrument named "Text Validation"
         And I click on the button labeled "Delete Survey Settings"
-        And I click on the button labeled "Delete Survey Settings "
         And I click on the button "Close"
         ##VERIFY
         Then I should see "Enable" for the data instrument named "Text Validation"
+
+        When I click on the link labeled "Record Status Dashboard"
+        And I click on the bubble for the instrument labeled "Text Validation" for event "Event 1" for record "1"
+        ##VERIFY
+        Then I should NOT see "Survey options"
 #END

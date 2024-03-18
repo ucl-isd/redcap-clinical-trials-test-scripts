@@ -31,7 +31,8 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
         And I enter "Name_survey" into the field labeled "Name"
         And I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey"
-        And I click on the button labeled "Close survey"
+        
+        When I click on the button labeled "Close survey"
         And I click on the button labeled "Leave without saving changes" in the dialog box
         Then I should see "Record Home Page"
 
@@ -66,7 +67,6 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
         When I click on the link labeled "Record Status Dashboard"
         And I click on the bubble for the instrument labeled "Text Validation" for event "Event 2" for record "2"
         #VERIFY
-        And I click on the button labeled "Save & Stay"
         And I click on the dropdown option labeled "Open survey" on the dropdown button labeled "Survey options"
         Then I should see "Thank you for your interest, but this survey is not currently active."
         And I click on the button labeled "Close survey"
@@ -77,5 +77,5 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
         When I click on the button labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Modify survey info                      |
+            | test_user1 | Manage/Design | Modify survey info                      |
 #END

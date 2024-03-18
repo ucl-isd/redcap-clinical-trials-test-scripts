@@ -29,14 +29,14 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
         And I click on the link labeled "1"
         ##ACTION Rename record
         And I click on the dropdown option labeled "Rename record" on the dropdown button labeled "Choose action for record"
-        And I enter "1.A" into the field labeled "Rename record "1" to the following record name:"
+        And I enter "1.A" into the field labeled "Rename record"
         And I click on the button labeled "Rename record" in the dialog box
         Then I should see "Record ID 1.A was successfully renamed!"
 
         #VERIFY_RSD: Record 1 is now 1.A
         When I click on the link labeled "Record Status Dashboard"
         Then I should see the linked labeled "1.A"
-        AND I should NOT see the linked labeled "1"
+        And I should NOT see the linked labeled "1"
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
