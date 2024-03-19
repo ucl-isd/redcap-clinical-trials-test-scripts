@@ -1,11 +1,12 @@
-Feature: User Interface: Survey Distribution: The system shall prompt the user to leave the survey to avoid overwriting survey responses when opening surveys from a data entry form when using Open Survey link.
+Feature: User Interface: Survey Distribution: The system shall prohibit the user from overwriting partially or fully completed survey response from a data entry form when using Open Survey link.
+
 
     As a REDCap end user
     I want to see that Survey Feature is functioning as expected
 
     Scenario: B.3.15.500.100 Data form overwrite function post survey entry
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "Test_User1"
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
         And I create a new project named "B.3.15.500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
@@ -28,20 +29,25 @@ Feature: User Interface: Survey Distribution: The system shall prompt the user t
         #FUNCTIONAL REQUIREMENT
         ##ACTION Verify Leave this page while survey is in session
 
-        When I click on the button labeled "Submit"
+        When I enter "Survey Name1" in the field labeled "Name"
+        And I click on the button labeled "Submit"
         Then I should see "Thank you for taking this survey"
-        And I click on the button labeled "Close survey"
+
+        When I click on the button labeled "Close survey"
         Then I should see "Recommended: Leave this page while survey is in session"
-        And I click on the button labeled "Leave without saving changes"
+
+        When I click on the button labeled "Leave without saving changes"
+        Then I should see "Record Home Page"
 
         ##VERIFY_LOG:
         Given I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username            | Action            | List of Data Changes OR Fields Exported |
-            | [survey respondent] | Update Response 5 | survey_complete= '2'                    |
+            | [survey respondent] | Update Response 5 | name_survey = 'Survey Name1'            |
+            | test_user1          | Create record 5   | name_survey = 'Name'                    |
 
         #FUNCTIONAL REQUIREMENT
-        ##ACTION Verify Leave this page while survey is in session
+        ##ACTION Verify Stay on page does not allow user to overwrite
         Given I click the link labeled "Add/Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble for the "Survey" longitudinal instrument on event "Event Three"
@@ -50,20 +56,28 @@ Feature: User Interface: Survey Distribution: The system shall prompt the user t
         And I select the option labeled "Open survey"
         Then I should see "Please complete the survey below"
 
-        #FUNCTIONAL REQUIREMENT
-        ##ACTION Verify stay on page and edit survey
-        When I click on the button labeled "Submit"
+        When I enter "Survey Name2" in the field labeled "Name"
+        And I click on the button labeled "Submit"
         Then I should see "Thank you for taking this survey"
 
         When I click on the button labeled "Close survey"
         And I click on the button labeled "Stay on this page"
-        And I enter "Overwrite Name" in the field labeled "Name"
+        Then I should see "Name" in the field labeled "Name"
+
+        When I enter "Overwrite Name" in the field labeled "Name"
         And I click on the button labeled "Save & Exit Form"
-        Then I should see "Record ID 6 successfully edited."
+        Then I should see "ERROR"
+        And I should see "page has already been saved as a partially or fully completed survey response"
+        And I should see "you may not modify the data on this data entry form"
 
         ##VERIFY_LOG:
         When I click on the link labeled "Logging"
         Then I should see a table row including the following values in in the logging table:
-            | test_admin          | Update record 6   | name_survey = 'Overwrite Name' |
-            | [survey respondent] | Update Response 6 | survey_complete= '2'           |
+            | Username            | Action            | List of Data Changes OR Fields Exported |
+            | [survey respondent] | Update Response 6 | name_survey = 'Survey Name2'            |
+            | test_user1          | Create record 6   | name_survey = 'Name'                    |
+
+        Then I should NOT see a table row including the following values in in the logging table:
+            | Username   | Action          | List of Data Changes OR Fields Exported |
+            | Test_User1 | Update record 6 | name_survey = 'Overwrite Name'          |
 #END
