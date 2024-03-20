@@ -74,8 +74,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
         Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Name            |
             | 1         | B.3.15.1200.100 |
-
-        And I should NOT see "Survey Timestamp"
+        And I should NOT see "text_validation_timestamp"
 
         ##VERIFY_SDT: verifying survey link and return codes are NOT available
         Given I click on the link labeled "Survey Distribution Tools"

@@ -29,7 +29,7 @@ Feature: User Interface: The system shall support executing a rule.
         And I click on the button labeled "All" in the Data Quality Rules controller box
         Then I should see a table header and rows containing the following values in the data quality report table:
             | Rule # | Rule Name                                                                 | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
-            | A      | Blank values*                                                             | -                                        | 377 export          | view |
+            | A      | Blank values*                                                             | -                                        | 375 export          | view |
             | B      | Blank values* (required fields only)                                      | -                                        | 2 export            | view |
             | C      | Field validation errors (incorrect data type)                             | -                                        | 1 export            | view |
             | D      | Field validation errors (out of range)                                    | -                                        | 4 export            | view |

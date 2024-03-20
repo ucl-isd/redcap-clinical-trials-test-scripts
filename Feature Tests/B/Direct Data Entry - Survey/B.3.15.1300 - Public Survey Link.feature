@@ -27,7 +27,7 @@ Feature: User Interface: Survey distribution: The system shall allow creation of
         ##ACTION - public survey link
         When I click on the link labeled "Survey Distribution Tools"
         #VERIFY
-        Then I should see "Public Survey URL:"
+        Then I should see "Public Survey URL"
         When I click on the button labeled "Open public survey"
         And I click on the button labeled "Submit"
         And I click on the button labeled "Close Survey"
@@ -35,5 +35,6 @@ Feature: User Interface: Survey distribution: The system shall allow creation of
         #VERIFY_LOG
         When I click on the button labeled "Logging"
         Then I should see a table row containing the following values in the logging table:
-            | [survey respondent] |
+            | Username            | Action            |
+            | [survey respondent] | Create Response 5 |
 #END

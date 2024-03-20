@@ -40,16 +40,9 @@ Feature: User Interface: The system shall allow submitted survey responses to be
         And I click on the button labeled "Leave without saving changes"
         Then I should see a Completed Survey Response icon for the data collection instrument labeled "Survey" on event "Event Three"
 
-        ##VERIFY_LOG:
-        When I click on the link labeled "Logging"
-        Then I should see a table row containing the following values in in the logging table:
-            | [survey respondent] | Update Response 5 | survey_complete= '2' |
-
         #FUNCTIONAL_REQUIREMENT
         ##ACTION Edit survey response
-        When I click on the link labeled "Record Status Dashboard"
-        And I click on the link labeled "Arm 1"
-        And I click the bubble for the data collection Instrument named "Survey" for record "5" for event "Event Three"
+        When I click the bubble for the "Survey" longitudinal instrument on event "Event Three"
         Then I should see the button labeled "Edit response"
 
         When I click on button labeled "Edit response"
@@ -60,15 +53,17 @@ Feature: User Interface: The system shall allow submitted survey responses to be
         ##VERIFY_LOG:
         When I click on the link labeled "Logging"
         Then I should see a table row containing the following values in in the logging table:
+            | Username            | Action            | List of Data Changes OR Fields Exported |
             | test_user1 | Update record 5 | name_survey = 'Name_EDITRESPONSE' |
+            | [survey respondent] | Update Response 5 | survey_complete= '2' |
 
         #VERIFY_RSD
         When I click on the link labeled "Record Status Dashboard"
         And I click on the link labeled "Arm 1"
         And I click the bubble for the data collection Instrument named "Survey" for record "5" for event "Event Three"
-        Then I should see the "Name_EDITRESPONSE" in the field labeled "Name"
+        Then I should see the "Name_EDITRESPONSE" in the field labeled "Name name_survey"
 
-        ##USER_RIGHTS - 3_ReadOnly_Deidentified
+        ##USER_RIGHTS - User Rights have No edit survey rights
         When I click on the link labeled "User Rights"
         And I click on the link labeled "Test_User1"
         And I click on the button labeled "Re-assign to role"
@@ -81,5 +76,5 @@ Feature: User Interface: The system shall allow submitted survey responses to be
         When I click on the link labeled "Record Status Dashboard"
         And I click on the link labeled "Arm 1"
         And I click the bubble for the data collection Instrument named "Survey" for record "5" for event "Event Three"
-        Then I should NOT see the button labeled "Edit response"
+        Then I should see  "Survey response is read-only"
 #END

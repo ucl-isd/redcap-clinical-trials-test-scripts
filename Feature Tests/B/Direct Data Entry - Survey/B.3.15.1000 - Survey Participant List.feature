@@ -19,15 +19,15 @@ Feature: User Interface: Survey Project Settings: The system shall support a par
         #FUNCTIONAL REQUIREMENT
         ##ACTION: Change survey distribution to form not in position 1
         When I click on the link labeled "Survey Distribution Tools"
-        Then I should see "Participant List belonging to "Consent "- Event 1 (Arm1: Arm 1)"
+        Then I should see "Participant List belonging to 'Consent'- Event 1 (Arm1: Arm 1)"
         #VERIFY: YOU SEE RECORD 1
         And I should see a table header and rows containing the following values in the participant list table"
             | Email             | Record |
             | 1) email@test.edu | 1      |
 
         ##ACTION: Change survey distribution to form not in position 1
-        When I select the dropdown option "Survey "- Event Three (Arm1: Arm 1)" from the dropdown field labeled "Participant List belonging to"
-        Then I should see "Participant List belonging to " Survey "- Event Three (Arm1: Arm 1)"
+        When I select the dropdown option 'Survey'- Event Three (Arm1: Arm 1)" from the dropdown field labeled "Participant List belonging to"
+        Then I should see "Participant List belonging to 'Survey'- Event Three (Arm1: Arm 1)"
         #VERIFY: YOU SEE RECORD 1
         And I should see a table header and rows containing the following values in the participant list table
             | Email             | Record |

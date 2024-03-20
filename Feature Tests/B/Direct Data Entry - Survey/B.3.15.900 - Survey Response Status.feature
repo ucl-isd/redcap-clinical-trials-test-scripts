@@ -41,9 +41,14 @@ Feature: User Interface: The system shall support the following statuses for sur
 
         ##VERIFY_RSD
         When I click on the button labeled "Save & Return Later"
-        And I click on the button labeled "Close" in the dialog box
-        #M: Close browser tab
-        And I click on the button labeled "Leave without saving changes" in the dialog box
+        Then I should see "Return Code"
+        And I should see "Copy or write down the Return Code"
+
+        When I click on the button labeled "Close" in the dialog box 
+        Then I should see "Your survey responses were saved!"
+        #Manual: Close browser tab
+        
+        When I click on the button labeled "Leave without saving changes" in the dialog box
         Then I should see "Record Home Page"
         And I should see a Partial Survey Response icon for the "Survey" longitudinal instrument on event "Event Three" for record "5"
 

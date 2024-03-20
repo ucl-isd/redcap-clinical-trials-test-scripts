@@ -91,7 +91,7 @@ Feature: User Interface: The system shall support data quality rule creation.
         When I click on the button labeled "All" in the Data Quality Rules controller box
         Then I should see a table header and rows containing the following values in the data quality report table:
             | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
-            | 4      | Integer   | [integer]='1'                            | 6 export            | view |
+            | 4      | Integer   | [integer]='1'                            | 1 export            | view |
 
         ##ACTION: delete rule
         When I click on the "X" delete image for Rule "4"
