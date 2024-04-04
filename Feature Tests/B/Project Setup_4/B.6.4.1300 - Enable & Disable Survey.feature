@@ -1,7 +1,7 @@
 Feature: User Interface: Survey Project Settings: The system shall support enabling and disabling survey functionality at the project level.
 
     As a REDCap end user
-    I want to see that Manage project user access is functioning as expected
+    I want to see that survey settings is functioning as expected
 
     Scenario: B.6.4.1300.100 Enable/Disable survey in Project Set-up
         #SETUP
@@ -18,10 +18,10 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         And I should see a button labeled "Enable" on the field labeled "Use surveys in this project?"
 
         Given I click on the link labeled " Designer"
-        Then I should see surveys are disabled
+        Then I should see surveys are enabled
 
         #VERIFY_LOG
-        When I click on the button labeled "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_user1 | Manage/design | Modify project settings                 |
@@ -42,7 +42,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         Then I should see "Your survey settings were successfully saved!"
 
         #VERIFY_LOG
-        When I click on the button labeled "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_user1 | Manage/design | Set up survey                           |
@@ -58,7 +58,7 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         Then I should see the button labeled "Enable" for the data instrument named "Text Validation"
 
         #VERIFY_LOG
-        When I click on the button labeled "Logging"
+        When I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_user1 | Manage/design | Delete survey                           |

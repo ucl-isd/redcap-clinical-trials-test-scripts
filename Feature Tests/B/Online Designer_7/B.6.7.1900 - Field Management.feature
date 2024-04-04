@@ -19,7 +19,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         ##SETUP_PRODUCTION
-        When I click on the button labeled "Project Setup"
+        When I click on the link on labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
@@ -134,6 +134,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
 
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
+        And I click on the button labeled "Expand all instruments"
         Then I should see a table row including the following values in the codebook table:
             | Variable / Field Name | Field Label         | Field Attributes (Field Type, Validation, Choices, Calculations, etc.) |
             | [add]                 | Add Field           | text                                                                   |

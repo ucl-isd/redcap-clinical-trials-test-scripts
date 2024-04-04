@@ -47,6 +47,7 @@ Feature: Field Creation: The system shall support the creation of Text box (Shor
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
+        And I click to Expand the "Text Validation" instrument
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_admin | Manage/Design | Edit project field                      |
@@ -70,6 +71,7 @@ Feature: Field Creation: The system shall support the creation of Text box (Shor
 
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
+        And I click to Expand the "Text Validation" instrument
         Then I should see a table row containing the following values in the codebook table:
             | [name] | Name | text |
 #END
