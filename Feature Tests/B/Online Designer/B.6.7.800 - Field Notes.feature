@@ -7,14 +7,14 @@ Scenario: B.6.7.800.100 Note box field creation in Online Designer
 
 #SETUP
 Given I login to REDCap with the user "Test_Admin"   
-And I create a new project named " B.6.7.800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing "Empty project", and clicking the "Create Project" button 
+And I create a new project named "B.6.7.800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing "Empty project", and clicking the "Create Project" button 
 
 ##SETUP_PRODUCTION
 When I click on the link labeled "My Projects"  
 And I click on the link labeled "B.6.7.800.100" 
 When I click on the button labeled "Project Setup"
 And I click on the button labeled "Move project to production"
-And I click on the radio button labeled "Keep ALL data saved so far" in the dialog box
+And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
 And I click on the button labeled "YES, Move to Production Status" in the dialog box
 Then I should see "Project Status: Production"
 
@@ -48,10 +48,10 @@ Then I should see a table header and rows including the following values in the 
 | Username   |        Action           | List of Data Changes OR Fields Exported |
 | test_admin | Manage/Design | Create project field |
 
-Scenario: B.6.7.800.200 Note box field creation in Data Dictionary 
+#Scenario: B.6.7.800.200 Note box field creation in Data Dictionary 
 #SETUP
-Given I login to REDCap with the user "Test_Admin"   
-And I create a new project named "B.6.7.700.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing "Empty project", and clicking the "Create Project" button 
+#Given I login to REDCap with the user "Test_Admin"   
+#And I create a new project named "B.6.7.700.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing "Empty project", and clicking the "Create Project" button 
 
 #FUNCTIONAL_REQUIREMENT
 ##ACTION: Upload data dictionary
@@ -67,4 +67,8 @@ Then I should see "Changes Made Successfully!"
 ##VERIFY_CODEBOOK
 When I click on the link labeled "Codebook"
 Then I should see a table row containing the following values in the codebook table: 
+| Variable / Field Name | 	Field Label | Field Attributes (Field Type, Validation, Choices, Calculations, etc.) |
+| [notesbox] | Notes box | notes |
 | [notesbox2] | Notes box 2 | notes |
+
+
