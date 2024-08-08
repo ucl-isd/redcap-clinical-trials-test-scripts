@@ -4,6 +4,7 @@ Feature: A.6.4.600 Manage project creation, deletion, and settings. Control Cent
     I want to see that manage project is functioning as expected
 
     Scenario: A.6.4.600.100 User's ability to add or modify events and arms while in production mode
+        #Testing for admin deletion is in feature test B.4.27.700.100 Admin delete events and arm in Define My Events
         #SETUP_CONTROL_CENTER
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
