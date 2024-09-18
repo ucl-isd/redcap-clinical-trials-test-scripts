@@ -3,7 +3,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
     As a REDCap end user
     I want to see that field reset is functioning as expected
 
-    Scenario: B.3.14.300.100 Reset multiple choice-radio button selection
+    Scenario: B.3.14.0300.100 Reset multiple choice-radio button selection
         ##ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
         Given I login to REDCap with the user "Test_Admin"
         When I click on the link labeled "Control Center"
@@ -16,7 +16,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
 
         #SETUP
         Given I login to REDCap with the user "Test_User1"
-        And I create a new project named "B.3.14.300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
+        And I create a new project named "B.3.14.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
         When I click on the link labeled "Project Setup"
