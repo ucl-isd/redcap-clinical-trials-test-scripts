@@ -1,9 +1,9 @@
-Feature: A.1.1.100 Run Configuration Check test page
+Feature: A.1.1.0100. Run Configuration Check test page
 
     As a REDCap end user
     I want to see that Configuration Checklist is functioning as expected
 
-    Scenario: A.1.1.100.100 Configuration Checklist Tests
+    Scenario: A.1.1.0100.100 Configuration Checklist Tests
 
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"

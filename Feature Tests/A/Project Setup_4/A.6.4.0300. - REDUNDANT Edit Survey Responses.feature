@@ -1,15 +1,15 @@
-Feature: A.6.4.300 Manage project creation, deletion, and settings
+Feature: A.6.4.0300. Manage project creation, deletion, and settings
 
     Manage project creation, deletion, and settings
     Control Center: The system shall support enabling users to edit survey responses.
 
-    Scenario: A.6.4.300.100 User's ability to edit survey responses
+    Scenario: A.6.4.0300.100 User's ability to edit survey responses
 
         #REDUNDANT - Tested in A.6.4.1600.100
         Given I login to REDCap with the user "Test_Admin"
-        And I create a new project named "A.6.4.300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "A.6.4.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "A.6.4.300.100"
+        And I click on the link labeled "A.6.4.0300.100"
 
         When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
@@ -34,7 +34,7 @@ Feature: A.6.4.300 Manage project creation, deletion, and settings
 
         Given I login to REDCap with the user "Test_User1"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "A.6.4.300.100"
+        And I click on the link labeled "A.6.4.0300.100"
         And I click on the link labeled "Record Status Dashboard"
         And I locate the bubble for the "Survey" instrument on event "Event 1" for record ID "1" and click on the bubble
         #Then I should see "Survey response is editable"
@@ -51,7 +51,7 @@ Feature: A.6.4.300 Manage project creation, deletion, and settings
 
         Given I login to REDCap with the user "Test_User1"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "A.6.4.300.100"
+        And I click on the link labeled "A.6.4.0300.100"
         And I click on the link labeled "Record Status Dashboard"
         And I locate the bubble for the "Survey" instrument on event "Event 1" for record ID "1" and click on the bubble
 #Then I should see "Survey response is read-only"

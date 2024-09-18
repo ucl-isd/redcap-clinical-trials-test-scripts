@@ -1,9 +1,9 @@
-Feature: A.2.2.100 Add/Manage users Control Center - Users: The system shall support the ability create a single unique user with username, first name, last name, primary email, expiration date, and allow the user to create/copy projects.
+Feature: A.2.2.0100. Add/Manage users Control Center - Users: The system shall support the ability create a single unique user with username, first name, last name, primary email, expiration date, and allow the user to create/copy projects.
 
     As a REDCap end user
     I want to see that Add / Manage Users is functioning as expected
 
-    Scenario: A.2.2.100.100 System-level User Settings Create Users
+    Scenario: A.2.2.0100.100 System-level User Settings Create Users
 
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
@@ -19,7 +19,7 @@ Feature: A.2.2.100 Add/Manage users Control Center - Users: The system shall sup
         When I click on the button labeled "Save Changes"
         Then I should see "Your system configuration values have now been changed!"
 
-    Scenario: A.2.2.100.200 Create a Table-based user
+    Scenario: A.2.2.0100.200 Create a Table-based user
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "Add Users (Table-based Only)"
@@ -37,7 +37,7 @@ Feature: A.2.2.100 Add/Manage users Control Center - Users: The system shall sup
     # Reset password through email link
     # leader will handle password change feature test
 
-    Scenario: A.2.2.100.300 Create Table-based users via bulk upload
+    Scenario: A.2.2.0100.300 Create Table-based users via bulk upload
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "Add Users (Table-based Only)"
@@ -50,7 +50,7 @@ Feature: A.2.2.100 Add/Manage users Control Center - Users: The system shall sup
         And I should see "Test_User3"
         And I should see "Test_User4"
 
-    Scenario: A.2.2.100.400 Prevent a Second User with the Same Username
+    Scenario: A.2.2.0100.400 Prevent a Second User with the Same Username
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "Add Users (Table-based Only)"
@@ -64,7 +64,7 @@ Feature: A.2.2.100 Add/Manage users Control Center - Users: The system shall sup
         And I click on the button labeled "Save"
         Then I should see "ERROR: The user could not be added!"
 
-    Scenario: A.2.2.100.500 Search a Table-based user
+    Scenario: A.2.2.0100.500 Search a Table-based user
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "Browse Users"
@@ -74,7 +74,7 @@ Feature: A.2.2.100 Add/Manage users Control Center - Users: The system shall sup
         And I click on the button labeled "Search"
         Then I should see "Test_User1"
 
-    Scenario: A.2.2.100.600 User has no control center access
+    Scenario: A.2.2.0100.600 User has no control center access
         Given I login to REDCap with the user "Test_User1"
         Then I should NOT see "Control Center"
 # #End

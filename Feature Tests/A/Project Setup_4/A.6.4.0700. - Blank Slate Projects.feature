@@ -1,13 +1,13 @@
-Feature: A.6.4.700 Manage project creation, deletion, and settings. User Interface  General: The system shall support the ability to create new projects from a blank slate.
+Feature: A.6.4.0700. Manage project creation, deletion, and settings. User Interface  General: The system shall support the ability to create new projects from a blank slate.
 
     As a REDCap end user
     I want to see that create project is functioning as expected
 
-    Scenario: A.6.4.700.100 Create blank new project
+    Scenario: A.6.4.0700.100 Create blank new project
 
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "New Project"
-        And I enter "A.6.4.700.100" into the input field labeled "Project title"
+        And I enter "A.6.4.0700.100" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
         And I click on the radio labeled "Empty project (blank slate)"
         And I click on the button labeled "Create Project"
@@ -16,6 +16,6 @@ Feature: A.6.4.700 Manage project creation, deletion, and settings. User Interfa
         # Then I should see "You are now creating a test project"
         # And I click on the button labeled "I Agree" in the dialog box
         # #############################################################################################################
-        Then I should see "A.6.4.700.100"
+        Then I should see "A.6.4.0700.100"
         And I should see "Project Home"
 #End

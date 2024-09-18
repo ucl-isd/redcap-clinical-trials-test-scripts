@@ -1,9 +1,9 @@
-Feature: A.2.2.300 Add/Manage users Control Center - Users: The system shall support the ability to search for individual users and view/edit user information for username, first name, last name and/or primary email.
+Feature: A.2.2.0300. Add/Manage users Control Center - Users: The system shall support the ability to search for individual users and view/edit user information for username, first name, last name and/or primary email.
 
   As a REDCap end user
   I want to see that Search Users is functioning as expected.
 
-  Scenario: A.2.2.300.100 Search by username, first name, last name and/or primary email
+  Scenario: A.2.2.0300.100 Search by username, first name, last name and/or primary email
 
     Given I login to REDCap with the user "Test_Admin"
     And I click on the link labeled "Control Center"

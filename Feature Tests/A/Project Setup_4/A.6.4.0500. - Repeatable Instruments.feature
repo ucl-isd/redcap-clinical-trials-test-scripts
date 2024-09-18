@@ -1,13 +1,13 @@
-Feature: Control Center: The system shall support the option to limit adding or modifying repeatable instruments while in production to administrators
+Feature: A.6.4.0500. Control Center: The system shall support the option to limit adding or modifying repeatable instruments while in production to administrators
 
       As a REDCap end user
       I want to see that repeatable function is functioning as expected
 
-      Scenario: A.6.4.500.100 User's ability to add or modify repeatable instrument while in production mode
+      Scenario: A.6.4.0500.100 User's ability to add or modify repeatable instrument while in production mode
             Given I login to REDCap with the user "Test_Admin"
-            And I create a new project named "A.6.4.500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+            And I create a new project named "A.6.4.0500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
             When I click on the link labeled "My Projects"
-            And I click on the link labeled "A.6.4.500.100"
+            And I click on the link labeled "A.6.4.0500.100"
             And I click on the link labeled "User Rights"
             And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
             And I click on the button labeled "Assign to role"
@@ -31,14 +31,14 @@ Feature: Control Center: The system shall support the option to limit adding or 
 
             Given I login to REDCap with the user "Test_User1"
             When I click on the link labeled "My Projects"
-            And I click on the link labeled "A.6.4.500.100"
+            And I click on the link labeled "A.6.4.0500.100"
             And I click on the link labeled "Project Setup"
             Then I should see that repeatable instruments are unchangeable
             Given I logout
 
             Given I login to REDCap with the user "Test_Admin"
             When I click on the link labeled "My Projects"
-            And I click on the link labeled "A.6.4.500.100"
+            And I click on the link labeled "A.6.4.0500.100"
             When I click on the link labeled "Control Center"
             And I click on the link labeled "User Settings"
             Then I should see "System-level User Settings"
@@ -49,7 +49,7 @@ Feature: Control Center: The system shall support the option to limit adding or 
 
             Given I login to REDCap with the user "Test_User1"
             When I click on the link labeled "My Projects"
-            And I click on the link labeled "A.6.4.500.100"
+            And I click on the link labeled "A.6.4.0500.100"
             And I click on the link labeled "Project Setup"
             Then I should see "Repeating instruments and events"
 

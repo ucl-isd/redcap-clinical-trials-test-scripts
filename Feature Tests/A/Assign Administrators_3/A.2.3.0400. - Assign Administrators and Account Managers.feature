@@ -1,8 +1,6 @@
-Feature: A.2.3.400 Assign administrators and account managers
+Feature: A.2.3.0400. Assign administrators and account managers
 
-    Scenario: A.2.3.400.100 Give and remove user maximum user privileges
-
-        #REDUNDANT - Tested in A.2.3.200.100
+    Scenario: A.2.3.0400.100 Give and remove user maximum user privileges
 
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
@@ -38,3 +36,4 @@ Feature: A.2.3.400 Assign administrators and account managers
         And I should see a link labeled "System Statistics"
         And I should NOT see a link labeled "Edit a Project's Settings"
         And I logout
+#End

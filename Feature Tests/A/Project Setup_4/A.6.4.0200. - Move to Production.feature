@@ -1,13 +1,13 @@
-Feature: A.6.4.200 Manage project creation, deletion, and settings
+Feature: A.6.4.0200. Manage project creation, deletion, and settings
 
     As a REDCap end user
     I want to see that project management features are functioning as expected
 
-    Scenario: A.6.4.200.100 User requests admin move project to production
+    Scenario: A.6.4.0200.100 User requests admin move project to production
         Given I login to REDCap with the user "Test_Admin"
-        And I create a new project named "A.6.4.200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "A.6.4.0200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "A.6.4.200.100"
+        And I click on the link labeled "A.6.4.0200.100"
         And I click on the link labeled "User Rights"
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
@@ -41,14 +41,14 @@ Feature: A.6.4.200 Manage project creation, deletion, and settings
 
         Given I login to REDCap with the user "Test_Admin"
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "A.6.4.200.100"
+        And I click on the link labeled "A.6.4.0200.100"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "To-Do List"
 
         Then I should see "Pending Requests"
 
-        Given I should see the "Move to prod" request created for the project named "A.6.4.200.100" within the "Pending Requests" table
-        When I click on the "process request" icon for the "Move to prod" request created for the project named "A.6.4.200.100" within the "Pending Requests" table
+        Given I should see the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Pending Requests" table
+        When I click on the "process request" icon for the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Pending Requests" table
         Then I should see "Move Project To Production Status" in the dialog box in the iframe
 
         Given I click on the radio labeled "Keep ALL data saved so far." in the dialog box in the iframe
@@ -57,7 +57,7 @@ Feature: A.6.4.200 Manage project creation, deletion, and settings
         Then I should see the "Move to prod" request created for the project named "A.6.4.200.100" within the "Completed & Archived Requests" table
 
         Given I click on the link labeled "My Projects"
-        And I click on the link labeled "A.6.4.200.100"
+        And I click on the link labeled "A.6.4.0200.100"
         Then I should see Project status: "Production"
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
@@ -66,9 +66,9 @@ Feature: A.6.4.200 Manage project creation, deletion, and settings
 
     Scenario: A.6.4.200.200 User moves project to production
         Given I login to REDCap with the user "Test_Admin"
-        And I create a new project named "A.6.4.200.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "A.6.4.0200.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "A.6.4.200.200"
+        And I click on the link labeled "A.6.4.0200.200"
         And I click on the link labeled "User Rights"
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
@@ -86,7 +86,7 @@ Feature: A.6.4.200 Manage project creation, deletion, and settings
 
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "A.6.4.200.200"
+        And I click on the link labeled "A.6.4.0200.200"
         And I click on the link labeled "Project Setup"
         Then I should see a button labeled "Move project to production"
 

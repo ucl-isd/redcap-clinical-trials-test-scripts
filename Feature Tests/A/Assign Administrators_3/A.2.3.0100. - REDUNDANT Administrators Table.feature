@@ -1,15 +1,15 @@
-Feature: A.2.3.100 Assign administrators and account managers
+Feature: A.2.3.0100. Assign administrators and account managers
 
     As a REDCap end user
     I want to see that Control Center is functioning as expected
 
-    Scenario: A.2.3.100.100 View administrator accounts
+    Scenario: A.2.3.0100.100 View administrator accounts
 
-    #REDUNDANT - Tested in A.2.3.200.100
+    #REDUNDANT - Tested in A.2.3.0200.100
     As a REDCap end user
     I want to see that Control Center is functioning as expected
 
-    Scenario: A.2.3.100.100 View administrator accounts
+    Scenario: A.2.3.0100.100 View administrator accounts
 
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"

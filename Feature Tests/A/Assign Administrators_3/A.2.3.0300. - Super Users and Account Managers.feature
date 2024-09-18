@@ -1,8 +1,6 @@
-Feature: A.2.3.300 Assign administrators and account managers
+Feature: A.2.3.0300. Assign administrators and account managers
 
-    Scenario: A.2.3.300.100 Modify and Revoke Admin's User Rights
-
-        #REDUNDANT - Tested in A.2.3.200.100
+    Scenario: A.2.3.0300.100 Modify and Revoke Admin's User Rights
 
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "Control Center"
@@ -82,3 +80,4 @@ Feature: A.2.3.300 Assign administrators and account managers
         And I login to REDCap with the user "Test_User1"
         And I should NOT see a link labeled "Control Center"
         Given I logout
+#End
