@@ -3,15 +3,15 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
     As a REDCap end user
     I want to see that project level user access is functioning as expected
 
-    Scenario: B.2.6.100.100 Project level User Rights functions (Add, Edit, Expire, Remove)
+    Scenario: B.2.6.0100.100 Project level User Rights functions (Add, Edit, Expire, Remove)
 
         #SETUP
 
         Given I login to REDCap with the user "Test_Admin"
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named "B.2.6.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "B.2.6.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.100.100"
+        And I click on the link labeled "B.2.6.0100.100"
         And I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
@@ -69,7 +69,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Then I should see "Logged in as test_user1"
 
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.100.100"
+        And I click on the link labeled "B.2.6.0100.100"
         Then I should see a link labeled "Project Home"
         And I should NOT see a link labeled "Project Setup"
         And I should NOT see a link labeled "Designer"
@@ -98,7 +98,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
 
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.100.100"
+        And I click on the link labeled "B.2.6.0100.100"
         And I click on the link labeled "User Rights"
         And I click on the link labeled "Test User1"
         And I click on the button labeled "Edit user privileges" on the tooltip
@@ -175,7 +175,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         ##ACTION: Expire User
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.100.100"
+        And I click on the link labeled "B.2.6.0100.100"
         And I click on the link labeled "User Rights"
         And I assign an expired expiration date to user "Test User1" with username of "test_user1"
         ##VERIFY_LOG: Verify Expire User
@@ -190,7 +190,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Given I login to REDCap with the user "Test_User1"
         Then I should see "Logged in as test_user1"
         And I click on the link labeled "My Projects"
-        And I click on a link labeled "B.2.6.100.100"
+        And I click on a link labeled "B.2.6.0100.100"
         Then I should see "ACCESS DENIED!"
         And I should see "Your access to this particular REDCap project has expired"
         When I click on the link labeled "Return to My Projects page"
@@ -200,7 +200,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
 
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.100.100"
+        And I click on the link labeled "B.2.6.0100.100"
         And I click on the link labeled "User Rights"
         And I remove the expiration date to user "Test User1" with username of "test_user1"
         #The Expiration column shows 'never' for "Test_User1"
@@ -216,7 +216,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Given I login to REDCap with the user "Test_User1"
         Then I should see "Logged in as test_user1"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.100.100"
+        And I click on the link labeled "B.2.6.0100.100"
         Then I should see a link labeled "Project Home"
         Given I logout
 
@@ -224,7 +224,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
 
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.100.100"
+        And I click on the link labeled "B.2.6.0100.100"
         And I click on the link labeled "User Rights"
         And I click on the link labeled "Test User1"
         And I click on the button labeled "Edit user privileges" on the tooltip
@@ -246,5 +246,5 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
 
         Given I login to REDCap with the user "Test_User1"
         Then I should see "My Projects"
-        And I should NOT see "B.2.6.100.100"
+        And I should NOT see "B.2.6.0100.100"
 #End

@@ -1,19 +1,19 @@
-Feature: User Interface: The system shall provide the ability to restrict a user who has been assigned to a DAG to: (data they entered | data entered by any member of the same DAG | files uploaded in the File Repository)
+Feature: B.2.10.0400. User Interface: The system shall provide the ability to restrict a user who has been assigned to a DAG to: (data they entered | data entered by any member of the same DAG | files uploaded in the File Repository)
+
 
     As a REDCap end user
     I want to see that Data Access Groups is functioning as expected
 
-    Scenario: B.2.10.400.100 User restriction for records in DAGs
+    Scenario: B.2.10.0400.100 User restriction for records in DAGs
 
-        #SETUP_NOTE: Will reference unique Group ID numbers located on DAG page. These numbers are specific to the PID
+        #SETUP_NOTE: Will reference unique Group ID numbers located on DAG page. These numbers are specific the PID
 
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
-        #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named "B.2.10.400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "B.2.10.0400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.10.400.100"
+        And I click on the link labeled "B.2.10.0400.100"
         And I click on the link labeled "User Rights"
         And I click on the button labeled "Upload or download users, roles, and assignments"
         Then I should see "Upload users (CSV)"
@@ -30,17 +30,17 @@ Feature: User Interface: The system shall provide the ability to restrict a user
             | test_user3 |
             | test_user4 |
 
-        Given I click on the button labeled "Upload"
+        Given I click on the button labeled "Upload" in the dialog box
         Then I should see a dialog containing the following text: "SUCCESS!"
 
-        When I close the popup
+        When I click on the button labeled "Close" in the dialog box
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | -                       | test_admin          |
-            | -                       | test_user1          |
-            | -                       | test_user2          |
-            | -                       | test_user3          |
-            | -                       | test_user4          |
+            | —                       | test_admin          |
+            | —                       | test_user1          |
+            | —                       | test_user2          |
+            | —                       | test_user3          |
+            | —                       | test_user4          |
             | 1_FullRights            | [No users assigned] |
             | 2_Edit_RemoveID         | [No users assigned] |
             | 3_ReadOnly_Deidentified | [No users assigned] |
@@ -146,13 +146,13 @@ Feature: User Interface: The system shall provide the ability to restrict a user
         ##VERIFY
         Given I login to REDCap with the user "Test_User3"
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.10.400.100"
+        And I click on the link labeled "B.2.10.0400.100"
         And I click on the link labeled "Record Status Dashboard"
 
         ##VERIFY_RSD:
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID     |
-            | 3  TestGroup1 |
+            | 3  TestGroup1 |
 
         ##VERIFY
         When I click on the link labeled "Add / Edit Records"
@@ -180,27 +180,23 @@ Feature: User Interface: The system shall provide the ability to restrict a user
 
         When I click on the button labeled "Close survey"
         Then I should see "You may now close this tab/window"
-        
-        Given I click on the button labeled "Leave without saving changes"
-        And I logout
 
+        #Verify still logged in as Test_User3
         Given I am still logged in to REDCap with the user "Test_User3"
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.10.400.100"
+        And I click on the link labeled "B.2.10.0400.100"
 
-#Manual:  DAG numbers will be different than what is listed below.  It will be based on your specific Group ID number located in the Data Access Groups Page
         ##VERIFY_LOG:
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
-            | Time / Date      | Username   | Action        | List of Data ChangesOR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_user3 | Create record | record_id = '1-1'                      |
+            | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
+            | mm/dd/yyyy hh:mm | test_user3 | Create record | record_id = '1-1'                       |
 
         ##VERIFY_RSD:
         When I click on the link labeled "Record Status Dashboard"
         Then I should see a table header and rows containing the following values in the record status dashboard table:
-            | Record ID |
-            | 3         |
-            | 1-1       |
+            | Record ID     |
+            | 3  TestGroup1 |
 
         ##VERIFY_FR:
         When I click on the link labeled "File Repository"
@@ -214,18 +210,19 @@ Feature: User Interface: The system shall provide the ability to restrict a user
         ##ACTION: Another user from same DAG has access to same DAG records
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.10.400.100"
+        And I click on the link labeled "B.2.10.0400.100"
 
         ##VERIFY_RSD:
         When I click on the link labeled "Record Status Dashboard"
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID       |
-            | 1-1  TestGroup1 |
-            | 3  TestGroup1   |
+            | 1-1  TestGroup1 |
+            | 3  TestGroup1   |
 
         ##VERIFY_FR:
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Survey Archive"
+
         Then I should see a table header and rows containing the following values in a table:
             | Record | Survey                               | Survey Completion Time |
             | 1-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm       |
@@ -234,7 +231,7 @@ Feature: User Interface: The system shall provide the ability to restrict a user
         ##ACTION: Separate User DAG
         Given I login to REDCap with the user "Test_User4"
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.10.400.100"
+        And I click on the link labeled "B.2.10.0400.100"
 
         ##VERIFY
         When I click on the link labeled "Add / Edit Records"
@@ -260,6 +257,7 @@ Feature: User Interface: The system shall provide the ability to restrict a user
         And I should see "Please complete the survey below."
 
         Given I click on the button labeled "Next Page"
+        And I should see "Consent"
         Then I should see "Displayed below is a read-only copy of your survey responses."
         And I check the checkbox labeled "I certify"
         When I click on the button labeled "Submit"
@@ -268,15 +266,16 @@ Feature: User Interface: The system shall provide the ability to restrict a user
         When I click on the button labeled "Close survey"
         Then I should see "You may now close this tab/window"
 
-        Given I click on the button labeled "Leave without saving changes"
-
+        Given I am still logged in to REDCap with the user "Test_User4"
+        When I click on the link labeled "My Projects"
+        And I click on the link labeled "B.2.10.0400.100"
 
         ##VERIFY_RSD:
-        When I click on the link labeled "Record Status Dashboard"
+        And I click on the link labeled "Record Status Dashboard"
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID       |
-            | 2-1  TestGroup2 |
-            | 4  TestGroup2   |
+            | 2-1  TestGroup2 |
+            | 4  TestGroup2   |
 
         ##VERIFY_FR:
         When I click on the link labeled "File Repository"
@@ -289,14 +288,14 @@ Feature: User Interface: The system shall provide the ability to restrict a user
         ##ACTION: Another user from same DAG has access to same DAG records
         Given I login to REDCap with the user "Test_User2"
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.10.400.100"
+        And I click on the link labeled "B.2.10.0400.100"
 
         ##VERIFY_RSD:
         When I click on the link labeled "Record Status Dashboard"
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID       |
-            | 2-1  TestGroup2 |
-            | 4  TestGroup2   |
+            | 2-1  TestGroup2 |
+            | 4  TestGroup2   |
 
         ##VERIFY_FR:
         When I click on the link labeled "File Repository"
