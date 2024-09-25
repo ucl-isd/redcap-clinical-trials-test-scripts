@@ -1,0 +1,11 @@
+{
+  "name": "redcap_rsvc",
+  "version": "14.5.5",
+  "description": "Version-specific feature tests written in Gherkin for the Regulatory and Software Validation Committee.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/4bbakers/redcap_rsvc.git"
+  },
+  "author": "Theresa Baker",
+  "license": "MIT"
+}
