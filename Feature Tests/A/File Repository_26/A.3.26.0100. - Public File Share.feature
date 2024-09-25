@@ -11,14 +11,6 @@ Feature: Control Center: The system shall provide the ability to enable/disable 
     And I click on the link labeled "My Projects"
     And I click on the link labeled "A.3.26.0100.100"
 
-   ##Below steps are not required
-   #  And I click on the link labeled "Designer"
-
-   #  And I click on the "Survey settings" button for the instrument row labeled "Consent"
-
-   #  And I click on the radio labeled "Auto-Archiver + e-Consent Framework"
-   #  Then I click on the button labeled "Save Changes"
-
     #SETUP_PRODUCTION
     When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
@@ -33,11 +25,11 @@ Feature: Control Center: The system shall provide the ability to enable/disable 
     When I click the button labeled "Select files to upload" to select and upload the following file to the File Repository:
       | import_files/testusers_bulkupload.csv |
 
+    When I click on the link labeled "File Repository"
     ##VERIFY file uploaded in folder
     Then I should see a table header and rows containing the following values in the file repository table:
       | Name                     | Time Uploaded    | Comments                |
       | Data Export Files        |                  |                         |
-      | PDF Survey Archive       |                  |                         |
       | Recycle Bin              |                  |                         |
       | testusers_bulkupload.csv | mm/dd/yyyy hh:mm | Uploaded by test_admin. |
 
