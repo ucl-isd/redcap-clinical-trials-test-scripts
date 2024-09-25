@@ -25,7 +25,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
 
         Given I login to REDCap with the user "Test_User1"
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "A.6.4.200.100"
+        And I click on the link labeled "A.6.4.0200.100"
         And I click on the link labeled "Project Setup"
         Then I should see a button labeled "Move project to production"
 
@@ -54,7 +54,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Given I click on the radio labeled "Keep ALL data saved so far." in the dialog box in the iframe
         When I click on the button labeled "YES, Move to Production Status" in the dialog box in the iframe
         And I close the iframe window
-        Then I should see the "Move to prod" request created for the project named "A.6.4.200.100" within the "Completed & Archived Requests" table
+        Then I should see the "Move to prod" request created for the project named "A.6.4.0200.100" within the "Completed & Archived Requests" table
 
         Given I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.100"
