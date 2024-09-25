@@ -13,8 +13,8 @@ Feature: C.3.24.0305. User Interface: The system shall support the e-Consent Fra
         When I click on the button labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
-        And I click on the button labeled "YES, Move to Production Status" in the dialog box
-        Then I should see "Project Status: Production"
+        And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
+        Then I should see Project status: "Production"
 
 
     Scenario: #SETUP_eConsent to allow for edit by users
