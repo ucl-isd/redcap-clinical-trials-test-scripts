@@ -15,7 +15,7 @@ Feature: User Interface: The system shall provide the option to allow blank valu
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box
     And I click on the button labeled "Ok" in the pop-up box
-    Then I should see "Project Status: Production"
+    Then I should see Project status: "Production"
 
     ##Verify Data present
     Given I see a table row containing the following values in the reports table:
