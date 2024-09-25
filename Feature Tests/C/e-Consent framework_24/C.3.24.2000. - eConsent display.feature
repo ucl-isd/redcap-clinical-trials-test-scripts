@@ -154,10 +154,10 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
       When I click on the link labeled "File Repository"
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows including the following values in the PDF Snapshot Archive table:
-         | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type |
-         | .pdf | YES                              | 3      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         |      | e-Consent Participant |
-         | .pdf |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                               |         |      | e-Consent |
-         | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         |      | e-Consent Participant |
+         | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             | Identifier (Name, DOB)        | Version | Type                  |
+         | .pdf | YES                              | 3      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | e-Consent Participant |
+         | .pdf |                                  | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |                               |         | e-Consent             |
+         | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) | FirstName LatName, 2000-01-01 |         | e-Consent Participant |
 
       ##VERIFY_Logging
       ##e-Consent Framework not used, and PDF Snapshot is used
@@ -169,4 +169,4 @@ Feature: User Interface: The system shall support the e-Consent Framework to hid
          | [survey respondent] | Save PDF Snapshot 2       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "2" event = "event_1_arm_1" instrument = "participant_consent"" |  |
          | [survey respondent] | Save PDF Snapshot 1       | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent"" |
          | [survey respondent] | e-Consent Certification 1 | e-Consent Certification record = "1"  event = "event_1_arm_1" instrument = "participant_consent"                                                           |
-      #END
+#END

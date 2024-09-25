@@ -37,8 +37,8 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I click the button labeled "Save settings"
         Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
         Then I should see a table header and rows including the following values in the e-Consent Framework table:
-            | e-Consent active? | Survey                                          | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
-            | Active            | "Participant Consent" (participant_consent)     | File Repository Specified field:[participant_file] | Participant         |       |
+            | e-Consent active? | Survey                                      | Location(s) to save the signed consent snapshot    | Custom tag/category | Notes |
+            | Active            | "Participant Consent" (participant_consent) | File Repository Specified field:[participant_file] | Participant         |       |
 
     Scenario: #SETUP_eConsent for coordinator signature (second signature) process
         #SETUP_eConsent for coordinator signature (second signature) process
@@ -57,7 +57,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Then I should see the e-consent framework for survey labeled "Coordinator Signature" is "Active"
 
     Scenario: Combine the PDFs to one combined PDF
-    #SETUP Trigger to combine the PDFs to one combined PDF
+        #SETUP Trigger to combine the PDFs to one combined PDF
         When I click on the button labeled "PDF Snapshots of Record"
         Then I should see a table header and rows including the following values in the PDF snapshot table:
             | Active | Edit settings         | Name | Type of trigger   | Save snapshot when...                   | Scope of the snapshot  | Location(s) to save the snapshot                     |
@@ -91,7 +91,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I click on the button labeled "Okay" in the dialog box
         And I select the dropdown option labeled "Open survey" from the dropdown button with the placeholder text of "Survey options"
         Then I should see "Participant Consent"
-       
+
         When I enter "FirstName" in the field labeled "First Name"
         And I enter "LastName" in the field labeled "Last Name"
         And I enter "email@test.edu" in the field labeled "Email"
@@ -131,7 +131,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         Then I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
         And I should see an Incomplete Survey Response icon for the Data Collection Instrument labeled "PDF And Combined Signatures PDF" for event "Event 1"
 
-        When And I click on the bubble labeled "PDF And Combined Signatures PDF" for event "Event 1" 
+        When And I click on the bubble labeled "PDF And Combined Signatures PDF" for event "Event 1"
         Then I should see "Participant Consent file."
         And I should see a file uploaded to the field labeled "Coordinator Signature file."
         And I should see a file uploaded to the field labeled "PDF And Combined Signatures PDF."
@@ -144,7 +144,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
             | Name | PDF utilized e-Consent Framework | Record | Survey Completed                               | Identifier (Name, DOB)        | Version | Type                  |
             | .pdf | YES                              | 1      | (Event 1 (Arm 1: Arm 1))                       |                               |         |                       |
             | .pdf | YES                              | 1      | Coordinator Signature (Event 1 (Arm 1: Arm 1)) |                               |         | e-Consent Coordinator |
-            | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1))   | FirstName LatName, 2000-01-01 |         |                       | e-Consent Participant |
+            | .pdf | YES                              | 1      | Participant Consent (Event 1 (Arm 1: Arm 1))   | FirstName LatName, 2000-01-01 |         | e-Consent Participant |
 
         When I click on the file link for record "1" Survey "(Event 1 (Arm 1: Arm 1))"
         Then I should have a pdf file with the following values in the header: "PID xxxx - LastName"
