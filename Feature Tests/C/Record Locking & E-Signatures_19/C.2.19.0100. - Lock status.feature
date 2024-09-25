@@ -21,7 +21,7 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
         Then I should see a table header and rows containing the following values in the table:
-            | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? |
+            | Display the Lock option for this instrument? | Data Collection Instrument | Also display E-signature option on instrument? |                           |
             | [✓]                                          | Text Validation            | [ ]                                            | Notes Box & "Save" button |
             | [✓]                                          | Data Type                  | [ ]                                            | Notes Box & "Save" button |
             | [✓]                                          | Survey                     | [ ]                                            | Notes Box & "Save" button |

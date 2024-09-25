@@ -178,8 +178,8 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Survey Archive"
         Then I should see a table header and rows including the following values in the PDF Survey Archive table:
-        Name | Record |
-        "pdf" format file | (record-name) TestGroup1
+            | Name              | Record                   |
+            | "pdf" format file | (record-name) TestGroup1 |
 
         And I logout
 
@@ -236,8 +236,8 @@ Feature: User Interface: The system shall support limiting file repository user 
         #See consent just created in testgroup2
         #Don't see consent created by testgroup1
         Then I should see a table header and rows including the following values in the PDF Survey Archive table:
-        Name | Record |
-        "pdf" format file | [record-name] TestGroup2
+            | Name              | Record                   |
+            | "pdf" format file | [record-name] TestGroup2 |
 
         And I logout
 
@@ -273,8 +273,8 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Survey Archive"
         Then I should see a table header and rows including the following values in the PDF Survey Archive table:
-        Name | Record |
-        "pdf" format file | [record-name] TestGroup1
+            | Name              | Record                   |
+            | "pdf" format file | [record-name] TestGroup1 |
         #Don't see consent created by testgroup2
 
         And I logout
@@ -312,9 +312,9 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the link labeled "File Repository"
         And I click on the link labeled "PDF Survey Archive"
         Then I should see a table header and rows including the following values in the PDF Survey Archive table:
-        Name | Record |
-        "pdf" format file | [record-name] testgroup1
-        "pdf" format file | [record-name] testgroup2
+            | Name              | Record                   |
+            | "pdf" format file | [record-name] testgroup1 |
+            | "pdf" format file | [record-name] testgroup2 |
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION C.3.26.500.100 Delete folders - unable to delete with file in folder
