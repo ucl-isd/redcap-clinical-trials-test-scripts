@@ -78,9 +78,9 @@ Feature: A.2.3.0200. Assign administrators and account managers
     Then I should see "Administrator privileges"
     And I should see "Browse Projects"
     And I should NOT see "Edit Project Settings"
-    And I should NOT "Add Users"
+    And I should NOT see "Add Users"
     And I should see "General Configurations"
-    And I should NOT "User Settings"
+    And I should NOT see "User Settings"
 
   Scenario: A.2.3.0200.100 Remove admin
     #TEST Remove admin #A.2.3.0200.100
