@@ -83,5 +83,4 @@ Feature: User Interface: The system shall support the saving PDF snapshots to sp
          | Username   | Action              | List of Data Changes OR Fields Exported                                                                                                                               |
          | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id |
          | test_admin | Save PDF Snapshot 1 | Save PDF Snapshot to File Repository record = "1" event = "event_1_arm_1" instrument = "participant_consent" snapshot_id =                                            |
-         #END
-      
+#END

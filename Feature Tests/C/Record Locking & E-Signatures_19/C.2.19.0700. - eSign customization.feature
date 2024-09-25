@@ -74,7 +74,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I should NOT see a signature field
 
 
-        FUNCTIONAL REQUIREMENT
+        #FUNCTIONAL REQUIREMENT
         ##ACTION Edit and Delete Lock Record Custom Text
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
         And I select the button labeled "I understand. Let me make changes" in the dialog box

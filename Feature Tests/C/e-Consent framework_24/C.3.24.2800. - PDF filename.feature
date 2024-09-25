@@ -4,7 +4,7 @@ Feature: User Interface: The system shall support the customization of the file 
    I want to see that eConsent is functioning as expected
 
    Scenario:  C.3.24.2800.100 PDF snapshots custom file name
-         #SETUP
+      #SETUP
       Given I login to REDCap with the user "Test_Admin"
       And I create a new project named "C.3.24.2800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
@@ -36,7 +36,7 @@ Feature: User Interface: The system shall support the customization of the file 
       And I click "Save"
       Then I should see "Saved!"
       Then I should see a table header and rows including the following values in the PDF snapshot table:
-         | Active | Edit settings | Name     | Type of trigger | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot                                   |
+         | Active | Edit settings | Name     | Type of trigger | Save snapshot when...                                  | Scope of the snapshot | Location(s) to save the snapshot                    |
          | Active | Edit Copy     | Snapshot | Logic-based     | Logic becomes true: [participant_consent_complete]='2' | All instruments       | File Repository Specified field: [participant_file] |
 
    Scenario: Add record
@@ -72,7 +72,7 @@ Feature: User Interface: The system shall support the customization of the file 
       When I click on the link labeled "File Repository"
       And I click on the link labeled "PDF Snapshot Archive"
       Then I should see a table header and rows including the following values in the PDF Snapshot Archive table:
-         | Name | PDF utilized e-Consent Framework | Record | Survey Completed         | Identifier (Name, DOB) | Version | Type |
+         | Name   | PDF utilized e-Consent Framework | Record | Survey Completed         | Identifier (Name, DOB) | Version | Type |
          | custom | -                                | 1      | (Event 1 (Arm 1: Arm 1)) |                        |         |      |
 
 

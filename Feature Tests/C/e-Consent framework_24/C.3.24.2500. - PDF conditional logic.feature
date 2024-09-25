@@ -3,8 +3,8 @@ Feature: User Interface: The system shall support conditional logic integration 
    As a REDCap end user
    I want to see that eConsent is functioning as expected
 
-   Scenario: C.3.24.2500.100 PDF snapshots conditional logic 
-   
+   Scenario: C.3.24.2500.100 PDF snapshots conditional logic
+
       #SETUP
       Given I login to REDCap with the user "Test_Admin"
       And I create a new project named "C.3.24.2500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
