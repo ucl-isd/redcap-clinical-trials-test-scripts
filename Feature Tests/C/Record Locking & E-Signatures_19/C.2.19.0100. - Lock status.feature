@@ -64,7 +64,7 @@ Feature: User Interface: The E-signature and Locking Management tool shall displ
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
         And I click on the button labeled "I understand. Let me make changes" in the dialog box
         And I click on the edit image for the Data Collection Instrument labeled "Text Validation"
-        I enter "New custom text" into the Notes Box field for the Data Collection Instrument labeled "Text Validation"
+        And I enter "New custom text" into the Notes Box field for the Data Collection Instrument labeled "Text Validation"
         And I click on the button labeled "Save" for the Data Collection Instrument labeled "Text Validation"
         And I click on the remove image for the Data Collection Instrument labeled "Data Types"
         And I click on the button labeled "OK" in the pop-up box
