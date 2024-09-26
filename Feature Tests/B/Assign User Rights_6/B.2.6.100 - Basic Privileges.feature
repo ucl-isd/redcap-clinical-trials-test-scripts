@@ -115,6 +115,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I check the User Right named "Data Import Tool"
         And I check the User Right named "Data Comparison Tool"
         And I check the User Right named "Logging"
+        And I check the User Right named "Email Logging"
         And I check the User Right named "File Repository"
         And I check the User Right named "Data Quality - Create & edit rules"
         And I check the User Right named "Data Quality - Execute rules"
