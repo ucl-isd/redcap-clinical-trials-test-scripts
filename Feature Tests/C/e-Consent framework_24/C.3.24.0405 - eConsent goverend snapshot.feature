@@ -7,7 +7,7 @@ Feature:  C.3.24.0405. User Interface: The system shall support the e-Consent Fr
 
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
-        And I create a new project named "C.3.24.405.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24ConsentWithSetup.xml", and clicking the "Create Project" button
+        And I create a new project named "C.3.24.405.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
         When I click on the button labeled "Project Setup"

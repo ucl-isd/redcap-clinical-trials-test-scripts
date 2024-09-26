@@ -25,6 +25,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
         And I should see a table header and rows containing the following values in a table:
             | username   |
+            | test_admin |
             | test_user1 |
             | test_user2 |
             | test_user3 |

@@ -6,7 +6,7 @@ Feature: User Interface: The system shall support the e-Consent Framework for re
     Scenario: C.3.24.0805.100 e-Consent framework & Repeatable instruments/events
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
-        And I create a new project named "C.3.24.0805.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24ConsentWithSetup.xml", and clicking the "Create Project" button
+        And I create a new project named "C.3.24.0805.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
         #Verify Longitudinal
         And I click on the button labeled "Enable" on the field labeled "Use longitudinal data collection with defined events?"
