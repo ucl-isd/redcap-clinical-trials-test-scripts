@@ -14,14 +14,14 @@ Feature: User Interface: The system shall provide the option to allow blank valu
     When I click on the button labeled "Move project to production"
     And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
-    And I click on the button labeled "Ok" in the pop-up box
     Then I should see Project status: "Production"
 
     ##Verify Data present
-    Given I see a table row containing the following values in the reports table:
+    When I click on the link labeled "Data Exports, Reports, and Stats"
+    Then I see a table row containing the following values in the reports table:
       | A | All data (all records and fields) |
-    When I click on the button labeled "View Report"
 
+    When I click on the button labeled "View Report"
     Then I should see a table header and rows containing the following values in the report data table:
       | Record ID | Event Name             | Repeat Instrument | Repeat Instance | Data Access Group | Survey Identifier | Name | Email          |
       | 1         | Event 1 (Arm 1: Arm 1) |                   |                 |                   |                   |      | email@test.edu |
@@ -29,7 +29,6 @@ Feature: User Interface: The system shall provide the option to allow blank valu
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Import new data, ignoring blank values
     When I click on the link labeled "Data Import Tool"
-    And I click on the tab labeled "CVS import"
     Then I should see the button labeled "Choose File"
 
     When I click on the button labeled "Choose File"
@@ -43,10 +42,11 @@ Feature: User Interface: The system shall provide the option to allow blank valu
     Then I should see "Import Successful!"
 
     ##Verify Data present
-    Given I see a table row containing the following values in the reports table:
+    When I click on the link labeled "Data Exports, Reports, and Stats"
+    Then I see a table row containing the following values in the reports table:
       | A | All data (all records and fields) |
-    When I click on the button labeled "View Report"
 
+    When I click on the button labeled "View Report"
     Then I should see a table header and rows containing the following values in the report data table:
       | Record ID | Event Name             | Repeat Instrument | Repeat Instance | Data Access Group | Survey Identifier | Name | Email          |
       | 1         | Event 1 (Arm 1: Arm 1) |                   |                 |                   |                   |      | email@test.edu |
@@ -54,7 +54,6 @@ Feature: User Interface: The system shall provide the option to allow blank valu
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Import new data, overwrite blank values
     When I click on the link labeled "Data Import Tool"
-    And I click on the tab labeled "CVS import"
     Then I should see the button labeled "Choose File"
 
     When I click on the button labeled "Choose File"
@@ -70,10 +69,11 @@ Feature: User Interface: The system shall provide the option to allow blank valu
     Then I should see "Import Successful!"
 
     ##Verify Data was overwritten with a blank
-    Given I see a table row containing the following values in the reports table:
+    When I click on the link labeled "Data Exports, Reports, and Stats"
+    Then I see a table row containing the following values in the reports table:
       | A | All data (all records and fields) |
-    When I click on the button labeled "View Report"
 
+    When I click on the button labeled "View Report"
     Then I should see a table header and rows containing the following values in the report data table:
       | Record ID | Event Name             | Repeat Instrument | Repeat Instance | Data Access Group | Survey Identifier | Name | Email |
       | 1         | Event 1 (Arm 1: Arm 1) |                   |                 |                   |                   |      |       |
