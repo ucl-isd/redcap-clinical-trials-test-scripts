@@ -1,6 +1,6 @@
 Feature: User Interface: The system shall require the repeating instrument and instance number in the csv file when importing data to a repeating event project.
 
-   
+
   As a REDCap end user
   I want to see that Data import is functioning as expected
 
@@ -22,14 +22,14 @@ Feature: User Interface: The system shall require the repeating instrument and i
     When I click on the button labeled "Move project to production"
     And I click on the radio labeled "Delete ALL data in the project" in the dialog box
     And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
-        #M: Will have to accept confirmation window "And I click on the button labeled "Ok" in the pop-up box"
+    #M: Will have to accept confirmation window "And I click on the button labeled "Ok" in the pop-up box"
     Then I see Project status: "Production"
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION: Error during import
     When I click on the link labeled "Data Import Tool"
-    And I upload a "csv" format file located at "import_files//B316800100_W_REPEATS.csv", by clicking the button near "Upload your CSV file:" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-        
+    And I upload a "csv" format file located at "import_files//B316800100_W_REPEATS.csv", by clicking the button near "Upload your CSV file:" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    And I click the button labeled "Upload File"
     ##VERIFY
     Then I should see "ERROR:"
     And I click on the link labeled "RETURN TO PREVIOUS PAGE"
@@ -45,15 +45,15 @@ Feature: User Interface: The system shall require the repeating instrument and i
     #FUNCTIONAL REQUIREMENT
     ##ACTION: import without repeat instrument
     When I click on the link labeled "Data Import Tool"
-    And I upload a "csv" format file located at "import_files//B316800100_WOUT_REPEATS.csv", by clicking the button near "Upload your CSV file:" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-
+    And I upload a "csv" format file located at "import_files//B316800100_WOUT_REPEATS.csv", by clicking the button near "Upload your CSV file:" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    And I click the button labeled "Upload File"
     ##VERIFY
     Then I should see "ERROR:"
 
-  #FUNCTIONAL REQUIREMENT
-  ##ACTION: import with repeat instrument
-    When I upload a "csv" format file located at "import_files//B316800100_W_REPEATS.csv", by clicking the button near "Upload your CSV file:" to browse for the file, and clicking the button labeled "Upload File" to upload the file
-
+    #FUNCTIONAL REQUIREMENT
+    ##ACTION: import with repeat instrument
+    When I upload a "csv" format file located at "import_files//B316800100_W_REPEATS.csv", by clicking the button near "Upload your CSV file:" to browse for the file, and clicking the button labeled "Upload" to upload the file
+    And I click the button labeled "Upload File"
     ##VERIFY
     Then I should see "Your document was uploaded successfully"
 

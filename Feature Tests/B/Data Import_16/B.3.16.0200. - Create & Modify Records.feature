@@ -21,7 +21,8 @@ Feature: User Interface: The system shall allow data to be uploaded with the csv
     # #FUNCTIONAL REQUIREMENT
     # ##ACTION - Cancel import
     # #B.3.16.0100 CROSSFUNCTIONAL
-    When I upload a "csv" format file located at "import_files/B316200100_ImportTemplate_ImportRecord.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+    When I upload a "csv" format file located at "import_files/B316200100_ImportTemplate_ImportRecord.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload to upload the file
+And I click the button labeled "Upload File"
     Then I should see "Your document was uploaded successfully and is ready for review"
     And I click on the link labeled "Cancel"
 
@@ -36,7 +37,8 @@ Feature: User Interface: The system shall allow data to be uploaded with the csv
     #FUNCTIONAL REQUIREMENT
     ##ACTION - Import (with records in rows)
     Given I click on the link labeled "Data Import Tool"
-    When I upload a "csv" format file located at "import_files/B316200100_ImportTemplate_ImportRecord.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+    When I upload a "csv" format file located at "import_files/B316200100_ImportTemplate_ImportRecord.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload" to upload the file
+And I click the button labeled "Upload File"
     Then I should see "Your document was uploaded successfully and is ready for review"
 
     When I click on the button labeled "Import Data"
@@ -55,8 +57,8 @@ Feature: User Interface: The system shall allow data to be uploaded with the csv
     #FUNCTIONAL REQUIREMENT
     ##ACTION - Import (with records in columns)
     When I click on the link labeled "Data Import Tool"
-    And I select "Columns" on the dropdown field labeled "Record format"
-    When I upload a "csv" format file located at "import_files/B316200100_ImportTemplate_ImportRecord_Column.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+    And I select "Columns" on the dropdown field labeled "Record in file are formatted as"
+    When I upload a "csv" format file located at "import_files/B316200100_ImportTemplate_ImportRecord_Column.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload" to upload the file
     Then I should see "Your document was uploaded successfully and is ready for review"
     And I click on the button labeled "Import Data"
     Then I should see "Import Successful!"

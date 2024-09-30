@@ -1,4 +1,5 @@
 Feature: B.3.16.1300. User Interface: The system shall provide the ability to assign data instruments to a data access group with the Data Import Tool.
+   
     As a REDCap end user
     I want to see that Data import is functioning as expected
 
@@ -17,12 +18,12 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         And I click on the button labeled "Add with custom rights"
         Then I should see a dialog containing the following text: "Adding new user"
 
-        Given I check the User Right named "Data Import Tool"
+        And I check the User Right named "Data Import Tool"
         And I select "Test_Group1" in the dropdown field labeled "Assign user to a Data Access Group" in the dialog box
         And I click on the button labeled "Add user" in the dialog box
         Then I should see a table header and rows containing the following values in a table:
             | Role | Username or users assigned to a role | Expiration | Data Access Group |
-            |      | test_admin                           |            | —                 |
+            |      | test_admin                           |            | -                 |
             |      | test_user1                           |            | Test_Group1       |
 
         #SETUP_PRODUCTION
@@ -33,7 +34,8 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         Then I should see Project status: "Production"
 
         Given I click on the link labeled "Data Import Tool"
-        And I upload a "csv" format file located at "import_files/B.3.16.1300_DataImport_Rows.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+        And I upload a "csv" format file located at "import_files/B.3.16.1300_DataImport_Rows.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload" to upload the file
+        And I click the button labeled "Upload File"
         Then I should see "Your document was uploaded successfully and is ready for review"
 
         When I click on the button labeled "Import Data"
@@ -44,7 +46,9 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.3.16.1300.100"
         And I click on the link labeled "Data Import Tool"
-        And I upload a "csv" format file located at "import_files/B.3.16.1300_DataImport_Dag.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+        And I upload a "csv" format file located at "import_files/B.3.16.1300_DataImport_Dag.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload" to upload the file
+        And I click the button labeled "Upload File"
+
         Then I should see "ERROR: Illegal use of 'redcap_data_access_group' field!"
         And I logout
 
@@ -52,7 +56,9 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.3.16.1300.100"
         And I click on the link labeled "Data Import Tool"
-        And I upload a "csv" format file located at "import_files/B.3.16.1300_DataImport_Dag.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload File" to upload the file
+        And I upload a "csv" format file located at "import_files/B.3.16.1300_DataImport_Dag.csv", by clicking the button near "Choose File" to browse for the file, and clicking the button labeled "Upload" to upload the file
+        And I click the button labeled "Upload File"
+
         Then I should see a table header and rows containing the following values in a table:
             | record_id | redcap_data_access_group | name   |
             | 100       | test_group1              | Rob    |
