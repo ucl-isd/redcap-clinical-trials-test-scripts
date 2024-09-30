@@ -26,8 +26,8 @@ Feature: A.2.3.0300. Assign administrators and account managers
         Then I should see "Control Center Home"
         # Checking if 'Access to Control Center dashboards' is enabled
         And I should see a link labeled "System Statistics"
-        # Checking if 'Perform REDCap upgrades' is enabled
-        Then I should see "Ready to upgrade to REDCap"
+        # Checking if 'Perform REDCap upgrades' is enabled.  This is a site-specific test.
+        # And I should see "Ready to upgrade to REDCap"
         # Checking if 'Manage user accounts' is enabled
         And I should see a link labeled "Browse Users"
         # Checking if 'Modify system configuration pages' is enabled
@@ -51,20 +51,23 @@ Feature: A.2.3.0300. Assign administrators and account managers
         And I logout
         And I login to REDCap with the user "Test_User1"
         When I click on the link labeled "Control Center"
+        
         Then I should see "Control Center Home"
-
         # Checking if 'Access to Control Center dashboards' is disabled
         And I should NOT see a link labeled "System Statistics"
-        # Checking if 'Perform REDCap upgrades' is disabled
-        Then I should NOT see "Ready to upgrade to REDCap"
+        # Checking if 'Perform REDCap upgrades' is disabled.  This is a site-specific test.
+        # And I should NOT see "Ready to upgrade to REDCap"
         # Checking if 'Manage user accounts' is disabled
         And I should NOT see a link labeled "Browse Users"
         # Checking if 'Modify system configuration pages' is disabled
+        
         When I click on the link labeled "General Configuration"
-        And I should NOT see a button labeled "Save Changes"
+        Then I should NOT see a button labeled "Save Changes"
         # Checking if 'Install, upgrade, and configure External Modules' is disabled
+        
         When I click on the link labeled exactly "Manage"
-        And I should NOT see a button labeled "Enable a module"
+        Then I should NOT see a button labeled "Enable a module"
+        
         Given I logout
 
         Given I login to REDCap with the user "Test_Admin"
@@ -75,7 +78,7 @@ Feature: A.2.3.0300. Assign administrators and account managers
         Given I disable the Administrator Privilege "Access to all projects and data with maximum user privileges" for the administrator "Test_User1"
         Then I should see a dialog containing the following text: "NOTICE"
         And I should see a dialog containing the following text: "Please be aware that you have unchecked ALL the administrator privileges for this user"
-        And I click on the button labeled "Close" in the dialog box
+        When I click on the button labeled "Close" in the dialog box
         And I logout
         And I login to REDCap with the user "Test_User1"
         And I should NOT see a link labeled "Control Center"
