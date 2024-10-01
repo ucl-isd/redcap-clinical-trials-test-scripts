@@ -177,3 +177,4 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
             | test_user | Manage/Design | Edit project field                      |
             | test_user | Manage/Design | Move project field                      |
             | test_user | Manage/Design | Create project field                    |
+#END

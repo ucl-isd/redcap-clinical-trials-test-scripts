@@ -95,3 +95,4 @@ Feature: Design forms Using Data Dictionary and Online Designer
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_admin | Manage/Design | Upload data dictionary                  |
+#END

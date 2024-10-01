@@ -75,3 +75,4 @@ Feature: Design forms Using Data Dictionary and Online Designer
             | test_admin | Manage/Design | Request approval for production project modifications |
             | test_admin | Manage/Design | Delete data collection instrument                     |
             | test_admin | Manage/Design | Enter draft mode                                      |
+#END

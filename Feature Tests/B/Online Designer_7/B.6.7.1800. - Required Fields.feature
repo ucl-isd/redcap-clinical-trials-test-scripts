@@ -76,3 +76,4 @@ Feature: Field Creation: The system shall support marking a data entry field as 
         When I click on the link labeled "Codebook"
         Then I should see a table row containing the following values in the codebook table:
             | [required] | Required | text, Required |
+#END

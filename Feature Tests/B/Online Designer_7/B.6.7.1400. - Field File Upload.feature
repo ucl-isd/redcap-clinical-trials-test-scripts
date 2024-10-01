@@ -81,3 +81,4 @@ Feature: Field Creation: The system shall support the creation of File upload (f
         Then I should see a table header and rows containing the following values in the codebook table:
             | # | Variable / Field Name | Field Label | Field Attributes |
             | 2 | [file_upload]         | File Upload | file             |
+#END

@@ -103,3 +103,4 @@ Feature: Field Creation: The system shall support marking a data entry field as 
     Then I should see a table header and rows containing the following values in the codebook table:
       | Variable / Field Name | Field Label | Field Attributes |
       | [identifier]          | Identifier  | text, Identifier |
+#END
