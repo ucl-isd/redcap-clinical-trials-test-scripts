@@ -35,8 +35,11 @@ Feature: User Interface: The system shall support data quality rule creation.
         ##ACTION: Upload rule
         And I click on the button labeled "Upload or download Data Quality Rules"
         And I click on the link labeled "Upload Data Quality Rule (CSV)"
-        And I upload a "csv" format file located at "import_files/C418100TEST_DataQualityRules_Upload.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
-        Then I should see "Upload Data Quality Rule (CSV) - Confirm" in the dialog box
+        And I upload a "csv" format file located at "import_files/C418100TEST_DataQualityRules_Upload.csv", by clicking the button labeled "Choose File"
+        And I click the button labeled "Upload" to upload the file
+        Then I should see "Upload Data Quality Rule (CSV) - And I click the button labeled "Upload"
+        Then I should see Upload Data Quality Rule (CSV) - Confirm
+        And I click the button labeled Upload"
 
         When I click on the button labeled "Upload" in the dialog box
         Then I should see "SUCCESS!"
@@ -76,7 +79,7 @@ Feature: User Interface: The system shall support data quality rule creation.
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
             | 3      | Integer   | [event_1_arm_1][integer]='1999'          | 0                   |
-            | 4      | Integer   | [integer]<>'1999'                        | 18                  |
+            | 4      | Integer   | [integer]<>'1999'                        | 40                  |
 
         ##ACTION: edit existing rule for longitudinal projects
         When I click the element containing the following text: "[event_1_arm_1][integer]='1999'"
@@ -104,8 +107,8 @@ Feature: User Interface: The system shall support data quality rule creation.
         And I should see "Processing Complete!"
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
-            | 3      | Integer   | [event_1_arm_1][integer]='1'             | 6                   |
-            | 4      | Integer   | [integer]='1'                            | 6                   |
+            | 3      | Integer   | [event_1_arm_1][integer]='1'             | 16                  |
+            | 4      | Integer   | [integer]='1'                            | 41                  |
 
         ##ACTION: delete rule
         When I click on the Delete icon for Data Quality Rule # "4"
@@ -121,7 +124,8 @@ Feature: User Interface: The system shall support data quality rule creation.
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_admin | Manage/Design | Delete data quality rule                |
-            | test_admin | Manage/Design | Edit data quality rule                  |
+            | test_admin | Manage/Design | Execute data quality rule               |
             | test_admin | Manage/Design | Execute data quality rule(s)            |
-            | test_admin | Manage/Design | Upload Data Quality Rules               |
+            | test_admin | Manage/Design | Execute Data Quality Rules              |
             | test_admin | Manage/Design | Create data quality rule                |
+#END
