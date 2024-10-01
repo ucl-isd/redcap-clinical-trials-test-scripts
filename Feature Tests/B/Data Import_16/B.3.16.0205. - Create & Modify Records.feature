@@ -1,4 +1,7 @@
 Feature: User Interface: The system shall allow data to be uploaded in real-time using the CSV template to create and modify records.
+   
+    As a REDCap end user
+    I want to see that Data import is functioning as expected
 
     Scenario: B.3.16.0205.100 Upload csv with new/modified records
         #SETUP
