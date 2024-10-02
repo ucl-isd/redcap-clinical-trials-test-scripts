@@ -89,3 +89,4 @@ Feature: User Interface: General: The system shall support the ability to erase 
     ##VERIFY_RSD
     When I click on the link labeled "Record Status Dashboard"
     Then I should see "No records exist yet"
+#END

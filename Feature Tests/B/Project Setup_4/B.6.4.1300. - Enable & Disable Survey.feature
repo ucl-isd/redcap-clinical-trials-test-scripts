@@ -68,3 +68,4 @@ Feature: User Interface: Survey Project Settings: The system shall support enabl
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_user1 | Manage/Design | Delete survey                           |
+#END

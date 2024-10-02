@@ -199,3 +199,4 @@ Feature: User Interface: General: The system shall support the ability to copy t
     ##VERIFY
     Then I should see "NOTICE: Project was marked as Completed"
     And I click on the button labeled "Return to My Projects page"
+#END

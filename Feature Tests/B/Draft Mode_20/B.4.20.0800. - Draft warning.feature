@@ -61,7 +61,6 @@ Feature: User Interface: The system shall flag any changes that may negatively i
             | Variable Name       | Choices or Calculations                                           |
             | radio_button_manual | *Possible label mismatch because of label changes. Check if okay. |
             | radio_button_manual | *Data MIGHT be lost due to deleted choice(s)                      |
-        #
 
         When I click on the button labeled "Compare"
         And I should see a table header and rows containing the following values in a table:

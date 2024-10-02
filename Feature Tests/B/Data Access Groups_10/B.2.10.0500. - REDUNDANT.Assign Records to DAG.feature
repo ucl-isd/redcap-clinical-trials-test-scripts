@@ -36,3 +36,4 @@ Feature: User Interface: The system shall provide the ability to assign records 
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported   |
             | mm/dd/yyyy hh:mm | test_admin | Update record | Assign record to Data Access Group        |
             | mm/dd/yyyy hh:mm | test_admin | Update record | (redcap_data_access_group = 'testgroup1') |
+#END

@@ -69,3 +69,4 @@ Feature: Design forms Using Data Dictionary and Online Designer
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
             | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Copy data collection instrument         |
+#END

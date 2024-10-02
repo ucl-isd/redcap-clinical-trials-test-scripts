@@ -196,5 +196,4 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click on the button labeled "Delete this instance of this event" in the dialog box
             Then I should see "successfully deleted entire event of data"
             And I should NOT see "(#2)"
-
 #End

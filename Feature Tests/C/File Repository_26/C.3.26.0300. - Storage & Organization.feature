@@ -31,7 +31,7 @@ Feature: User Interface: The system shall support the storage, organization, and
         And I should see "Data export file created by test_admin on YYYY-MM-DD"
 
     Scenario: C.3.26.300.200 Automatic uploading of e-Consent Framework PDFs
-    REDUNDANT
+    #REDUNDANT
     Scenario: C.3.26.300.300 Recycle bin function - permanently force delete
 
         #SETUP

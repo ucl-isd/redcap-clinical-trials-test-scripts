@@ -75,7 +75,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
          | Active | Edit Copy     | 1 multi data form same event            | Logic-based     | Logic becomes true: [trigger1]='1' and [trigger2]='1' | All instruments       | File Repository                  |
          | Active | Edit Copy     | 2 multi data form and survey same event | Logic-based     | Logic becomes true: [trigger1]='2' and [trigger2]='1' | All instruments       | File Repository                  |
 
-
    Scenario: New multi survey same event PDF Trigger
       ##ACTION: New PDF Trigger
       When I click the button "+Add new trigger"
@@ -156,7 +155,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
          | Active | Edit Copy     | 5 multi data form and survey different event | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='1' and... | All instruments       | File Repository                  |
          | Active | Edit Copy     | 6 multi survey different event               | Logic-based     | Logic becomes true: [event_1_arm_1][trigger1]='2' and... | All instruments       | File Repository                  |
 
-
    Scenario: Add record - 1 multi data form same event
       #Add record
       When I click on the link labeled "Add/Edit Records"
@@ -186,8 +184,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
       Then I should see "Record Home Page"
       And  I should see a Complete icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
       And  I should see a Complete icon for the Data Collection Instrument labeled "Coordinator Signature" for event "Event 1"
-
-
 
    Scenario: Add record - 2 multi data form and survey same event
       #Add record
@@ -300,13 +296,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
       And  I should see a Complete icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
       And  I should see a Complete icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 2"
 
-
-
-
-
-
-
-
    Scenario: Add record -  5 multi data form and survey different event
       #Add record
       When I click on the link labeled "Add/Edit Records"
@@ -348,9 +337,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
       Then I should see "Record Home Page"
       And  I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
       And  I should see a Complete icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 2"
-
-
-
 
    Scenario: Add record -  6 multi survey different event
       #Add record
@@ -396,8 +382,6 @@ Feature: User Interface: The system shall support the capture and storage of mul
       Then I should see "Record Home Page"
       And  I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 1"
       And  I should see a Completed Survey Response icon for the Data Collection Instrument labeled "Participant Consent" for event "Event 2"
-
-
 
    Scenario: Verification pdf saved and logged correctly
       ##VERIFY_FiRe

@@ -38,6 +38,5 @@ Feature: User Interface: The system shall ignore survey identifier and timestamp
             | 4         |                          |                      | My Name   |
             | 5         |                          |                      | Your Name |
             | 6         |                          |                      | That name |
-
 #Manual: new records were imported and survey timestamp fields and identifier fields are ignored
 #End
