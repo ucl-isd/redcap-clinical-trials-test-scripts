@@ -1,4 +1,5 @@
 Feature: User Interface: The system shall allow submitted survey responses to be changed by a user who has edit survey responses rights.
+  
   As a REDCap end user
   I want to see that Survey Feature is functioning as expected
 
