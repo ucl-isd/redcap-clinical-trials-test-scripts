@@ -1,7 +1,7 @@
 Feature: Control Center: The system shall support the option to configure the storage location for uploaded documents
 
     As a REDCap end user
-    I want to see that Manage project user access is functioning as expected
+    I want to see that external storage is functioning as expected
 
     Scenario: D.3.28.0100.100 configure the storage location for uploaded documents
 
