@@ -3,7 +3,7 @@ Feature: User Interface: The system shall report background process data import 
     As a REDCap end user
     I want to see that Data import is functioning as expected
 
-    Scenario: in B.3.16.1600.100 Report Errors with Background Data Import
+    Scenario: B.3.16.1600.100 Report Errors with Background Data Import
         #REDUNDANT Tested in B.3.16.1400
         #SETUP
         Given I login to REDCap with the user "Test_Admin"

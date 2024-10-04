@@ -3,7 +3,7 @@ Feature: User Interface:The system shall provide the ability to display real-tim
     As a REDCap end user
     I want to see that Data import is functioning as expected
 
-    Scenario: B.3.16.1800.100  Download Errors with Background Data Import
+    Scenario: B.3.16.1800.100 Data Import real-time process data comparison table
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "B.3.16.1800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "BigDataTestProject.xml", and clicking the "Create Project" button
