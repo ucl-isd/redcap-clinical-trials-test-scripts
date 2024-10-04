@@ -40,11 +40,10 @@ Feature: User Interface: The system shall report background process data import 
         When I click the Link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username            | Action             | List of Data Changes OR Fields Exported |
-            | SYSTEM (Test_Admin) | Create Record 3000 | record_id=’3000’                        |
+            | SYSTEM (Test_Admin) | Create Record 3000 | record_id='3000'                        |
 
         When I click the button labeled "View Details"
         And I click the button labeled "Download list of all errors"
-
         Then I should see a table header and rows including the following values in the logging table:
             | Record | Variable Name | Value        | Error Message                                                                                                   |
             | 2      | field 1       | Not a number | The value you provided could not be validated because it does not follow the expected format. Please try again. |
