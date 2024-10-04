@@ -19,43 +19,47 @@ Feature: User Interface: The system shall support the ability to assign the User
 
         #SETUP: Assign record 1 to DAG1
         When I click on the link labeled "Record Status Dashboard"
-        And I click on record "1"
-        And I select the dropdown option labeled "Assign to Data Access Group" from the dropdown button with the placeholder text of "Choose action for record"
-        And I select the dropdown option labeled "TestGroup1" from the dropdown button with the placeholder text of "[No Assignment]" in the dialog box
+        And I click on the link labeled exactly "1"
+        And I click on the span element labeled "Choose action for record"
+        And I click on the link labeled "Assign to Data Access Group"
+        When I select "TestGroup1" on the dropdown field labeled "Assign record" on the dialog box
         And I click on the button labeled "Assign to Data Access Group" in the dialog box
-        Then I should see "Record ID 1 was successfully assigned to a Data Access Group1"
+        Then I should see "Record ID 1 was successfully assigned to a Data Access Group"
 
         #SETUP: Assign record 2 to DAG2
         When I click on the link labeled "Record Status Dashboard"
-        And I click on record "2"
-        And I select the dropdown option labeled "Assign to Data Access Group" from the dropdown button with the placeholder text of "Choose action for record"
-        And I select the dropdown option labeled "TestGroup2" from the dropdown button with the placeholder text of "[No Assignment]" in the dialog box
+        And I click on the link labeled exactly "2"
+        And I click on the span element labeled "Choose action for record"
+        And I click on the link labeled "Assign to Data Access Group"
+        When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
         And I click on the button labeled "Assign to Data Access Group" in the dialog box
-        Then I should see "Record ID 2 was successfully assigned to a Data Access Group2"
+        Then I should see "Record ID 2 was successfully assigned to a Data Access Group"
 
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I select "TestGroup1" on the dropdown field with the placeholder text "[No Assignment]" on the DAG dropdown
+        And I select "TestGroup1" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "Test User 1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
-        And I should see "Test User 1" assigned to the DAG labeled "TestGroup1"
+        Then I should see "test_user1 (Test User1)" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+        And I should see "TestGroup1" within the "1_FullRights" row of the column labeled "Data Access Group" of the User Rights table
 
         When I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "2_Edit_RemoveID" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I select "TestGroup2" on the dropdown field with the placeholder text "[No Assignment]" on the DAG dropdown
+        And I select "TestGroup2" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "Test User 2" within the "2_Edit_RemoveID" row of the column labeled "Username" of the User Rights table
-        And I should see "Test User 2" assigned to the DAG labeled "TestGroup2"
+        Then I should see "test_user2 (Test User2)" within the "2_Edit_RemoveID" row of the column labeled "Username" of the User Rights table
+        And I should see "TestGroup2" within the "2_Edit_RemoveID" row of the column labeled "Data Access Group" of the User Rights table
 
         When I enter "Test_User3" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
-        And I uncheck the checkbox on the field labeled "Add/Edit/Organize Reports"
+        And I uncheck the checkbox labeled "Add/Edit/Organize Reports"
         And I click on the button labeled "Add user"
-        Then I should see User "test_user3" was successfully added
+        Then I should see a table header and rows containing the following values in a table:
+            | Role name               | Username            |
+            | —                       | test_user3          |
         #SETUP: Create report
         When I click on the link labeled "Data Exports, Reports, and Stats"
         And I click on the button labeled "Create New Report"
