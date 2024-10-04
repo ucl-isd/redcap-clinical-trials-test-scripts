@@ -14,20 +14,20 @@ Feature: User Interface:The system shall provide the ability to display real-tim
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
         And I click on the button labeled "YES, Move to Production Status" in the dialog box
         Then I should see "Project status: Production"
-        
+
         Given I click on the link labeled "Data Import Tool"
         When I click on the dropdown labeled "Import in real time"
         And I select "Yes, display uploaded data prior to importing"
         And I select the file labeled "BigDataTestProjectDATA.csv"
-        And I click on the button labeled "Upload"
+        And I click on the button labeled "Upload File"
         Then I should see " File is Large. Consider using the background process"
-        
+
         When I click the button labeled "No, import in real time"
         And I click on the button labeled "Upload File"
         Then I should see "Instructions for Data Review"
-        And I Click the Button labeled "Import Data"
 
-        Then I should see "Import successful! 3,000 records were created or modified during the import"
+        When I Click the Button labeled "Import Data"
+        Then I should see "Import successful! 75 records were created or modified during the import"
 
         Given I Click on the "Record Status Dashboard"
         Then I should see a table header and rows containing the following values in the table:
@@ -37,10 +37,9 @@ Feature: User Interface:The system shall provide the ability to display real-tim
             | 3         |        |
             | 4         |        |
         And I should see all records are in an unverified status
-        
         #VERIFY
         When I click the Link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
-            | Username    | Action                     | List of Data Changes OR Fields Exported |
-            | test_admin) | Create Record (import)3000 | record_id=’3000’                        |
+            | Username    | Action                   | List of Data Changes OR Fields Exported |
+            | test_admin) | Create Record (import)75 | record_id='75                           |
 #END

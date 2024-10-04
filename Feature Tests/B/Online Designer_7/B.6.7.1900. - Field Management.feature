@@ -98,10 +98,10 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         ##VERIFY
         Then I should see the field labeled "Radio Button Manual"
         And I should see the radio field labeled "Radio Button Manual" with the options below
-            | Choice99  |
-            | Choice100 |
-            | Choice101 |
-            | Abc123    |
+            | Choice99      |
+            | Choice100     |
+            | Choice101     |
+            | Choice Abc123 |
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: copy field
@@ -149,14 +149,12 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
 
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "My Projects"
         And I click on the link labeled "B.6.7.1900.100"
         And I click on the link labeled "Project Setup"
         And I click on the button labeled "Online Designer"
         Then I should see "Project Modification Module"
 
         When I click on the button labeled "Project Modification Module"
-        And I click on the button labeled "COMMIT CHANGES"
         And I click on the button labeled "COMMIT CHANGES" in the dialog box
         Then I should see "Project Changes Committed / User Notified"
 
