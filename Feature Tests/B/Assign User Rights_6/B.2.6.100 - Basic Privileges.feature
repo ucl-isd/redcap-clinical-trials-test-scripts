@@ -105,7 +105,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Then I should see a dialog containing the following text: "Editing existing user"
 
         When I check the User Right named "Project Setup & Design"
-        And I check the User Right named "User Rights"
+        And I select the radio option "No Access" for the field labeled "User Rights" 
         And I check the User Right named "Data Access Groups"
         And I check the User Right named "Survey Distribution Tools"
         And I check the User Right named "Alerts & Notifications"
