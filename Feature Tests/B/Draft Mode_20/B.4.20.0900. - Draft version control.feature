@@ -34,7 +34,6 @@ Feature: User Interface: The system shall record all versions of the data dictio
         Given I click on the instrument labeled "Data Types"
         And I click on the button labeled "Add Field"
 
-
         And I select "Notes Box (Paragraph Text)" on the dropdown field labeled "Field Type:"
         And I enter "DD History" into the Field Label of the open "Add New Field" dialog box
         And I enter "dd_history" into the Variable Name of the open "Add New Field" dialog box
@@ -57,4 +56,5 @@ Feature: User Interface: The system shall record all versions of the data dictio
             | Created project                  | mm/dd/yyyy hh:mm |                          | Test_User1 (Test User1) |
             | Moved to production              | mm/dd/yyyy hh:mm | Download data dictionary | Test_User1 (Test User1) |
             | Production revision #1 (current) | mm/dd/yyyy hh:mm | Download data dictionary | Test_User1 (Test User1) |
+#Project Revision History table also includes following language "Approved automatically"
 #END
