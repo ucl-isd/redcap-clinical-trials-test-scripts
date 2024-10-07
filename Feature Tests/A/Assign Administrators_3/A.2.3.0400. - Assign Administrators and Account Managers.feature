@@ -19,7 +19,7 @@ Feature: A.2.3.0400. Assign administrators and account managers
         And I click on the link labeled "Control Center"
         Then I should see "Control Center Home"
         And I should see a link labeled "System Statistics"
-        And I should see a link labeled "Edit a Project's Settings"
+        And I should see a link labeled "Edit Project Settings"
 
         Given I logout
         And I login to REDCap with the user "Test_Admin"
@@ -34,6 +34,6 @@ Feature: A.2.3.0400. Assign administrators and account managers
         Then I should see "Control Center Home"
 
         And I should see a link labeled "System Statistics"
-        And I should NOT see a link labeled "Edit a Project's Settings"
+        And I should NOT see a link labeled "Edit Project Settings"
         And I logout
 #End
