@@ -4,7 +4,7 @@ Feature: A.2.3.0200. Assign administrators and account managers
   I want to see that Assign Super Users / Account Managers is functioning as expected
 
   Scenario: A.2.3.0200.100 Give/remove user admin user rights
-    ##REDUNDANT A.2.3.100.100 View administrator accounts
+    ##REDUNDANT_TEST This test is also testing for A.2.3.0100.100 View administrator accounts
     Given I login to REDCap with the user "Test_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Administrator Privileges"
@@ -83,14 +83,8 @@ Feature: A.2.3.0200. Assign administrators and account managers
     And I should NOT see "User Settings"
 
   Scenario: A.2.3.0200.100 Remove admin
-    #TEST Remove admin #A.2.3.0200.100
-    Given I logout
-    When I login to REDCap with the user "Test_Admin"
-    And I click on the link labeled "Control Center"
-    And I click on the link labeled "Administrator Privileges"
-    Then I should see "Set administrator privileges"
-
-    Given I disable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1"
+    Given I click on the link labeled "Administrator Privileges"
+    And I disable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1"
     Then I should see a dialog containing the following text: "Please be aware that you have unchecked ALL the administrator privileges for this user"
 
     Given I click on the button labeled "Close" in the dialog box
