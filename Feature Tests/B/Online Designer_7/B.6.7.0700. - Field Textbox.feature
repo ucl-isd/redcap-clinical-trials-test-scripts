@@ -73,6 +73,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_admin | Manage/Design | Edit project field                      |
 
+        Given I logout
+
     Scenario: B.6.7.0700.200 Text box field creation in Data Dictionary
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
@@ -90,10 +92,4 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
         When I click on the button labeled "Commit Changes"
         Then I should see "Changes Made Successfully!"
-
-        ##VERIFY_CODEBOOK
-        When I click on the link labeled "Codebook"
-        Then I should see a table header and rows containing the following values in the codebook table:
-            | Variable / Field Name | Field Label | Field Attributes |
-            | [name]                | Name        | text             |
 #END

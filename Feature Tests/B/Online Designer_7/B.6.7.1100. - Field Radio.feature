@@ -4,7 +4,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
     As a REDCap end user
     I want to see that Project Designer is functioning as expected
 
-    Scenario: B.6.7.1000.100 Creation of multiple choice dropdown list (single answer) through the Online Designer
+    Scenario: B.6.7.1100.100 Creation of multiple choice dropdown list (single answer) through the Online Designer
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
         When I click on the link labeled "New Project"
@@ -70,6 +70,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_admin | Manage/Design | Create project field                    |
+        Given I logout
 
     Scenario: B.6.7.1100.200 Creation of multiple choice radio buttons (single answer) through Data Dictionary upload (#CROSSFUNCTIONAL - B.6.7.100.100)
 
