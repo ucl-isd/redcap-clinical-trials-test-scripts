@@ -198,8 +198,6 @@ Feature: User Interface: The system shall support ranges for the following data 
         And I select the submit option labeled "Save & Exit Form" on the Data Collection Instrument
         Then I should see "Record ID 7 successfully added."
 
-        And I want to export a snapshot of this feature here
-
         ##VERIFY_LOG
         When I click on the link labeled exactly "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
@@ -215,7 +213,6 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Repeat Instrument | Datetime         |
             | 7         | Data Types        | 2022-08-02 12:12 |
-
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside lower bound (Datetime YMD HMSS)
@@ -245,7 +242,6 @@ Feature: User Interface: The system shall support ranges for the following data 
             | Record ID | Repeat Instrument | Datetime YMD HMSS   |
             | 8         | Data Types        | 2022-08-02 12:12:12 |
 
-
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside lower bound (Time HH:MM)
         When I click on the link labeled "Add / Edit Records"
@@ -273,7 +269,6 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Repeat Instrument | Time HH:MM |
             | 9         | Data Types        | 07:07      |
-
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside lower bound (Time HH:MM:SS)
@@ -387,7 +382,6 @@ Feature: User Interface: The system shall support ranges for the following data 
             | Record ID | Repeat Instrument | Number |
             | 13        | Data Types        | 0      |
 
-
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside lower bound (Number Decimal)
         When I click on the link labeled "Add / Edit Records"
@@ -444,7 +438,6 @@ Feature: User Interface: The system shall support ranges for the following data 
             | Record ID | Repeat Instrument | Number Comma |
             | 15        | Data Types        | 0,0          |
 
-
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside upper bound (date YMD)
         When I click on the link labeled "Add / Edit Records"
@@ -471,7 +464,6 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Repeat Instrument | date YMD   |
             | 16        | Data Types        | 2024-08-02 |
-
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside upper bound (Datetime)
@@ -500,7 +492,6 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Repeat Instrument | Datetime         |
             | 17        | Data Types        | 2024-08-02 12:12 |
-
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside upper bound (Datetime YMD HMSS)
@@ -558,7 +549,6 @@ Feature: User Interface: The system shall support ranges for the following data 
             | Record ID | Repeat Instrument | Time HH:MM |
             | 19        | Data Types        | 23:07      |
 
-
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside upper bound (Time HH:MM:SS)
         When I click on the link labeled "Add / Edit Records"
@@ -586,7 +576,6 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Repeat Instrument | Time HH:MM:SS |
             | 20        | Data Types        | 23:07:07      |
-
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside upper bound (Time MM:SS)
@@ -616,7 +605,6 @@ Feature: User Interface: The system shall support ranges for the following data 
             | Record ID | Repeat Instrument | Time MM:SS |
             | 21        | Data Types        | 59:01      |
 
-
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside upper bound (Integer)
         When I click on the link labeled "Add / Edit Records"
@@ -644,7 +632,6 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Repeat Instrument | Integer |
             | 22        | Data Types        | 200     |
-
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside upper bound (Number)
@@ -701,7 +688,6 @@ Feature: User Interface: The system shall support ranges for the following data 
         Then I should see a table header and rows containing the following values in the report data table:
             | Record ID | Repeat Instrument | Number Decimal |
             | 24        | Data Types        | 6.0            |
-
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION - Verify field validation outside upper bound (Number Comma)
