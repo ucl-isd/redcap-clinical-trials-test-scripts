@@ -56,7 +56,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         ##ACTION: Set user access to View & Edit + Edit survey responses
         When I set Data Viewing Rights to View & Edit for the instrument "Text Validation"
-        And I set Data Viewing Rights to View & Edit with Edit survey responses checked for the instrument "Consent"
+        And I set Data Viewing Rights to View & Edit for the instrument "Consent"
         And I save changes within the context of User Rights
 
         #This will give Test_User4 elevated privileges for this test
@@ -66,7 +66,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         ##ACTION: Set user access to View & Edit + Edit survey responses
         When I set Data Viewing Rights to View & Edit for the instrument "Text Validation"
-        And I set Data Viewing Rights to View & Edit with Edit survey responses checked for the instrument "Consent"
+        And I set Data Viewing Rights to View & Edit for the instrument "Consent"
         And I save changes within the context of User Rights
 
         #ASSIGN RECORDS TO SPECIFIC DAGs
