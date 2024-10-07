@@ -20,7 +20,7 @@ Feature: User Interface: The tool shall display locked status of forms for all r
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
-        Then I should see "Adding new user "test_user1""
+        Then I should see "Adding new user "test_user1"
 
         When I click on the checkbox for the field labeled "Record Locking Customization"
         And I click on the radio labeled "Locking / Unlocking" for the field labeled "Lock / Unlock Records (instrument level)"
