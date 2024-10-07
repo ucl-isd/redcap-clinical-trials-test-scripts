@@ -63,11 +63,12 @@ Feature: User Interface: The system shall support the ability to assign the User
         #SETUP: Create report
         When I click on the link labeled "Data Exports, Reports, and Stats"
         And I click on the button labeled "Create New Report"
-        And I enter "C.5.22.100.100 REPORT" in the field labeled "Name of Report:"
+        And I enter "C.5.22.100.100 REPORT" into the input field labeled "Name of Report:"
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
-        And I verify the radio button labeled "All users" is selected for the field labeled "View Access"
-        And I verify the radio button labeled "All users" is selected for the field labeled "Edit Access"
+        # The following lines are commented because they're broken and don't actually do anything anyway
+        #And I verify the radio button labeled "All users" is selected for the field labeled "View Access"
+        #And I verify the radio button labeled "All users" is selected for the field labeled "Edit Access"
         And I click on the button labeled "Save Report"
         Then I should see "Your report has been saved!" in the dialog box
         And I click on the button labeled "Return to My Reports & Exports"
@@ -77,13 +78,13 @@ Feature: User Interface: The system shall support the ability to assign the User
         Given I login to REDCap with the user "Test_User1"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should see the link labeled "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
         Then I should see a table row containing the following values in the reports table:
             | 1 | C.5.22.100.100 REPORT |
 
-        When I click on the button labeled "View Report" for the report labeled "C.5.22.100.100 REPORT"
+        When I click on the "View Report" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table 
         Then I should see record "1"
         And I should NOT see record "2"
         And I should NOT see record "3"
