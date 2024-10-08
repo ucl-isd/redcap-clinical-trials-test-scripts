@@ -26,10 +26,11 @@ Feature: A.2.3.0300. Assign administrators and account managers
         Then I should see "Control Center Home"
         # Checking if 'Access to Control Center dashboards' is enabled
         And I should see a link labeled "System Statistics"
-        # Checking if 'Perform REDCap upgrades' is enabled.  This is a site-specific test.
-        # And I should see "Ready to upgrade to REDCap"
         # Checking if 'Manage user accounts' is enabled
         And I should see a link labeled "Browse Users"
+        # Checking if 'Perform REDCap upgrades' is enabled
+        When I click on the link labeled "Configuration Check"
+        Then I should NOT see "you have restricted admin privileges"
         # Checking if 'Modify system configuration pages' is enabled
         When I click on the link labeled "General Configuration"
         And I should see a button labeled "Save Changes"
@@ -55,10 +56,11 @@ Feature: A.2.3.0300. Assign administrators and account managers
         Then I should see "Control Center Home"
         # Checking if 'Access to Control Center dashboards' is disabled
         And I should NOT see a link labeled "System Statistics"
-        # Checking if 'Perform REDCap upgrades' is disabled.  This is a site-specific test.
-        # And I should NOT see "Ready to upgrade to REDCap"
         # Checking if 'Manage user accounts' is disabled
         And I should NOT see a link labeled "Browse Users"
+        # Checking if 'Perform REDCap upgrades' is disabled.
+        When I click on the link labeled "Configuration Check"
+        Then I should see "you have restricted admin privileges"
         # Checking if 'Modify system configuration pages' is disabled
         
         When I click on the link labeled "General Configuration"
