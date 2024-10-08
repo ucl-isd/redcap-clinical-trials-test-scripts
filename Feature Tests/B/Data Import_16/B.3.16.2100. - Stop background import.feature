@@ -33,8 +33,8 @@ Feature: User Interface: The system shall provide the ability for the user impor
         Then I should see "Success"
         And I click the button labeled "Close"
 
-        VERIFY: LOGGING
-        Then I should see a table header and rows including the following values in the logging table:
+        #VERIFY: LOGGING
+        Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes              |
             | test_admin | Manage/Design | Move project to Production status |
 #END
