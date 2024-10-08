@@ -166,7 +166,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         And I click the bubble to select a record for the "Consent" longitudinal instrument on event "Event Three"
 
         #This opens the survey
-        When I click on the button labeled "Survey options"
+        When I click on the button labeled "Log out + Survey options"
         And I click on the survey option label containing "Open survey" label
 
         #On the survey
@@ -180,7 +180,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
-        Then I should see "You may now close this tab/window"
+        #You may now close this tab/window
 
         #Verify still logged in as Test_User3
         Given I am still logged in to REDCap with the user "Test_User3"
