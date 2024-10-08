@@ -1,5 +1,5 @@
 Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Center: The system shall allow production Draft Mode changes to be approved automatically under certain conditions.
-  
+
   Manage project creation, deletion, and settings
   Control Center: The system shall allow production Draft Mode changes to be approved automatically under certain conditions.
 
@@ -381,7 +381,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     Given I see a table header and rows containing the following values in the report data table:
       | Record ID | Repeat Instrument | Event Name             | Radio Button Manual |
-      | 1         | Data Types        | Event 1 (Arm 1: Arm 1) |                     |
+      | 1         | Data Types        | Event 1 (Arm 1: Arm 1) | (100)               |
       | 2         | Data Types        | Event 1 (Arm 1: Arm 1) | (100)               |
       | 3         | Data Types        | Event 1 (Arm 1: Arm 1) | (100)               |
       | 4         | Data Types        | Event 1 (Arm 1: Arm 1) | (100)               |
