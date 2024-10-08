@@ -166,7 +166,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         And I click the bubble to select a record for the "Consent" longitudinal instrument on event "Event Three"
 
         #This opens the survey
-        When I click on the button labeled "Log out + Survey options"
+        When I click on the button labeled "Survey options"
         And I click on the survey option label containing "Open survey" label
 
         #On the survey
@@ -180,12 +180,9 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see "Thank you for taking the survey."
 
         When I click on the button labeled "Close survey"
-        #You may now close this tab/window
-
-        #Verify still logged in as Test_User3
-        Given I am still logged in to REDCap with the user "Test_User3"
-        When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.10.0400.100"
+        #Then I should see "You may now close this tab/window"
+        And  click on the button labeled "Leave without saving changes" in the dialog box
+        Then I should seen "Record Home Page"
 
         ##VERIFY_LOG:
         And I click on the link labeled "Logging"
@@ -205,7 +202,6 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see a table header and rows containing the following values in a table:
             | Record | Survey                               | Survey Completion Time |
             | 1-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm       |
-
         And I logout
 
         ##ACTION: Another user from same DAG has access to same DAG records
