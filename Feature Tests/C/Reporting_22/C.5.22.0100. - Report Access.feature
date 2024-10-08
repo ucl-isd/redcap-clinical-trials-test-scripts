@@ -85,10 +85,13 @@ Feature: User Interface: The system shall support the ability to assign the User
             | 1 | C.5.22.100.100 REPORT |
 
         When I click on the "View Report" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table 
-        Then I should see record "1"
-        And I should NOT see record "2"
-        And I should NOT see record "3"
-        And I should NOT see record "4"
+        Then I should see the report with 4 rows
+        Then I should see a table header and rows containing the following values in a table:
+            | Record ID               |
+            | 1                       |
+            | 1                       |
+            | 1                       |
+            | 1                       |
         ##VERIFY: Edit Report button
         And I should see a button labeled "Edit Report"
         And I logout
@@ -97,26 +100,29 @@ Feature: User Interface: The system shall support the ability to assign the User
         Given I login to REDCap with the user "Test_User2"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should see the link labeled "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
         Then I should see a table row containing the following values in the reports table:
             | 1 | C.5.22.100.100 REPORT |
 
         When I click on the button labeled "View Report"
-        Then I should see record "2"
-        And I should NOT see record "1"
-        And I should NOT see record "3"
-        And I should NOT see record "4"
+        Then I should see the report with 3 rows
+        Then I should see a table header and rows containing the following values in a table:
+            | Record ID               |
+            | 2                       |
+            | 2                       |
+            | 2                       |
         ##VERIFY: Edit Report button
-        And I should see a button labeled "Edit Report"
+        When I click on the link labeled "Data Exports, Reports, and Stats"
+        And I click on the "Edit" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table 
         And I logout
 
         ##VERIFY: USER 3
         Given I login to REDCap with the user "Test_User3"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should see the link labeled "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
         ##VERIFY: cannot create report, edit, delete or copy report
@@ -127,10 +133,24 @@ Feature: User Interface: The system shall support the ability to assign the User
             | 1 | C.5.22.100.100 REPORT |
 
         When I click on the button labeled "View Report"
-        Then I should see record "1"
-        And I should see record "2"
-        And I should see record "3"
-        And I should see record "4"
+        Then I should see the report with 15 rows
+        And I should see a table header and rows containing the following values in a table:
+            | Record ID               |
+            | 1                       |
+            | 1                       |
+            | 1                       |
+            | 1                       |
+            | 1                       |
+            | 2                       |
+            | 2                       |
+            | 2                       |
+            | 3                       |
+            | 3                       |
+            | 3                       |
+            | 4                       |
+            | 4                       |
+            | 4                       |
+            | 4                       |
 
         ##VERIFY: Edit Report button
         And I should NOT see a button labeled "Edit Report"
@@ -140,8 +160,8 @@ Feature: User Interface: The system shall support the ability to assign the User
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
         And I click on the link labeled "Data Exports, Reports, and Stats"
-        And I click on the button labeled "Edit" for the field labeled "C.5.22.100.100 REPORT"
-        Then I should see "Edit Existing Report: "C.5.22.100.100 REPORT"
+        And I click on the "Edit" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table 
+        And I verify "C.5.22.100.100 REPORT" is within the input field labeled "Name of Report:"
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
@@ -159,7 +179,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         Given I login to REDCap with the user "Test_User3"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should NOT see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should NOT see the link labeled "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
         Then I should NOT see "C.5.22.100.100 REPORT"
@@ -169,9 +189,9 @@ Feature: User Interface: The system shall support the ability to assign the User
         Given I login to REDCap with the user "Test_User2"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should see the link labeled "C.5.22.100.100 REPORT"
 
-        When I click on the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        When I click on the link labeled "C.5.22.100.100 REPORT"
         Then I should see "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -182,10 +202,12 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I should NOT see a button labeled "Delete"
 
         When I click on the button labeled "View Report" for the link labeled "C.5.22.100.100 REPORT"
-        Then I should see record "2"
-        And I should NOT see record "1"
-        And I should NOT see record "3"
-        And I should NOT see record "4"
+        Then I should see the report with 3 rows
+        Then I should see a table header and rows containing the following values in a table:
+            | Record ID               |
+            | 2                       |
+            | 2                       |
+            | 2                       |
         ##VERIFY: Edit Report button
         And I should NOT see a button labeled "Edit Report"
         And I logout
@@ -194,9 +216,9 @@ Feature: User Interface: The system shall support the ability to assign the User
         Given I login to REDCap with the user "Test_User1"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should see the link labeled "C.5.22.100.100 REPORT"
 
-        When I click on the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        When I click on the link labeled "C.5.22.100.100 REPORT"
         Then I should see "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
