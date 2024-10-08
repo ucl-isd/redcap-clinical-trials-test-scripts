@@ -89,7 +89,6 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
             | —                       | test_admin          |
-            | —                       |                     |
             | —                       | test_user4          |
             | 1_FullRights            | test_user1          |
             | 2_Edit_RemoveID         | test_user2          |
@@ -104,7 +103,6 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
             | —                       | test_admin          |
-            | —                       | test_user4          |
             | 1_FullRights            | test_user1          |
             | 2_Edit_RemoveID         | test_user2          |
             | 3_ReadOnly_Deidentified | test_user3          |
