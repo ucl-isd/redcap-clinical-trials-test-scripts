@@ -117,8 +117,9 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         ##VERIFY
         Then I should see a table header and rows containing the following values in data access groups table:
             | Data Access Groups | Users in group |
-            | TestGroup1         | test_user3     |
             | TestGroup1         | test_user1     |
+            | TestGroup1         | test_user3     |
+
 
         When I select "test_user4 (Test User4)" on the dropdown field labeled "Assign user"
         When I select "TestGroup2" on the dropdown field labeled "to"
@@ -139,8 +140,8 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
             | Data Access Groups | Users in group |
             | TestGroup1         | test_user3     |
             | TestGroup1         | test_user1     |
-            | TestGroup2         | test_user4     |
             | TestGroup2         | test_user2     |
+            | TestGroup2         | test_user4     |
 
         And I logout
 
@@ -198,7 +199,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         ##VERIFY_FR:
         When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Survey Archive"
+        And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
             | Record | Survey                               | Survey Completion Time |
             | 1-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm       |
@@ -218,7 +219,7 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         ##VERIFY_FR:
         When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Survey Archive"
+        And I click on the link labeled "PDF Snapshot Archive"
 
         Then I should see a table header and rows containing the following values in a table:
             | Record | Survey                               | Survey Completion Time |
@@ -264,19 +265,16 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         Then I should see "You may now close this tab/window"
 
         Given I am still logged in to REDCap with the user "Test_User4"
-        When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.10.0400.100"
-
         ##VERIFY_RSD:
         And I click on the link labeled "Record Status Dashboard"
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID       |
-            | 2-1  TestGroup2 |
             | 4  TestGroup2   |
+            | 2-1  TestGroup2 |
 
         ##VERIFY_FR:
         When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Survey Archive"
+        And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
             | Record | Survey                               | Survey Completion Time |
             | 2-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm       |
@@ -291,12 +289,12 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         When I click on the link labeled "Record Status Dashboard"
         Then I should see a table header and rows containing the following values in the record status dashboard table:
             | Record ID       |
-            | 2-1  TestGroup2 |
             | 4  TestGroup2   |
+            | 2-1  TestGroup2 |
 
         ##VERIFY_FR:
         When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Survey Archive"
+        And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows containing the following values in a table:
             | Record | Survey                               | Survey Completion Time |
             | 2-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm       |

@@ -42,6 +42,7 @@ Feature: User Interface: Survey Project Settings: The system shall support track
     And I click on the button labeled "Close survey"
 
     Given I return to the REDCap page I opened the survey from
+    And I click on the link labeled "Leave without saving changes" in the dialog box
     And I click on the link labeled "Survey Distribution Tools"
     When I click on the tab labeled "Participant List"
     Then I should see the dropdown field labeled "Participant List" with the option '"Consent" - Event 1 (Arm 1: Arm 1)' selected

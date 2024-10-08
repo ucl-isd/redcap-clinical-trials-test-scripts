@@ -42,14 +42,16 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I uncheck the User Right named "Data Quality - Execute rules"
         And I uncheck the User Right named "API Export"
         And I uncheck the User Right named "API Import/Update"
+        And I uncheck the User Right named "REDCap Mobile App - Allow users to collect data offline in the mobile app"
+        And I uncheck the User Right named "Allow user to download data for all records to the app?"
         And I uncheck the User Right named "Create Records"
         And I uncheck the User Right named "Rename Records"
         And I uncheck the User Right named "Delete Records"
         And I uncheck the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Disabled"
-        And I uncheck the User Right named "Lock/Unlock *Entire* Records (record level) "
-        And I uncheck the User Right named "REDCap Mobile App - Allow users to collect data offline in the mobile app"
-        And I save changes within the context of User Rights
+        And I uncheck the User Right named "Lock/Unlock *Entire* Records (record level)"
+        And I click on the link labeled "Add User" in the dialog box
+
         ##VERIFY_LOG: Verify Update user rights
         And I click on the button labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
@@ -79,7 +81,6 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I should see a link labeled "Record Status Dashboard"
         And I should see a link labeled "View / Edit Records"
         And I should see "Applications"
-        And I should NOT see a link labeled "Project Dashboards"
         And I should NOT see a link labeled "Alerts & Notifications"
         And I should NOT see a link labeled "Multi-Language Management"
         And I should NOT see a link labeled "Calendar"
@@ -94,8 +95,38 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I should NOT see a link labeled "REDCap Mobile App"
         Given I logout
 
-        ##ACTION: Edit User to full custom rights
+        ##ACTION: Edit User to read-only custom rights
+        Given I login to REDCap with the user "Test_Admin"
+        And I click on the link labeled "My Projects"
+        And I click on the link labeled "B.2.6.0100.100"
+        And I click on the link labeled "User Rights"
+        And I click on the link labeled "Test User1"
+        And I click on the button labeled "Edit user privileges" on the tooltip
+        Then I should see a dialog containing the following text: "Editing existing user"
 
+        When I select the radio option "Read Only" for the field labeled "User Rights"
+        And I save changes within the context of User Rights
+
+        ##VERIFY_LOG: Verify Update user rights
+        And I click on the button labeled "Logging"
+        Then I should see a table header and rows including the following values in the logging table:
+            | Username   | Action      | List of Data Changes OR Fields Exported |
+            | test_admin | Update user | test_user1                              |
+        Given I logout
+
+        ##VERIFY: Verify User with full custom rights
+
+        Given I login to REDCap with the user "Test_User1"
+        Then I should see "Logged in as test_user1"
+        And I should see a link labeled "Record Status Dashboard"
+        And I should see a link labeled "Add / Edit Records"
+        And I should see a link labeled "User Rights "
+
+        When I click on the link labeled "User Rights"
+        Then I should see "This page may be used for viewing the user privileges of users in this project. Since you have read-only privileges to this page, you may not add users, modify user privileges, add/edit roles, or other actions."
+        And I logout
+
+        ##ACTION: Edit User to full custom rights
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.6.0100.100"
@@ -119,6 +150,10 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I check the User Right named "File Repository"
         And I check the User Right named "Data Quality - Create & edit rules"
         And I check the User Right named "Data Quality - Execute rules"
+        And I check the User Right named "REDCap Mobile App - Allow users to collect data offline in the mobile app"
+        Then I should see a dialog containing the following text: "Confirm Mobile App Privileges"
+        When I click on the button labeled "Yes, I understand"
+        And I check the User Right named "REDCap Mobile App - Allow user to download data for all records to the app?"
         And I check the User Right named "API Export"
         And I check the User Right named "API Import/Update"
         And I check the User Right named "Create Records"
@@ -127,10 +162,6 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I check the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Locking / Unlocking"
         And I check the User Right named "Lock/Unlock *Entire* Records (record level) "
-        And I check the User Right named "REDCap Mobile App - Allow users to collect data offline in the mobile app"
-        Then I should see a dialog containing the following text: "Confirm Mobile App Privileges"
-        And I click on the button labeled "Yes, I understand"
-        And I check the User Right named "REDCap Mobile App - Allow user to download data for all records to the app?"
         And I save changes within the context of User Rights
 
         ##VERIFY_LOG: Verify Update user rights
@@ -169,7 +200,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I should see a link labeled "Customize & Manage Locking/E-signatures"
         And I should see a link labeled "Data Quality"
         And I should see a link labeled "API"
-        And I should see a link labeled " API Playground"
+        And I should see a link labeled "API Playground"
         And I should see a link labeled "REDCap Mobile App"
         And I logout
 
@@ -187,11 +218,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Given I logout
 
         ##VERIFY: Verify User access to project
-
         Given I login to REDCap with the user "Test_User1"
-        Then I should see "Logged in as test_user1"
-        And I click on the link labeled "My Projects"
-        And I click on a link labeled "B.2.6.0100.100"
         Then I should see "ACCESS DENIED!"
         And I should see "Your access to this particular REDCap project has expired"
         When I click on the link labeled "Return to My Projects page"
@@ -213,7 +240,6 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Given I logout
 
         ##VERIFY: Verify User access to project
-
         Given I login to REDCap with the user "Test_User1"
         Then I should see "Logged in as test_user1"
         And I click on the link labeled "My Projects"
@@ -222,7 +248,6 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Given I logout
 
         ##ACTION: Remove User from project
-
         Given I login to REDCap with the user "Test_Admin"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.6.0100.100"
