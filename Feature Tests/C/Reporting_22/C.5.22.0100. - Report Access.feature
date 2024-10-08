@@ -19,51 +19,56 @@ Feature: User Interface: The system shall support the ability to assign the User
 
         #SETUP: Assign record 1 to DAG1
         When I click on the link labeled "Record Status Dashboard"
-        And I click on record "1"
-        And I select the dropdown option labeled "Assign to Data Access Group" from the dropdown button with the placeholder text of "Choose action for record"
-        And I select the dropdown option labeled "TestGroup1" from the dropdown button with the placeholder text of "[No Assignment]" in the dialog box
+        And I click on the link labeled exactly "1"
+        And I click on the span element labeled "Choose action for record"
+        And I click on the link labeled "Assign to Data Access Group"
+        When I select "TestGroup1" on the dropdown field labeled "Assign record" on the dialog box
         And I click on the button labeled "Assign to Data Access Group" in the dialog box
-        Then I should see "Record ID 1 was successfully assigned to a Data Access Group1"
+        Then I should see "Record ID 1 was successfully assigned to a Data Access Group"
 
         #SETUP: Assign record 2 to DAG2
         When I click on the link labeled "Record Status Dashboard"
-        And I click on record "2"
-        And I select the dropdown option labeled "Assign to Data Access Group" from the dropdown button with the placeholder text of "Choose action for record"
-        And I select the dropdown option labeled "TestGroup2" from the dropdown button with the placeholder text of "[No Assignment]" in the dialog box
+        And I click on the link labeled exactly "2"
+        And I click on the span element labeled "Choose action for record"
+        And I click on the link labeled "Assign to Data Access Group"
+        When I select "TestGroup2" on the dropdown field labeled "Assign record" on the dialog box
         And I click on the button labeled "Assign to Data Access Group" in the dialog box
-        Then I should see "Record ID 2 was successfully assigned to a Data Access Group2"
+        Then I should see "Record ID 2 was successfully assigned to a Data Access Group"
 
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
         And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I select "TestGroup1" on the dropdown field with the placeholder text "[No Assignment]" on the DAG dropdown
+        And I select "TestGroup1" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "Test User 1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
-        And I should see "Test User 1" assigned to the DAG labeled "TestGroup1"
+        Then I should see "test_user1 (Test User1)" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+        And I should see "TestGroup1" within the "1_FullRights" row of the column labeled "Data Access Group" of the User Rights table
 
         When I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "2_Edit_RemoveID" on the dropdown field labeled "Select Role" on the role selector dropdown
-        And I select "TestGroup2" on the dropdown field with the placeholder text "[No Assignment]" on the DAG dropdown
+        And I select "TestGroup2" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "Test User 2" within the "2_Edit_RemoveID" row of the column labeled "Username" of the User Rights table
-        And I should see "Test User 2" assigned to the DAG labeled "TestGroup2"
+        Then I should see "test_user2 (Test User2)" within the "2_Edit_RemoveID" row of the column labeled "Username" of the User Rights table
+        And I should see "TestGroup2" within the "2_Edit_RemoveID" row of the column labeled "Data Access Group" of the User Rights table
 
         When I enter "Test_User3" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
-        And I uncheck the checkbox on the field labeled "Add/Edit/Organize Reports"
+        And I uncheck the checkbox labeled "Add/Edit/Organize Reports"
         And I click on the button labeled "Add user"
-        Then I should see User "test_user3" was successfully added
+        Then I should see a table header and rows containing the following values in a table:
+            | Role name               | Username            |
+            | —                       | test_user3          |
         #SETUP: Create report
         When I click on the link labeled "Data Exports, Reports, and Stats"
         And I click on the button labeled "Create New Report"
-        And I enter "C.5.22.100.100 REPORT" in the field labeled "Name of Report:"
+        And I enter "C.5.22.100.100 REPORT" into the input field labeled "Name of Report:"
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
-        And I verify the radio button labeled "All users" is selected for the field labeled "View Access"
-        And I verify the radio button labeled "All users" is selected for the field labeled "Edit Access"
+        # The following lines are commented because they're broken and don't actually do anything anyway
+        #And I verify the radio button labeled "All users" is selected for the field labeled "View Access"
+        #And I verify the radio button labeled "All users" is selected for the field labeled "Edit Access"
         And I click on the button labeled "Save Report"
         Then I should see "Your report has been saved!" in the dialog box
         And I click on the button labeled "Return to My Reports & Exports"
@@ -73,17 +78,20 @@ Feature: User Interface: The system shall support the ability to assign the User
         Given I login to REDCap with the user "Test_User1"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should see the link labeled "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
         Then I should see a table row containing the following values in the reports table:
             | 1 | C.5.22.100.100 REPORT |
 
-        When I click on the button labeled "View Report" for the report labeled "C.5.22.100.100 REPORT"
-        Then I should see record "1"
-        And I should NOT see record "2"
-        And I should NOT see record "3"
-        And I should NOT see record "4"
+        When I click on the "View Report" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table 
+        Then I should see the report with 4 rows
+        Then I should see a table header and rows containing the following values in a table:
+            | Record ID               |
+            | 1                       |
+            | 1                       |
+            | 1                       |
+            | 1                       |
         ##VERIFY: Edit Report button
         And I should see a button labeled "Edit Report"
         And I logout
@@ -92,26 +100,29 @@ Feature: User Interface: The system shall support the ability to assign the User
         Given I login to REDCap with the user "Test_User2"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should see the link labeled "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
         Then I should see a table row containing the following values in the reports table:
             | 1 | C.5.22.100.100 REPORT |
 
         When I click on the button labeled "View Report"
-        Then I should see record "2"
-        And I should NOT see record "1"
-        And I should NOT see record "3"
-        And I should NOT see record "4"
+        Then I should see the report with 3 rows
+        Then I should see a table header and rows containing the following values in a table:
+            | Record ID               |
+            | 2                       |
+            | 2                       |
+            | 2                       |
         ##VERIFY: Edit Report button
-        And I should see a button labeled "Edit Report"
+        When I click on the link labeled "Data Exports, Reports, and Stats"
+        And I click on the "Edit" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table 
         And I logout
 
         ##VERIFY: USER 3
         Given I login to REDCap with the user "Test_User3"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should see the link labeled "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
         ##VERIFY: cannot create report, edit, delete or copy report
@@ -122,10 +133,24 @@ Feature: User Interface: The system shall support the ability to assign the User
             | 1 | C.5.22.100.100 REPORT |
 
         When I click on the button labeled "View Report"
-        Then I should see record "1"
-        And I should see record "2"
-        And I should see record "3"
-        And I should see record "4"
+        Then I should see the report with 15 rows
+        And I should see a table header and rows containing the following values in a table:
+            | Record ID               |
+            | 1                       |
+            | 1                       |
+            | 1                       |
+            | 1                       |
+            | 1                       |
+            | 2                       |
+            | 2                       |
+            | 2                       |
+            | 3                       |
+            | 3                       |
+            | 3                       |
+            | 4                       |
+            | 4                       |
+            | 4                       |
+            | 4                       |
 
         ##VERIFY: Edit Report button
         And I should NOT see a button labeled "Edit Report"
@@ -135,8 +160,8 @@ Feature: User Interface: The system shall support the ability to assign the User
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
         And I click on the link labeled "Data Exports, Reports, and Stats"
-        And I click on the button labeled "Edit" for the field labeled "C.5.22.100.100 REPORT"
-        Then I should see "Edit Existing Report: "C.5.22.100.100 REPORT"
+        And I click on the "Edit" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table 
+        And I verify "C.5.22.100.100 REPORT" is within the input field labeled "Name of Report:"
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
@@ -154,7 +179,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         Given I login to REDCap with the user "Test_User3"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should NOT see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should NOT see the link labeled "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
         Then I should NOT see "C.5.22.100.100 REPORT"
@@ -164,9 +189,9 @@ Feature: User Interface: The system shall support the ability to assign the User
         Given I login to REDCap with the user "Test_User2"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should see the link labeled "C.5.22.100.100 REPORT"
 
-        When I click on the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        When I click on the link labeled "C.5.22.100.100 REPORT"
         Then I should see "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
@@ -177,10 +202,12 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I should NOT see a button labeled "Delete"
 
         When I click on the button labeled "View Report" for the link labeled "C.5.22.100.100 REPORT"
-        Then I should see record "2"
-        And I should NOT see record "1"
-        And I should NOT see record "3"
-        And I should NOT see record "4"
+        Then I should see the report with 3 rows
+        Then I should see a table header and rows containing the following values in a table:
+            | Record ID               |
+            | 2                       |
+            | 2                       |
+            | 2                       |
         ##VERIFY: Edit Report button
         And I should NOT see a button labeled "Edit Report"
         And I logout
@@ -189,9 +216,9 @@ Feature: User Interface: The system shall support the ability to assign the User
         Given I login to REDCap with the user "Test_User1"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
-        Then I should see the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        Then I should see the link labeled "C.5.22.100.100 REPORT"
 
-        When I click on the link labeled "C.5.22.100.100 REPORT" under the header labeled "Reports"
+        When I click on the link labeled "C.5.22.100.100 REPORT"
         Then I should see "C.5.22.100.100 REPORT"
 
         When I click on the link labeled "Data Exports, Reports, and Stats"
