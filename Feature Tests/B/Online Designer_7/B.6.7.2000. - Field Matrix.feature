@@ -43,8 +43,9 @@ Feature: Field Creation: The system shall support the creation and spliting matr
         When I click on "Logging"
         Then I should see "Create matrix of fields"
 
-
         #VERIFY: SPLIT OF MATRIX
+        When I click the link labeled "Designer"  
+        And I click on the instrument labeled "Form 1"
         When I click on the icon labeled "Edit Matrix" on the field labeled "Matrix Group: ice_cream"
         And I click the button labeled "Save & split into separate fields"
         And I click the button labeled "Split matrix"
