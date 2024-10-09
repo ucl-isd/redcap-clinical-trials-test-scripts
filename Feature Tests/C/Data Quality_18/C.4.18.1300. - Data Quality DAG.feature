@@ -45,8 +45,9 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
         #SETUP: Create Data Quality Rule
         When I click on the link labeled "Data Quality"
         And I enter "TestGroup1" into the textarea field labeled "Enter descriptive name for new rule"
-        And I enter '([ptname]<>[name]) AND ([user-dag-name]="testgroup1")' into the textarea field labeled "Enter logic for new rule"
-        And I clear field and enter '([ptname]<>[name]) AND ([user-dag-name]="testgroup1")' into the textarea field labeled "Logic Editor" in the dialog box
+        And I click on "" in the textarea field labeled "Enter logic for new rule"
+        And I wait for 1 minute
+        And I clear field and enter "([ptname]<>[name]) AND ([user-dag-name]='testgroup1')" in the textarea field labeled "Logic Editor" in the dialog box
         And I click on the button labeled "Update & Close Editor" in the dialog box
         And I click on the button labeled "Add"
         Then I should see a table header and rows containing the following values in a table:

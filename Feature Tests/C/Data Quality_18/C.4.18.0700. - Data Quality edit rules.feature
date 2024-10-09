@@ -40,7 +40,8 @@ Feature: User Interface: The system shall support editing of user defined rules.
         Then I should see "Data Quality Rules"
 
         When I enter "Integer" into the textarea field labeled "Enter descriptive name for new rule"
-        And I enter "[integer]='1'" into the textarea field labeled "Enter logic for new rule"
+        And I click on "" in the textarea field labeled "Enter logic for new rule"
+        And I wait for 1 minute
         And I clear field and enter "[integer]='1'" in the textarea field labeled "Logic Editor" in the dialog box
         And I click on the button labeled "Update & Close Editor" in the dialog box
         And I click on the button labeled "Add"
