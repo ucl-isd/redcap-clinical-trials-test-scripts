@@ -1,6 +1,5 @@
 Feature: User Interface: Survey Project Settings: The system shall support a participant list for each survey in the project. A dropdown menu will list each survey or if a longitudinal project, each survey/event pairing from which to select the survey of interest.
 
-
   As a REDCap end user
   I want to see that Participant List is functioning as expected
 
@@ -28,7 +27,6 @@ Feature: User Interface: Survey Project Settings: The system shall support a par
       | email@test.edu    | 1      | Disabled               | [icon]    | -                     | [icon]            | [icon] | [icon]             |
       | email@test.edu    | 2      | Disabled               | [icon]    | -                     | [icon]            | [icon] | [icon]             |
 
-    #
     ###ACTION: Change survey distribution to form not in position 1
     When I select '"Survey" - Event Three (Arm 1: Arm 1)' on the dropdown field labeled "Participant List"
     ##VERIFY: YOU SEE RECORD 1

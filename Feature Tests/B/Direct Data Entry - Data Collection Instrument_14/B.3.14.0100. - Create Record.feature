@@ -6,7 +6,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
     Scenario: B.3.14.0100.100 Create new record
         #SETUP_PRODUCTION
         Given I login to REDCap with the user "Test_Admin"
-        And I create a new project named " B.3.14.0100.100 " by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
+        And I create a new project named "B.3.14.0100.100 " by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
 
         When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
