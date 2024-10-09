@@ -68,7 +68,7 @@ Feature: User Interface: Survey Project Settings: The system shall delete all su
     Then I should see "Thank you for taking the survey"
 
     Given I click on the button labeled "Close survey"
-    #And I click on the button labeled "Leave without saving changes" in the dialog box
+    And I click on the button labeled "Leave without saving changes" in the dialog box
 
     ##VERIFY_DE
     Given I return to the REDCap page I opened the survey from
