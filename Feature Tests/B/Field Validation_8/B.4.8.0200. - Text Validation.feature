@@ -7,8 +7,7 @@ Feature: User Interface: The system shall support text validation for text field
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "B.4.8.0200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_4.8.xml", and clicking the "Create Project" button
-        When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.4.8.0200.100"
+        Then I should see "Project Setup"
 
         #SETUP _PRODUCTION
         When I click on the link labeled "Project Setup"
@@ -95,8 +94,7 @@ Feature: User Interface: The system shall support text validation for text field
             | Record ID | Email          |
             | 5         | email@test.edu |
 
-        #FUNCTIONAL REQUIREMENT
-        ##ACTION - Verify field validation with out of range values (works)
+    Scenario: #FUNCTIONAL REQUIREMENT ##ACTION - Verify field validation with out of range values (works)
         When I click on the link labeled "Add / Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click the bubble to add a record for the "Data Types" longitudinal instrument on event "Event 1"
@@ -131,7 +129,6 @@ Feature: User Interface: The system shall support text validation for text field
         And I click on the button labeled "Close" in the dialog box
 
         When I enter "07:05" into the data entry form field labeled "Time HH:MM"
-
         And I should see a dialog containing the following text: "The value you provided is outside the suggested range (08:05 - 23:00). This value is admissible, but you may wish to double check it."
         And I click on the button labeled "Close" in the dialog box
 
