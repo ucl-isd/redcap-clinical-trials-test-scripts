@@ -4,6 +4,7 @@ Feature: User Interface: The system shall require the event name in the csv file
   I want to see that Data import is functioning as expected
 
   Scenario: B.3.16.0700.100 Import requires the event name
+    #TEST FOR B.3.16.0300 The system shall highlight data modifications for user confirmation.
 
     Given I login to REDCap with the user "Test_Admin"
     And I create a new project named "B.3.16.0700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button

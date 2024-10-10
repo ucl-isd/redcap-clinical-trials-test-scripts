@@ -6,7 +6,7 @@ Feature: User Interface: The system shall provide the ability for the user impor
     Scenario: B.3.16.2100.100 Stop non-imported data during the background data import
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
-        And I create a new project named "B.3.16.2100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "BigDataTestProject2100.xml", and clicking the "Create Project" button
+        And I create a new project named "B.3.16.2100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "BigDataTestProject.xml", and clicking the "Create Project" button
         #SETUP_PRODUCTION
         Given I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
