@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDCap Dynamic Content</title>
+</head>
+<body>
+    <div id="content">Loading content...</div>
+
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the version parameter from the URL
+        const versionTag = getQueryParam('version') || 'main'; // Defaults to 'main' if no version is provided
+
+        // Construct the URL to fetch content from the specified branch
+        const githubUrl = `https://raw.githubusercontent.com/4bbakers/redcap_rsvc/${versionTag}/content.html`;
+
+        // Fetch content from the URL and display it in the 'content' div
+        fetch(githubUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Content not found for version ${versionTag}.`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('content').innerHTML = data;
+            })
+            .catch(error => {
+                document.getElementById('content').innerHTML = `<p>Error: ${error.message}</p>`;
+            });
+    </script>
+</body>
+</html>
