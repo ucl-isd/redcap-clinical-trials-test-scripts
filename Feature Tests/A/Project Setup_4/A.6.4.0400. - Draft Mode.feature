@@ -5,7 +5,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
   Scenario: A.6.4.0400.100 User's ability to approve draft changes without administrative approval
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "A.6.4.0400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     # BEGIN: STEPS FOR ATS
@@ -14,7 +14,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the link labeled "General Configuration"
     Then I should see "General Configuration"
 
-    When I enter "redcap@test.instance" into the input field labeled "Email Address of REDCap Administrator"
+    When I enter "ctsp@ucl.ac.uk" into the input field labeled "Email Address of REDCap Administrator"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed"
     # END: STEPS FOR ATS ###
@@ -23,7 +23,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the link labeled "A.6.4.0400.100"
 
     And I click on the link labeled "User Rights"
-    And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+    And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     When I click on the button labeled exactly "Assign" on the role selector dropdown
@@ -39,7 +39,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Move project to Production status       |
+      | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Move project to Production status       |
 
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"
@@ -49,7 +49,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "Your system configuration values have now been changed!"
     Given I logout
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.100"
     And I click on the link labeled "Designer"
@@ -59,7 +59,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Enter draft mode                        |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Enter draft mode                        |
 
     When I click on the link labeled "Designer"
     When I click on the button labeled "Submit Changes for Review"
@@ -69,11 +69,11 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported               |
-      | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Request approval for production project modifications |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Request approval for production project modifications |
 
     Given I logout
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.100"
     And I click on the link labeled "Designer"
@@ -85,14 +85,14 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "Project Changes Rejected / User Notified"
     Given I logout
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.100"
     And I click on the link labeled "Logging"
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Reject production project modifications |
+      | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Reject production project modifications |
 
     And I click on the link labeled "Designer"
     #THE PROJECT STAYS IN DRAFT MODE IF THE CHANGES ARE REJECTED SO DRAFT MODE BUTTON DOES NOT APPEAR
@@ -106,11 +106,11 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported               |
-      | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Request approval for production project modifications |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Request approval for production project modifications |
 
     Given I logout
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.100"
     And I click on the link labeled "Designer"
@@ -122,27 +122,27 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "Project Changes Committed / User Notified"
     Given I logout
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.100"
     And I click on the link labeled "Logging"
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported  |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Approve production project modifications |
+      | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Approve production project modifications |
 
     And I click on the link labeled "Designer"
     Then I should see "Enter Draft Mode"
 
 
   Scenario: A.6.4.0400.200 User's ability to approve draft changes without administrative approval if no existing fields were modified
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "A.6.4.0400.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.200"
 
     And I click on the link labeled "User Rights"
-    And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+    And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     When I click on the button labeled exactly "Assign" on the role selector dropdown
@@ -162,7 +162,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "Your system configuration values have now been changed!"
     Given I logout
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.200"
     And I click on the link labeled "Designer"
@@ -177,7 +177,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     And I click on the button labeled "Submit" in the dialog box
     Given I logout
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.200"
     And I click on the link labeled "Designer"
@@ -189,14 +189,14 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "Project Changes Removed / User Notified"
     Given I logout
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.200"
     And I click on the link labeled "Logging"
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Remove production project modifications |
+      | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Remove production project modifications |
 
     And I click on the link labeled "Designer"
     And I click on the button labeled "Enter Draft Mode"
@@ -214,17 +214,17 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported              |
-      | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Approve production project modifications (automatic) |
-      | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Create project field                                 |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Approve production project modifications (automatic) |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Create project field                                 |
 
   Scenario: A.6.4.0400.300 User's ability to approve draft changes without administrative approval if no critical issues exist
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "A.6.4.0400.300" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.300"
     And I click on the link labeled "User Rights"
 
-    And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+    And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     When I click on the button labeled exactly "Assign" on the role selector dropdown
@@ -244,7 +244,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "Your system configuration values have now been changed!"
     Given I logout
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.300"
     And I click on the link labeled "Designer"
@@ -263,7 +263,7 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported              |
-      | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Approve production project modifications (automatic) |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Approve production project modifications (automatic) |
 
     When I click on the link labeled "Designer"
 
@@ -285,11 +285,11 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported               |
-      | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Request approval for production project modifications |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Request approval for production project modifications |
 
     Given I logout
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.300"
     And I click on the link labeled "Designer"
@@ -302,14 +302,14 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "Project Changes Removed / User Notified"
     Given I logout
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.300"
     And I click on the link labeled "Logging"
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Remove production project modifications |
+      | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Remove production project modifications |
 
     And I click on the link labeled "Designer"
     And I click on the button labeled "Enter Draft Mode"
@@ -329,11 +329,11 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported               |
-      | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Request approval for production project modifications |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Request approval for production project modifications |
 
     Given I logout
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.300"
     And I click on the link labeled "Designer"
@@ -346,14 +346,14 @@ Feature: A.6.4.0400. Manage project creation, deletion, and settings. Control Ce
     Then I should see "Project Changes Committed / User Notified"
     Given I logout
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.4.0400.300"
     And I click on the link labeled "Logging"
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported  |
-      | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Approve production project modifications |
+      | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Approve production project modifications |
 
     And I click on the link labeled "Designer"
     And I click on the button labeled "Enter Draft Mode"
