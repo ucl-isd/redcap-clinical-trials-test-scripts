@@ -5,16 +5,16 @@ Feature: A.2.3.0200. Assign administrators and account managers
 
   Scenario: A.2.3.0200.100 Give/remove user admin user rights
     ##REDUNDANT_TEST This test is also testing for A.2.3.0100.100 View administrator accounts
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "Administrator Privileges"
     Then I should see "Set administrator privileges"
     And I should see a table header and rows containing the following values in the administrators table:
       | Administrators          |
-      | Test_Admin (Admin User) |
+      | REDCap_Admin (Admin User) |
 
     ##TEST Add administrator account no privileges
-    Given I enter "Test_User1" into the field with the placeholder text of "Search users to add as admin"
+    Given I enter "Test_User1_CTSP" into the field with the placeholder text of "Search users to add as admin"
     And I click on the button labeled "Add"
     Then I should see a dialog containing the following text: "check one or more"
     And I close the popup
@@ -27,29 +27,29 @@ Feature: A.2.3.0200. Assign administrators and account managers
     Given  I click on the button labeled "OK"
     Then I should see a table header and rows containing the following values in the administrators table:
       | Administrators | Set administrator privileges | Access to all projects and data with maximum user privileges | Manage user accounts | Modify system configuration pages | Install, upgrade, and configure External Modules | Perform REDCap upgrades | Access to Control Center dashboards |
-      | Test_User1     | Enable                       | Disable                                                      | Disable              | Disable                           | Disable                                          | Disable                 | Disable                             |
+      | Test_User1_ctsp   Enable                       | Disable                                                      | Disable              | Disable                           | Disable                                          | Disable                 | Disable                             |
 
     Given I logout
-    When I login to REDCap with the user "Test_User1"
+    When I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "Control Center"
     When I click on the link labeled "Administrator Privileges"
     Then I should see "Set administrator privileges"
     And I should see a table header and rows containing the following values in the administrators table:
       | Administrators | Set administrator privileges | Access to all projects and data with maximum user privileges | Manage user accounts | Modify system configuration pages | Install, upgrade, and configure External Modules | Perform REDCap upgrades | Access to Control Center dashboards |
-      | Test_User1     | Enable                       | Disable                                                      | Disable              | Disable                           | Disable                                          | Disable                 | Disable                             |
+      | Test_User1_ctsp     | Enable                       | Disable                                                      | Disable              | Disable                           | Disable                                          | Disable                 | Disable                             |
 
     #TEST Modify by Enable Administrator Privileges
-    When I enable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1"
-    And I enable the Administrator Privilege "Access to all projects and data with maximum user privileges" for the administrator "Test_User1"
-    And I enable the Administrator Privilege "Manage user accounts" for the administrator "Test_User1"
-    And I enable the Administrator Privilege "Modify system configuration pages" for the administrator "Test_User1"
-    And I enable the Administrator Privilege "Install, upgrade, and configure External Modules" for the administrator "Test_User1"
-    And I enable the Administrator Privilege "Perform REDCap upgrades" for the administrator "Test_User1"
-    And I enable the Administrator Privilege "Access to Control Center dashboards" for the administrator "Test_User1"
+    When I enable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1_ctsp"
+    And I enable the Administrator Privilege "Access to all projects and data with maximum user privileges" for the administrator "Test_User1_ctsp"
+    And I enable the Administrator Privilege "Manage user accounts" for the administrator "Test_User1_ctsp"
+    And I enable the Administrator Privilege "Modify system configuration pages" for the administrator "Test_User1_ctsp"
+    And I enable the Administrator Privilege "Install, upgrade, and configure External Modules" for the administrator "Test_User1_ctsp"
+    And I enable the Administrator Privilege "Perform REDCap upgrades" for the administrator "Test_User1_ctsp"
+    And I enable the Administrator Privilege "Access to Control Center dashboards" for the administrator "Test_User1_ctsp"
 
     Then I should see a table header and rows containing the following values in the administrators table:
       | Administrators | Set administrator privileges | Access to all projects and data with maximum user privileges | Manage user accounts | Modify system configuration pages | Install, upgrade, and configure External Modules | Perform REDCap upgrades | Access to Control Center dashboards |
-      | Test_User1     | Enable                       | Enable                                                       | Enable               | Enable                            | Enable                                           | Enable                  | Enable                              |
+      | Test_User1_ctsp | Enable                       | Enable                                                       | Enable               | Enable                            | Enable                                           | Enable                  | Enable                              |
 
     #VERIFY
     When I click on the link labeled "Control Center"
@@ -61,13 +61,13 @@ Feature: A.2.3.0200. Assign administrators and account managers
     And I should see "User Settings"
 
     #TEST Disable Administrator Privileges
-    When I enable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1"
-    And I disable the Administrator Privilege "Access to all projects and data with maximum user privileges" for the administrator "Test_User1"
-    And I disable the Administrator Privilege "Manage user accounts" for the administrator "Test_User1"
-    And I disable the Administrator Privilege "Modify system configuration pages" for the administrator "Test_User1"
-    And I disable the Administrator Privilege "Install, upgrade, and configure External Modules" for the administrator "Test_User1"
-    And I disable the Administrator Privilege "Perform REDCap upgrades" for the administrator "Test_User1"
-    And I disable the Administrator Privilege "Access to Control Center dashboards" for the administrator "Test_User1"
+    When I enable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1_ctsp"
+    And I disable the Administrator Privilege "Access to all projects and data with maximum user privileges" for the administrator "Test_User1_ctsp"
+    And I disable the Administrator Privilege "Manage user accounts" for the administrator "Test_User1_ctsp"
+    And I disable the Administrator Privilege "Modify system configuration pages" for the administrator "Test_User1_ctsp"
+    And I disable the Administrator Privilege "Install, upgrade, and configure External Modules" for the administrator "Test_User1_ctsp"
+    And I disable the Administrator Privilege "Perform REDCap upgrades" for the administrator "Test_User1_ctsp"
+    And I disable the Administrator Privilege "Access to Control Center dashboards" for the administrator "Test_User1_ctsp"
 
     Then I should see a table header and rows containing the following values in the administrators table:
       | Administrators | Set administrator privileges | Access to all projects and data with maximum user privileges | Manage user accounts | Modify system configuration pages | Install, upgrade, and configure External Modules | Perform REDCap upgrades | Access to Control Center dashboards |
@@ -84,13 +84,13 @@ Feature: A.2.3.0200. Assign administrators and account managers
 
   Scenario: A.2.3.0200.100 Remove admin
     Given I click on the link labeled "Administrator Privileges"
-    And I disable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1"
+    And I disable the Administrator Privilege "Set administrator privileges" for the administrator "Test_User1_ctsp"
     Then I should see a dialog containing the following text: "Please be aware that you have unchecked ALL the administrator privileges for this user"
 
     Given I click on the button labeled "Close" in the dialog box
     When I click on the link labeled "Administrator Privileges"
     Then I should see "Set administrator privileges"
-    And I should NOT see "Test_User1"
+    And I should NOT see "Test_User1_ctsp"
     Given I logout
 
     ##VERIFY
