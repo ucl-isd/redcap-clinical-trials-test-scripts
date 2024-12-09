@@ -5,7 +5,7 @@ Feature: A.2.2.0600. Add/Manage users
 
   Scenario: A.2.2.0600.100 User account locked out after too many attempts
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see "Security & Authentication Configuration"
@@ -18,23 +18,23 @@ Feature: A.2.2.0600. Add/Manage users
     Then I should see "Your system configuration values have now been changed!"
     Given I logout
 
-    Given I enter "Test_User1" into the input field labeled "Username:"
+    Given I enter "Test_User1_ctsp" into the input field labeled "Username:"
     And I enter "test" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
     Then I should see "ERROR: You entered an invalid user name or password!"
 
-    Given I enter "Test_User1" into the input field labeled "Username:"
+    Given I enter "Test_User1_ctsp" into the input field labeled "Username:"
     And I enter "test" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
     Then I should see "ACCESS DENIED!"
 
     Given I wait for 2 minutes
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_ctsp"
     And I see "My Projects"
     Given I logout
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see "Security & Authentication Configuration"
@@ -47,24 +47,24 @@ Feature: A.2.2.0600. Add/Manage users
     Then I should see "Your system configuration values have now been changed!"
     Given I logout
 
-    Given I enter "Test_User1" into the input field labeled "Username:"
+    Given I enter "Test_User1_ctsp" into the input field labeled "Username:"
     And I enter "test" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
     Then I should see "ERROR"
 
-    Given I enter "Test_User1" into the input field labeled "Username:"
+    Given I enter "Test_User1_ctsp" into the input field labeled "Username:"
     And I enter "test" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
     Then I should see "ERROR"
 
-    Given I enter "Test_User1" into the input field labeled "Username:"
+    Given I enter "Test_User1_ctsp" into the input field labeled "Username:"
     And I enter "test" into the input field labeled "Password:"
     And I click on the button labeled "Log In"
     Then I should see "ACCESS DENIED!"
 
     Given I wait for 1 minute
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_ctsp"
     And I see "My Projects"
     Given I logout
 #End
