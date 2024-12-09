@@ -5,7 +5,7 @@ Feature: A.2.2.0800. Add/Manage users
 
   Scenario: A.2.2.0800.100 User account locked time
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see "Security & Authentication Configuration"
@@ -16,7 +16,7 @@ Feature: A.2.2.0800. Add/Manage users
     Then I should see "Your system configuration values have now been changed!"
 
     Given I logout
-    When I login to REDCap with the user "Test_User1"
+    When I login to REDCap with the user "Test_User1_ctsp"
     Then I should see a link labeled "My Projects"
 
     Given I wait for 2 minutes
@@ -28,11 +28,11 @@ Feature: A.2.2.0800. Add/Manage users
     Given I click on the button labeled "Log In" in the dialog box
     Then I should see "Please log in with your user name and password."
 
-    Given I successfully login to REDCap with the user "Test_User1"
+    Given I successfully login to REDCap with the user "Test_User1_ctsp"
     Then I should see a link labeled "My Projects"
 
     Given I logout
-    And I successfully login to REDCap with the user "Test_Admin"
+    And I successfully login to REDCap with the user "REDcap_Admin"
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see "Security & Authentication Configuration"
@@ -43,7 +43,7 @@ Feature: A.2.2.0800. Add/Manage users
     Then I should see "Your system configuration values have now been changed!"
 
     Given I logout
-    And I successfully login to REDCap with the user "Test_User1"
+    And I successfully login to REDCap with the user "Test_User1_ctsp"
     And I wait for 2 minutes
     Then I should see a dialog containing the following text: "REDCap Auto Logout Warning"
 
@@ -53,17 +53,17 @@ Feature: A.2.2.0800. Add/Manage users
     Given I click on the button labeled "Log In" in the dialog box
     Then I should see "Please log in with your user name and password."
 
-    Given I successfully login to REDCap with the user "Test_User1"
+    Given I successfully login to REDCap with the user "Test_User1_ctsp"
     Then I should see a link labeled "My Projects"
 
     Given I logout
-    And I successfully login to REDCap with the user "Test_Admin"
+    And I successfully login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Security & Authentication"
     Then I should see "Security & Authentication Configuration"
 
     When I clear the field labeled "Auto logout time"
-    And I enter "20" into the input field labeled "Auto logout time"
+    And I enter "15" into the input field labeled "Auto logout time"
     And I click on the button labeled "Save Changes"
     Then I should see "Your system configuration values have now been changed!"
     Given I logout
