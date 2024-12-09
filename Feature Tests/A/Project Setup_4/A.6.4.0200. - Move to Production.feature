@@ -4,12 +4,12 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
     I want to see that project management features are functioning as expected
 
     Scenario: A.6.4.0200.100 User requests admin move project to production
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "A.6.4.0200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.100"
         And I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+        And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         When I click on the button labeled exactly "Assign" on the role selector dropdown
@@ -23,7 +23,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Then I should see "Your system configuration values have now been changed!"
         Given I logout
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.100"
         And I click on the link labeled "Project Setup"
@@ -36,10 +36,10 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported           |
-            | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Send request to move project to production status |
+            | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Send request to move project to production status |
         Given I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.100"
         And I click on the link labeled "Control Center"
@@ -62,15 +62,15 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Move project to Production status       |
+            | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Move project to Production status       |
 
     Scenario: A.6.4.200.200 User moves project to production
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "A.6.4.0200.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.200"
         And I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+        And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
@@ -84,7 +84,7 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Then I should see "Your system configuration values have now been changed!"
         Given I logout
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0200.200"
         And I click on the link labeled "Project Setup"
@@ -97,5 +97,5 @@ Feature: A.6.4.0200. Manage project creation, deletion, and settings
         Given I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Move project to Production status       |
+            | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Move project to Production status       |
 #End
