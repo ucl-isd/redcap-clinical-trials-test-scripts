@@ -4,6 +4,7 @@ Feature: A.2.2.0700. Add/Manage users
     I want to see that Users failed login lockout is functioning as expected.
 
     Scenario: A.2.2.0700.100 User account locked time
+        #This feature has been tested manually in A.2.2.600 and this test has not been run 
         #This feature test is REDUNDANT and can be viewed in A.2.2.600.100
         Given I login to REDCap with the user "Test_Admin"
         When I click on the link labeled "Control Center"
