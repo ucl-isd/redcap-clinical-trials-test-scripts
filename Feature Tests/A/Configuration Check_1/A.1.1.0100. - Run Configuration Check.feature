@@ -5,7 +5,7 @@ Feature: A.1.1.0100. Run Configuration Check test page
 
     Scenario: A.1.1.0100.100 Configuration Checklist Tests
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "Control Center"
         Then I should be able to locate and visit the Control Center link labeled "Browse Projects"
         And I should be able to locate and visit the Control Center link labeled "Edit Project Settings"
