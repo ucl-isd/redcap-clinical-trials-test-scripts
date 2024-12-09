@@ -5,7 +5,7 @@ Feature: A.2.2.0400. Add/Manage users
 
   Scenario: A.2.2.0400.100 Delete User Function
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Add Users (Table-based Only)"
     Then I should see "Create single user"
