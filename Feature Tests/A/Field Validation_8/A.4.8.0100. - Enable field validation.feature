@@ -5,7 +5,7 @@ Feature: Control Center: The system shall support the enabling/disabling of fiel
 
   Scenario: A.4.8.0100.100 Control center Enable/disable field validation
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "A.4.8.0100.100 " by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
