@@ -2,12 +2,12 @@ Feature: A.2.3.0300. Assign administrators and account managers
 
     Scenario: A.2.3.0300.100 Modify and Revoke Admin's User Rights
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "Administrator Privileges"
         Then I should see "Set administrator privileges"
 
-        When I enter "Test_User1" into the field with the placeholder text of "Search users to add as admin"
+        When I enter "Test_User1_CTSP" into the field with the placeholder text of "Search users to add as admin"
         And I enable the Administrator Privilege "Access to Control Center dashboards" for a new administrator
         And I enable the Administrator Privilege "Manage user accounts" for a new administrator
         And I enable the Administrator Privilege "Modify system configuration pages" for a new administrator
@@ -17,11 +17,11 @@ Feature: A.2.3.0300. Assign administrators and account managers
         And I click on the button labeled "Add"
         Then I should see 'The user "Test_User1" has now been granted one or more administrator privileges'
         And I click on the button labeled "OK"
-        And I should see "Test_User1"
+        And I should see "Test_User1_CTSP"
 
         Given I logout
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "Control Center"
         Then I should see "Control Center Home"
         # Checking if 'Access to Control Center dashboards' is enabled
@@ -39,18 +39,18 @@ Feature: A.2.3.0300. Assign administrators and account managers
         And I should see a button labeled "Enable a module"
         Given I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "Administrator Privileges"
         Then I should see "Set administrator privileges"
 
-        Given I disable the Administrator Privilege "Access to Control Center dashboards" for the administrator "Test_User1"
-        And I disable the Administrator Privilege "Manage user accounts" for the administrator "Test_User1"
-        And I disable the Administrator Privilege "Modify system configuration pages" for the administrator "Test_User1"
-        And I disable the Administrator Privilege "Perform REDCap upgrades" for the administrator "Test_User1"
-        And I disable the Administrator Privilege "Install, upgrade, and configure External Modules" for the administrator "Test_User1"
+        Given I disable the Administrator Privilege "Access to Control Center dashboards" for the administrator "Test_User1_CTSP"
+        And I disable the Administrator Privilege "Manage user accounts" for the administrator "Test_User1_CTSP"
+        And I disable the Administrator Privilege "Modify system configuration pages" for the administrator "Test_User1_CTSP"
+        And I disable the Administrator Privilege "Perform REDCap upgrades" for the administrator "Test_User1_CTSP"
+        And I disable the Administrator Privilege "Install, upgrade, and configure External Modules" for the administrator "Test_User1_CTSP"
         And I logout
-        And I login to REDCap with the user "Test_User1"
+        And I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "Control Center"
         
         Then I should see "Control Center Home"
@@ -72,7 +72,7 @@ Feature: A.2.3.0300. Assign administrators and account managers
         
         Given I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "Control Center"
         And I click on the link labeled "Administrator Privileges"
         Then I should see "Set administrator privileges"
@@ -82,7 +82,7 @@ Feature: A.2.3.0300. Assign administrators and account managers
         And I should see a dialog containing the following text: "Please be aware that you have unchecked ALL the administrator privileges for this user"
         When I click on the button labeled "Close" in the dialog box
         And I logout
-        And I login to REDCap with the user "Test_User1"
+        And I login to REDCap with the user "Test_User1_CTSP"
         And I should NOT see a link labeled "Control Center"
         Given I logout
 #End
