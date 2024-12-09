@@ -5,7 +5,7 @@ Feature: A.2.2.0200 Add/Manage users
 
   Scenario: A.2.2.0200.100 Account suspension
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Add Users (Table-based Only)"
     Then I should see "User Management for Table-based Authentication"
@@ -21,9 +21,9 @@ Feature: A.2.2.0200 Add/Manage users
     And I should see "Test_User4"
 
     When I click on the link labeled "Browse Users"
-    And I enter "Test_User1" into the input field labeled "User Search: Search for user by username, first name, last name, or primary email"
+    And I enter "Test_User1_CTSP" into the input field labeled "User Search: Search for user by username, first name, last name, or primary email"
     And I click on the button labeled "Search"
-    Then I should see "Test_User1"
+    Then I should see "Test_User1_CTSP"
 
     When I click on the button labeled "Suspend user account" and cancel the confirmation window
     Then I should NOT see "Success! The user has now been suspended from REDCap"
@@ -34,12 +34,12 @@ Feature: A.2.2.0200 Add/Manage users
     Then I should see "Home"
     And I logout
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Browse Users"
     Then I should see "User Search: Search for user by username, first name, last name, or primary email"
 
-    When I enter "Test_User1" into the input field labeled "User Search: Search for user by username, first name, last name, or primary email"
+    When I enter "Test_User1_ctsp" into the input field labeled "User Search: Search for user by username, first name, last name, or primary email"
     And I click on the button labeled "Search"
     Then I should see "Test_User1"
 
@@ -54,27 +54,27 @@ Feature: A.2.2.0200 Add/Manage users
     And I click on the button labeled "Display User List"
     Then I should see "Loading..."
     And I should see "User List"
-    And I should see a link labeled "Test_User1"
+    And I should see a link labeled "Test_User1_ctsp"
 
     Given I logout
-    And I login to REDCap with the user "Test_User1"
+    And I login to REDCap with the user "Test_User1_ctsp"
     Then I should see "The following REDCap user account has been suspended:"
     And I logout
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Browse Users"
     Then I should see "User Search: Search for user by username, first name, last name, or primary email"
 
     When I enter "Test_User1" into the input field labeled "User Search: Search for user by username, first name, last name, or primary email"
     And I click on the button labeled "Search"
-    Then I should see "Test_User1"
+    Then I should see "Test_User1_ctsp"
 
     When I click on the link labeled "unsuspend user" and cancel the confirmation window
     Then I should see "unsuspend user"
 
     Given I logout
-    And I login to REDCap with the user "Test_User1"
+    And I login to REDCap with the user "Test_User1_ctsp"
     Then I should see "The following REDCap user account has been suspended:"
     And I logout
 
