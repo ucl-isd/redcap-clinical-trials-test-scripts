@@ -91,12 +91,12 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Given I add an event named "Event 4" with offset of 4 days into the currently selected arm
         Then I should see "Event 4" in the define events table
 
-        When I click on the link labeled "Designate Instruments for My Events"
-        And I click on the button labeled "Arm 1"
+        When I click on the button labeled "Designate Instruments for My Events"
+        And I click on the link labeled "Arm 1"
         And I click on the button labeled "Begin Editing"
-        And I select "tick" in the field labeled "Event 4" under survey
-        And I select "Save"
-        Then I should see "Event 4" in Arm 1 under survey ticked
+        And I enable the Data Collection Instrument named "Survey" for the Event named "Event 4"
+        And I click on the button labeled "Save" on the Designate Instruments for My Events page
+        Then I verify the Data Collection Instrument named "Survey" is enabled for the Event named "Event 4"
 
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
