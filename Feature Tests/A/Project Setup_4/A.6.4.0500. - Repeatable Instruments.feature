@@ -4,12 +4,12 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
       I want to see that repeatable function is functioning as expected
 
       Scenario: A.6.4.0500.100 User's ability to add or modify repeatable instrument while in production mode
-            Given I login to REDCap with the user "Test_Admin"
+            Given I login to REDCap with the user "REDCap_Admin"
             And I create a new project named "A.6.4.0500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
             When I click on the link labeled "My Projects"
             And I click on the link labeled "A.6.4.0500.100"
             And I click on the link labeled "User Rights"
-            And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+            And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
             And I click on the button labeled "Assign to role"
             And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
             When I click on the button labeled exactly "Assign" on the role selector dropdown
@@ -29,14 +29,14 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Then I should see "Your system configuration values have now been changed!"
             Given I logout
 
-            Given I login to REDCap with the user "Test_User1"
+            Given I login to REDCap with the user "Test_User1_CTSP"
             When I click on the link labeled "My Projects"
             And I click on the link labeled "A.6.4.0500.100"
             And I click on the link labeled "Project Setup"
             Then I should see that repeatable instruments are unchangeable
             Given I logout
 
-            Given I login to REDCap with the user "Test_Admin"
+            Given I login to REDCap with the user "REDCap_Admin"
             When I click on the link labeled "My Projects"
             And I click on the link labeled "A.6.4.0500.100"
             When I click on the link labeled "Control Center"
@@ -47,7 +47,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             Then I should see "Your system configuration values have now been changed!"
             Given I logout
 
-            Given I login to REDCap with the user "Test_User1"
+            Given I login to REDCap with the user "Test_User1_CTSP"
             When I click on the link labeled "My Projects"
             And I click on the link labeled "A.6.4.0500.100"
             And I click on the link labeled "Project Setup"
@@ -67,7 +67,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click on the link labeled "Logging"
             Then I should see a table header and rows containing the following values in the logging table:
                   | Username   | Action        | List of Data Changes OR Fields Exported |
-                  | test_user1 | Manage/Design | Set up repeating instruments/events     |
+                  | test_user1_ctsp | Manage/Design | Set up repeating instruments/events     |
 
             Given I click on the link labeled "Add / Edit Records"
             Given I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
@@ -113,7 +113,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             When I click on the link labeled "Logging"
             Then I should see a table header and rows containing the following values in the logging table:
                   | Username   | Action        | List of Data Changes OR Fields Exported |
-                  | test_user1 | Manage/Design | Set up repeating instruments/events     |
+                  | test_user1_ctsp | Manage/Design | Set up repeating instruments/events     |
 
             Given I click on the link labeled "Add / Edit Records"
             And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
@@ -148,7 +148,7 @@ Feature: A.6.4.0500. Control Center: The system shall support the option to limi
             And I click on the link labeled "Logging"
             Then I should see a table header and rows containing the following values in the logging table:
                   | Username   | Action        | List of Data Changes OR Fields Exported |
-                  | test_user1 | Manage/Design | Set up repeating instruments/events     |
+                  | test_user1_ctsp | Manage/Design | Set up repeating instruments/events     |
 
             Given I click on the link labeled "Add / Edit Records"
             And I select record ID "1" from arm name "Arm 1: Arm 1" on the Add / Edit record page
