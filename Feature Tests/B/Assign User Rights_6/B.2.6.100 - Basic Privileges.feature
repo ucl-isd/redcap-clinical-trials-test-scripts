@@ -7,11 +7,11 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
 
         #SETUP
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named "B.2.6.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "B.2.6.0100.100 LTS 14.5.26" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.0100.100"
+        And I click on the link labeled "B.2.6.0100.100 LTS 14.5.26"
         And I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
         And I click on the radio labeled "Keep ALL data saved so far" in the dialog box
@@ -22,7 +22,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         ##ACTION: Add User with Basic custom rights
 
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the input field labeled "Add with custom rights"
+        And I enter "Test_User1_CTSP" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
         Then I should see a dialog containing the following text: "Adding new user"
 
@@ -56,22 +56,22 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on the button labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action   | List of Data Changes OR Fields Exported |
-            | test_admin | Add User | test_user1                              |
+            | REDCap_admin | Add User | test_user1                              |
 
         ##ACTION #CROSS-FEATURE B.2.23.100: Verify Logging Filter by user name
-        When I select the "test_admin" on the dropdown field labeled "Filter by username"
+        When I select the "REDCap_admin" on the dropdown field labeled "Filter by username"
         ##VERIFY_LOG #CROSS-FEATURE: Verify Logging Filter by user name
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action   | List of Data Changes OR Fields Exported |
-            | test_admin | Add User | test_user1                              |
+            | REDCap_admin | Add User | test_user1_CTSP                              |
         Given I logout
 
         ##VERIFY: Verify User with Basic custom rights
-        Given I login to REDCap with the user "Test_User1"
-        Then I should see "Logged in as test_user1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
+        Then I should see "Logged in as test_user1_CTSP"
 
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.0100.100"
+        And I click on the link labeled "B.2.6.0100.100 LTS 14.5.26"
         Then I should see a link labeled "Project Home"
         And I should NOT see a link labeled "Project Setup"
         And I should NOT see a link labeled "Designer"
@@ -96,11 +96,11 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Given I logout
 
         ##ACTION: Edit User to read-only custom rights
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.0100.100"
+        And I click on the link labeled "B.2.6.0100.100 LTS 14.5.26"
         And I click on the link labeled "User Rights"
-        And I click on the link labeled "Test User1"
+        And I click on the link labeled "Test User1_CTSP"
         And I click on the button labeled "Edit user privileges" on the tooltip
         Then I should see a dialog containing the following text: "Editing existing user"
 
@@ -111,13 +111,13 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on the button labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action      | List of Data Changes OR Fields Exported |
-            | test_admin | Update user | test_user1                              |
+            | REDCap_admin | Update user | test_user1_CTSP                              |
         Given I logout
 
         ##VERIFY: Verify User with full custom rights
 
-        Given I login to REDCap with the user "Test_User1"
-        Then I should see "Logged in as test_user1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
+        Then I should see "Logged in as test_user1_CTSP"
         And I should see a link labeled "Record Status Dashboard"
         And I should see a link labeled "Add / Edit Records"
         And I should see a link labeled "User Rights "
@@ -127,11 +127,10 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I logout
 
         ##ACTION: Edit User to full custom rights
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.0100.100"
-        And I click on the link labeled "User Rights"
-        And I click on the link labeled "Test User1"
+        And I click on the link labeled "B.2.6.0100.100 LTS 14.5.26"
+        And I click on the link labeled "Test User1_CTSP"
         And I click on the button labeled "Edit user privileges" on the tooltip
         Then I should see a dialog containing the following text: "Editing existing user"
 
@@ -168,13 +167,13 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on the button labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action      | List of Data Changes OR Fields Exported |
-            | test_admin | Update user | test_user1                              |
+            | REDCap_admin | Update user | test_user1_CTSP                              |
         Given I logout
 
         ##VERIFY: Verify User with full custom rights
 
-        Given I login to REDCap with the user "Test_User1"
-        Then I should see "Logged in as test_user1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
+        Then I should see "Logged in as test_user1_CTSP"
         And I should see a link labeled "Project Setup"
         And I should see a link labeled "Designer"
         And I should see a link labeled "Dictionary"
@@ -205,20 +204,20 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I logout
 
         ##ACTION: Expire User
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.0100.100"
+        And I click on the link labeled "B.2.6.0100.100 LTS 14.5.26"
         And I click on the link labeled "User Rights"
-        And I assign an expired expiration date to user "Test User1" with username of "test_user1"
+        And I assign an expired expiration date to user "Test User1_CTSP" with username of "test_user1_CTSP"
         ##VERIFY_LOG: Verify Expire User
         And I click on the button labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action                  | List of Data Changes OR Fields Exported |
-            | test_admin | Updated User Expiration | test_user1                              |
+            | REDCap_admin | Updated User Expiration | test_user1_CTSP                              |
         Given I logout
 
         ##VERIFY: Verify User access to project
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         Then I should see "ACCESS DENIED!"
         And I should see "Your access to this particular REDCap project has expired"
         When I click on the link labeled "Return to My Projects page"
@@ -226,33 +225,33 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
 
         ##ACTION: Remove expiration for User
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.0100.100"
+        And I click on the link labeled "B.2.6.0100.100 LTS 14.5.26"
         And I click on the link labeled "User Rights"
-        And I remove the expiration date to user "Test User1" with username of "test_user1"
-        #The Expiration column shows 'never' for "Test_User1"
+        And I remove the expiration date to user "Test User1_CTSP" with username of "test_user1_CTSP"
+        #The Expiration column shows 'never' for "Test_User1_CTSP"
         ##VERIFY_LOG: Verify Update user Expiration
         And I click on the button labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action                  | List of Data Changes OR Fields Exported |
-            | test_admin | Updated User Expiration | test_user1                              |
+            | REDCap_admin | Updated User Expiration | test_user1_CTSP                              |
         Given I logout
 
         ##VERIFY: Verify User access to project
-        Given I login to REDCap with the user "Test_User1"
-        Then I should see "Logged in as test_user1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
+        Then I should see "Logged in as test_user1_CTSP"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.0100.100"
+        And I click on the link labeled "B.2.6.0100.100 LTS 14.5.26"
         Then I should see a link labeled "Project Home"
         Given I logout
 
         ##ACTION: Remove User from project
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.0100.100"
+        And I click on the link labeled "B.2.6.0100.100 LTS 14.5.26"
         And I click on the link labeled "User Rights"
-        And I click on the link labeled "Test User1"
+        And I click on the link labeled "Test User1_CTSP"
         And I click on the button labeled "Edit user privileges" on the tooltip
         Then I should see a dialog containing the following text: "Editing existing user"
 
@@ -264,13 +263,13 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         When I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action                  | List of Data Changes OR Fields Exported |
-            | test_admin | Delete user             | test_user1                              |
-            | test_admin | Updated User Expiration | test_user1                              |
+            | REDCap_admin | Delete user             | test_user1_CTSP                              |
+            | REDCap_admin | Updated User Expiration | test_user1_CTSP                              |
         Given I logout
 
         ##VERIFY: Verify User has no access to project
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         Then I should see "My Projects"
-        And I should NOT see "B.2.6.0100.100"
+        And I should NOT see "B.2.6.0100.10 LTS 14.5.26"
 #End
