@@ -5,9 +5,9 @@ Feature: Project Level:  The system shall allow instrument level data export rig
 
     Scenario: B.2.6.300.100 Data Export Rights
         #SETUP_PRODUCTION
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named "B.2.6.300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "B.2.6.300.100 LTS 14.5.26" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         When I click on the link labeled "Project Setup"
         And I click on the button labeled "Move project to production"
@@ -23,15 +23,15 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I click on the link labeled "Upload users (CSV)"
         Then I should see a dialog containing the following text: "Upload users (CSV)"
 
-        Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
+        Given I upload a "csv" format file located at "import_files/user list for project 1_CTSP.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
         Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
         And I should see a table header and rows containing the following values in a table in the dialog box:
             | username   |
-            | test_admin |
-            | test_user1 |
-            | test_user2 |
-            | test_user3 |
-            | test_user4 |
+            | REDCap_admin |
+            | test_user1_CTSP |
+            | test_user2_CTSP |
+            | test_user3_CTSP |
+            | test_user4_CTSP |
 
         Given I click on the button labeled "Upload" in the dialog box
         Then I should see a dialog containing the following text: "SUCCESS!"
@@ -39,60 +39,60 @@ Feature: Project Level:  The system shall allow instrument level data export rig
 
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_admin          |
-            | —                       | test_user1          |
-            | —                       | test_user2          |
-            | —                       | test_user3          |
-            | —                       | test_user4          |
+            | —                       | REDCap_admin          |
+            | —                       | test_user1_CTSP          |
+            | —                       | test_user2_CTSP          |
+            | —                       | test_user3_CTSP          |
+            | —                       | test_user4_CTSP          |
             | 1_FullRights            | [No users assigned] |
             | 2_Edit_RemoveID         | [No users assigned] |
             | 3_ReadOnly_Deidentified | [No users assigned] |
             | 4_NoAccess_Noexport     | [No users assigned] |
 
         #B.2.6.500.100 Assign User Roles
-        When I click on the link labeled "Test User1"
+        When I click on the link labeled "Test User1_CTSP"
         And I click on the button labeled "Assign to role" on the role selector dropdown
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I click on the button labeled exactly "Assign"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_admin          |
-            | —                       | test_user2          |
-            | —                       | test_user3          |
-            | —                       | test_user4          |
-            | 1_FullRights            | test_user1          |
+            | —                       | REDCap_admin          |
+            | —                       | test_user2_CTSP          |
+            | —                       | test_user3_CTSP          |
+            | —                       | test_user4_CTSP          |
+            | 1_FullRights            | test_user1_CTSP          |
             | 2_Edit_RemoveID         | [No users assigned] |
             | 3_ReadOnly_Deidentified | [No users assigned] |
             | 4_NoAccess_Noexport     | [No users assigned] |
 
-        When I click on the link labeled "Test User2"
+        When I click on the link labeled "Test User2_CTSP"
         And I click on the button labeled "Assign to role" on the role selector dropdown
         And I select "2_Edit_RemoveID" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I click on the button labeled exactly "Assign"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_admin          |
-            | —                       | test_user3          |
-            | —                       | test_user4          |
-            | 1_FullRights            | test_user1          |
-            | 2_Edit_RemoveID         | test_user2          |
+            | —                       | REDCap_admin          |
+            | —                       | test_user3_CTSP          |
+            | —                       | test_user4_CTSP          |
+            | 1_FullRights            | test_user1_CTSP          |
+            | 2_Edit_RemoveID         | test_user2_CTSP          |
             | 3_ReadOnly_Deidentified | [No users assigned] |
             | 4_NoAccess_Noexport     | [No users assigned] |
 
-        When I click on the link labeled "Test User3"
+        When I click on the link labeled "Test User3_CTSP"
         And I click on the button labeled "Assign to role" on the role selector dropdown
         And I select "3_ReadOnly_Deidentified" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I click on the button labeled exactly "Assign"
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_admin          |
-            | —                       | test_user4          |
-            | 1_FullRights            | test_user1          |
-            | 2_Edit_RemoveID         | test_user2          |
-            | 3_ReadOnly_Deidentified | test_user3          |
+            | —                       | REDCap_admin          |
+            | —                       | test_user4_CTSP          |
+            | 1_FullRights            | test_user1_CTSP          |
+            | 2_Edit_RemoveID         | test_user2_CTSP          |
+            | 3_ReadOnly_Deidentified | test_user3_CTSP          |
             | 4_NoAccess_Noexport     | [No users assigned] |
 
         When I click on the link labeled "Test User4"
@@ -102,19 +102,19 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         ##VERIFY
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_admin          |
-            | 1_FullRights            | test_user1          |
-            | 2_Edit_RemoveID         | test_user2          |
-            | 3_ReadOnly_Deidentified | test_user3          |
-            | 4_NoAccess_Noexport     | test_user4          |
+            | —                       | REDCap_admin          |
+            | 1_FullRights            | test_user1_CTSP          |
+            | 2_Edit_RemoveID         | test_user2_CTSP          |
+            | 3_ReadOnly_Deidentified | test_user3_CTSP          |
+            | 4_NoAccess_Noexport     | test_user4_CTSP          |
         And I logout
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         Then I should see "Logged in as"
 
         #FUNCTIONAL REQUIREMENT #B.5.21.300.100 Export Full Data Set
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.300.100"
+        And I click on the link labeled "B.2.6.300.100 LTS 14.5.26"
         And I click on the link labeled "Data Exports, Reports, and Stats"
         Then I should see "All data (all records and fields)"
 
@@ -136,17 +136,17 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action      | List of Data Changes OR Fields Exported |
-            | test_user1 | Data export | Download exported data file (CSV raw)   |
+            | test_user1_CTSP | Data export | Download exported data file (CSV raw)   |
 
         And I logout
 
         #SETUP
-        Given I login to REDCap with the user "Test_User2"
+        Given I login to REDCap with the user "Test_User2_CTSP"
         Then I should see "Logged in as"
 
         #FUNCTIONAL REQUIREMENT Export remove all identifier fields
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.300.100"
+        And I click on the link labeled "B.2.6.300.100 LTS 14.5.26"
         And I click on the link labeled "Data Exports, Reports, and Stats"
         Then I should see "All data (all records and fields)"
 
@@ -171,12 +171,12 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         And I logout
 
         #SETUP
-        Given I login to REDCap with the user "Test_User3"
+        Given I login to REDCap with the user "Test_User3_CTSP"
         Then I should see "Logged in as"
 
         #FUNCTIONAL REQUIREMENT: Export Deidentified
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.300.100"
+        And I click on the link labeled "B.2.6.300.100 LTS 14.5.26"
         And I click on the link labeled "Data Exports, Reports, and Stats"
         Then I should see "All data (all records and fields)"
 
@@ -199,12 +199,12 @@ Feature: Project Level:  The system shall allow instrument level data export rig
         And I logout
 
         #SETUP
-        Given I login to REDCap with the user "Test_User4"
+        Given I login to REDCap with the user "Test_User4_CTSP"
         Then I should see "Logged in as"
 
         #FUNCTIONAL REQUIREMENT: Export No Access
         When I click on the link labeled "My Projects"
-        And I click on the link labeled "B.2.6.300.100"
+        And I click on the link labeled "B.2.6.300.100 LTS 14.5.26"
         ##ACTION:
         And I click on the link labeled "Data Exports, Reports, and Stats"
         ##VERIFY
