@@ -63,7 +63,6 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Then I should see "Arm name:  Arm 2"
 
         When I click on the link labeled "Logging"
-
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
             | test_user1_CTSP | Manage/Design | Edit arm name/number                    |
@@ -91,6 +90,13 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
 
         Given I add an event named "Event 4" with offset of 4 days into the currently selected arm
         Then I should see "Event 4" in the define events table
+
+        When I click on the link labeled "Designate Instruments for My Events"
+        And I click on the button labeled "Arm 1"
+        And I click on the button labeled "Begin Editing"
+        And I select "tick" in the field labeled "Event 4" under survey
+        And I select "Save"
+        Then I should see "Event 4" in Arm 1 under survey ticked
 
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
@@ -121,8 +127,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Record Status Dashboard"
         And I click on the link labeled "Arm 1"
         Then I should see a Data Collection Instrument named "Consent" for the Event named "Event 1"
-
-
+        
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
