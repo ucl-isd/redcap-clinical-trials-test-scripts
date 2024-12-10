@@ -5,21 +5,21 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
 
     Scenario: A.6.4.0600.100 User's ability to add or modify events and arms while in production mode
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "A.6.4.0600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
         Then I should see Project status: "Development"
 
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+        And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         When I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+        Then I should see "Test User1_CTSP" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
         Given I logout
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
         And I click on the link labeled "Project Setup"
@@ -34,8 +34,8 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_user1 | Manage/Design | Create arm                              |
-            | test_user1 | Manage/Design | Arm 3: Arm 3                            |
+            | test_user1_CTSP | Manage/Design | Create arm                              |
+            | test_user1_CTSP | Manage/Design | Arm 3: Arm 3                            |
 
         Given I click on the link labeled "Project Setup"
         And I click on the button labeled "Define My Events"
@@ -47,10 +47,10 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported                         |
-            | test_user1 | Manage/Design | Create arm                                                      |
-            | test_user1 | Manage/Design | Arm 3: Arm 3                                                    |
-            | test_user1 | Manage/Design | Create event                                                    |
-            | test_user1 | Manage/Design | Event: Event 1, Arm: Arm 3, Days Offset: 0, Offset Range: -0/+0 |
+            | test_user1_CTSP | Manage/Design | Create arm                                                      |
+            | test_user1_CTSP | Manage/Design | Arm 3: Arm 3                                                    |
+            | test_user1_CTSP | Manage/Design | Create event                                                    |
+            | test_user1_CTSP | Manage/Design | Event: Event 1, Arm: Arm 3, Days Offset: 0, Offset Range: -0/+0 |
 
         Given I click on the link labeled "Project Setup"
         And I click on the button labeled "Define My Events"
@@ -66,8 +66,8 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
 
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_user1 | Manage/Design | Edit arm name/number                    |
-            | test_user1 | Manage/Design | Arm 2: Arm 2                            |
+            | test_user1_CTSP | Manage/Design | Edit arm name/number                    |
+            | test_user1_CTSP | Manage/Design | Arm 2: Arm 2                            |
 
         Given I click on the link labeled "Project Setup"
         And I click on the button labeled "Define My Events"
@@ -81,8 +81,8 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_user1 | Manage/Design | Edit event                              |
-            | test_user1 | Manage/Design | Event One, Arm: Arm 2                   |
+            | test_user1_CTSP | Manage/Design | Edit event                              |
+            | test_user1_CTSP | Manage/Design | Event One, Arm: Arm 2                   |
 
         Given I click on the link labeled "Project Setup"
         And I click on the button labeled "Define My Events"
@@ -95,10 +95,10 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported                         |
-            | test_user1 | Manage/Design | Create arm                                                      |
-            | test_user1 | Manage/Design | Arm 2: Arm 2                                                    |
-            | test_user1 | Manage/Design | Create event                                                    |
-            | test_user1 | Manage/Design | Event: Event 4, Arm: Arm 1, Days Offset: 4, Offset Range: -0/+0 |
+            | test_user1_CTSP | Manage/Design | Create arm                                                      |
+            | test_user1_CTSP | Manage/Design | Arm 2: Arm 2                                                    |
+            | test_user1_CTSP | Manage/Design | Create event                                                    |
+            | test_user1_CTSP | Manage/Design | Event: Event 4, Arm: Arm 1, Days Offset: 4, Offset Range: -0/+0 |
 
         When I click on the link labeled "Record Status Dashboard"
         Then I should see "Arm 3: Arm 3"
@@ -126,7 +126,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_user1 | Manage/Design | Perform instrument-event mappings       |
+            | test_user1_CTSP | Manage/Design | Perform instrument-event mappings       |
 
         Given I click on the link labeled "Project Setup"
         When I click on the button labeled "Designate Instruments for My Events"
@@ -166,7 +166,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Then I should see a Data Collection Instrument named "Consent" for the Event named "Event 1"
         Given I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
         And I click on the link labeled "Project Setup"
@@ -183,7 +183,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Then I should see "Your system configuration values have now been changed!"
         Given I logout
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
         And I click on the link labeled "Project Setup"
@@ -208,7 +208,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         But I should NOT see "Upload instrument-event mappings (CSV)"
         Given I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"
         Then I should see "System-level User Settings"
@@ -217,7 +217,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Then I should see "Your system configuration values have now been changed!"
         Given I logout
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
         And I click on the link labeled "Project Setup"
@@ -236,10 +236,10 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported                         |
-            | test_user1 | Manage/Design | Create arm                                                      |
-            | test_user1 | Manage/Design | Arm 4: Arm 4                                                    |
-            | test_user1 | Manage/Design | Create event                                                    |
-            | test_user1 | Manage/Design | Event: Event 1, Arm: Arm 4, Days Offset: 0, Offset Range: -0/+0 |
+            | test_user1_CTSP | Manage/Design | Create arm                                                      |
+            | test_user1_CTSP | Manage/Design | Arm 4: Arm 4                                                    |
+            | test_user1_CTSP | Manage/Design | Create event                                                    |
+            | test_user1_CTSP | Manage/Design | Event: Event 1, Arm: Arm 4, Days Offset: 0, Offset Range: -0/+0 |
 
         Given I click on the link labeled "Project Setup"
         And I click on the button labeled "Define My Events"
@@ -292,7 +292,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_user1 | Manage/Design | Perform instrument-event mappings       |
+            | test_user1_CTSP | Manage/Design | Perform instrument-event mappings       |
 
         Given I click on the link labeled "Project Setup"
         When I click on the button labeled "Designate Instruments for My Events"
@@ -307,7 +307,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         Then I should see a Data Collection Instrument named "Consent" for the Event named "Event 1"
         And I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "A.6.4.0600.100"
         And I click on the link labeled "Project Setup"
@@ -328,8 +328,8 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Edit arm name/number                    |
-            | test_admin | Manage/Design | Arm 1: Arm One                          |
+            | REDCap_admin | Manage/Design | Edit arm name/number                    |
+            | REDCap_admin | Manage/Design | Arm 1: Arm One                          |
 
         Given I click on the link labeled "Project Setup"
         And I click on the button labeled "Define My Events"
@@ -346,8 +346,8 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Edit event                              |
-            | test_admin | Manage/Design | Event Four, Arm: Arm One                |
+            | REDCap_admin | Manage/Design | Edit event                              |
+            | REDCap_admin | Manage/Design | Event Four, Arm: Arm One                |
 
         Given I click on the link labeled "Project Setup"
         When I click on the button labeled "Designate Instruments for My Events"
@@ -364,7 +364,7 @@ Feature: A.6.4.0600 Manage project creation, deletion, and settings. Control Cen
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Perform instrument-event mappings       |
+            | REDCap_admin | Manage/Design | Perform instrument-event mappings       |
 
         When I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"
