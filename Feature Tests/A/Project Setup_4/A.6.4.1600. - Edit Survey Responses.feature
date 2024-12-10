@@ -54,7 +54,7 @@ Feature: Control Center: The system shall allow users to edit survey responses t
         ##ACTION: Enable editing survey responses for survey instrument
         When I check the checkbox in the row labeled "Survey" in the Edit survey responses column
         And I save changes within the context of User Rights
-        Then I should see 'User "test_admin" was successfully edited'
+        Then I should see 'User "REDCap_admin" was successfully edited'
 
         #SETUP Check edit survey function in a  record
         Given I click on the link labeled "Record Status Dashboard"
