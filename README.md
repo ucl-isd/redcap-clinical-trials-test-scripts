@@ -23,4 +23,6 @@ For more information about the Regulatory & Software Validation Committee (RSVC)
 
 Thank you for your interest in ensuring the quality and compliance of REDCap through manual validation test scripts. Together, we can enhance the reliability of REDCap for critical research and clinical projects.
 
+## Testing Contribution
 
+UCL Clinical Trials Shared Platforms is conducting these tests manually in December 2024 for the initial validation of our package of REDCap. Tests will be conducted by Nancy Tappenden, Andrew Cooper, and Sven Nelson. Nancy will be performing tests within the [Production environment](https://redcap-clinical-trials.ucl.ac.uk/), Andrew in the [Testing environment](https://redcap-clinical-trials-uat.ucl.ac.uk/), and Sven in the [Development environment](https://redcap-clinical-trials-dev.ucl.ac.uk/)
