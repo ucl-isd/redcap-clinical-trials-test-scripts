@@ -56,7 +56,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         And I click on the button labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action   | List of Data Changes OR Fields Exported |
-            | REDCap_admin | Add User | test_user1                              |
+            | REDCap_admin | Add User | test_user1_CTSP                              |
 
         ##ACTION #CROSS-FEATURE B.2.23.100: Verify Logging Filter by user name
         When I select the "REDCap_admin" on the dropdown field labeled "Filter by username"
