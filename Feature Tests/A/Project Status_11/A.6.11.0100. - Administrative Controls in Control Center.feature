@@ -5,16 +5,16 @@ Feature: A.6.11.0100. Control Center: The system shall support limiting the abil
 
   Scenario: A.6.11.0100.100 Production status setting in control center
     ##SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "A.6.11.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     ###USER_RIGHTS
     When I click on the link labeled "User Rights"
-    And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+    And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I click on the button labeled exactly "Assign" on the role selector dropdown
-    Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+    Then I should see "Test User1_CTSP" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
     ##FUNCTIONAL REQUIREMENT
     ###ACTION: Setup in control center - admin only
@@ -28,7 +28,7 @@ Feature: A.6.11.0100. Control Center: The system shall support limiting the abil
     Then I should see "Your system configuration values have now been changed!"
     And I logout
     #SETUP
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.11.0100.100"
     ##ACTION: Test user requests move to production
@@ -45,7 +45,7 @@ Feature: A.6.11.0100. Control Center: The system shall support limiting the abil
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username   | Action        | List of Data Changes OR Fields Exported           |
-      | test_user1 | Manage/Design | Send request to move project to production status |
+      | test_user1_CTSP | Manage/Design | Send request to move project to production status |
 
     ##ACTION: cancel request
     When I click on the link labeled "Project Setup"
@@ -55,7 +55,7 @@ Feature: A.6.11.0100. Control Center: The system shall support limiting the abil
     And I logout
 
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"
     Then I should see "System-level User Settings"
@@ -66,7 +66,7 @@ Feature: A.6.11.0100. Control Center: The system shall support limiting the abil
     And I logout
 
     #SETUP
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "A.6.11.0100.100"
 
@@ -83,5 +83,5 @@ Feature: A.6.11.0100. Control Center: The system shall support limiting the abil
     When I click on the link labeled "Logging"
     And I should see a table header and rows containing the following values in the logging table:
       | Username   | Action        | List of Data Changes OR Fields Exported |
-      | test_user1 | Manage/Design | Move project to Production status       |
+      | test_user1_CTSP | Manage/Design | Move project to Production status       |
 #End
