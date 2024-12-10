@@ -119,7 +119,7 @@ Feature: Project Level: The system shall allow the ability to add, edit or delet
         Given I login to REDCap with the user "Test_User1_CTSP"
         Then I should see "Logged in as test_user1_CTSP"
         And I should see a link labeled "Record Status Dashboard"
-        And I should see a link labeled "Add / Edit Records"
+        And I should see a link labeled "View / Edit Records"
         And I should see a link labeled "User Rights "
 
         When I click on the link labeled "User Rights"
