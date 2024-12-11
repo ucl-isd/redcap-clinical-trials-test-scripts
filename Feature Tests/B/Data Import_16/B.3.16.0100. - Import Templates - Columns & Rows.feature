@@ -5,7 +5,7 @@ Feature: User Interface: The system shall support the ability to download two ve
 
   Scenario: B.3.16.0100.100 data import template
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "B.3.16.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.16.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
