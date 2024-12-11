@@ -5,7 +5,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
 
     Scenario: B.2.10.0100.100 Create, Edit & Delete DAGs
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.2.10.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.10.0100.100"
@@ -37,14 +37,14 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         #FUNCTIONAL REQUIREMENT - Cannot delete DAG with User
         ##ACTION: Add User with Basic custom rights
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the input field labeled "Add with custom rights"
+        And I enter "Test_User1_CTSP" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
         Then I should see a dialog containing the following text: "Adding new user"
         And I save changes within the context of User Rights
 
         ##ACTION: Assign User to DAG
         Given I click on the link labeled "DAGs"
-        When I select "test_user1 (Test User1)" on the dropdown field labeled "Assign user"
+        When I select "test_user1_CTSP (Test User_CTSP1)" on the dropdown field labeled "Assign user"
         And I select "RenameGroup3" on the dropdown field labeled "to"
         And I click on the button labeled "Assign"
 
@@ -53,7 +53,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
             | Data Access Groups | Users in group          |
             | TestGroup1         |                         |
             | TestGroup2         |                         |
-            | RenameGroup3       | test_user1 (Test User1) |
+            | RenameGroup3       | test_user1_CTSP (Test User_CTSP1) |
 
         ##ACTION: Cannot Delete DAG with User
         Given I click the X to delete the data access group named "RenameGroup3"
@@ -66,7 +66,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
             | Data Access Groups | Users in group          |
             | TestGroup1         |                         |
             | TestGroup2         |                         |
-            | RenameGroup3       | test_user1 (Test User1) |
+            | RenameGroup3       | test_user1_CTSP (Test User1_CTSP) |
 
         ##ACTION: Remove User from DAG
         When I select "test_user1 (Test User1)" on the dropdown field labeled "Assign user"
@@ -96,7 +96,7 @@ Feature: B.2.10.0100. User Interface: The system shall allow for the creation of
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Delete data access group                |
-            | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Rename data access group                |
-            | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Create data access group                |
+            | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Delete data access group                |
+            | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Rename data access group                |
+            | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Create data access group                |
 #END
