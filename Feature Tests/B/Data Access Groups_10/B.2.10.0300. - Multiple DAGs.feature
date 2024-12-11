@@ -5,7 +5,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
 
     Scenario: B.2.10.0300.100 Assign user multiple DAGs and DAG Switcher
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.2.10.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.10.0300.100"
@@ -16,14 +16,14 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         When I click on the link labeled "Upload users (CSV)"
         Then I should see a dialog containing the following text: "Upload users (CSV)"
 
-        Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
+        Given I upload a "csv" format file located at "import_files/user list for project 1_CTSP.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
         Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
         And I should see a table header and rows containing the following values in a table:
             | username   |
-            | test_user1 |
-            | test_user2 |
-            | test_user3 |
-            | test_user4 |
+            | test_user1_CTSP |
+            | test_user2_CTSP |
+            | test_user3_CTSP |
+            | test_user4_CTSP |
 
         Given I click on the button labeled "Upload" in the dialog box
         Then I should see a dialog containing the following text: "SUCCESS!"
@@ -31,11 +31,11 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         When I click on the button labeled "Close" in the dialog box
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_admin          |
-            | —                       | test_user1          |
-            | —                       | test_user2          |
-            | —                       | test_user3          |
-            | —                       | test_user4          |
+            | —                       | REDCap_admin          |
+            | —                       | test_user1_CTSP          |
+            | —                       | test_user2_CTSP          |
+            | —                       | test_user3_CTSP          |
+            | —                       | test_user4_CTSP          |
             | 1_FullRights            | [No users assigned] |
             | 2_Edit_RemoveID         | [No users assigned] |
             | 3_ReadOnly_Deidentified | [No users assigned] |
@@ -47,18 +47,18 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: Assign DAG
-        When I select "test_user1 (Test User1)" on the dropdown field labeled "Assign user"
+        When I select "test_user1_CTSP (Test User1_CTSP)" on the dropdown field labeled "Assign user"
         When I select "TestGroup1" on the dropdown field labeled "to"
         And I click on the button labeled "Assign"
 
         ##VERIFY
         Then I should see a table header and rows containing the following values in data access groups table:
             | Data Access Groups | Users in group |
-            | TestGroup1         | test_user1     |
+            | TestGroup1         | test_user1_CTSP     |
             | TestGroup2         |                |
 
         ##ACTION: Assign DAG
-        When I select "test_user1 (Test User1)" on the dropdown field labeled "Assign user"
+        When I select "test_user1_CTSP (Test User1_CTSP)" on the dropdown field labeled "Assign user"
         When I select "TestGroup2" on the dropdown field labeled "to"
         And I click on the button labeled "Assign"
 
@@ -66,11 +66,11 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
         Then I should see a table header and rows containing the following values in data access groups table:
             | Data Access Groups | Users in group |
             | TestGroup1         |                |
-            | TestGroup2         | test_user1     |
+            | TestGroup2         | test_user1_CTSP     |
 
         ##ACTION: Assign DAG Switcher
-        When I check "TestGroup1" for user "test_user1" in the DAG Switcher
-        And I check "TestGroup2" for user "test_user1" in the DAG Switcher
+        When I check "TestGroup1" for user "test_user1_CTSP" in the DAG Switcher
+        And I check "TestGroup2" for user "test_user1_CTSP" in the DAG Switcher
 
         #ASSIGN RECORDS TO SPECIFIC DAGs
         # -- Record ID 3 - TestGroup1 --
@@ -101,7 +101,7 @@ Feature: B.2.10.0300. User Interface: The system shall allow a user to be added 
 
 
         When I logout
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.10.0300.100"
         And I click on the link labeled "Record Status Dashboard"
