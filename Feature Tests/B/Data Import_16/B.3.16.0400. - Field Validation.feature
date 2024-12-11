@@ -5,7 +5,7 @@ Feature: User Interface: The system shall import only valid formats for text fie
 
     Scenario: B.3.16.0400.100 Import valid formats for text fields
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.3.16.0400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.16.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
@@ -39,9 +39,9 @@ Feature: User Interface: The system shall import only valid formats for text fie
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action                 | List of Data Changes OR Fields Exported |
-            | test_admin | Create record (import) | record_id = '100'                       |
-            | test_admin | Create record (import) | record_id = '200'                       |
-            | test_admin | Create record (import) | record_id = '300'                       |
+            | REDCap_admin | Create record (import) | record_id = '100'                       |
+            | REDCap_admin | Create record (import) | record_id = '200'                       |
+            | REDCap_admin | Create record (import) | record_id = '300'                       |
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
@@ -74,7 +74,7 @@ Feature: User Interface: The system shall import only valid formats for text fie
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action | List of Data Changes OR Fields Exported |
-            | test_admin | 300    | email = 'ringo@noreply.edu'             |
-            | test_admin | 300    | notesbox = '',                          |
-            | test_admin | 300    | multiple_radio_auto = '2'               |
+            | REDCap_admin | 300    | email = 'ringo@noreply.edu'             |
+            | REDCap_admin | 300    | notesbox = '',                          |
+            | REDCap_admin | 300    | multiple_radio_auto = '2'               |
 #End
