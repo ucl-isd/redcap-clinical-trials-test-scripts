@@ -5,9 +5,9 @@ Feature: Project Level:  The system shall allow for the creation, copying and de
 
     Scenario: B.2.6.400.100 Create, Copy, & Delete User Roles
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named "B.2.6.400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "B.2.6.400.100 LTS 14.5.26" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
      #FUNCTIONAL REQUIREMENT:
     ##ACTION: User Rights Create role
@@ -31,7 +31,7 @@ Feature: Project Level:  The system shall allow for the creation, copying and de
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action           | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_admin | Create user role | role = 'TestRole2'                      |
+      | mm/dd/yyyy hh:mm | REDCap_admin | Create user role | role = 'TestRole2'                      |
 
 
     Given I click on the link labeled "User Rights"
@@ -78,7 +78,7 @@ Feature: Project Level:  The system shall allow for the creation, copying and de
 
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action           | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_admin | Delete user role | role = 'TestRole2'                      |
-      | mm/dd/yyyy hh:mm | test_admin | Create user role | role = 'Copy role'                      |
-      | mm/dd/yyyy hh:mm | test_admin | Create user role | role = 'TestRole2'                      |
+      | mm/dd/yyyy hh:mm | REDCap_admin | Delete user role | role = 'TestRole2'                      |
+      | mm/dd/yyyy hh:mm | REDCap_admin | Create user role | role = 'Copy role'                      |
+      | mm/dd/yyyy hh:mm | REDCap_admin | Create user role | role = 'TestRole2'                      |
 #End
