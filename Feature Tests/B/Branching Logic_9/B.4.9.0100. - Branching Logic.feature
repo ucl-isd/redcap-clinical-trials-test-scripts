@@ -4,7 +4,7 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
 
     Scenario: B.4.9.0100.100 Branching Logic
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.4.9.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_4.9.xml", and clicking the "Create Project" button
 
         ##VERIFY: Branching logic
@@ -142,5 +142,5 @@ Feature: B.4.9.0100. User Interface: The system shall support branching logic fo
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Add/edit branching logic                |
+            | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Add/edit branching logic                |
 #End
