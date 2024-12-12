@@ -50,9 +50,9 @@ Feature: User Interface: The system shall import only valid choice codes for rad
         When I click on the link labeled "Logging"
         Then I should see table header and rows containing the following values in the logging table:
             | Username   | Action                 | List of Data Changes OR Fields Exported |
-            | test_admin | Update record (import) | multiple_dropdown_auto = '3'            |
-            | test_admin | Update record (import) | multiple_dropdown_manual = '5'          |
-            | test_admin | Update record (import) | multiple_radio_auto = '2'               |
-            | test_admin | Update record (import) | radio_button_manual = '101'             |
-            | test_admin | Update record (import) | checkbox(1) = unchecked                 |
+            | REDCap_admin | Update record (import) | multiple_dropdown_auto = '3'            |
+            | REDCap_admin | Update record (import) | multiple_dropdown_manual = '5'          |
+            | REDCap_admin | Update record (import) | multiple_radio_auto = '2'               |
+            | REDCap_admin | Update record (import) | radio_button_manual = '101'             |
+            | REDCap_admin | Update record (import) | checkbox(1) = unchecked                 |
 #End
