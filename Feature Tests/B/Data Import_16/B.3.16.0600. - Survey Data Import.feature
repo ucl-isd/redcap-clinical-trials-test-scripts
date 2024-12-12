@@ -6,7 +6,7 @@ Feature: User Interface: The system shall ignore survey identifier and timestamp
     Scenario: B.3.16.0600.100 Import ignores survey identifier and timestamp fields
 
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.3.16.0600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "B.3.16.0600Project.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
