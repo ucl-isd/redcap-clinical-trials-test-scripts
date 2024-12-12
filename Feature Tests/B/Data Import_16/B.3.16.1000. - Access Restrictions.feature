@@ -6,7 +6,7 @@ Feature: User Interface: The system shall not allow a new record to be imported 
     Scenario: B.3.16.1000.100 Data import of new record limited by user rights
 
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.3.16.1000.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
@@ -18,7 +18,7 @@ Feature: User Interface: The system shall not allow a new record to be imported 
 
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
-        And I enter "Test_User3" into the field with the placeholder text of "Add new user"
+        And I enter "Test_User3_CTSP" into the field with the placeholder text of "Add new user"
         And I click on the button labeled "Add with custom rights"
         Then I should see a dialog containing the following text: "Adding new user"
 
@@ -27,11 +27,11 @@ Feature: User Interface: The system shall not allow a new record to be imported 
         And I click on the button labeled "Add user" in the dialog box
         Then I should see a table header and rows containing the following values in a table:
             | Role name | Username   |
-            | —         | test_user3 |
+            | —         | test_user3_CTSP |
         And I logout
 
         #FUNCTIONAL_REQUIREMENT
-        Given I login to REDCap with the user "Test_User3"
+        Given I login to REDCap with the user "Test_User3_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.3.16.1000.100"
         When I click on the link labeled "Data Import Tool"
@@ -40,7 +40,7 @@ Feature: User Interface: The system shall not allow a new record to be imported 
         And I should see "Your user privileges do NOT allow you to create new records."
         And I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.3.16.1000.100"
         And I click on the link labeled "Data Import Tool"
