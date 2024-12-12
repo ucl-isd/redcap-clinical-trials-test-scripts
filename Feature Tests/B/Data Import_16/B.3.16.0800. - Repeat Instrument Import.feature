@@ -6,7 +6,7 @@ Feature: User Interface: The system shall require the repeating instrument and i
 
   Scenario: B.3.16.0800.100 Import requires the repeating instrument and instance number
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "B.3.16.0800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PROJECTSETUP
