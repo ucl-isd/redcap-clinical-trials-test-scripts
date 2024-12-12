@@ -5,7 +5,7 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
 
     Scenario: B.3.16.1300.100 Data import assigns DAG
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.3.16.1300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.16.xml", and clicking the "Create Project" button
 
         When I click on the link labeled "DAGs"
@@ -14,7 +14,7 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         Then I should see 'Data Access Group "Test_Group1" has been created!'
 
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the input field labeled "Add with custom rights"
+        And I enter "Test_User1_CTSP" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
         Then I should see a dialog containing the following text: "Adding new user"
 
@@ -23,8 +23,8 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         And I click on the button labeled "Add user" in the dialog box
         Then I should see a table header and rows containing the following values in a table:
             | Role | Username or users assigned to a role | Expiration | Data Access Group |
-            |      | test_admin                           |            | -                 |
-            |      | test_user1                           |            | Test_Group1       |
+            |      | REDCap_admin                           |            | -                 |
+            |      | test_user1_CTSP                           |            | Test_Group1       |
 
         #SETUP_PRODUCTION
         Given I click on the link labeled "Project Setup"
@@ -42,7 +42,7 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         Then I should see "Import Successful!"
         And I logout
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.3.16.1300.100"
         And I click on the link labeled "Data Import Tool"
@@ -52,7 +52,7 @@ Feature: B.3.16.1300. User Interface: The system shall provide the ability to as
         Then I should see "ERROR: Illegal use of 'redcap_data_access_group' field!"
         And I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.3.16.1300.100"
         And I click on the link labeled "Data Import Tool"
