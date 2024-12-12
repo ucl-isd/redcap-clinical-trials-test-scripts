@@ -6,7 +6,7 @@ Feature: User Interface: The system shall not allow data to be changed on locked
   Scenario: B.3.16.0900.100 Limit import to unlocked record forms
 
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "B.3.16.0900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.16.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
@@ -51,5 +51,5 @@ Feature: User Interface: The system shall not allow data to be changed on locked
     Then I should see a table header and rows containing the following values in the logging table:
       #M: should not see anything was imported after record was locked
       | Username   | Action               | List of Data Changes      |
-      | test_admin | Lock/Unlock Record 1 | Action Lock entire record |
+      | REDCap_admin | Lock/Unlock Record 1 | Action Lock entire record |
 #End
