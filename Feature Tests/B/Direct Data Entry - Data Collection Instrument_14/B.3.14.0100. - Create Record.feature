@@ -75,5 +75,5 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record1 | name = 'Name'                           |
+            | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record1 | name = 'EDIT'                           |
 #END
