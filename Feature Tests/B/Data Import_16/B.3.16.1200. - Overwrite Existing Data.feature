@@ -6,9 +6,9 @@ Feature: User Interface: The system shall provide the option to allow blank valu
   Scenario: B.3.16.1200.100 Data import overwrite existing values with blank
 
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-    And I create a new project named "B.3.16.1200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+    And I create a new project named "B.3.16.1200.100 LTS 14.5.26" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
     When I click on the button labeled "Move project to production"
