@@ -5,7 +5,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
 
     Scenario: B.3.14.0100.100 Create new record
         #SETUP_PRODUCTION
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.3.14.0100.100 " by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
 
         When I click on the link labeled "Project Setup"
@@ -16,12 +16,12 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
 
         ##SETUP_USER_RIGHTS
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the field with the placeholder text of "Add new user"
+        And I enter "Test_User1_CTSP" into the field with the placeholder text of "Add new user"
         And I click on the button labeled "Add with custom rights"
         And I uncheck the User Right named "Create Records"
         And I check the User Right named "Logging"
         And I click on the button labeled "Add user"
-        Then I should see "Test User1"
+        Then I should see "Test User1_CTSP"
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION: create record
@@ -37,7 +37,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_admin | Create record7 | record_id = '7'                         |
+            | mm/dd/yyyy hh:mm | REDCap_admin | Create record7 | record_id = '7'                         |
 
         #VERIFY_RSD:
         When I click on the link labeled "Record Status Dashboard"
@@ -57,7 +57,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         And I logout
 
         ##ACTION: login as user without create record access - but can edit record
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.3.14.0100.100"
         And I click on the link labeled "View / Edit Records"
@@ -75,5 +75,5 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         And I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_user1 | Update record1 | name = 'Name'                           |
+            | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record1 | name = 'Name'                           |
 #END
