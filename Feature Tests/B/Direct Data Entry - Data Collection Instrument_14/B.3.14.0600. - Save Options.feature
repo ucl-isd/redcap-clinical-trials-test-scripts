@@ -5,7 +5,7 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
 
     Scenario: B.3.14.0600.100 Save data options from data entry page
         #ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"
         Then I should see "System-level User Settings"
@@ -15,7 +15,7 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         Then I logout
 
         #SETUP
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         And I create a new project named "B.3.14.0600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
@@ -116,10 +116,10 @@ Feature: Saving Data: The system shall support the ability to: (Save and stay | 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action          | List of Data Changes OR Fields Exported |
-            | test_user1 | Update record10 | name = 'SAVE & GO TO NEXT RECORD'       |
-            | test_user1 | Create record9  | name = 'SAVE & EXIT RECORD'             |
-            | test_user1 | Create record8  | name = 'SAVE & GO TO NEXT FORM'         |
-            | test_user1 | Create record7  | name = 'SAVE & STAY'                    |
+            | test_user1_CTSP | Update record10 | name = 'SAVE & GO TO NEXT RECORD'       |
+            | test_user1_CTSP | Create record9  | name = 'SAVE & EXIT RECORD'             |
+            | test_user1_CTSP | Create record8  | name = 'SAVE & GO TO NEXT FORM'         |
+            | test_user1_CTSP | Create record7  | name = 'SAVE & STAY'                    |
 
         ##VERIFY_DE:
         When I click on the link labeled "Data Exports, Reports, and Stats"
