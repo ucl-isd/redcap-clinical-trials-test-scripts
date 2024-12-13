@@ -5,7 +5,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
 
     Scenario: B.3.14.0300.100 Reset multiple choice-radio button selection
         ##ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"
         Then I should see "System-level User Settings"
@@ -15,7 +15,7 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         Then I logout
 
         #SETUP
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         And I create a new project named "B.3.14.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
@@ -43,8 +43,8 @@ Feature: Creating a Record and Entering Data: The system shall support the abili
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_user1 | Update record7 | radio = ''                              |
-            | mm/dd/yyyy hh:mm | test_user1 | Create record7 | radio = '9..9'                          |
+            | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record7 | radio = ''                              |
+            | mm/dd/yyyy hh:mm | test_user1_CTSP | Create record7 | radio = '9..9'                          |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
