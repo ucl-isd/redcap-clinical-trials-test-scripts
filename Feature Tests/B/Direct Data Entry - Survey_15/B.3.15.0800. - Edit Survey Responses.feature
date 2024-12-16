@@ -5,7 +5,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
 
   Scenario: B.3.15.0800.100 Edit survey response
     ##ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"
     Then I should see "System-level User Settings"
@@ -15,7 +15,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
     Then I logout
 
     #SETUP
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     And I create a new project named "B.3.15.0800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
@@ -27,7 +27,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
 
     ##USER_RIGHTS - 1_FullRights
     When I click on the link labeled "User Rights"
-    And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+    And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I click on the button labeled exactly "Assign" on the role selector dropdown
@@ -77,7 +77,7 @@ Feature: User Interface: The system shall allow submitted survey responses to be
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_user1 | Update record5 | name_survey = 'Name_EDITRESPONSE'       |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record5 | name_survey = 'Name_EDITRESPONSE'       |
 
     #VERIFY_RSD
     When I click on the link labeled "Record Status Dashboard"
@@ -86,11 +86,11 @@ Feature: User Interface: The system shall allow submitted survey responses to be
 
     ##USER_RIGHTS - 3_ReadOnly_Deidentified
     When I click on the link labeled "User Rights"
-    And I click on the link labeled "Test User1"
+    And I click on the link labeled "Test User1_CTSP"
     And I click on the button labeled "Re-assign to role"
     And I select "3_ReadOnly_Deidentified" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I click on the button labeled exactly "Assign" on the role selector dropdown
-    Then I should see "Test User1" within the "3_ReadOnly_Deidentified" row of the column labeled "Username" of the User Rights table
+    Then I should see "Test User1_CTSP" within the "3_ReadOnly_Deidentified" row of the column labeled "Username" of the User Rights table
 
     #FUNCTIONAL_REQUIREMENT
     ##ACTION Unable to edit survey response
