@@ -4,12 +4,12 @@ Feature: User Interface: The system shall support the ability to identify data a
 
   Scenario: B.5.21.0100.100 Limit identified data export
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "B.5.21.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_5.21.xml", and clicking the "Create Project" button
 
     #SETUP_USER_RIGHTS
     When I click on the link labeled "User Rights"
-    And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+    And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     Then I should see "Assign To DAG" on the role selector dropdown
 
@@ -17,7 +17,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I click on the button labeled exactly "Assign" on the role selector dropdown
     Then I should see a table header and rows containing the following values in a table:
       | Role name           | Username   |
-      | 4_NoAccess_Noexport | test_user1 |
+      | 4_NoAccess_Noexport | test_user1_CTSP |
 
     ##VERIFY_CODEBOOK
     When I click on the link labeled "Codebook"
@@ -183,7 +183,7 @@ Feature: User Interface: The system shall support the ability to identify data a
     And I click on the button labeled "Close" in the dialog box
     And I logout
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     And I click on the link labeled "My Projects"
     When I click on the link labeled "B.5.21.0100.100"
     And I click on the link labeled "Data Exports, Reports, and Stats"
