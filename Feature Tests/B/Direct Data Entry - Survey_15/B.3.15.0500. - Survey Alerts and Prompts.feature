@@ -5,7 +5,7 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
 
   Scenario: B.3.15.0500.100 Data form overwrite function post survey entry
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "B.3.15.0500.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
@@ -60,6 +60,6 @@ Feature: User Interface: Survey Distribution: The system shall prohibit the user
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username            | Action          | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_admin          | Update record   | name_survey = 'Overwrite Name'          |
+      | mm/dd/yyyy hh:mm | REDCap_admin          | Update record   | name_survey = 'Overwrite Name'          |
       | mm/dd/yyyy hh:mm | [survey respondent] | Update Response | survey_complete = '2'                   |
 #END
