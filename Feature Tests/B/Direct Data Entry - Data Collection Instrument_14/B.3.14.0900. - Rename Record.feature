@@ -27,7 +27,7 @@ Feature: Renaming a Record: The system shall allow users to rename a record.
 
         #SET UP_USER_RIGHTS
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+        And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         When I click on the button labeled exactly "Assign" on the role selector dropdown
