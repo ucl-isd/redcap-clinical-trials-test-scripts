@@ -5,7 +5,7 @@ Feature: Deleting Data: The system shall allow users to delete all data in an ev
 
   Scenario: B.3.14.1100.100 Delete all data in an event for a given record
     ##ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"
     Then I should see "System-level User Settings"
@@ -15,7 +15,7 @@ Feature: Deleting Data: The system shall allow users to delete all data in an ev
     Then I logout
 
     #SETUP
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     And I create a new project named "B.3.14.1100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
@@ -27,7 +27,7 @@ Feature: Deleting Data: The system shall allow users to delete all data in an ev
 
     #SET UP_USER_RIGHTS
     When I click on the link labeled "User Rights"
-    And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+    And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     When I click on the button labeled exactly "Assign" on the role selector dropdown
@@ -62,13 +62,13 @@ Feature: Deleting Data: The system shall allow users to delete all data in an ev
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action         | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_user1 | Update record1 | calc_test = ''                          |
-      | mm/dd/yyyy hh:mm | test_user1 | Update record1 | data_types_complete = ''                |
-      | mm/dd/yyyy hh:mm | test_user1 | Update record1 | dob = ''                                |
-      | mm/dd/yyyy hh:mm | test_user1 | Update record1 | email = ''                              |
-      | mm/dd/yyyy hh:mm | test_user1 | Update record1 | email_consent = ''                      |
-      | mm/dd/yyyy hh:mm | test_user1 | Update record1 | name_consent = ''                       |
-      | mm/dd/yyyy hh:mm | test_user1 | Update record1 | text_validation_complete = ''           |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record1 | calc_test = ''                          |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record1 | data_types_complete = ''                |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record1 | dob = ''                                |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record1 | email = ''                              |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record1 | email_consent = ''                      |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record1 | name_consent = ''                       |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Update record1 | text_validation_complete = ''           |
 
     ##VERIFY - COUNT OF ROWS
     When I click on the link labeled "Data Exports, Reports, and Stats"
