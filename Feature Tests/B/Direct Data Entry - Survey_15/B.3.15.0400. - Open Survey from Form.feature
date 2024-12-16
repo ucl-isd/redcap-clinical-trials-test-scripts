@@ -5,7 +5,7 @@ Feature: User Interface: Survey Distribution: The system shall provide a survey 
 
   Scenario: B.3.15.0400.100 Open survey mode
     ##ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"
     Then I should see "System-level User Settings"
@@ -15,7 +15,7 @@ Feature: User Interface: Survey Distribution: The system shall provide a survey 
     Then I logout
 
     #SETUP
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     And I create a new project named "B.3.15.0400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
@@ -58,7 +58,7 @@ Feature: User Interface: Survey Distribution: The system shall provide a survey 
     And I click on the button labeled "Close survey"
 
     ##VERIFY_LOG:
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "B.3.15.0400.100"
     And I click on the link labeled "Logging"
