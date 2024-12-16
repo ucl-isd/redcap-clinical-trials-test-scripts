@@ -5,7 +5,7 @@ Feature: User Interface: The system shall support text validation for text field
 
     Scenario: B.4.8.0200.100 Field validation type
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.4.8.0200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_4.8.xml", and clicking the "Create Project" button
         Then I should see "Project Setup"
 
@@ -147,16 +147,16 @@ Feature: User Interface: The system shall support text validation for text field
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action          | List of Data Changes OR Fields Exported   |
-            | test_admin | Create record 6 | date_ymd = '2023-09-01'                   |
-            | test_admin | Create record 6 | datetime_ymd_hm = '2023-08-02 01:03'      |
-            | test_admin | Create record 6 | datetime_ymd_hmss = '2023-10-02 01:03:01' |
-            | test_admin | Create record 6 | integer = '101'                           |
-            | test_admin | Create record 6 | number = '6'                              |
-            | test_admin | Create record 6 | number_dec = '5.1'                        |
-            | test_admin | Create record 6 | num_comma = '5,1'                         |
-            | test_admin | Create record 6 | time_hhmm = '07:05'                       |
-            | test_admin | Create record 6 | time_mm_ss = '01:59'                      |
-            | test_admin | Create record 6 | time_hhmmss = '07:59:59'                  |
+            | REDCap_admin | Create record 6 | date_ymd = '2023-09-01'                   |
+            | REDCap_admin | Create record 6 | datetime_ymd_hm = '2023-08-02 01:03'      |
+            | REDCap_admin | Create record 6 | datetime_ymd_hmss = '2023-10-02 01:03:01' |
+            | REDCap_admin | Create record 6 | integer = '101'                           |
+            | REDCap_admin | Create record 6 | number = '6'                              |
+            | REDCap_admin | Create record 6 | number_dec = '5.1'                        |
+            | REDCap_admin | Create record 6 | num_comma = '5,1'                         |
+            | REDCap_admin | Create record 6 | time_hhmm = '07:05'                       |
+            | REDCap_admin | Create record 6 | time_mm_ss = '01:59'                      |
+            | REDCap_admin | Create record 6 | time_hhmmss = '07:59:59'                  |
 
         ##VERIFY_DE
         When I click on the link labeled "Data Exports, Reports, and Stats"
