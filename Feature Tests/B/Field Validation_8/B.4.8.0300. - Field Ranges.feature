@@ -96,8 +96,8 @@ Feature: User Interface: The system shall support ranges for the following data 
         ## ACTION:M Number 1 Decimal validation
         When I click on the Edit image for the field named "Number Decimal"
         Then I should see the dropdown field labeled "Validation?" with the option "Number (1 decimal place)" selected in the dialog box
-        And I verify "1" is within the input field labeled "Minimum" in the dialog box
-        And I verify "5" is within the input field labeled "Maximum" in the dialog box
+        And I verify "1.0" is within the input field labeled "Minimum" in the dialog box
+        And I verify "5.0" is within the input field labeled "Maximum" in the dialog box
         And I click on the button labeled "Save" in the "Edit Field" dialog box
 
         ## ACTION:M Number Comma validation
