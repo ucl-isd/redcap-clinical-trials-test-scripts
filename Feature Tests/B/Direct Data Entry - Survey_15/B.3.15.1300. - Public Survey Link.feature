@@ -5,7 +5,7 @@ Feature: User Interface: Survey distribution: The system shall allow creation of
 
   Scenario: B.3.15.1300.100 Public survey link
     #SETUP
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     And I create a new project named "B.3.15.1300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #FUNCTIONAL REQUIREMENT
