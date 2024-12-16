@@ -5,7 +5,7 @@ Feature: Saving Data: The system shall support a Record Status Dashboard to disp
 
   Scenario: B.3.14.0800.100 record status dashboard display
     #SETUP
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     And I create a new project named "B.3.14.0800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_3.14.xml", and clicking the "Create Project" button
     And I click on the link labeled "My Projects"
     And I click on the link labeled "B.3.14.0800.100"
