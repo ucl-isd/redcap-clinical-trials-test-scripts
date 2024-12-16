@@ -35,7 +35,7 @@ Feature: User Interface: The system shall support the ability to restrict users 
         When I click on the button labeled exactly "Assign" on the role selector dropdown
         Then I should see a table header and rows containing the following values in a table:
             | Role name           | Username   |
-            | 4_NoAccess_Noexport | test_user1 |
+            | 4_NoAccess_Noexport | test_user1_CTSP |
 
 
         #FUNCTIONAL_REQUIREMENT
