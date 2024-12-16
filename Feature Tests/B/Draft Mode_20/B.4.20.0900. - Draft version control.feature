@@ -5,7 +5,7 @@ Feature: User Interface: The system shall record all versions of the data dictio
 
     Scenario: B.4.20.0900.100 Data dictionary version history
         #ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"
         Then I should see "System-level User Settings"
@@ -15,7 +15,7 @@ Feature: User Interface: The system shall record all versions of the data dictio
         Then I logout
 
         #SETUP
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         And I create a new project named "B.4.20.0900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
@@ -53,8 +53,8 @@ Feature: User Interface: The system shall record all versions of the data dictio
 
         #FUNCTIONAL_REQUIREMENT
         And I should see a table rows containing the following values in a table:
-            | Created project                  | mm/dd/yyyy hh:mm |                          | Test_User1 (Test User1) |
-            | Moved to production              | mm/dd/yyyy hh:mm | Download data dictionary | Test_User1 (Test User1) |
-            | Production revision #1 (current) | mm/dd/yyyy hh:mm | Download data dictionary | Test_User1 (Test User1) |
+            | Created project                  | mm/dd/yyyy hh:mm |                          | Test_User1_CTSP (Test User1_CTSP) |
+            | Moved to production              | mm/dd/yyyy hh:mm | Download data dictionary | Test_User1_CTSP (Test User1_CTSP) |
+            | Production revision #1 (current) | mm/dd/yyyy hh:mm | Download data dictionary | Test_User1_CTSP (Test User1_CTSP) |
 #Project Revision History table also includes following language "Approved automatically"
 #END
