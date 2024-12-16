@@ -5,7 +5,7 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
 
   Scenario: B.3.15.0200.100 Survey Online/Offline Status
     ##ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"
     Then I should see "System-level User Settings"
@@ -15,7 +15,7 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
     Then I logout
 
     #SETUP
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     And I create a new project named "B.3.15.0200.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_PRODUCTION
@@ -60,7 +60,7 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
     Then I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username            | Action          | List of Data Changes OR Fields Exported |
       | mm/dd/yyyy hh:mm | [survey respondent] | Update Response | name = 'Name_survey'                    |
-      | mm/dd/yyyy hh:mm | test_user1          | Manage/Design   | Set up survey                           |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP          | Manage/Design   | Set up survey                           |
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION Survey Offline
@@ -90,5 +90,5 @@ Feature: User Interface: Survey Project Settings: The system shall support surve
     Then I should see "This module lists all changes made to this project"
     And I should see a table header and rows containing the following values in the logging table:
       | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-      | mm/dd/yyyy hh:mm | test_user1 | Manage/Design | Modify survey info                      |
+      | mm/dd/yyyy hh:mm | test_user1_CTSP | Manage/Design | Modify survey info                      |
 #END
