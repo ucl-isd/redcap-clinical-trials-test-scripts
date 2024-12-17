@@ -14,6 +14,8 @@ Feature: User Interface: The system shall support limiting file repository user 
 
         ##SETUP auto-archive
         And I click the link labeled "Designer"
+        And I click the button labeled "Enable" for the instrument "Consent"
+        And I click the button labeled "Save Changes"
         And I click the button labeled "Survey Settings" for the instrument "Consent"
         And I click on the button labeled "Auto-Archiver + eConsent enabled"
         Then I click the button labeled "Save Changes"
