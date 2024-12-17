@@ -6,7 +6,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
     Scenario: B.6.7.0100.100 Data dictionary export/import function
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "New Project"
         And I enter "B.6.7.0100.100" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
@@ -60,7 +60,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Upload data dictionary                  |
+            | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Upload data dictionary                  |
 
         ##ACTION: Unable to upload data dictionary with Errors
         When I click on the link labeled "Dictionary"
@@ -75,5 +75,5 @@ Feature: Design forms Using Data Dictionary and Online Designer
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Time / Date      | Username   | Action        | List of Data Changes OR Fields Exported |
-            | mm/dd/yyyy hh:mm | test_admin | Manage/Design | Upload data dictionary                  |
+            | mm/dd/yyyy hh:mm | REDCap_admin | Manage/Design | Upload data dictionary                  |
 #END
