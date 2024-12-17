@@ -5,7 +5,7 @@ Feature: User Interface: The system shall support excluding discrepancies found 
 
     Scenario: C.4.18.0600.100 Exclude discrepancies
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "C.4.18.0600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml", and clicking the "Create Project" button
         #SETUP_PRODUCTION
         When I click on the link labeled "Project Setup"
