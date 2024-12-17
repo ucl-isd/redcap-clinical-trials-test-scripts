@@ -6,7 +6,7 @@ Feature: User Interface: General: The system shall support the ability to delete
   Scenario: B.6.4.1200.100 Projects in development can be deleted by user
 
     ##ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"
     Then I should see "System-level User Settings"
@@ -16,7 +16,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     Then I logout
 
     ##SETUP_DEV
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "New Project"
     And I enter "B.6.4.1200.100.DEV" into the input field labeled "Project title"
     And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
@@ -41,7 +41,7 @@ Feature: User Interface: General: The system shall support the ability to delete
 
   Scenario: B.6.4.1200.200 Projects in production with no records can be deleted by user
     ##SETUP_PRODUCTION
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "New Project"
     And I enter "B.6.4.1200.200.PROD" into the input field labeled "Project title"
     And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
@@ -74,7 +74,7 @@ Feature: User Interface: General: The system shall support the ability to delete
 
   Scenario: B.6.4.1200.300 Projects in production with records require admin
     ##SETUP_PRODUCTION
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     And I create a new project named "B.6.4.1200.300.PROD" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     When I click on the link labeled "My Projects"
@@ -105,7 +105,7 @@ Feature: User Interface: General: The system shall support the ability to delete
     Then I should see "Success!"
     And I logout
 
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     Then I should see a link labeled "To-Do List"
     Given I click on the link labeled "To-Do List"
