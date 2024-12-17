@@ -5,7 +5,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
 
     Scenario: B.4.27.0300.100 Change project longitudinal status
         #ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"
         Then I should see "System-level User Settings"
@@ -15,7 +15,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         Then I logout
 
         ##SETUP_DEV
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         And I create a new project named "B.4.27.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         ##ACTION Verify event exist ##VERIFY_RSD
@@ -42,7 +42,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_user1 | Manage/Design | Modify project settings                 |
+            | test_user1_CTSP | Manage/Design | Modify project settings                 |
 
         #FUNCTIONAL REQUIREMENT
         ##ACTION Enable longitudinal
@@ -60,7 +60,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_user1 | Manage/Design | Modify project settings                 |
+            | test_user1_CTSP | Manage/Design | Modify project settings                 |
 
         ##SETUP_PRODUCTION
         When I click on the link labeled "Project Setup"
@@ -76,7 +76,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         Then I should see the button labeled "Disable" in the "Use longitudinal data collection with defined events?" row in the "Main project settings" section is disabled
         And I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "Control Center"
         And I click on the link labeled "Browse Projects"
         Then I should see "Viewing projects accessible by user:"
@@ -103,5 +103,5 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_user1 | Manage/Design | Modify project settings                 |
+            | test_user1_CTSP | Manage/Design | Modify project settings                 |
 #END
