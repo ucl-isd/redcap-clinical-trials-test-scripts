@@ -147,7 +147,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         Then I should see "Awaiting review of project changes"
         And I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "B.6.7.1900.100"
         And I click on the link labeled "Project Setup"
