@@ -116,7 +116,7 @@ Feature: User Interface: The system shall support data quality rule creation.
         #And I click on the button labeled "OK" in the dialog box
         Then I should see a table header and rows containing the following values in a table:
             | Rule # | Rule Name | Rule Logic (Show discrepancy only if...) | Total Discrepancies |
-            | 3      | Integer   | [event_1_arm_1][integer]='1999'          | 0                   |
+            | 3      | Integer   | [event_1_arm_1][integer]='1'          | 0                   |
         Then I should NOT see "[integer]='1'"
 
         ##VERIFY_LOG
