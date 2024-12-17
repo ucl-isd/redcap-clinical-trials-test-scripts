@@ -5,7 +5,7 @@ Feature: User Interface: The logging module shall be secure, tamper-proof, and n
 
     Scenario: B.2.23.0400.100 Logging module security
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.2.23.0400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.2.23.0400.100"
@@ -19,7 +19,7 @@ Feature: User Interface: The logging module shall be secure, tamper-proof, and n
 
         ##USER_RIGHTS
         And I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the field with the placeholder text of "Add new user"
+        And I enter "Test_User1_CTSP" into the field with the placeholder text of "Add new user"
         And I click on the button labeled "Add with custom rights"
         And I uncheck the User Right named "Logging"
         And I save changes within the context of User Rights
@@ -34,7 +34,7 @@ Feature: User Interface: The logging module shall be secure, tamper-proof, and n
         And I logout
 
         #FUNCTIONAL REQUIREMENT
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
 
         ##ACTION: Logging Module – Restricted access to module
