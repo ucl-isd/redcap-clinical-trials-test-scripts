@@ -5,7 +5,7 @@ Feature: User Interface: The system shall support a My Project dashboard page co
 
   Scenario:  B.6.13.0100.100 My Project dashboard
     #FUNCTIONAL_REQUIREMENT
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "My Projects"
     Then I should see a table header and rows containing the following values in the a table:
       | Project Title                          | PID | Records | Fields | Instruments | Type | Status |
