@@ -5,7 +5,7 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
 
     Scenario: C.4.18.1300.100 DAG limits rule viewing
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "C.4.18.1300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
@@ -17,30 +17,30 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
 
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+        And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I select "TestGroup1" on the dropdown field labeled "[No Assignment]" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+        Then I should see "Test User1_CTSP" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         Then I should see a table header and rows containing the following values in a table:
             | Role         | Username or users assigned to a role | Expiration | Data Access Group |
-            | —            | test_admin (Admin User)              | never      | —                 |
-            | 1_FullRights | test_user1 (Test User1)              | never      | TestGroup1        |
+            | —            | REDCap_admin (Admin User)              | never      | —                 |
+            | 1_FullRights | test_user1_CTSP (Test User1_CTSP)              | never      | TestGroup1        |
 
 
-        When I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
+        When I enter "Test_User2_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I select "TestGroup2" on the dropdown field labeled "[No Assignment]" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "Test User2" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+        Then I should see "Test User2_CTSP" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
         Then I should see a table header and rows containing the following values in a table:
             | Role         | Username or users assigned to a role | Expiration | Data Access Group |
-            | —            | test_admin (Admin User)              | never      | —                 |
-            | 1_FullRights | test_user1 (Test User1)              | never      | TestGroup1        |
-            |              | test_user2 (Test User2)              | never      | TestGroup2        |
+            | —            | REDCap_admin (Admin User)              | never      | —                 |
+            | 1_FullRights | test_user1_CTSP (Test User1_CTSP)              | never      | TestGroup1        |
+            |              | test_user2_CTSP (Test User2_CTSP)              | never      | TestGroup2        |
 
         #SETUP: Create Data Quality Rule
         When I click on the link labeled "Data Quality"
@@ -57,7 +57,7 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: testuser1 can see results within DAG
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.4.18.1300.100"
         And I click on the link labeled "Data Quality"
@@ -72,7 +72,7 @@ Feature: User Interface: The system shall support limiting rule viewing to a Dat
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: testuser2 cannot see results within DAG
-        Given I login to REDCap with the user "Test_User2"
+        Given I login to REDCap with the user "Test_User2_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.4.18.1300.100"
         And I click on the link labeled "Data Quality"
