@@ -6,7 +6,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
     Scenario: B.6.7.0500.100 Delete instrument from online designer
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
 
         # BEGIN: STEPS FOR ATS
         And I click on the link labeled "Control Center"
@@ -71,8 +71,8 @@ Feature: Design forms Using Data Dictionary and Online Designer
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported               |
-            | test_admin | Manage/Design | Approve production project modifications              |
-            | test_admin | Manage/Design | Request approval for production project modifications |
-            | test_admin | Manage/Design | Delete data collection instrument                     |
-            | test_admin | Manage/Design | Enter draft mode                                      |
+            | REDCap_admin | Manage/Design | Approve production project modifications              |
+            | REDCap_admin | Manage/Design | Request approval for production project modifications |
+            | REDCap_admin | Manage/Design | Delete data collection instrument                     |
+            | REDCap_admin | Manage/Design | Enter draft mode                                      |
 #END
