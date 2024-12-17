@@ -3,7 +3,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall require
   Scenario: B.4.27.0700.100 Admin delete events and arm in Define My Events
 
     ##SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"
     Then I should see "System-level User Settings"
@@ -22,16 +22,16 @@ Feature: User Interface: Longitudinal Project Settings: The system shall require
 
     ###USER_RIGHTS
     When I click on the link labeled "User Rights"
-    And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+    And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I click on the button labeled exactly "Assign" on the role selector dropdown
-    Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+    Then I should see "Test User1_CTSP" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
     #FUNCTIONAL REQUIREMENT
     ##ACTION Verify normal user cannot delete events and arms in production
     Given I logout
-    And I login to REDCap with the user "Test_User1"
+    And I login to REDCap with the user "Test_User1_CTSP"
     And I click on the link labeled "My Projects"
     And I click on the link labeled "B.4.27.0700.100"
     When I click on the link labeled "Project Setup"
@@ -46,7 +46,7 @@ Feature: User Interface: Longitudinal Project Settings: The system shall require
     #FUNCTIONAL REQUIREMENT
     ##ACTION Verify administrator can delete events and arms in production
     Given I logout
-    And I login to REDCap with the user "Test_Admin"
+    And I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "My Projects"
     And I click on the link labeled "B.4.27.0700.100"
     When I click on the link labeled "Project Setup"
