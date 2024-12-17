@@ -5,7 +5,7 @@ Feature: User Interface: The system shall provide default rules after installati
 
     Scenario: C.4.18.0100.100 Default data quality rules
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "C.4.18.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
