@@ -5,7 +5,7 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
 
     Scenario: B.6.7.1200.100 Creation of Checkboxes (multiple answers) through the Online Designer
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "New Project"
         And I enter "B.6.7.1200.100" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
@@ -61,8 +61,8 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported              |
-            | test_admin | Manage/Design | Approve production project modifications (automatic) |
-            | test_admin | Manage/Design | Create project field                                 |
+            | REDCap_admin | Manage/Design | Approve production project modifications (automatic) |
+            | REDCap_admin | Manage/Design | Create project field                                 |
 
     Scenario: B.6.7.1200.200 Creation of Checkboxes (multiple answers) through Data Dictionary upload
         #FUNCTIONAL_REQUIREMENT
@@ -82,11 +82,11 @@ Feature: Field Creation: The system shall support the creation of Checkboxes (mu
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported              |
-            | test_admin | Manage/Design | Approve production project modifications (automatic) |
-            | test_admin | Manage/Design | Upload data dictionary                               |
-            | test_admin | Manage/Design | Enter draft mode                                     |
-            | test_admin | Manage/Design | Approve production project modifications (automatic) |
-            | test_admin | Manage/Design | Create project field                                 |
+            | REDCap_admin | Manage/Design | Approve production project modifications (automatic) |
+            | REDCap_admin | Manage/Design | Upload data dictionary                               |
+            | REDCap_admin | Manage/Design | Enter draft mode                                     |
+            | REDCap_admin | Manage/Design | Approve production project modifications (automatic) |
+            | REDCap_admin | Manage/Design | Create project field                                 |
 
         ##VERIFY_CODEBOOK
         When I click on the link labeled "Codebook"
