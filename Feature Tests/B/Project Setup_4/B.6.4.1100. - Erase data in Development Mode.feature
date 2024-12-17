@@ -5,7 +5,7 @@ Feature: User Interface: General: The system shall support the ability to erase 
 
   Scenario: B.6.4.1100.100 Erase all data only in development as User
     ##ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "Control Center"
     And I click on the link labeled "User Settings"
     Then I should see "System-level User Settings"
@@ -15,7 +15,7 @@ Feature: User Interface: General: The system shall support the ability to erase 
     Then I logout
 
     ##SETUP_DEV
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     And I create a new project named "B.6.4.1100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     ##ACTION Verify record exist ##VERIFY_RSD
@@ -58,7 +58,7 @@ Feature: User Interface: General: The system shall support the ability to erase 
 
   Scenario: B.6.4.1100.200 Erase all data in production mode as Admin
     ##SETUP_PRODUCTION
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "B.6.4.1100.200.PROD" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     When I click on the link labeled "Project Setup"
     And I click on the button labeled "Move project to production"
