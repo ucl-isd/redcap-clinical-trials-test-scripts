@@ -5,7 +5,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
 
     Scenario: B.6.7.1900.100 Add, edit, copy, move and delete fields
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
 
         # BEGIN: STEPS FOR ATS
         # - EMAIL ADDRESS SET FOR REDCAP ADMIN - without it, project request behavior does not work properly
@@ -23,11 +23,11 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
 
         #SETUP_USER_RIGHTS
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+        And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+        Then I should see "Test User1_CTSP" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
         ##SETUP_PRODUCTION
         When I click on the link labeled "Project Setup"
@@ -37,7 +37,7 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         Then I should see Project status: "Production"
         And I logout
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "B.6.7.1900.100"
         And I click on the link labeled "Project Setup"
@@ -170,9 +170,9 @@ Feature: Field Creation: The system shall support the ability to add, edit, copy
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username  | Action        | List of Data Changes OR Fields Exported |
-            | test_user | Manage/Design | Delete project field                    |
-            | test_user | Manage/Design | Copy project field                      |
-            | test_user | Manage/Design | Edit project field                      |
-            | test_user | Manage/Design | Move project field                      |
-            | test_user | Manage/Design | Create project field                    |
+            | Test_User1_CTSP | Manage/Design | Delete project field                    |
+            | Test_User1_CTSP | Manage/Design | Copy project field                      |
+            | Test_User1_CTSP | Manage/Design | Edit project field                      |
+            | Test_User1_CTSP | Manage/Design | Move project field                      |
+            | Test_User1_CTSP | Manage/Design | Create project field                    |
 #END
