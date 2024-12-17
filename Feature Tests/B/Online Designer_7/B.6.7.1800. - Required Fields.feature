@@ -5,7 +5,7 @@ Feature: Field Creation: The system shall support marking a data entry field as 
 
     Scenario: B.6.7.1800.100 Designating field as required through the Online Designer
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.6.7.1800.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         ##SETUP_PRODUCTION
@@ -49,12 +49,12 @@ Feature: Field Creation: The system shall support marking a data entry field as 
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Create project field                    |
+            | REDCap_admin | Manage/Design | Create project field                    |
 
     Scenario: B.6.7.1800.200 Designating field as required through Data Dictionary upload
 
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "New Project"
         And I enter "B.6.7.1800.200" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
