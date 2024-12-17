@@ -4,6 +4,8 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
     I want to see that Project Setup is functioning as expected
 
     Scenario: B.4.27.0400.100 Ability to designate data collection instruments for defined events in each arm
+    #This feature test has been deemed REDUNDANT by UCL as it has already been tested in A.6.4.0600
+    
         ##SETUP
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "B.4.27.0400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
