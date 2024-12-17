@@ -6,7 +6,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
   Scenario: B.6.7.1000.100 Creation of multiple choice dropdown list (single answer) through the Online Designer
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "New Project"
     And I enter "B.6.7.1000.100" into the input field labeled "Project title"
     And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
@@ -70,7 +70,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username   | Action        | List of Data Changes OR Fields Exported |
-      | test_admin | Manage/Design | Create project field                    |
+      | REDCap_admin | Manage/Design | Create project field                    |
 
     Given I logout
 
@@ -78,7 +78,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
   #CROSSFUNCTIONAL – B.6.7.0100.100
 
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     When I click on the link labeled "New Project"
     And I enter "B.6.7.1000.200" into the input field labeled "Project title"
     And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
