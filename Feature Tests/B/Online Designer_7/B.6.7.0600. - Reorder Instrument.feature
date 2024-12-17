@@ -6,7 +6,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
     Scenario: B.6.7.0600.100 Reorder instrument from online designer
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.6.7.0600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         When I click on the link labeled "My Projects"
@@ -43,5 +43,5 @@ Feature: Design forms Using Data Dictionary and Online Designer
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Reorder data collection instruments     |
+            | REDCap_admin | Manage/Design | Reorder data collection instruments     |
 #END
