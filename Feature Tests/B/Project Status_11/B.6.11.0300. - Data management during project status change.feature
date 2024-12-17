@@ -6,7 +6,7 @@ Feature: User Interface: The system shall support the ability for a user to keep
     Scenario: B.6.11.0300.100 Move project from development to production while keeping data
         #SETUP - Important: the manual test had this user listed as 'Test_User1' which is not correct.
         # Needs to be Test_Admin to guarantee we can move to production immediately ...
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.6.11.0300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #FUNCTIONAL REQUIREMENT
@@ -31,7 +31,7 @@ Feature: User Interface: The system shall support the ability for a user to keep
 
     Scenario: B.6.11.0300.200 Move project from development to production while deleting data
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "B.6.11.0300.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #FUNCTIONAL REQUIREMENT
