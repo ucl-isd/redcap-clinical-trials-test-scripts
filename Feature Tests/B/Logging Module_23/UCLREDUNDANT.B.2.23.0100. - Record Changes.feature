@@ -4,6 +4,8 @@ Feature: User Interface: The logging module shall record all changes with userna
   I want to see that Logging Module is functioning as expected
 
   Scenario: B.2.23.0100.100 Logging module records changes
+  #This feature test has been deemed REDUNDANT by UCL as it has already been tested in A.6.4.0400
+  
     #SETUP
     Given I login to REDCap with the user "Test_Admin"
     And I create a new project named "B.2.23.0100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
