@@ -5,19 +5,19 @@ Feature: Field Creation: The system shall support marking a data entry field as 
 
   Scenario: B.6.7.1700.100 Designating field as identifier through the Online Designer
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "B.6.7.1700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     #SETUP_USER_RIGHTS
     And I click on the link labeled "User Rights"
-    And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+    And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
     And I click on the button labeled "Assign to role"
     And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
     And I click on the button labeled exactly "Assign" on the role selector dropdown
-    Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+    Then I should see "Test User1_CTSP" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
     And I logout
 
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     When I click on the link labeled "My Projects"
     And I click on the link labeled "B.6.7.1700.100"
     And I click on the link labeled "Project Setup"
@@ -47,11 +47,11 @@ Feature: Field Creation: The system shall support marking a data entry field as 
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username   | Action        | List of Data Changes OR Fields Exported |
-      | test_user1 | Manage/Design | Create project field                    |
+      | test_user1_CTSP | Manage/Design | Create project field                    |
 
   Scenario: B.6.7.1700.200 Designating field as identifier through Project Setup
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I create a new project named "B.6.7.1700.200" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     When I click on the link labeled "My Projects"
@@ -76,11 +76,11 @@ Feature: Field Creation: The system shall support marking a data entry field as 
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username   | Action        | List of Data Changes OR Fields Exported |
-      | test_admin | Manage/Design | Tag new identifier fields               |
+      | REDCap_admin | Manage/Design | Tag new identifier fields               |
 
   Scenario: B.6.7.1700.300 Designating field as identifier through Data Dictionary upload
     #SETUP
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "New Project"
     And I enter "B.6.7.1700.300" into the input field labeled "Project title"
     And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
