@@ -5,7 +5,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
 
     Scenario: C.4.18.0700.100 Edit rule
         #ATS prerequisite: Normal users cannot move projects to production by default - let's adjust that before we proceed.
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "Control Center"
         And I click on the link labeled "User Settings"
         Then I should see "System-level User Settings"
@@ -15,7 +15,7 @@ Feature: User Interface: The system shall support editing of user defined rules.
         Then I logout
 
         #SETUP
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         And I create a new project named "C.4.18.0700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
@@ -26,13 +26,13 @@ Feature: User Interface: The system shall support editing of user defined rules.
         Then I should see Project status:  "Production"
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
-        And I click on the link labeled "test_user1"
+        And I click on the link labeled "test_user1_CTSP"
         And I click on the button labeled "Edit user privileges"
-        Then I should see 'Editing existing user "test_user1"'
+        Then I should see 'Editing existing user "test_user1_CTSP"'
         Then  I check the User Right named "Data Quality - Create & edit rules"
         Then  I check the User Right named "Data Quality - Execute rules"
         And I click on the button labeled "Save Changes"
-        Then I should see 'User "test_user1" was successfully edited'
+        Then I should see 'User "test_user1_CTSP" was successfully edited'
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: Manual rule add
@@ -71,11 +71,11 @@ Feature: User Interface: The system shall support editing of user defined rules.
         #USER_RIGHTS
         ##ACTION: change rights-cannot create rules
         When I click on the link labeled "User Rights"
-        And I click on the link labeled "test_user1 (Test User1)"
+        And I click on the link labeled "test_user1_CTSP (Test User1_CTSP)"
         And I click on the button labeled "Edit user privileges"
         Then  I uncheck the User Right named "Data Quality - Create & edit rules"
         And I click on the button labeled "Save Changes"
-        Then I should see 'User "test_user1" was successfully edited'
+        Then I should see 'User "test_user1_CTSP" was successfully edited'
 
 
         #FUNCTIONAL_REQUIREMENT
@@ -105,12 +105,12 @@ Feature: User Interface: The system shall support editing of user defined rules.
         #USER_RIGHTS
         ##ACTION: change rights - cannot execute rules
         When I click on the link labeled "User Rights"
-        And I click on the link labeled "test_user1 (Test User1)"
+        And I click on the link labeled "test_user1_CTSP (Test User1_CTSP)"
         And I click on the button labeled "Edit user privileges"
         Then  I check the User Right named "Data Quality - Create & edit rules"
         Then  I uncheck the User Right named "Data Quality - Execute rules"
         And I click on the button labeled "Save Changes"
-        Then I should see 'User "test_user1" was successfully edited'
+        Then I should see 'User "test_user1_CTSP" was successfully edited'
 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION: can add rule and cannot execute rules
