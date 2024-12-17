@@ -6,7 +6,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
 
     Scenario: B.6.7.0900.100 Creation of calculated field through online designer
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "New Project"
         And I enter "B.6.7.0900.100" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
@@ -63,7 +63,7 @@ Feature: Design forms Using Data Dictionary and Online Designer
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Create project field                    |
+            | REDCap_admin | Manage/Design | Create project field                    |
 
     Scenario: B.6.7.0900.200 Creation of calculated field through Data Dictionary upload
 
@@ -94,5 +94,5 @@ Feature: Design forms Using Data Dictionary and Online Designer
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Upload data dictionary                  |
+            | REDCap_admin | Manage/Design | Upload data dictionary                  |
 #END
