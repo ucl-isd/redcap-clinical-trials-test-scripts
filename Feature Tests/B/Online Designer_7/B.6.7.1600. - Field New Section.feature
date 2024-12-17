@@ -6,7 +6,7 @@ Feature: Field Creation: The system shall support the creation of Begin New Sect
     Scenario: B.6.7.1600.100 Creation of Section through the Online Designer
 
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "New Project"
         And I enter "B.6.7.1600.100" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
@@ -68,7 +68,7 @@ Feature: Field Creation: The system shall support the creation of Begin New Sect
     Scenario: B.6.7.1600.200 Creation of section through Data Dictionary upload
 
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "New Project"
         And I enter "B.6.7.1600.200" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
