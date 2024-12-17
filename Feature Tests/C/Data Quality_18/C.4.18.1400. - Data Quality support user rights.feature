@@ -5,7 +5,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
 
     Scenario: C.4.18.1400.100 User access limit rule viewing
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "C.4.18.1400.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project418.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
@@ -17,21 +17,21 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
 
         #USER_RIGHTS: add two users with diff access levels
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+        And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "Test User1" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+        Then I should see "Test User1_CTSP" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
 
-        When I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
+        When I enter "Test_User2_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "4_NoAccess_Noexport" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "Test User2" within the "4_NoAccess_Noexport" row of the column labeled "Username" of the User Rights table
+        Then I should see "Test User2_CTSP" within the "4_NoAccess_Noexport" row of the column labeled "Username" of the User Rights table
 
         And I logout
 
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.4.18.1400"
         And I click on the link labeled "Data Quality"
@@ -67,7 +67,7 @@ Feature: User Interface: The system shall support limiting a rule viewing that r
         And I logout
 
         #ACTION: switch to Test_User2
-        Given I login to REDCap with the user "Test_User2"
+        Given I login to REDCap with the user "Test_User2_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.4.18.1400"
         And I click on the link labeled "Data Quality"
