@@ -5,7 +5,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
 
   Scenario: B.6.4.1000.100 Copy a project with all users and all data
     # BEGIN: STEPS FOR ATS
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     # - EMAIL ADDRESS SET FOR REDCAP ADMIN - without it, project request behavior does not work properly
     # - CUSTOM MESSAGE SET - Makes the dialog box pop up when requesting a project
@@ -29,7 +29,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
 
 
     #SETUP_DEV
-    Given I login to REDCap with the user "Test_User1"
+    Given I login to REDCap with the user "Test_User1_CTSP"
     And I create a new project named "B.6.4.1000.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
     And I click on the button labeled "I Agree" in the dialog box
 
@@ -51,7 +51,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     When I click on the link labeled "User Rights"
     Then I should see a table header and rows containing the following values in a table:
       | Role name               | Username            |
-      | —                       | test_user1          |
+      | —                       | test_user1_CTSP          |
       | 1_FullRights            | [No users assigned] |
       | 2_Edit_RemoveID         | [No users assigned] |
       | 3_ReadOnly_Deidentified | [No users assigned] |
@@ -71,8 +71,8 @@ Feature: User Interface: General: The system shall support the ability to copy t
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username   | Action        | List of Data Changes OR Fields Exported |
-      | test_user1 | Add user      | user = 'test_user1'                     |
-      | test_user1 | Manage/Design | Copy project from                       |
+      | test_user1_CTSP | Add user      | user = 'test_user1_CTSP'                     |
+      | test_user1_CTSP | Manage/Design | Copy project from                       |
 
     #SETUP_PRODUCTION
     Given I click on the link labeled "My Projects"
@@ -99,7 +99,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     When I click on the link labeled "User Rights"
     Then I should see a table header and rows containing the following values in a table:
       | Role name               | Username            |
-      | —                       | test_user1          |
+      | —                       | test_user1_CTSP          |
       | 1_FullRights            | [No users assigned] |
       | 2_Edit_RemoveID         | [No users assigned] |
       | 3_ReadOnly_Deidentified | [No users assigned] |
@@ -119,8 +119,8 @@ Feature: User Interface: General: The system shall support the ability to copy t
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username   | Action        | List of Data Changes OR Fields Exported |
-      | test_user1 | Add user      | user = 'test_user1'                     |
-      | test_user1 | Manage/Design | Copy project from                       |
+      | test_user1_CTSP | Add user      | user = 'test_user1_CTSP'                     |
+      | test_user1_CTSP | Manage/Design | Copy project from                       |
 
     #SETUP_ANALYSIS
     Given I click on the link labeled "My Projects"
@@ -144,7 +144,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     When I click on the link labeled "User Rights"
     Then I should see a table header and rows containing the following values in a table:
       | Role name               | Username            |
-      | —                       | test_user1          |
+      | —                       | test_user1_CTSP          |
       | 1_FullRights            | [No users assigned] |
       | 2_Edit_RemoveID         | [No users assigned] |
       | 3_ReadOnly_Deidentified | [No users assigned] |
@@ -164,8 +164,8 @@ Feature: User Interface: General: The system shall support the ability to copy t
     When I click on the link labeled "Logging"
     Then I should see a table header and rows containing the following values in the logging table:
       | Username   | Action        | List of Data Changes OR Fields Exported |
-      | test_user1 | Add user      | user = 'test_user1'                     |
-      | test_user1 | Manage/Design | Copy project from                       |
+      | test_user1_CTSP | Add user      | user = 'test_user1_CTSP'                     |
+      | test_user1_CTSP | Manage/Design | Copy project from                       |
 
     #And I want to export a snapshot of this feature here
     #And I want to pause
@@ -190,7 +190,7 @@ Feature: User Interface: General: The system shall support the ability to copy t
     And I logout
 
     ##ACTION: UNABLE to Copy original in complete mode as Admin
-    Given I login to REDCap with the user "Test_Admin"
+    Given I login to REDCap with the user "REDCap_Admin"
     And I click on the link labeled "Control Center"
     And I click on the link labeled "Browse Projects"
     And I enter "B.6.4.1000.100" into the input field labeled "Search project title by keyword(s):"
