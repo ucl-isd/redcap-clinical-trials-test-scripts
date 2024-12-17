@@ -5,7 +5,7 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
 
     Scenario: B.6.7.1300.100 Creation of Signature field through the Online Designer
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "New Project"
         And I enter "B.6.7.1300.100" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
@@ -53,12 +53,12 @@ Feature: Field Creation: The system shall support the creation of Signature (dra
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Create project field                    |
+            | REDCap_admin | Manage/Design | Create project field                    |
 
     Scenario: B.6.7.1300.200 Creation of Signature field through Data Dictionary upload
 
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I click on the link labeled "New Project"
         And I enter "B.6.7.1300.200" into the input field labeled "Project title"
         And I select "Practice / Just for fun" on the dropdown field labeled "Project's purpose"
