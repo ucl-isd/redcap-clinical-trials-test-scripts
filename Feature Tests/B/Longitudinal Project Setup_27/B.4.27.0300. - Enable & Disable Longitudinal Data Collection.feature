@@ -103,5 +103,5 @@ Feature: User Interface: Longitudinal Project Settings: The system shall support
         When I click on the link labeled "Logging"
         Then I should see a table header and rows containing the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_user1_CTSP | Manage/Design | Modify project settings                 |
+            | REDCap_admin | Manage/Design | Modify project settings                 |
 #END
