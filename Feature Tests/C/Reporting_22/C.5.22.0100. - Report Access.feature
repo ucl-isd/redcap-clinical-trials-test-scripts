@@ -6,9 +6,9 @@ Feature: User Interface: The system shall support the ability to assign the User
     Scenario: C.5.22.100.100 - MISSING SCENARIO TITLE
 
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named "C.5.22.100.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "C.5.22.100.100 LTS 14.5.26" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
         When I click on the link labeled "Project Setup"
@@ -37,29 +37,29 @@ Feature: User Interface: The system shall support the ability to assign the User
 
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the field with the placeholder text of "Assign new user to role"
+        And I enter "Test_User1_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "1_FullRights" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I select "TestGroup1" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "test_user1 (Test User1)" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
+        Then I should see "test_user1_CTSP (Test User1_CTSP)" within the "1_FullRights" row of the column labeled "Username" of the User Rights table
         And I should see "TestGroup1" within the "1_FullRights" row of the column labeled "Data Access Group" of the User Rights table
 
-        When I enter "Test_User2" into the field with the placeholder text of "Assign new user to role"
+        When I enter "Test_User2_CTSP" into the field with the placeholder text of "Assign new user to role"
         And I click on the button labeled "Assign to role"
         And I select "2_Edit_RemoveID" on the dropdown field labeled "Select Role" on the role selector dropdown
         And I select "TestGroup2" on the dropdown field labeled "Assign To DAG" on the role selector dropdown
         And I click on the button labeled exactly "Assign" on the role selector dropdown
-        Then I should see "test_user2 (Test User2)" within the "2_Edit_RemoveID" row of the column labeled "Username" of the User Rights table
+        Then I should see "test_user2_CTSP (Test User2_CTSP)" within the "2_Edit_RemoveID" row of the column labeled "Username" of the User Rights table
         And I should see "TestGroup2" within the "2_Edit_RemoveID" row of the column labeled "Data Access Group" of the User Rights table
 
-        When I enter "Test_User3" into the input field labeled "Add with custom rights"
+        When I enter "Test_User3_CTSP" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
         And I uncheck the checkbox labeled "Add/Edit/Organize Reports"
         And I click on the button labeled "Add user"
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_user3          |
+            | —                       | test_user3_CTSP          |
         #SETUP: Create report
         When I click on the link labeled "Data Exports, Reports, and Stats"
         And I click on the button labeled "Create New Report"
@@ -75,7 +75,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I logout
 
         ##VERIFY: USER 1
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
         Then I should see the link labeled "C.5.22.100.100 REPORT"
@@ -97,7 +97,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I logout
 
         ##VERIFY: USER 2
-        Given I login to REDCap with the user "Test_User2"
+        Given I login to REDCap with the user "Test_User2_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
         Then I should see the link labeled "C.5.22.100.100 REPORT"
@@ -119,7 +119,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I logout
 
         ##VERIFY: USER 3
-        Given I login to REDCap with the user "Test_User3"
+        Given I login to REDCap with the user "Test_User3_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
         Then I should see the link labeled "C.5.22.100.100 REPORT"
@@ -156,7 +156,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I should NOT see a button labeled "Edit Report"
         And I logout
 
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         When I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
         And I click on the link labeled "Data Exports, Reports, and Stats"
@@ -166,17 +166,17 @@ Feature: User Interface: The system shall support the ability to assign the User
         #FUNCTIONAL_REQUIREMENT
         ##ACTION
         When I click on the radio button labeled "Custom user access" for the field labeled "View Access"
-        And I select "test_user1" from the dropdown field labeled "Selected users"
-        And I select "test_user2" from the dropdown field labeled "Selected users"
+        And I select "test_user1_CTSP" from the dropdown field labeled "Selected users"
+        And I select "test_user2_CTSP" from the dropdown field labeled "Selected users"
         And I click on the radio labeled "Custom user access" for the field labeled "Edit Access"
-        And I select "test_user1" from the dropdown field labeled "Selected users"
+        And I select "test_user1_CTSP" from the dropdown field labeled "Selected users"
         And I click on the button labeled "Save Report"
         Then I should see "Your report has been saved!" in the dialog box
         And I click on the button labeled "Return to My Reports & Exports"
         And I logout
 
         ##VERIFY: USER 3
-        Given I login to REDCap with the user "Test_User3"
+        Given I login to REDCap with the user "Test_User3_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
         Then I should NOT see the link labeled "C.5.22.100.100 REPORT"
@@ -186,7 +186,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I logout
 
         ##VERIFY: USER 2
-        Given I login to REDCap with the user "Test_User2"
+        Given I login to REDCap with the user "Test_User2_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
         Then I should see the link labeled "C.5.22.100.100 REPORT"
@@ -213,7 +213,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         And I logout
 
         ##VERIFY: USER 1
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.5.22.100.100"
         Then I should see the link labeled "C.5.22.100.100 REPORT"
