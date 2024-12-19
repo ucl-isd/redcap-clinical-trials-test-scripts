@@ -6,9 +6,9 @@ Feature: User Interface: The tool shall support the ability to navigate directly
     Scenario: C.2.19.600.100 Navigate to record
 
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named "C.2.19.600.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "C.2.19.600.100 LTS 14.5.26" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
         When I click on the link labeled "Project Setup"
@@ -19,22 +19,22 @@ Feature: User Interface: The tool shall support the ability to navigate directly
 
         #USER_RIGHTS
         When I click on the link labeled "User Rights"
-        And I enter "Test_User1" into the input field labeled "Add with custom rights"
+        And I enter "Test_User1_CTSP" into the input field labeled "Add with custom rights"
         And I click on the button labeled "Add with custom rights"
-        Then I should see "Adding new user "test_user1""
+        Then I should see "Adding new user "test_user1_CTSP""
 
         When I click on the checkbox for the field labeled "Record Locking Customization"
         And I click on the radio labeled "Locking / Unlocking with E-signature authority" for the field labeled "Lock / Unlock Records (instrument level)"
         And I click on the button labeled "Close" in the dialog box
         And I click on the checkbox for the field labeled "Lock/Unlock *Entire* Records (record level)"
         And I click on the button labeled "Add user"
-        Then I should see "User "test_user1" was successfully added"
+        Then I should see "User "test_user1_CTSP" was successfully added"
 
         ##VERIFY_LOG
         When I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action              | List of Data Changes OR Fields Exported |
-            | test_admin | Add user test_user1 | user = 'test_user1'                     |
+            | REDCap_admin | Add user test_user1_CTSP | user = 'test_user1_CTSP'                     |
 
 
         #FUNCTIONAL REQUIREMENT
