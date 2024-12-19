@@ -5,9 +5,9 @@ Feature: User Interface: The tool shall support the filtering the record list:
 
     Scenario: C.2.19.300.100 Record locking and E-signatures filtering
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named "C.2.19.300.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "C.2.19.300.100 LTS 14.5.26" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
         When I click on the link labeled "Project Setup"
@@ -34,7 +34,7 @@ Feature: User Interface: The tool shall support the filtering the record list:
         When I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action               | List of Data Changes OR Fields Exported                                   |
-            | test_admin | Lock/Unlock Record 3 | Action: Lock instrument, Record: 3, Form: Text Validation, Event: Event 1 |
+            | REDCap_admin | Lock/Unlock Record 3 | Action: Lock instrument, Record: 3, Form: Text Validation, Event: Event 1 |
 
         ##VERIFY_LOCK_ESIG: Record instrument lock on Locking Management
         When I click on the link labeled "Customize & Manage Locking/E-signatures"
