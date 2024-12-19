@@ -4,7 +4,7 @@ Feature: User Interface: The system shall support the ability to limit access to
     I want to see that Record locking and E-signatures is functioning as expected
 
     Scenario: C.2.19.900.100 Enable user rights for Record Locking Customization module
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "C.2.19.900.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
     Scenario: ##SETUP_PRODUCTION
@@ -31,14 +31,14 @@ Feature: User Interface: The system shall support the ability to limit access to
         When I click on the link labeled "Upload users (CSV)"
         Then I should see a dialog containing the following text: "Upload users (CSV)"
 
-        Given I upload a "csv" format file located at "import_files/user list for project 1.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
+        Given I upload a "csv" format file located at "import_files/user list for project 1_CTSP.csv", by clicking the button near "Select your CSV" to browse for the file, and clicking the button labeled "Upload" to upload the file
         Then I should see a dialog containing the following text: "Upload users (CSV) - Confirm"
         And I should see a table header and rows containing the following values in a table:
             | username   |
-            | test_user1 |
-            | test_user2 |
-            | test_user3 |
-            | test_user4 |
+            | test_user1_CTSP |
+            | test_user2_CTSP |
+            | test_user3_CTSP |
+            | test_user4_CTSP |
 
         Given I click on the button labeled "Upload" in the dialog box
         Then I should see a dialog containing the following text: "SUCCESS!"
@@ -46,11 +46,11 @@ Feature: User Interface: The system shall support the ability to limit access to
         When I click on the button labeled "Close" in the dialog box
         Then I should see a table header and rows containing the following values in a table:
             | Role name               | Username            |
-            | —                       | test_admin          |
-            | —                       | test_user1          |
-            | —                       | test_user2          |
-            | —                       | test_user3          |
-            | —                       | test_user4          |
+            | —                       | REDCap_admin          |
+            | —                       | test_user1_CTSP          |
+            | —                       | test_user2_CTSP          |
+            | —                       | test_user3_CTSP          |
+            | —                       | test_user4_CTSP          |
             | 1_FullRights            | [No users assigned] |
             | 2_Edit_RemoveID         | [No users assigned] |
             | 3_ReadOnly_Deidentified | [No users assigned] |
@@ -58,8 +58,8 @@ Feature: User Interface: The system shall support the ability to limit access to
             | TestRole                | [No users assigned] |
 
     Scenario:  #USER_RIGHTS - Assign eSign and Lock user rights to users
-        ##ACTION - Assign users rights for Test_User1; Lock/Unlock *Entire* Records (record level)
-        Given I click on the link labeled "Test User1"
+        ##ACTION - Assign users rights for Test_User1_CTSP; Lock/Unlock *Entire* Records (record level)
+        Given I click on the link labeled "Test User1_CTSP"
         And I click on the button labeled "Edit user privileges" on the tooltip
         Then I should see a dialog containing the following text: "Editing existing user"
         And I check the User Right named "Record Locking Customization"
@@ -68,55 +68,55 @@ Feature: User Interface: The system shall support the ability to limit access to
         And I click on the button labeled "Close" in the dialog box
         Given I check the User Right named "Lock/Unlock *Entire* Records (record level)"
         When I save changes within the context of User Rights
-        Then I should see 'User "test_user1" was successfully edited'
+        Then I should see 'User "test_user1_CTSP was successfully edited'
 
-        ##ACTION - Assign users rights for Test_User2; Disable Lock/Unlock Records
-        Given I click on the link labeled "Test User2"
+        ##ACTION - Assign users rights for Test_User2_CTSP; Disable Lock/Unlock Records
+        Given I click on the link labeled "Test User2_CTSP
         And I click on the button labeled "Edit user privileges" on the tooltip
         Then I should see a dialog containing the following text: "Editing existing user"
         And I check the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Disabled"
         When I save changes within the context of User Rights
-        Then I should see 'User "test_user2" was successfully edited'
+        Then I should see 'User "test_user2_CTSP" was successfully edited'
 
-        ##ACTION - Assign users rights for Test_User3; Enable Locking / Unlocking records
-        Given I click on the link labeled "Test User3"
+        ##ACTION - Assign users rights for Test_User3_CTSP; Enable Locking / Unlocking records
+        Given I click on the link labeled "Test User3_CTSP"
         And I click on the button labeled "Edit user privileges" on the tooltip
         Then I should see a dialog containing the following text: "Editing existing user"
         And I uncheck the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Locking / Unlocking"
         When I save changes within the context of User Rights
-        Then I should see 'User "test_user3" was successfully edited'
+        Then I should see 'User "test_user3_CTSP" was successfully edited'
 
-        ##ACTION - Assign users rights for Test_User4;  Disable Lock/Unlock Records
-        Given I click on the link labeled "Test User4"
+        ##ACTION - Assign users rights for Test_User4_CTSP;  Disable Lock/Unlock Records
+        Given I click on the link labeled "Test User4_CTSP"
         And I click on the button labeled "Edit user privileges" on the tooltip
         Then I should see a dialog containing the following text: "Editing existing user"
         And I uncheck the User Right named "Record Locking Customization"
         And I select the User Right named "Lock/Unlock Records" and choose "Disabled"
         When I set Data Viewing Rights to View & Edit for the instrument "Text Validation"
         When I save changes within the context of User Rights
-        Then I should see 'User "test_user4" was successfully edited'
+        Then I should see 'User "test_user4_CTSP" was successfully edited'
 
     Scenario: #VERIFY_LOG
         When I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Update user   | test_user4                              |
-            | test_admin | Update user   | test_user3                              |
-            | test_admin | Update user   | test_user2                              |
-            | test_admin | Update user   | test_user1                              |
-            | test_admin | Manage/Design | Upload users (CSV)                      |
-            | test_admin | Add User      | test_user4                              |
-            | test_admin | Add User      | test_user3                              |
-            | test_admin | Add User      | test_user2                              |
-            | test_admin | Add User      | test_user1                              |
+            | REDCap_admin | Update user   | test_user4_CTSP                              |
+            | REDCap_admin | Update user   | test_user3_CTSP                              |
+            | REDCap_admin | Update user   | test_user2_CTSP                              |
+            | REDCap_admin | Update user   | test_user1_CTSP                              |
+            | REDCap_admin | Manage/Design | Upload users (CSV)                      |
+            | REDCap_admin | Add User      | test_user4_CTSP                              |
+            | REDCap_admin | Add User      | test_user3_CTSP                              |
+            | REDCap_admin | Add User      | test_user2_CTSP                             |
+            | REDCap_admin | Add User      | test_user1_CTSP                              |
 
         Given I logout
 
     Scenario:  #FUNCTIONAL_REQUIREMENT Test user privileges
-        #Test_User1
-        Given I login to REDCap with the user "Test_User1"
+        #Test_User1_CTSP
+        Given I login to REDCap with the user "Test_User1_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.2.19.900.100"
         ##VERIFY - Record Locking Customization module enabled
@@ -138,8 +138,8 @@ Feature: User Interface: The system shall support the ability to limit access to
         Then I should see a link labeled "Lock entire record"
         And I logout
 
-    Scenario:  #Test_User2
-        Given I login to REDCap with the user "Test_User2"
+    Scenario:  #Test_User2_CTSP
+        Given I login to REDCap with the user "Test_User2_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.2.19.900.100"
         ##VERIFY - Record Locking Customization module is enabled
@@ -161,8 +161,8 @@ Feature: User Interface: The system shall support the ability to limit access to
         Then I should NOT see a link labeled "Lock entire record"
         And I logout
 
-    Scenario:  #Test_User3
-        Given I login to REDCap with the user "Test_User3"
+    Scenario:  #Test_User3_CTSP
+        Given I login to REDCap with the user "Test_User3_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.2.19.900.100"
         ##VERIFY - Record Locking Customization module is disabled but becomes enabled if you have lock/unlock privileges
@@ -184,8 +184,8 @@ Feature: User Interface: The system shall support the ability to limit access to
         Then I should NOT see a link labeled "Lock entire record"
         And I logout
 
-        #Test_User4
-        Given I login to REDCap with the user "Test_User4"
+        #Test_User4_CTSP
+        Given I login to REDCap with the user "Test_User4_CTSP"
         And I click on the link labeled "My Projects"
         And I click on the link labeled "C.2.19.900.100"
         ##VERIFY - Record Locking Customization module is disabled
