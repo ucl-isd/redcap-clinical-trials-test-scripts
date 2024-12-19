@@ -6,7 +6,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
     Scenario: C.3.24.0205.100 e-Consent text validation
 
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "C.3.24.0205.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentNoSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
