@@ -115,7 +115,8 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         Then I should see "E-signed by test_admin"
         And I should see "Instrument locked by REDCap_admim"
 
-        When I click on the link labeled "Data Types"
+        When I click on the link labeled "Record Status Dashboard"
+        And I click the bubble for the instrument labeled "Data Types" for record "1" for event "Event 1"
         Then I should see "Data Types"
         And I should see "Lock this instrument?"
         And I should NOT see a checkbox for the field labeled "E-signature"
