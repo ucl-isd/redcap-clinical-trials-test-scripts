@@ -6,7 +6,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
     Scenario: C.3.24.0105.100 The system shall support the enabling of the e-Consent Framework with an active/inactive status.
 
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         And I create a new project named "C.3.24.0105.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
