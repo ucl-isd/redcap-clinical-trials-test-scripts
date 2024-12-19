@@ -5,9 +5,9 @@ Feature: User Interface: The Record Locking Customization module shall allow the
 
     Scenario: C.2.19.700.100 Customize Record Locking display and text
         #SETUP
-        Given I login to REDCap with the user "Test_Admin"
+        Given I login to REDCap with the user "REDCap_Admin"
         #Manual: Append project name with the current version (i.e. "X.X.X.XXX.XXX - LTS X.X.X")
-        And I create a new project named "C.2.19.700.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
+        And I create a new project named "C.2.19.700.100 LTS 14.5.26" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "Project_1.xml", and clicking the "Create Project" button
 
         #SETUP_PRODUCTION
         When I click on the link labeled "Project Setup"
@@ -43,8 +43,8 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         When I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Customize record locking                |
-            | test_admin | Manage/Design | Customize record locking                |
+            | REDCap_admin | Manage/Design | Customize record locking                |
+            | REDCap_admin | Manage/Design | Customize record locking                |
 
         ##VERIFY_RECORD
         When I click on the link labeled "Record Status Dashboard"
@@ -58,9 +58,9 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I click on the button labeled "Save & Stay"
         Then I should see "E-signature: Username/password verification" in the dialog box
 
-        Given I enter credentials for user "Test_Admin"
+        Given I enter credentials for user "REDCap_Admin"
         Then I should see "E-signed by test_admin"
-        And I should see "Instrument locked by test_admim"
+        And I should see "Instrument locked by REDCap_admim"
 
         When I click on the link labeled "Data Types"
         Then I should see "Data Types"
@@ -96,7 +96,7 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         When I click on the link labeled "Logging"
         Then I should see a table header and rows including the following values in the logging table:
             | Username   | Action        | List of Data Changes OR Fields Exported |
-            | test_admin | Manage/Design | Customize record locking                |
+            | REDCap_admin | Manage/Design | Customize record locking                |
 
         ##VERIFY_RECORD
         When I click on the link labeled "Record Status Dashboard"
@@ -110,9 +110,9 @@ Feature: User Interface: The Record Locking Customization module shall allow the
         And I click on the button labeled "Save & Stay"
         Then I should see "E-signature: Username/password verification" in the dialog box
 
-        Given I enter credentials for user "Test_Admin"
+        Given I enter credentials for user "REDCap_Admin"
         Then I should see "E-signed by test_admin"
-        And I should see "Instrument locked by test_admim"
+        And I should see "Instrument locked by REDCap_admim"
 
         When I click on the link labeled "Data Types"
         Then I should see "Data Types"
