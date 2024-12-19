@@ -26,8 +26,8 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I should see "Primary settings"
 
         When I check "Allow e-Consent responses to be edited by users?"
-        And I select "first_name" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "First name field:" in the dialog box
-        And I select "last_name" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "Last name field:" in the dialog box
+        And I select "f_name" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "First name field:" in the dialog box
+        And I select "l_name" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "Last name field:" in the dialog box
         And I select "dob" on the event name "Event 1 (Arm 1: Arm 1)" from the dropdown field labeled "Date of birth field:" in the dialog box
         And I enter "Participant" in the field labeled "e-Consent tag/category:"
         And I enter "PID [project-id] - [last_name]" in the field labeled "Custom label for PDF header"
