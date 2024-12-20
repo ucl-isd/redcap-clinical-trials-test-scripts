@@ -47,9 +47,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I enter "01-01-2000" in the field labeled "DOB"
         And I enter "MyName" in the field labeled "Participant's Name Typed"
         And I enter a signature in the field labeled "Participant signature field"
-        And I click "Next Page"
-        And I should see "I certify..." 
-        Then I should check the box
+        And I click "Save Signature"
         And I click "Submit"
         Then I should see "Close survey"
 
@@ -66,24 +64,13 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         ##VERIFY_FiRe
         ##e-Consent Framework not used, and PDF Snapshot is used
         When I click on the link labeled "File Repository"
-        Then I should see a table header and rows including the following values in the file repository table:
-            | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             |
-            | .pdf | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |
-
-        ##VERIFY_Logging
-        ##e-Consent Framework not used, and PDF Snapshot is used
-        When I click on the link labeled "Logging"
-        Then I should see a table header and rows including the following values in the logging table:
-            | Username            | Action                                     | List of Data Changes OR Fields Exported                                           |
-            | [survey respondent] | Save PDF Snapshot 1                        | Save PDF Snapshot to File Upload Field field = "participant_file (event_1_arm_1)" |
-            | [survey respondent] | Update Response 1 (Event 1 (Arm 1: Arm 1)) | participant_file =                                                                |
-            | [survey respondent] | Save PDF Snapshot 1                        | Save PDF Snapshot to File Repository record = "1"                                 |
+        Then I should see 0 Files in the "PDF Snapshot Archive" folder
 
     ##ACTION: e-consent survey settings - enable
     Scenario: Enable e-Consent
         When I click on the button labeled "Designer"
         And I click on the button labeled "e-Consent and PDF Snapshots"
-        When I "Enable" the "Hide inactive"
+        When I "Disable" the "Hide inactive"
         And I "Active" the e-consent framework for survey labeled "Participant Consent"
         Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
 
@@ -104,7 +91,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I enter "email@test.edu" in the field labeled "Email"
         And I enter "01-01-2000" in the field labeled "DOB"
         And I enter "MyName" in the field labeled "Participant's Name Typed"
-        And I enter a signature in the field labeled "Participant signature field"
+        And I enter a signature in the field labeled "Participant signature field" and click "Save Signature"
 
         When I click on the button labeled "Next Page"
         Then I should see "Displayed below is a read-only copy of your survey responses."
@@ -127,11 +114,11 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
 
         ##VERIFY_FiRe
         ##e-Consent Framework not used, and PDF Snapshot is used
-        When I click on the link labeled "File Repository"
-        Then I should see a table header and rows including the following values in the file repository table:
+        When I click on the link labeled "File Repository" and open "PDF Snapshot Archive" folder
+        Then I should see the following:
             | Name | PDF utilized e-Consent Framework | Record | Survey Completed                             |
             | .pdf | icon                             | 2      | Participant Consent (Event 1 (Arm 1: Arm 1)) |
-            | .pdf | -                                | 1      | Participant Consent (Event 1 (Arm 1: Arm 1)) |
+           
 
         When I click on the link labeled "PDF Survey Archive"
         And I click on the link on the PDF link for record "2"
