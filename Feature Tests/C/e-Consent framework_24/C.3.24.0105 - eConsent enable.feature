@@ -24,9 +24,9 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
 
         When I "Disable" the "Hide inactive"
-        And I "Inactive" the e-consent framework for survey labeled "Participant Consent"
-        And I click on the button labeled "Set as inactive"
-        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Inactive"
+        And I "Active" the e-consent framework for survey labeled "Participant Consent"
+        And I click on the button labeled "Set as Active"
+        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
 
         When I "Enable" the "Hide inactive"
         Then I should NOT see the e-consent framework for survey labeled "Participant Consent" is "Inactive"
@@ -47,6 +47,9 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I enter "01-01-2000" in the field labeled "DOB"
         And I enter "MyName" in the field labeled "Participant's Name Typed"
         And I enter a signature in the field labeled "Participant signature field"
+        And I click "Next Page"
+        And I should see "I certify..." 
+        Then I should check the box
         And I click "Submit"
         Then I should see "Close survey"
 
