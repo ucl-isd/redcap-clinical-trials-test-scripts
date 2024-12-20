@@ -111,8 +111,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         Then I should see a table header and rows containing the following values in a table:
             | Record ID               |
             | 2                       |
-            | 2                       |
-            | 2                       |
+            
         ##VERIFY: Edit Report button
         When I click on the link labeled "Data Exports, Reports, and Stats"
         And I click on the "Edit" button for the "C.5.22.100.100 REPORT" report in the My Reports & Exports table 
@@ -140,16 +139,8 @@ Feature: User Interface: The system shall support the ability to assign the User
             | 1                       |
             | 1                       |
             | 1                       |
-            | 1                       |
-            | 2                       |
-            | 2                       |
             | 2                       |
             | 3                       |
-            | 3                       |
-            | 3                       |
-            | 4                       |
-            | 4                       |
-            | 4                       |
             | 4                       |
 
         ##VERIFY: Edit Report button
@@ -206,8 +197,7 @@ Feature: User Interface: The system shall support the ability to assign the User
         Then I should see a table header and rows containing the following values in a table:
             | Record ID               |
             | 2                       |
-            | 2                       |
-            | 2                       |
+            
         ##VERIFY: Edit Report button
         And I should NOT see a button labeled "Edit Report"
         And I logout
