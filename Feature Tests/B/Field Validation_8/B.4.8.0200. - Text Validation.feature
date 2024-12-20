@@ -214,9 +214,8 @@ Feature: User Interface: The system shall support text validation for text field
         And I click on the button labeled "Close" in the dialog box
 
         When I clear field and enter "" into the data entry form field labeled "Number Comma"
-        When I clear field and enter "TEST" into the data entry form field labeled "Time HH:MM"
-        And I should see a dialog containing the following text: "The value entered must be a time value in the following format HH:MM within the range 00:00-23:59 (e.g., 04:32 or 23:19)."
-        And I click on the button labeled "Close" in the dialog box
+        When I clear field and  attempt to enter "TEST" into the data entry form field labeled "Time HH:MM"
+        And I should be unable to enter "TEST" into the field
 
         When I clear field and enter "" into the data entry form field labeled "Time HH:MM"
         When I clear field and enter "TEST" into the data entry form field labeled "Time MM:SS"
@@ -225,10 +224,12 @@ Feature: User Interface: The system shall support text validation for text field
 
         When I clear field and enter "" into the data entry form field labeled "Time MM:SS"
         When I clear field and enter "TEST" into the data entry form field labeled "Time HH:MM:SS"
-        And I should see a dialog containing the following text: "The value you provided could not be validated because it does not follow the expected format. Please try again.Required format: Time (HH:MM:SS)"
-        And I click on the button labeled "Close" in the dialog box
+        And And I should be unable to enter "TEST" into the field
 
-        When I clear field and enter "" into the data entry form field labeled "Time HH:MM:SS"
+        When I click "save and exit form"
+        And I should see "Record ID 7"
+
+        When I click the bubble for "text validation"
         And I enter "TEST" into the data entry form field labeled "Email"
         And I should see a dialog containing the following text: "This field must be a valid email address (like joe@user.com). Please re-enter it now."
         And I click on the button labeled "Close" in the dialog box
