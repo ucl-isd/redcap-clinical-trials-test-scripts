@@ -69,6 +69,13 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
         And I set Data Viewing Rights to View & Edit for the instrument "Consent"
         And I save changes within the context of User Rights
 
+        ##ACTION: Set Consent to survey mode
+        When I click on Designer for the project B.2.10.0400.100 
+        Then I should see "Data Collection Insturments"
+        Then I should click "Enable" next to Consent
+        And I click Save Changes
+        Then I should see "Your changes have been saved successfully"
+
         #ASSIGN RECORDS TO SPECIFIC DAGs
         # -- Record ID 3 - TestGroup1 --
         Given I click on the link labeled "Add / Edit Records"
