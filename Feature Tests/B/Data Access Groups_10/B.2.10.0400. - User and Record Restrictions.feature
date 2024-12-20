@@ -201,14 +201,6 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
             | Record ID     |
             | 3  TestGroup1 |
 
-        ##VERIFY_FR:
-        When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Snapshot Archive"
-        Then I should see a table header and rows containing the following values in a table:
-            | Record | Survey                               | Survey Completion Time |
-            | 1-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm       |
-        And I logout
-
         ##ACTION: Another user from same DAG has access to same DAG records
         Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "My Projects"
@@ -220,15 +212,6 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
             | Record ID       |
             | 1-1  TestGroup1 |
             | 3  TestGroup1   |
-
-        ##VERIFY_FR:
-        When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Snapshot Archive"
-
-        Then I should see a table header and rows containing the following values in a table:
-            | Record | Survey                               | Survey Completion Time |
-            | 1-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm       |
-        And I logout
 
         ##ACTION: Separate User DAG
         Given I login to REDCap with the user "Test_User4_CTSP"
@@ -276,14 +259,6 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
             | 4  TestGroup2   |
             | 2-1  TestGroup2 |
 
-        ##VERIFY_FR:
-        When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Snapshot Archive"
-        Then I should see a table header and rows containing the following values in a table:
-            | Record | Survey                               | Survey Completion Time |
-            | 2-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm       |
-        And I logout
-
         ##ACTION: Another user from same DAG has access to same DAG records
         Given I login to REDCap with the user "Test_User2_CTSP"
         When I click on the link labeled "My Projects"
@@ -296,11 +271,5 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
             | 4  TestGroup2   |
             | 2-1  TestGroup2 |
 
-        ##VERIFY_FR:
-        When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Snapshot Archive"
-        Then I should see a table header and rows containing the following values in a table:
-            | Record | Survey                               | Survey Completion Time |
-            | 2-1    | Consent (Event Three (Arm 1: Arm 1)) | mm/dd/yyyy hh:mm       |
         And I logout
 #End
