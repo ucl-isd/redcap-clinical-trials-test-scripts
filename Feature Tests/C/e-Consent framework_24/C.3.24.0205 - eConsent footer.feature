@@ -48,7 +48,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         And I should see "Primary settings"
 
         When I check "Allow e-Consent responses to be edited by users?"
-        And I enter "Coordinator" in the field labeled "e-Consent tag/category:"
+        And I enter "Coordinator" in the field labeled "Custom tag/category for PDF footere-Consent tag/category:"
         And I enter "PID [project-id] - [last_name]" in the field labeled "Custom label for PDF header"
         And I select "coo_sign1" for the field labeled "Signature field #1"
         And I check "Save to a specific field"
@@ -67,6 +67,7 @@ Feature: User Interface: The system shall support the e-Consent Framework abilit
         When I click the button "+Add new trigger"
         And I enter "Combine PDF file" in the box labeled "Name of trigger"
         And I enter "[participant_consent_complete]='2' and [coordinator_signature_complete]='2'" in the box labeled "When the following logic becomes true"
+        And I click on "[all instuments]" and deselect all options
         And I click "Particpant Consent" and "Coordinator Siganture" from "[Any Event]" located in "Arm 1: Arm 1"
         And I click on the button labeled "Update"
         And I check "Save to File Repository"
