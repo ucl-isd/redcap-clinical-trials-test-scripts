@@ -4,6 +4,7 @@ Feature: C.3.24.0505. User Interface: The system shall support the e-Consent Fra
     I want to see that eConsent is functioning as expected
 
     Scenario: C.3.24.0505.100 Download e-Consent from File Repository
+    #This feature test has been deemed REDUNDANT by UCL as it has already been tested in C.3.24.0105
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
         And I create a new project named "C.3.24.505.100" by clicking on "New Project" in the menu bar, selecting "Practice / Just for fun" from the dropdown, choosing file "24EConsentWithSetup.xml", and clicking the "Create Project" button
