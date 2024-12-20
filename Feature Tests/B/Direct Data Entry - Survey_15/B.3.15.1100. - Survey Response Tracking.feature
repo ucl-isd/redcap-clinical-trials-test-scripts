@@ -25,7 +25,7 @@ Feature: User Interface: Survey Project Settings: The system shall support track
     Then I should see Project status: "Production"
 
     ##ACTION: Set Consent to survey mode
-    When I click on Designer for the project B.2.10.0400.100 
+    When I click on Designer for the project B.3.15.1100.100 
     Then I should see "Data Collection Insturments"
     Then I should click "Enable" next to Consent
     And I click Save Changes
