@@ -17,8 +17,17 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I click the button labeled "Enable" for the instrument "Consent"
         And I click the button labeled "Save Changes"
         And I click the button labeled "Survey Settings" for the instrument "Consent"
-        And I click on the button labeled "Auto-Archiver + eConsent enabled"
         Then I click the button labeled "Save Changes"
+
+        When I click the link labeled "e-consent & PDF Snapshot"
+        And i click "PDF snapshots of records"
+        And i click the edit image on Survey completion
+        And Under "Every time the following survey is completed" I click "'Consent'- [Any Event]"
+        And I select the edit image under STEP 2 and deselect all and select Consent
+        And I click update 
+        And I select "Save to File Repository"
+        And I click save
+        Then I should see "Success"
 
         ##SETUP File Repository
         And I click the link labeled "File Repository"
@@ -98,6 +107,8 @@ Feature: User Interface: The system shall support limiting file repository user 
             | 3_ReadOnly_Deidentified | test_user4_CTSP |
             | 4_NoAccess_Noexport     |            |
 
+        When I click the link labeled "DAGs"
+
         ##SETUP DAG: Assign User to DAG
         When I select "Test_User1_CTSP" from "Assign User" dropdown
         And I select "TestGroup1" from "DAG" dropdown
@@ -119,7 +130,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         And I logout
 
         ##SETUP Record: Create record while in DAG through eConsent framework
-        Given I login to REDCap with the user "Test_User1"
+        Given I login to REDCap with the user "Test_User1_CTSP"
         When I click on the link labeled "Add/Edit Records"
         And I click on the button labeled "Add new record for the arm selected above"
         And I click on the bubble labeled "Consent" for event "Event 1"
@@ -128,9 +139,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         When I click on the button labeled "Save & Stay"
         And I select the dropdown option labeled "Open survey" from the dropdown button with the placeholder text of "Survey options"
         And I click on the button labeled "Next Page"
-        Then I should see a checkbox for the field labeled "I certify that all of my information in the document above is correct."
 
-        When I click on the checkbox for the field labeled "I certify that all of my information in the document above is correct."
         And I click on the button labeled "Submit"
         And I click on the button labeled "Close survey"
         And I click on the button labeled "Leave without saving changes" in the dialog box
@@ -178,7 +187,7 @@ Feature: User Interface: The system shall support limiting file repository user 
         #FUNCTIONAL_REQUIREMENT
         ##ACTION Auto-archive file in DAG TestGroup1
         When I click on the link labeled "File Repository"
-        And I click on the link labeled "PDF Survey Archive"
+        And I click on the link labeled "PDF Snapshot Archive"
         Then I should see a table header and rows including the following values in the PDF Survey Archive table:
             | Name              | Record                   |
             | "pdf" format file | (record-name) TestGroup1 |
