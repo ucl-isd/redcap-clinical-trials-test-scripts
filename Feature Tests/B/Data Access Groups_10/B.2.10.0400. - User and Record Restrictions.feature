@@ -239,12 +239,8 @@ Feature: B.2.10.0400. User Interface: The system shall provide the ability to re
 
         #On the survey
         Then I should see "Consent"
-        And I should see "Please complete the survey below."
-
-        Given I click on the button labeled "Next Page"
-        And I should see "Consent"
-        Then I should see "Displayed below is a read-only copy of your survey responses."
-        And I check the checkbox labeled "I certify"
+        And I should see "Please complete the survey below." 
+        And I click on "Add Signature", I sign the form and click "Save Signature"
         When I click on the button labeled "Submit"
         Then I should see "Thank you for taking the survey."
 
