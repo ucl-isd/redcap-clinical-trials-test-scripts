@@ -24,9 +24,9 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
         And I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
 
         When I "Disable" the "Hide inactive"
-        And I "Active" the e-consent framework for survey labeled "Participant Consent"
-        And I click on the button labeled "Set as Active"
-        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Active"
+        And I "Inactive" the e-consent framework for survey labeled "Participant Consent"
+        And I click on the button labeled "Set as inactive"
+        Then I should see the e-consent framework for survey labeled "Participant Consent" is "Inactive"
 
         When I "Enable" the "Hide inactive"
         Then I should NOT see the e-consent framework for survey labeled "Participant Consent" is "Inactive"
