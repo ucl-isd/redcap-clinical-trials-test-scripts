@@ -61,7 +61,7 @@ Feature: User Interface: The system shall support the enabling of the e-Consent 
 
         ##VERIFY_PDF Snapshot Specific File Location
         When I click on the bubble labeled "Pdfs And Combined Signatures Pdf" for event "Event 1"
-        Then I should see ".pdf" in the field labeled "Participant Consent file"
+        Then I should NOT see ".pdf" in the field labeled "Participant Consent file"
 
         ##VERIFY_FiRe
         ##e-Consent Framework not used, and PDF Snapshot is used
