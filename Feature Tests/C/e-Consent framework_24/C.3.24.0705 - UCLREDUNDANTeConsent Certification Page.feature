@@ -4,6 +4,7 @@ Feature: User Interface: The system shall support the e-Consent Framework to pro
     I want to see that eConsent is functioning as expected
 
     Scenario: C.3.24.705.100 Verify certification page
+    #This feature test has been deemed REDUNDANT by UCL as it has already been tested in C.3.24.0105
 
         #SETUP
         Given I login to REDCap with the user "Test_Admin"
