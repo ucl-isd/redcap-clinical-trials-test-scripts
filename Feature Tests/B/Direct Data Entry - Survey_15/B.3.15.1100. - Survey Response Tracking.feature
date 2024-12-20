@@ -24,6 +24,13 @@ Feature: User Interface: Survey Project Settings: The system shall support track
     And I click on the button labeled "YES, Move to Production Status" in the dialog box to request a change in project status
     Then I should see Project status: "Production"
 
+    ##ACTION: Set Consent to survey mode
+    When I click on Designer for the project B.2.10.0400.100 
+    Then I should see "Data Collection Insturments"
+    Then I should click "Enable" next to Consent
+    And I click Save Changes
+    Then I should see "Your changes have been saved successfully"
+
     ##VERIFY_SDT
     Given I click on the link labeled "Survey Distribution Tools"
     When I click on the tab labeled "Participant List"
